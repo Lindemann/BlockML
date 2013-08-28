@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'BlockML' target in the 'BlockML' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

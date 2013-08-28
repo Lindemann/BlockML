@@ -1,0 +1,395 @@
+/*
+    ____  __           __   __  _____ 
+   / __ )/ /___  _____/ /__/  |/  / / 
+  / __  / / __ \/ ___/ //_/ /|_/ / /  
+ / /_/ / / /_/ / /__/ ,< / /  / / /___
+/_____/_/\____/\___/_/|_/_/  /_/_____/
+
+*/
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   RESET                                    */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   GENERAL                                  */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+/*Center the Body*/
+body {
+    margin: 150px auto;
+    width: 70%;
+    max-width: 680px;
+}
+
+a {
+    color: #1483C3;
+    text-decoration: none;
+}
+
+::selection { 
+	background-color: #D9F28F; 
+	/*background-color: #DFE16D; */
+	/*color: #D7CCE5;*/
+}
+
+::-moz-selection { 
+	background-color: #D9F28F; 
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                     FONT                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+body {
+	font-family: "Georgia", serif;
+	font-size: 12pt;
+	line-height: 1.6em;
+	color: #272822;
+	/* Break to long words...important for Code */
+	word-wrap: break-word;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   HEADINGS                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	line-height: 1.3em;
+	margin-top: 0.6em;
+	margin-bottom: 0.6em;
+}
+
+h1 {
+	font-size: 28pt;
+}
+
+h2 {
+	font-size: 22pt;
+}
+
+h3 {
+	font-size: 18pt;
+}
+
+h4 {
+	font-size: 16pt;
+}
+
+h5 {
+	font-size: 14pt;
+}
+
+h6 {
+	font-size: 12pt;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                 PARAGRAPH                                  */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+p {
+	margin-bottom: 1.3em;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   LISTS                                    */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+ul, ol {
+   padding-left: 50px;
+}
+
+body > ul, body > ol,
+.sec > ul, .sec > ol {
+	margin-bottom: 1.3em;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                	FRONTPAGE                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#frontpage {
+	text-align: center;
+	margin-bottom: 150px;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   	TOC                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#toc {
+	margin-bottom: 150px;
+}
+
+#toc ul {
+	list-style: none;
+	/* List should start on the left edge */
+	padding-left: 0px;
+}
+
+#toc ul ul {
+	/* Under Lists are indented*/
+	padding-left: 30px;
+}
+
+#toc li {
+	/* Set a repeating background picture on the bottom */
+	background: url(dot.png) repeat-x bottom left;
+	/* To give the Link a fix position */
+	position: relative; 
+}
+
+#toc ul li > span {
+	display: inline-block;
+	max-width: 90%;
+}
+
+#toc ul li > span span {
+	/* Make a white box around the text to hide the background dots */
+	height: 18pt;
+	padding-right: 4px;
+	background-color: white;
+	/* Move the Text a few Pixel deeper than its normal bottom */
+	/* Moving the Picture is not possible...for reasons...*/
+	position: relative;
+	bottom: -7px;
+}
+
+#toc a {
+	float: right;
+	/* Make a white box around the link to hide the background dots */
+	height: 18pt;
+	padding-left: 4px;
+	background-color: white;
+
+	display: block;
+	height: 100%;
+
+	position: absolute; 
+	/* Move the Link a few Pixel deeper than its normal bottom */
+	bottom: -4px;
+	right: 0;
+}
+
+#toc a span {
+	/* Move the Text to the bottom of List */
+	position: absolute; 
+	bottom: 0;
+}
+
+/*#toc > ul > li > span {
+	font-size: 14pt;
+	line-height: 1.6em;
+}
+
+#toc > ul > li {
+	background-image: none;
+}*/
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                     MATH                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#math {
+    padding: 0 0 20px 0;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                     CODE                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+.icode {
+    font-family:"Menlo", monospace;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+pre code, 
+pre code span {
+    font-family: "Menlo", monospace;
+    font-size: 10pt;
+    line-height: 1.6em;
+}
+
+pre {
+	/* Creepy behavior of pre require use of CSS Table*/
+  	display: table;
+  	table-layout: fixed;
+  	width: 100%;
+  	margin-bottom: 1.3em;
+
+  	font-family:"Menlo", monospace;
+    font-size: 10pt;
+}
+
+.codewc  pre {
+	line-height: 1.6em;
+}
+
+.codewc {
+	margin: 0 auto 1.6em auto;
+}
+
+.codewc .caption {
+	font-size: 10pt;
+	margin: 1em auto 0 auto;
+	text-align: center;
+	max-width: 80%;
+}
+
+.codewc a {
+	font-size: 10pt;
+}
+
+.caption code {
+	font-size: 8pt;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    ERROR                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+.error {
+    font-family:"Menlo", monospace;
+    text-align: center;
+    padding: 5px 0;
+    margin: 1.6em 0;
+
+    color: #99990f;
+	padding: 5px;
+	text-decoration: none;
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow: 2px 2px 6px #adadad;
+	text-shadow: 1px 1px 0px #ffffff;
+	border: solid #d1d110 1px;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#f9fcb8), to(#f5fa91));
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    IMAGE                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+img {
+	max-height: 100%; 
+	max-width: 100%;
+	display: block;
+	margin: 0 auto 1.6em auto;
+}
+
+.imgwc {
+	margin: 0 auto 1.6em auto;
+}
+
+.imgwc .caption {
+	font-size: 10pt;
+	margin: 1em auto 0 auto;
+	text-align: center;
+	max-width: 80%;
+}
+
+.imgwc a {
+	font-size: 10pt;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                  REFERENCES                                */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+/*.xr p {
+	text-align: left;
+}*/
+
+.xr {
+	position: relative;
+	margin-bottom: 1.3em;
+}
+
+.xr span {
+	display: block;
+	margin-left: 120px;
+}
+
+.xr > a {
+	width: 120px;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   ENDNOTES                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+/*#en p {
+	text-align: left;
+}*/
+
+#en {
+    border-top: 1px solid #272822;
+    margin: 4.6em auto 1.6em auto;
+    padding-top: 1.6em;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                	BLOCKQUOTE                                */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+blockquote {
+	font-style: italic;
+	padding-left: 40px;
+	position: relative;
+	/* same bottom margin like p */
+	margin: 0 auto 1.3em auto;
+	width: 80%;
+	left: -20px;
+}
+
+blockquote:before {
+	display: block;
+	content: "“";
+	font-size: 80px;
+	position: absolute;
+	left: -5px;
+	top: -30px;
+	color: gray;
+	line-height: 1.6;
+}
+
+.source {
+	color: gray;
+	font-size: 10pt;
+	display: block;
+	margin-top: 5px;
+	position: relative;
+	padding-left: 15px;
+}
+
+.source a {
+	font-size: 10pt;
+}
+ 
+.source::before {
+	content: "— ";
+	position: absolute;
+	left: 0;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    TABLE                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+table {
+	margin-bottom: 1.3em;
+}
+
+

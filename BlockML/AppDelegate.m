@@ -1,0 +1,106 @@
+//
+//  AppDelegate.m
+//  BlockML
+//
+//  Created by Lindemann on 28.04.13.
+//  Copyright (c) 2013 Lindemann. All rights reserved.
+//
+
+#import "AppDelegate.h"
+#import "Parser.h"
+
+@implementation AppDelegate
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [self.recompileButton setHidden:YES];
+}
+
+// Get file path after drag and drop a file on the dock icon
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
+    self.fileURL = [NSURL fileURLWithPath:filename];
+
+    [self processFile];
+    
+    return YES;
+}
+
+// Reopen window from dock after it was closed
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag {
+    if (flag) {
+        return NO;
+    } else {
+        [self.window orderFront:self];
+        return YES;
+    }
+}
+
+// Action!
+- (void)processFile {
+    // Test if fileURL exists...relevant when method became called from Recompile button
+    if (![self.fileURL checkResourceIsReachableAndReturnError:nil]) {
+        // Play warning beep
+        NSBeep();
+        return;
+    }
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    // Generate directory for compiled data with image directory inside
+    NSURL *compiledDataDirectory = [self.fileURL URLByDeletingPathExtension];
+    if (![compiledDataDirectory checkResourceIsReachableAndReturnError:nil]) {
+        [fileManager createDirectoryAtURL:compiledDataDirectory withIntermediateDirectories:NO attributes:nil error:nil];
+    }
+    
+    NSURL *imageDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"Images" isDirectory:YES];
+    if (![imageDirectory checkResourceIsReachableAndReturnError:nil]) {
+        [fileManager createDirectoryAtURL:imageDirectory withIntermediateDirectories:NO attributes:nil error:nil];
+    }
+    
+    // Copy CSS
+    NSURL *CSSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"CSS" isDirectory:YES];
+    NSURL *CSSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"CSS" isDirectory:YES];
+    if (![CSSDestinationDirectory checkResourceIsReachableAndReturnError:nil]) {
+        [fileManager copyItemAtURL:CSSSourceDirectory toURL:CSSDestinationDirectory error:nil];
+    }
+    // Copy MathJax
+    NSURL *mathJaxSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"MathJax" isDirectory:YES];
+    NSURL *mathJaxDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"MathJax" isDirectory:YES];
+    if (![mathJaxDestinationDirectory checkResourceIsReachableAndReturnError:nil]) {
+        [fileManager copyItemAtURL:mathJaxSourceDirectory toURL:mathJaxDestinationDirectory error:nil];
+    }
+    // Copy HighlightJS
+    NSURL *highlightJSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"HighlightJS" isDirectory:YES];
+    NSURL *highlightJSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"HighlightJS" isDirectory:YES];
+    if (![highlightJSDestinationDirectory checkResourceIsReachableAndReturnError:nil]) {
+        [fileManager copyItemAtURL:highlightJSSourceDirectory toURL:highlightJSDestinationDirectory error:nil];
+    }
+    
+    self.HTMLURL = [compiledDataDirectory URLByAppendingPathComponent:@"document.html"];
+    NSString *textFileName = [self.fileURL lastPathComponent];
+    self.fileNameTextField.stringValue = textFileName;
+    
+    // Read source text file and compile it
+    NSString *content =  [[NSString alloc] initWithContentsOfURL:self.fileURL encoding:NSUTF8StringEncoding error:nil];
+    
+    [self.progessIndicator startAnimation:self];
+    [self.recompileButton setEnabled:NO];
+    [self.recompileButton setHidden:NO];
+    
+    Parser *parser = [Parser parserWithString:content];
+    dispatch_queue_t parseData = dispatch_queue_create("parseData", NULL);
+    dispatch_async(parseData, ^{
+        [parser startParsing];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Do something after compilation
+            [self.progessIndicator stopAnimation:self];
+            [self.recompileButton setEnabled:YES];
+            [[NSWorkspace sharedWorkspace] openURL:self.HTMLURL];
+        });
+    });
+}
+
+- (IBAction)recompileButtonWasPressed:(id)sender {
+    [self processFile];
+}
+
+@end
