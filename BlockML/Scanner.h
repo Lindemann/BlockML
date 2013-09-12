@@ -12,7 +12,6 @@
 @interface Scanner : NSObject
 
 @property (nonatomic, strong) NSString *string;
-@property (nonatomic, strong) NSMutableAttributedString *highlightedString;
 
 - (id)initWithString:(NSString*)string;
 + (id)scannerWithString:(NSString*)string;

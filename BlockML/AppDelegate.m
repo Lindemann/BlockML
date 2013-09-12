@@ -8,19 +8,23 @@
 
 #import "AppDelegate.h"
 #import "Parser.h"
+#import "Token.h"
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [self.recompileButton setHidden:YES];
+    
+    // Remove this!
+    self.fileURL = [NSURL fileURLWithPath:@"/Users/LINDEMANN/Desktop/test.txt"];
+    [self processFile];
+    // Really! Remove this!
 }
 
 // Get file path after drag and drop a file on the dock icon
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
     self.fileURL = [NSURL fileURLWithPath:filename];
-
     [self processFile];
-    
     return YES;
 }
 
@@ -87,6 +91,7 @@
     [self.recompileButton setHidden:NO];
     
     Parser *parser = [Parser parserWithString:content];
+    parser.document.HTMLURL = self.HTMLURL;
     dispatch_queue_t parseData = dispatch_queue_create("parseData", NULL);
     dispatch_async(parseData, ^{
         [parser startParsing];

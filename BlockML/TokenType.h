@@ -6,30 +6,36 @@
 //  Copyright (c) 2012 Lindemann. All rights reserved.
 //
 
-typedef enum  _TokenType {
+typedef enum {
     
     /* K E Y W O R D */
     
-    // SB - Sqare Brackets
+    /* sqare brackets */
+    
     OPEN_SB,    // [
     CLOSE_SB,   // ]
     
-    // I N L I N E
+    /* inline */
     
     A_SB,       // a[
     
     FN_SB,      // fn[
     
-    FK_SB,       // fk[
-    FRA_SB,      // fra[
-    
     HTML_SB,    // html[
     
-    ICODE_SB,    // icode[
+    ICODE_SB,   // icode[
     
-    XRA_SB,     // xra[
+    B_SB,       // b[
     
-    // S T A N D A L O N E
+    I_SB,       // i[
+    
+    U_SB,       // u[
+    
+    M_SB,       // m[
+    
+    ID_SB,      // id[
+    
+    /* block */
     
     H1_SB,      // h1[
     H2_SB,      // h2[
@@ -41,34 +47,23 @@ typedef enum  _TokenType {
     UL_SB,      // ul[
     OL_SB,      // ol[
     
-    TITLE,      // title[
-    
     TOC_SB,     // toc[
     
     SEC_SB,     // sec[
     
     CODE_SB,    // code[
     
-    CODEWC_SB,    // codewc[
-    
     MATH_SB,    // math[
     
-    FRONTPAGE_SB,// frontpage[
-    
-    TITLE_SB,    // title[
-    
     IMG_SB,     // img[
-    IMGWC_SB,   // imgwc[
     
     Q_SB,       // q[
     
     PB_SB,      // pb[
     
-    XR_SB,       // xr[
+    FRONTPAGE_SB,// frontpage[
     
-    B_SB,       // b[
-    I_SB,       // i[
-    U_SB,       // u[
+    TITLE_SB,    // title[
     
     /* S T R I N G */
     
@@ -79,10 +74,14 @@ typedef enum  _TokenType {
     LF,         // \n
     
     END,        // End Of File
-    
-    /* C O M M E N T */
-    
-    OPEN_COM,   // /*
-    CLOSE_COM,  // */
-    
+
 } TokenType;
+
+
+
+
+
+
+
+
+

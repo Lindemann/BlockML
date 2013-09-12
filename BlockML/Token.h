@@ -14,4 +14,11 @@
 @property (nonatomic) TokenType type;
 @property (nonatomic, strong) NSString *value;
 
+// Look up list for TokenType <-> String
+// (A_SB <-> @"a[")
+// Gets handy for Scanner and -description
++ (NSMutableArray*)stringList;
++ (NSString*)stringForStringListElement:(NSArray*)element;
++ (TokenType)tokenTypeForStringListElement:(NSArray*)element;
+
 @end

@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HTMLDocument.h"
 
 @interface Parser : NSObject
 
 @property (nonatomic, strong) NSString *string;
+@property (nonatomic, strong) HTMLDocument *document;
 
 - (id)initWithString:(NSString*)string;
 + (id)parserWithString:(NSString*)string;

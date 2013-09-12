@@ -11,6 +11,12 @@
 @interface Scanner()
 
 @property (nonatomic, strong) Token *token;
+@property (nonatomic) int scannerLocation;
+@property (nonatomic, strong) NSMutableString *currentString;
+@property (nonatomic, strong) NSMutableArray *stringList;
+@property (nonatomic, strong) NSMutableArray *openTags;
+@property (nonatomic) int lastAndProbablyStillOpenTag;
+@property (nonatomic) BOOL commentIsOpen;
 
 @end
 
@@ -19,6 +25,10 @@
 - (id)initWithString:(NSString*)string {
     if(self = [super init]) {
         self.token = [Token new];
+        self.string = string;
+        self.currentString = [NSMutableString new];
+        self.stringList = [Token stringList];
+        self.openTags = [NSMutableArray new];
     }
     return self;
 }
@@ -28,7 +38,250 @@
 }
 
 - (Token *)getToken {
+    while (self.scannerLocation < self.string.length) {
+        [self readNextCharacter];
+        
+        // Yes...all these special cases must become exactly handeled in this order!
+        if ([self isImmutableContentString]) {
+            continue;
+        }
+        if ([self isEscapedBracket]) {
+            continue;
+        }
+        if ([self isWhiteSpace]) {
+            continue;
+        }
+        if ([self isComment]) {
+            continue;
+        }
+        if ([self isPreCommentString]) {
+            return self.token;
+        }
+        if ([self isKeyword]) {
+            return self.token;
+        }
+        if ([self isString]) {
+            return self.token;
+        }
+    }
+    if ([self isParagraph]) {
+        return self.token;
+    }
+    self.token.type = END;
     return self.token;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*                                            CASES                                             */
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+#pragma mark - Cases
+
+- (BOOL)isString {
+    if (self.commentIsOpen) {
+        return NO;
+    }
+    NSString *searchString;
+    for (NSArray *element in self.stringList) {
+        searchString = [Token stringForStringListElement:element];
+        if ([self.currentString hasSuffix:searchString] && ![self.currentString isEqual:searchString]) {
+            self.token.type = STRING;
+            NSRange stringRange = {0, self.currentString.length - searchString.length};
+            self.token.value = [self.currentString substringWithRange:stringRange];
+            _scannerLocation = _scannerLocation - (int)searchString.length;
+            self.currentString = [NSMutableString new];
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)isKeyword {
+    if (self.commentIsOpen) {
+        return NO;
+    }
+    NSString *searchString;
+    for (NSArray *element in self.stringList) {
+        searchString = [Token stringForStringListElement:element];
+        if ([self.currentString isEqual:searchString]) {
+            TokenType tokenType = [Token tokenTypeForStringListElement:element];
+            self.token.type = tokenType;
+            self.currentString = [NSMutableString new];
+            [self manageOpenTagsWithElement:element];
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)isParagraph {
+    // Returns pure strings without any markup elements
+    if (self.currentString.length > 0) {
+        self.token.type = STRING;
+        self.token.value = self.currentString;
+        self.currentString = [NSMutableString new];
+        return YES;
+    }
+    return  NO;
+}
+
+- (BOOL)isEscapedBracket {
+    NSString *ESCAPED_OPEN_SB = @"\\[";
+    NSString *ESCAPED_CLOSE_SB = @"\\]";
+    if ([self.currentString hasSuffix:ESCAPED_OPEN_SB] || [self.currentString hasSuffix:ESCAPED_CLOSE_SB] ||
+        [self.currentString isEqualToString:ESCAPED_OPEN_SB] || [self.currentString isEqualToString:ESCAPED_CLOSE_SB]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)isImmutableContentString {
+    if ([self isImmutableContentTag]) {
+        NSMutableArray *searchStringList = [NSMutableArray new];
+        [searchStringList addObject:@"/*"];
+        [searchStringList addObject:@"*/"];
+        [searchStringList addObject:@"\n"];
+        for (NSString *searchString in searchStringList) {
+            if ([self.currentString hasSuffix:searchString] || [self.currentString isEqual:searchString]) {
+                return YES;
+            }
+        }
+    }
+    return NO;
+}
+
+- (BOOL)isWhiteSpace {
+    // Don't change this strings
+    if ([self isImmutableContentTag]) {
+        return NO;
+    }
+    // Inline Tags must be handeled like strings
+    // Don't removes the whitespaces after inline tags
+    // Because they are like whitespace between two strings
+    if (self.lastAndProbablyStillOpenTag >= A_SB && self.lastAndProbablyStillOpenTag <= ID_SB) {
+        return NO;
+    }
+    // Remove strings which contains only a LF
+    // Except when the last token is a string or a LF
+    // Because that indicates a new line or a new paragraph
+    // 1 LF -> New Line
+    // > 2 LFs -> New Paragraph
+    if (self.token.type != STRING && self.token.type != LF) {
+        NSString *LF = @"\n";
+        if ([self.currentString isEqual:LF]) {
+            self.currentString = [NSMutableString new];
+            return YES;
+        }
+    }
+    // Remove leading TABs or SPACEs
+    NSString *SPACE = @" ";
+    NSString *TAB = @"\t";
+    if ([self.currentString isEqual:SPACE] || [self.currentString isEqual:TAB]) {
+        self.currentString = [NSMutableString new];
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)isPreCommentString {
+    // Example: Foo /*...
+    // Returns the string Foo 
+    NSString *OPEN_COM = @"/*";
+    if ([self.currentString hasSuffix:OPEN_COM]) {
+        self.token.type = STRING;
+        NSRange stringRange = {0, self.currentString.length - OPEN_COM.length};
+        self.token.value = [self.currentString substringWithRange:stringRange];
+        _scannerLocation = _scannerLocation - (int)OPEN_COM.length;
+        self.currentString = [NSMutableString new];
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)isComment {
+    NSString *OPEN_COM = @"/*";
+    NSString *CLOSE_COM = @"*/";
+    if ([self.currentString isEqual:OPEN_COM] || [self.currentString isEqual:CLOSE_COM]) {
+        if ([self.currentString isEqual:OPEN_COM]) {
+            self.commentIsOpen = YES;
+        }
+        if ([self.currentString isEqual:CLOSE_COM]) {
+            self.commentIsOpen = NO;
+            // Nifty tweak for correct whitepace removal
+            self.token.type = 666;
+        }
+        self.currentString = [NSMutableString new];
+        return YES;
+    }
+    if ([self.currentString hasSuffix:CLOSE_COM]) {
+        self.currentString = [NSMutableString new];
+        _scannerLocation = _scannerLocation - (int)CLOSE_COM.length;
+        return YES;
+    }
+    return NO;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*                                           HELPER                                             */
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+#pragma mark - Helper
+
+- (void)readNextCharacter {
+    // range.location must become assigned every time again
+    NSRange range = {self.scannerLocation, 1};
+    _scannerLocation++;
+    [self.currentString appendString:[self.string substringWithRange:range]];
+}
+
+- (BOOL)element:(NSArray*)element hasTokenType:(TokenType)tokenType {
+    if ([Token tokenTypeForStringListElement:element] == tokenType) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)isImmutableContentTag {
+    // All tags which probably contains content,
+    // which should stay in one string and not become divided trough comments or LFs
+    // For example a code tag with LFs
+    if ([[self.openTags lastObject] intValue] == CODE_SB ||
+        [[self.openTags lastObject] intValue] == ICODE_SB ||
+        [[self.openTags lastObject] intValue] == MATH_SB ||
+        [[self.openTags lastObject] intValue] == HTML_SB) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)isRealTag:(NSArray*)element {
+    if ([self element:element hasTokenType:OPEN_SB] ||
+        [self element:element hasTokenType:CLOSE_SB] ||
+        [self element:element hasTokenType:LF]) {
+        return NO;
+    }
+    return YES;
+}
+
+- (void)manageOpenTagsWithElement:(NSArray*)element {
+    // Push all openning tags like "a[" or "code[" on  a stack
+    // The stack is sufficent for the "special cases"
+    if ([self isRealTag:element]) {
+        [self.openTags addObject:[NSNumber numberWithInt:self.token.type]];
+    }
+    // Remove tags from the stack, when the tag became closed by a "]"
+    // Preserve tag for the case that he was not really closed like in "a[][]"
+    if ([self element:element hasTokenType:CLOSE_SB]) {
+        self.lastAndProbablyStillOpenTag = [[self.openTags lastObject] intValue];
+        [self.openTags removeLastObject];
+    }
+    // When a "[" appears it is clear that the tag is still open
+    // Push preserved tag back to the stack
+    if ([self element:element hasTokenType:OPEN_SB]) {
+        [self.openTags addObject:[NSNumber numberWithInt:self.lastAndProbablyStillOpenTag]];
+    }
 }
 
 @end
