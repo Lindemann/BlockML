@@ -32,6 +32,9 @@
 		8215C33317E0046D00ABB0E6 /* HTMLStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33217E0046D00ABB0E6 /* HTMLStringBuilder.m */; };
 		8215C33617E004B900ABB0E6 /* HTMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33517E004B900ABB0E6 /* HTMLElement.m */; };
 		8215C33917E004CD00ABB0E6 /* HTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33817E004CD00ABB0E6 /* HTMLDocument.m */; };
+		8215C34017E3648D00ABB0E6 /* Paragraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33F17E3648D00ABB0E6 /* Paragraph.m */; };
+		82DEC4FB17E609D9007708D1 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FA17E609D9007708D1 /* Text.m */; };
+		82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FD17E609F8007708D1 /* LineBreak.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,13 @@
 		8215C33517E004B900ABB0E6 /* HTMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLElement.m; sourceTree = "<group>"; };
 		8215C33717E004CD00ABB0E6 /* HTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLDocument.h; sourceTree = "<group>"; };
 		8215C33817E004CD00ABB0E6 /* HTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLDocument.m; sourceTree = "<group>"; };
+		8215C33E17E3648D00ABB0E6 /* Paragraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paragraph.h; sourceTree = "<group>"; };
+		8215C33F17E3648D00ABB0E6 /* Paragraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paragraph.m; sourceTree = "<group>"; };
+		8215C34417E36EFC00ABB0E6 /* HTMLTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLTree.h; sourceTree = "<group>"; };
+		82DEC4F917E609D9007708D1 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
+		82DEC4FA17E609D9007708D1 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
+		82DEC4FC17E609F8007708D1 /* LineBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineBreak.h; sourceTree = "<group>"; };
+		82DEC4FD17E609F8007708D1 /* LineBreak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineBreak.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +252,13 @@
 		8215C33A17E2594F00ABB0E6 /* HTMLElements */ = {
 			isa = PBXGroup;
 			children = (
+				8215C34417E36EFC00ABB0E6 /* HTMLTree.h */,
+				8215C33E17E3648D00ABB0E6 /* Paragraph.h */,
+				8215C33F17E3648D00ABB0E6 /* Paragraph.m */,
+				82DEC4F917E609D9007708D1 /* Text.h */,
+				82DEC4FA17E609D9007708D1 /* Text.m */,
+				82DEC4FC17E609F8007708D1 /* LineBreak.h */,
+				82DEC4FD17E609F8007708D1 /* LineBreak.m */,
 			);
 			name = HTMLElements;
 			sourceTree = "<group>";
@@ -358,11 +375,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DEC4FB17E609D9007708D1 /* Text.m in Sources */,
 				8215C33917E004CD00ABB0E6 /* HTMLDocument.m in Sources */,
 				82080F32172D0CEE008ABC58 /* main.m in Sources */,
+				8215C34017E3648D00ABB0E6 /* Paragraph.m in Sources */,
 				82080F39172D0CEE008ABC58 /* AppDelegate.m in Sources */,
 				82080F73172D1C1F008ABC58 /* Token.m in Sources */,
 				8215C33317E0046D00ABB0E6 /* HTMLStringBuilder.m in Sources */,
+				82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */,
 				82080F75172D1C1F008ABC58 /* Scanner.m in Sources */,
 				82080F77172D1C1F008ABC58 /* Parser.m in Sources */,
 				8208100E172DCD1F008ABC58 /* DropView.m in Sources */,

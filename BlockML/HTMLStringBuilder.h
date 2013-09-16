@@ -9,15 +9,15 @@
 #import <Foundation/Foundation.h>
 
 // ATTRIBUTES
-#define ID @"id"
-#define CLASS @"class"
-#define HREF @"href"
+static NSString *const ID = @"id";
+static NSString *const CLASS = @"class";
+static NSString *const HREF = @"href";
 
 // TAGS
-#define DIV @"div"
-#define SPAN @"span"
-#define A @"a"
-static NSString const *bla = @"hg";
+static NSString *const DIV = @"div";
+static NSString *const SPAN = @"span";
+static NSString *const A = @"a";
+static NSString *const P = @"p";
 
 @interface HTMLStringBuilder : NSObject
 

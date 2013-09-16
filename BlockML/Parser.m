@@ -9,6 +9,7 @@
 #import "Parser.h"
 #import "Scanner.h"
 #import "Token.h"
+#import "HTMLTree.h"
 
 @interface Parser ()
 
@@ -52,7 +53,12 @@
 
 - (void)documentWithParent:(HTMLElement*)parent {
     while (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= TITLE_SB)) {
-        [self textBlockWithParent:parent];
+        
+        Paragraph *paragraph = [Paragraph new];
+        [parent addElement:paragraph];
+        paragraph.closingTagLineBreak = YES;
+        
+        [self textBlockWithParent:paragraph];
         [self blockTagWithParent:parent];
     }
 }
@@ -63,9 +69,15 @@
         if (self.token.type == LF) {
             NSLog(@"%@", self.token);
             self.token = [self.scanner getToken];
-            [self ParagraphWithParent:parent];
+            [self paragraphWithParent:parent.parent];
             if (self.token.type != LF) {
                 
+                if (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
+                    LineBreak *lineBreak = [LineBreak new];
+                    [parent addElement:lineBreak];
+                }
+                
+                [self textBlockWithParent:parent];
             }
         }
     }
@@ -74,12 +86,25 @@
 - (void)textWithParent:(HTMLElement*)parent {
     if (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
         if (self.token.type == STRING) {
+            
+            Text *text = [Text new];
+            [parent addElement:text];
+            text.string = self.token.value;
+            NSLog(@"parent %@", text.parent);
+            
+            
             NSLog(@"%@", self.token);
             self.token = [self.scanner getToken];
         }
         [self inlineTagWithParent:parent];
         while (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
             if (self.token.type == STRING) {
+                
+                Text *text = [Text new];
+                [parent addElement:text];
+                text.string = self.token.value;
+                NSLog(@"parent %@", text.parent);
+                
                 NSLog(@"%@", self.token);
                 self.token = [self.scanner getToken];
             }
@@ -88,7 +113,7 @@
     }
 }
 
-- (void)ParagraphWithParent:(HTMLElement*)parent {
+- (void)paragraphWithParent:(HTMLElement*)parent {
     if (self.token.type == LF) {
         NSLog(@"%@", self.token);
         self.token = [self.scanner getToken];
@@ -96,6 +121,16 @@
             NSLog(@"%@", self.token);
             self.token = [self.scanner getToken];
         }
+        
+        if (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
+            
+            Paragraph *paragraph = [Paragraph new];
+            [parent addElement:paragraph];
+            paragraph.closingTagLineBreak = YES;
+            
+            [self textBlockWithParent:paragraph];
+        }
+        
     }
 }
 
