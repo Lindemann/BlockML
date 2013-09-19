@@ -9,3 +9,4 @@
 #import "Paragraph.h"
 #import "Text.h"
 #import "LineBreak.h"
+#import "Link.h"

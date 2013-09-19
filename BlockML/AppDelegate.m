@@ -54,12 +54,12 @@
     if (![compiledDataDirectory checkResourceIsReachableAndReturnError:nil]) {
         [fileManager createDirectoryAtURL:compiledDataDirectory withIntermediateDirectories:NO attributes:nil error:nil];
     }
-    
-    NSURL *imageDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"Images" isDirectory:YES];
-    if (![imageDirectory checkResourceIsReachableAndReturnError:nil]) {
-        [fileManager createDirectoryAtURL:imageDirectory withIntermediateDirectories:NO attributes:nil error:nil];
+    // Copy Images
+    NSURL *ImagesSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"Images" isDirectory:YES];
+    NSURL *ImagesDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"Images" isDirectory:YES];
+    if (![ImagesDestinationDirectory checkResourceIsReachableAndReturnError:nil]) {
+        [fileManager copyItemAtURL:ImagesSourceDirectory toURL:ImagesDestinationDirectory error:nil];
     }
-    
     // Copy CSS
     NSURL *CSSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"CSS" isDirectory:YES];
     NSURL *CSSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"CSS" isDirectory:YES];

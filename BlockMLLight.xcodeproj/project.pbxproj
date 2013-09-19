@@ -35,6 +35,8 @@
 		8215C34017E3648D00ABB0E6 /* Paragraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33F17E3648D00ABB0E6 /* Paragraph.m */; };
 		82DEC4FB17E609D9007708D1 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FA17E609D9007708D1 /* Text.m */; };
 		82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FD17E609F8007708D1 /* LineBreak.m */; };
+		82DEC50217E975B1007708D1 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC50117E975B1007708D1 /* Link.m */; };
+		82DEC50517EAADF2007708D1 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 82DEC50417EAADF2007708D1 /* Images */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,9 @@
 		82DEC4FA17E609D9007708D1 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
 		82DEC4FC17E609F8007708D1 /* LineBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineBreak.h; sourceTree = "<group>"; };
 		82DEC4FD17E609F8007708D1 /* LineBreak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineBreak.m; sourceTree = "<group>"; };
+		82DEC50017E975B1007708D1 /* Link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
+		82DEC50117E975B1007708D1 /* Link.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Link.m; sourceTree = "<group>"; };
+		82DEC50417EAADF2007708D1 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +207,7 @@
 		82080F5D172D0E45008ABC58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				82DEC50417EAADF2007708D1 /* Images */,
 				82080F69172D0FFB008ABC58 /* CSS */,
 				82080F60172D0E67008ABC58 /* HighlightJS */,
 				82080F5E172D0E54008ABC58 /* MathJax */,
@@ -253,6 +259,16 @@
 			isa = PBXGroup;
 			children = (
 				8215C34417E36EFC00ABB0E6 /* HTMLTree.h */,
+				82DEC4FF17E77DA0007708D1 /* Text */,
+				82DEC50017E975B1007708D1 /* Link.h */,
+				82DEC50117E975B1007708D1 /* Link.m */,
+			);
+			name = HTMLElements;
+			sourceTree = "<group>";
+		};
+		82DEC4FF17E77DA0007708D1 /* Text */ = {
+			isa = PBXGroup;
+			children = (
 				8215C33E17E3648D00ABB0E6 /* Paragraph.h */,
 				8215C33F17E3648D00ABB0E6 /* Paragraph.m */,
 				82DEC4F917E609D9007708D1 /* Text.h */,
@@ -260,7 +276,7 @@
 				82DEC4FC17E609F8007708D1 /* LineBreak.h */,
 				82DEC4FD17E609F8007708D1 /* LineBreak.m */,
 			);
-			name = HTMLElements;
+			name = Text;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +354,7 @@
 				82080F36172D0CEE008ABC58 /* Credits.rtf in Resources */,
 				82080F3C172D0CEE008ABC58 /* MainMenu.xib in Resources */,
 				82080F5F172D0E54008ABC58 /* MathJax in Resources */,
+				82DEC50517EAADF2007708D1 /* Images in Resources */,
 				82080F61172D0E67008ABC58 /* HighlightJS in Resources */,
 				82080F6A172D0FFB008ABC58 /* CSS in Resources */,
 				8208105B17329313008ABC58 /* icon.icns in Resources */,
@@ -375,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DEC50217E975B1007708D1 /* Link.m in Sources */,
 				82DEC4FB17E609D9007708D1 /* Text.m in Sources */,
 				8215C33917E004CD00ABB0E6 /* HTMLDocument.m in Sources */,
 				82080F32172D0CEE008ABC58 /* main.m in Sources */,

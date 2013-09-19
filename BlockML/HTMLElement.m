@@ -28,4 +28,16 @@
     element.parent = nil;
 }
 
+- (int)parentCount {
+    return [self calculateParentCount:self withCounter:0];
+}
+
+- (int)calculateParentCount:(HTMLElement*)currentElement withCounter:(int)counter {
+    int i = counter;
+    if (currentElement.parent) {
+        i = [self calculateParentCount:currentElement.parent withCounter:counter + 1];
+    }
+    return i;
+}
+
 @end

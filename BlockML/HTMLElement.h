@@ -23,6 +23,8 @@
 @property (nonatomic) int closingTagIndentation;
 @property (nonatomic) BOOL closingTagLineBreak;
 
+@property (nonatomic) int parentCount;
+
 - (void)addElement:(HTMLElement*)element;
 - (void)removeElement:(HTMLElement*)element;
 

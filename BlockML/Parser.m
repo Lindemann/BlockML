@@ -51,24 +51,54 @@
     NSLog(@"%@", self.token);
 }
 
+- (void)nextToken {
+    NSLog(@"%@", self.token);
+    self.token = [self.scanner getToken];
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*                                     PRODUCTION RULES                                         */
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+#pragma mark - Production Rules
+
 - (void)documentWithParent:(HTMLElement*)parent {
     while (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= TITLE_SB)) {
         
         Paragraph *paragraph = [Paragraph new];
         [parent addElement:paragraph];
-        paragraph.closingTagLineBreak = YES;
         
         [self textBlockWithParent:paragraph];
         [self blockTagWithParent:parent];
     }
+//    // Keep parsing to find erros
+//    while (self.token.type == OPEN_SB || self.token.type == CLOSE_SB) {
+//        self.token = [self.scanner getToken];
+//        [self documentWithParent:parent];
+//    }
 }
+
+- (void)inlineTagWithParent:(HTMLElement*)parent {
+    [self linkWithParent:parent];
+}
+
+- (void)blockTagWithParent:(HTMLElement*)parent {
+    
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*                                            TEXT                                              */
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+#pragma mark - Text
 
 - (void)textBlockWithParent:(HTMLElement*)parent {
     if (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
         [self textWithParent:parent];
         if (self.token.type == LF) {
-            NSLog(@"%@", self.token);
-            self.token = [self.scanner getToken];
+            [self nextToken];
             [self paragraphWithParent:parent.parent];
             if (self.token.type != LF) {
                 
@@ -90,11 +120,9 @@
             Text *text = [Text new];
             [parent addElement:text];
             text.string = self.token.value;
-            NSLog(@"parent %@", text.parent);
             
             
-            NSLog(@"%@", self.token);
-            self.token = [self.scanner getToken];
+            [self nextToken];
         }
         [self inlineTagWithParent:parent];
         while (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
@@ -103,10 +131,8 @@
                 Text *text = [Text new];
                 [parent addElement:text];
                 text.string = self.token.value;
-                NSLog(@"parent %@", text.parent);
                 
-                NSLog(@"%@", self.token);
-                self.token = [self.scanner getToken];
+                [self nextToken];
             }
             [self inlineTagWithParent:parent];
         }
@@ -115,32 +141,60 @@
 
 - (void)paragraphWithParent:(HTMLElement*)parent {
     if (self.token.type == LF) {
-        NSLog(@"%@", self.token);
-        self.token = [self.scanner getToken];
+        [self nextToken];
         while (self.token.type == LF) {
-            NSLog(@"%@", self.token);
-            self.token = [self.scanner getToken];
+            [self nextToken];
         }
         
-        if (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
+        if (self.token.type == STRING) {
             
             Paragraph *paragraph = [Paragraph new];
             [parent addElement:paragraph];
-            paragraph.closingTagLineBreak = YES;
             
             [self textBlockWithParent:paragraph];
+        }
+        
+        if (self.token.type >= A_SB && self.token.type <= ID_SB) {
+            [self textBlockWithParent:parent];
         }
         
     }
 }
 
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
 
-- (void)inlineTagWithParent:(HTMLElement*)parent {
-    
-}
+/*                                         INLINE TAGS                                          */
 
-- (void)blockTagWithParent:(HTMLElement*)parent {
-    
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+#pragma mark - INLINE TAGS
+
+- (void)linkWithParent:(HTMLElement*)parent {
+    if (self.token.type == A_SB) {
+        [self nextToken];
+        
+        Link *link = [Link new];
+        
+        if (self.token.type == STRING) {
+
+            link.href = self.token.value;
+            
+            [self nextToken];
+            
+            if (self.token.type == CLOSE_SB) {
+                
+                [parent addElement:link];
+                
+                [self nextToken];
+                
+                if (self.token.type != OPEN_SB) {
+                    
+                    Text *text = [Text new];
+                    [link addElement:text];
+                    text.string = link.href;
+                }
+            }
+        }
+    }
 }
 
 
