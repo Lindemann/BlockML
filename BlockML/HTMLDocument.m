@@ -85,6 +85,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
 }
 
 - (void)generateHTML {
+    [self assamblyNumbering:self];
     [self formatHTMLString:self];
     
     // Write Content to File
@@ -100,10 +101,18 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
         for (int i = 0; i < root.elements.count; ++i) {
             HTMLElement *element = [root.elements objectAtIndex:i];
             
-            if ([element.parent isKindOfClass:[HTMLDocument class]]) {
+            if ([element.parent isKindOfClass:[HTMLDocument class]] ||
+                [element.parent isKindOfClass:[Section class]]) {
                 element.closingTagLineBreak = YES;
                 // +1 for body tag
                 element.openTagIndentation = element.parentCount + 1;
+            }
+            if ([element isKindOfClass:[Section class]]) {
+                element.openTagLineBreak = YES;
+                element.closingTagLineBreak = YES;
+                // +1 for body tag
+                element.openTagIndentation = element.parentCount + 1;
+                element.closingTagIndentation = element.parentCount + 1;
             }
             
             [self formatHTMLString:element];
@@ -126,6 +135,26 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
             }
             
             [root.htmlString appendString:element.htmlString];
+        }
+    }
+}
+
+- (void)assamblyNumbering:(HTMLElement*)root {
+    if (root.elements != nil && root.elements.count > 0) {
+        int sectionIndex = 1;
+        for (int i = 0; i < root.elements.count; ++i) {
+            HTMLElement *element = [root.elements objectAtIndex:i];
+            
+            if ([element isKindOfClass:[Section class]]) {
+                Section *section = (Section*)element;
+                section.sectionIndex = sectionIndex;
+                ++sectionIndex;
+            }
+ 
+            
+            [self assamblyNumbering:element];
+            
+
         }
     }
 }

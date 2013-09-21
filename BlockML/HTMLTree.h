@@ -10,3 +10,6 @@
 #import "Text.h"
 #import "LineBreak.h"
 #import "Link.h"
+#import "Heading.h"
+#import "Section.h"
+#import "TableOfContent.h"

@@ -14,6 +14,7 @@
     if (self = [super init]) {
         self.elements = [NSMutableArray new];
         self.htmlString = [NSMutableString string];
+        self.attributes = [NSMutableDictionary new];
     }
     return self;
 }

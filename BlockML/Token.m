@@ -59,6 +59,8 @@
     
     /* block */
     [stringList addObject:@[[NSNumber numberWithInt:CODE_SB], @"code["]];
+    [stringList addObject:@[[NSNumber numberWithInt:SEC_SB], @"sec["]];
+    [stringList addObject:@[[NSNumber numberWithInt:TOC_SB], @"toc["]];
     
     /* sqare brackets */
     [stringList addObject:@[[NSNumber numberWithInt:OPEN_SB], @"["]];

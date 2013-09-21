@@ -64,12 +64,17 @@
 #pragma mark - Production Rules
 
 - (void)documentWithParent:(HTMLElement*)parent {
+    // Everything
     while (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= TITLE_SB)) {
-        
-        Paragraph *paragraph = [Paragraph new];
-        [parent addElement:paragraph];
-        
-        [self textBlockWithParent:paragraph];
+        // STRING
+        if (self.token.type == STRING) {
+            Paragraph *paragraph = [Paragraph new];
+            [parent addElement:paragraph];
+            [self textBlockWithParent:paragraph];
+        }
+        // Inline Tags
+        [self textBlockWithParent:parent];
+        // Block Tags
         [self blockTagWithParent:parent];
     }
 //    // Keep parsing to find erros
@@ -84,7 +89,8 @@
 }
 
 - (void)blockTagWithParent:(HTMLElement*)parent {
-    
+    [self tableOfContent:parent];
+    [self section:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -169,33 +175,91 @@
 #pragma mark - INLINE TAGS
 
 - (void)linkWithParent:(HTMLElement*)parent {
+    // a[
     if (self.token.type == A_SB) {
-        [self nextToken];
-        
         Link *link = [Link new];
-        
+        [self nextToken];
+        // STRING
         if (self.token.type == STRING) {
-
             link.href = self.token.value;
-            
             [self nextToken];
-            
-            if (self.token.type == CLOSE_SB) {
-                
-                [parent addElement:link];
-                
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [parent addElement:link];
+            [self nextToken];
+            // ![
+            if (self.token.type != OPEN_SB) {
+                Text *text = [Text new];
+                [link addElement:text];
+                text.string = link.href;
+            }
+            // [
+            if (self.token.type == OPEN_SB) {
                 [self nextToken];
-                
-                if (self.token.type != OPEN_SB) {
-                    
+                // STRING
+                if (self.token.type == STRING) {
                     Text *text = [Text new];
                     [link addElement:text];
-                    text.string = link.href;
+                    text.string = self.token.value;
+                    [self nextToken];
+                }
+                // ]
+                if (self.token.type == CLOSE_SB) {
+                    [self nextToken];
                 }
             }
         }
     }
 }
 
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*                                          BLOCK TAGS                                          */
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+#pragma mark - Block Tags
+
+- (void)tableOfContent:(HTMLElement*)parent {
+    // toc[
+    if (self.token.type == TOC_SB) {
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        }
+    }
+}
+
+- (void)section:(HTMLElement*)parent {
+    // sec[
+    if (self.token.type == SEC_SB) {
+        Section *section = [Section new];
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [parent addElement:section];
+            [self nextToken];
+            // [
+            if (self.token.type == OPEN_SB) {
+                [self nextToken];
+                // document
+                [self documentWithParent:section];
+                // ]
+                if (self.token.type == CLOSE_SB) {
+                    [self nextToken];
+                }
+            }
+        }
+    }
+}
 
 @end

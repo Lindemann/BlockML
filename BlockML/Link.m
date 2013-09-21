@@ -13,9 +13,8 @@
 - (NSString*)openTag {
     NSMutableString *result = [NSMutableString new];
     
-    if (self.href) {
-        self.attributes = [NSMutableDictionary dictionaryWithDictionary:@{HREF: self.href, @"target": @"_blank"}];
-    }
+    [self.attributes setValue:self.href forKey:HREF];
+    [self.attributes setValue:@"_blank" forKey:@"target"];
     
     [result appendString:[HTMLStringBuilder openTag:@"a" attributes:self.attributes indentation:self.openTagIndentation lineBreak:self.openTagLineBreak]];
     return result;
