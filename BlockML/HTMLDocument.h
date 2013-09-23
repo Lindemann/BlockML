@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HTMLElement.h"
+#import "HTMLTree.h"
 
 @interface HTMLDocument : HTMLElement
 
@@ -16,6 +17,8 @@
 
 @property (nonatomic) BOOL mathJax;
 @property (nonatomic) BOOL highlight;
+
+@property (nonatomic, strong) TableOfContent *tableOfContent;
 
 - (void)generateHTML;
 

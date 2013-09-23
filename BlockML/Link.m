@@ -14,7 +14,7 @@
     NSMutableString *result = [NSMutableString new];
     
     [self.attributes setValue:self.href forKey:HREF];
-    [self.attributes setValue:@"_blank" forKey:@"target"];
+//    [self.attributes setValue:@"_blank" forKey:@"target"];
     
     [result appendString:[HTMLStringBuilder openTag:@"a" attributes:self.attributes indentation:self.openTagIndentation lineBreak:self.openTagLineBreak]];
     return result;

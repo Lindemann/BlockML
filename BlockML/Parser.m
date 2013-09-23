@@ -223,13 +223,22 @@
 - (void)tableOfContent:(HTMLElement*)parent {
     // toc[
     if (self.token.type == TOC_SB) {
+        TableOfContent *tableOfContent = [TableOfContent new];
+        self.document.tableOfContent = tableOfContent;
         [self nextToken];
         // STRING
         if (self.token.type == STRING) {
+            Heading *heading = [Heading new];
+            heading.level = 1;
+            Text *text = [Text new];
+            text.string = self.token.value;
+            [heading addElement:text];
+            [tableOfContent addElement:heading];
             [self nextToken];
         }
         // ]
         if (self.token.type == CLOSE_SB) {
+            [parent addElement:tableOfContent];
             [self nextToken];
         }
     }
@@ -239,9 +248,15 @@
     // sec[
     if (self.token.type == SEC_SB) {
         Section *section = [Section new];
+        Heading *heading = [Heading new];
+        Text *text = [Text new];
+        text.string = @"";
+        [section addElement:heading];
+        [heading addElement:text];
         [self nextToken];
         // STRING
         if (self.token.type == STRING) {
+            text.string = self.token.value;
             [self nextToken];
         }
         // ]

@@ -10,4 +10,17 @@
 
 @implementation TableOfContent
 
+- (NSString*)openTag {
+    NSMutableString *result = [NSMutableString new];
+    [self.attributes setValue:@"toc" forKey:ID];
+    [result appendString:[HTMLStringBuilder openTag:DIV attributes:self.attributes indentation:self.openTagIndentation lineBreak:self.openTagLineBreak]];
+    return result;
+}
+
+- (NSString*)closeTag {
+    NSMutableString *result = [NSMutableString new];
+    [result appendString:[HTMLStringBuilder closingTag:DIV indentation:self.closingTagIndentation lineBreak:self.closingTagLineBreak]];
+    return result;
+}
+
 @end
