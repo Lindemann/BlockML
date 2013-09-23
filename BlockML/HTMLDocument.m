@@ -11,6 +11,8 @@
 
 @interface HTMLDocument ()
 
+@property (nonatomic) int errorCount;
+
 @end
 
 static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n   / __ )/ /___  _____/ /__/  |/  / /\n  / __  / / __ \\/ ___/ //_/ /|_/ / /\n / /_/ / / /_/ / /__/ ,< / /  / / /___\n/_____/_/\\____/\\___/_/|_/_/  /_/_____/\n\n-->\n";
@@ -103,13 +105,15 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
             if ([element.parent isKindOfClass:[HTMLDocument class]] ||
                 [element.parent isKindOfClass:[Section class]] ||
                 [element.parent isKindOfClass:[TableOfContent class]] ||
-                [element.parent isKindOfClass:[UnorderedList class]]) {
+                [element.parent isKindOfClass:[UnorderedList class]] ||
+                [element.parent isKindOfClass:[OrderedList class]]) {
                 element.closingTagLineBreak = YES;
                 // +1 for body tag
                 element.openTagIndentation = element.parentCount + 1;
             }
             if ([element isKindOfClass:[Section class]] ||
                 [element isKindOfClass:[TableOfContent class]] ||
+                [element isKindOfClass:[UnorderedList class]] ||
                 [element isKindOfClass:[UnorderedList class]]) {
                 element.openTagLineBreak = YES;
                 element.closingTagLineBreak = YES;
@@ -119,8 +123,6 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
             }
             
             [self formatHTMLString:element];
-            
-            
         }
     }
 }
@@ -171,14 +173,20 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                     Text *TOCHeadingText = [Text new];
                     TOCHeadingText.string = numberedHeadingString;
                     [unorderedList addElement:listItem];
-                    [listItem addElement:TOCHeadingText];
+                    Span *outerHeadingSpan = [Span new];
+                    Span *innerHeadingSpan = [Span new];
+                    [outerHeadingSpan addElement:innerHeadingSpan];
+                    [innerHeadingSpan addElement:TOCHeadingText];
+                    [listItem addElement:outerHeadingSpan];
                     // Set link
                     Link *link = [Link new];
                     link.href = [NSString stringWithFormat:@"#sec-%@", section.sectionNumber];
                     Text *linkText = [Text new];
                     linkText.string = @"[⚐]";
                     [link addElement:linkText];
-                    [listItem addElement:link];
+                    Span *linkSpan = [Span new];
+                    [linkSpan addElement:link];
+                    [listItem addElement:linkSpan];
                     
                     // Assambly TOC
                     int TOCLevel = heading.level - 1;
@@ -190,6 +198,22 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                     }
                 }
             }
+            
+            // Errors
+            if ([element isKindOfClass:[Error class]]) {
+                ++ _errorCount;
+                Error *error = (Error*)element;
+                error.count = self.errorCount;
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
             [self assamblyNumbering:element];
         }
     }

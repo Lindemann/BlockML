@@ -56,6 +56,14 @@
     self.token = [self.scanner getToken];
 }
 
+- (void)errorWithParent:(HTMLElement*)parent andErrorMessage:(NSString*)message {
+    Error *error = [Error new];
+    Text *text = [Text new];
+    text.string = [NSString stringWithFormat:@"ERRRROR with %@", message];
+    [error addElement:text];
+    [self.document addElement:error];
+}
+
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 
 /*                                     PRODUCTION RULES                                         */
@@ -77,11 +85,19 @@
         // Block Tags
         [self blockTagWithParent:parent];
     }
-//    // Keep parsing to find erros
-//    while (self.token.type == OPEN_SB || self.token.type == CLOSE_SB) {
-//        self.token = [self.scanner getToken];
-//        [self documentWithParent:parent];
-//    }
+}
+
+- (void)bracketsWithParent:(HTMLElement*)parent {
+    // Keep Parsing to find Erros
+    BOOL error;
+    while (self.token.type == OPEN_SB || self.token.type == CLOSE_SB) {
+        error = YES;
+        [self nextToken];
+    }
+    if (error) {
+        [self errorWithParent:parent andErrorMessage:@"Brackets"];
+        error = NO;
+    }
 }
 
 - (void)inlineTagWithParent:(HTMLElement*)parent {
@@ -189,7 +205,7 @@
             [parent addElement:link];
             [self nextToken];
             // ![
-            if (self.token.type != OPEN_SB) {
+            if (self.token.type != OPEN_SB && link.href) {
                 Text *text = [Text new];
                 [link addElement:text];
                 text.string = link.href;
@@ -207,8 +223,12 @@
                 // ]
                 if (self.token.type == CLOSE_SB) {
                     [self nextToken];
+                } else {
+                    [self errorWithParent:parent andErrorMessage:@"Link"];
                 }
             }
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Link"];
         }
     }
 }

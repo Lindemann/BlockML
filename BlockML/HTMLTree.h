@@ -16,3 +16,5 @@
 #import "UnorderedList.h"
 #import "OrderedList.h"
 #import "ListItem.h"
+#import "Span.h"
+#import "Error.h"
