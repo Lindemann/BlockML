@@ -18,3 +18,4 @@
 #import "ListItem.h"
 #import "Span.h"
 #import "Error.h"
+#import "InlineCode.h"

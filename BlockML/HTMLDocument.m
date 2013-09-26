@@ -11,7 +11,7 @@
 
 @interface HTMLDocument ()
 
-@property (nonatomic) int errorCount;
+@property (nonatomic, strong) NSMutableArray *errors;
 
 @end
 
@@ -22,7 +22,8 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
 - (id)init {
     self = [super init];
     if (self) {
-        self.title = @"♥ BlockML ♥";
+        self.title = @"▲ BlockML ▲";
+        self.errors = [NSMutableArray new];
     }
     return self;
 }
@@ -38,6 +39,12 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                           openTag:@"meta"
                           attributes:@{@"http-equiv": @"Content-Type",
                                        @"content": @"text/html; charset=UTF-8"}
+                          indentation:2
+                          lineBreak:YES]];
+    [result appendString:[HTMLStringBuilder
+                          openTag:@"meta"
+                          attributes:@{@"name": @"viewport",
+                                       @"content": @"width=device-width, initial-scale=1, maximum-scale=1"}
                           indentation:2
                           lineBreak:YES]];
     [result appendString:[HTMLStringBuilder
@@ -85,13 +92,21 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
     return result;
 }
 
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*                                     ASSEMBLY HTML                                            */
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+#pragma mark - Assembly HTML
+
 - (void)generateHTML {
-    [self assamblyNumbering:self];
+    [self assemblyNumbering:self];
+    [self addErrorMessage];
     [self formatHTMLString:self];
     
     // Write Content to File
     [self.htmlString appendString:self.openTag];
-    [self assamblyHTMLString:self];
+    [self assemblyHTMLString:self];
     [self.htmlString appendString:self.closeTag];
     NSString *content = self.htmlString;
     [content writeToURL:self.HTMLURL atomically:NO encoding:NSUTF8StringEncoding error:nil];
@@ -127,13 +142,13 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
     }
 }
 
-- (void)assamblyHTMLString:(HTMLElement*)root {
+- (void)assemblyHTMLString:(HTMLElement*)root {
     if (root.elements != nil && root.elements.count > 0) {
         for (int i = 0; i < root.elements.count; ++i) {
             HTMLElement *element = [root.elements objectAtIndex:i];
             [element.htmlString appendString:element.openTag];
             
-            [self assamblyHTMLString:element];
+            [self assemblyHTMLString:element];
             
             if (element.closeTag) {
                 [element.htmlString appendString:element.closeTag];
@@ -144,7 +159,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
     }
 }
 
-- (void)assamblyNumbering:(HTMLElement*)root {
+- (void)assemblyNumbering:(HTMLElement*)root {
     if (root.elements != nil && root.elements.count > 0) {
         int sectionIndex = 1;
         for (int i = 0; i < root.elements.count; ++i) {
@@ -201,9 +216,9 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
             
             // Errors
             if ([element isKindOfClass:[Error class]]) {
-                ++ _errorCount;
                 Error *error = (Error*)element;
-                error.count = self.errorCount;
+                [self.errors addObject:error];
+                error.count = self.errors.count;
             }
             
             
@@ -214,10 +229,17 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
             
             
             
-            [self assamblyNumbering:element];
+            [self assemblyNumbering:element];
         }
     }
 }
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*                                           HELPER                                             */
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+#pragma mark - Helper
 
 - (UnorderedList*)lastElementOfTOCForLevel:(int)level {
     UnorderedList *root = [self.tableOfContent.elements lastObject];
@@ -227,6 +249,33 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
         root = [root.elements lastObject];
     }
     return root;
+}
+
+- (void)addErrorMessage {
+    if (self.errors.count) {
+        Error *error = [Error new];
+        Text *text = [Text new];
+        [error addElement:text];
+        error.parent = self;
+        [self.elements insertObject:error atIndex:0];
+        
+        if (self.errors.count == 1) {
+            text.string = @"1 Error found!";
+        } else {
+            text.string = [NSString  stringWithFormat:@"%lu Errors found!", (unsigned long)self.errors.count];
+        }
+        for (int i = 0; i < self.errors.count; ++i) {
+            LineBreak *lineBreak = [LineBreak new];
+            [error addElement:lineBreak];
+            Link *link = [Link new];
+            link.href = [NSString  stringWithFormat:@"#error-%d",i+1];
+            Text *subText = [Text new];
+            Error *currentError = [self.errors objectAtIndex:i];
+            subText.string = [[currentError.elements objectAtIndex:0] string];
+            [link addElement:subText];
+            [error addElement:link];
+        }
+    }
 }
 
 @end

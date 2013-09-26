@@ -35,6 +35,7 @@
 		8215C33617E004B900ABB0E6 /* HTMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33517E004B900ABB0E6 /* HTMLElement.m */; };
 		8215C33917E004CD00ABB0E6 /* HTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33817E004CD00ABB0E6 /* HTMLDocument.m */; };
 		8215C34017E3648D00ABB0E6 /* Paragraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33F17E3648D00ABB0E6 /* Paragraph.m */; };
+		82AD8A6517F4941700859D26 /* InlineCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6417F4941700859D26 /* InlineCode.m */; };
 		82DEC4FB17E609D9007708D1 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FA17E609D9007708D1 /* Text.m */; };
 		82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FD17E609F8007708D1 /* LineBreak.m */; };
 		82DEC50217E975B1007708D1 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC50117E975B1007708D1 /* Link.m */; };
@@ -103,6 +104,8 @@
 		8215C33E17E3648D00ABB0E6 /* Paragraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paragraph.h; sourceTree = "<group>"; };
 		8215C33F17E3648D00ABB0E6 /* Paragraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paragraph.m; sourceTree = "<group>"; };
 		8215C34417E36EFC00ABB0E6 /* HTMLTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLTree.h; sourceTree = "<group>"; };
+		82AD8A6317F4941700859D26 /* InlineCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlineCode.h; sourceTree = "<group>"; };
+		82AD8A6417F4941700859D26 /* InlineCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlineCode.m; sourceTree = "<group>"; };
 		82DEC4F917E609D9007708D1 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		82DEC4FA17E609D9007708D1 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
 		82DEC4FC17E609F8007708D1 /* LineBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineBreak.h; sourceTree = "<group>"; };
@@ -296,12 +299,22 @@
 				82DEC50C17EBF747007708D1 /* Section + TOC */,
 				82DEC51917EDDB6B007708D1 /* Lists */,
 				8214B0EF17EFFEA400DF4061 /* Error */,
+				82AD8A6217F493F300859D26 /* Code */,
 				82DEC50017E975B1007708D1 /* Link.h */,
 				82DEC50117E975B1007708D1 /* Link.m */,
 				8214B0E917EFED6100DF4061 /* Span.h */,
 				8214B0EA17EFED6100DF4061 /* Span.m */,
 			);
 			name = HTMLElements;
+			sourceTree = "<group>";
+		};
+		82AD8A6217F493F300859D26 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				82AD8A6317F4941700859D26 /* InlineCode.h */,
+				82AD8A6417F4941700859D26 /* InlineCode.m */,
+			);
+			name = Code;
 			sourceTree = "<group>";
 		};
 		82DEC4FF17E77DA0007708D1 /* Text */ = {
@@ -471,6 +484,7 @@
 				82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */,
 				82080F75172D1C1F008ABC58 /* Scanner.m in Sources */,
 				82080F77172D1C1F008ABC58 /* Parser.m in Sources */,
+				82AD8A6517F4941700859D26 /* InlineCode.m in Sources */,
 				82DEC50B17EBF73A007708D1 /* Section.m in Sources */,
 				8214B0EB17EFED6100DF4061 /* Span.m in Sources */,
 				8208100E172DCD1F008ABC58 /* DropView.m in Sources */,

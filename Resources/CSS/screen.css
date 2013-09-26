@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
 /*
     ____  __           __   __  _____ 
    / __ )/ /___  _____/ /__/  |/  / / 
@@ -11,18 +12,146 @@
 /*                                   IMPORTS                                  */
 /*////////////////////////////////////////////////////////////////////////////*/
 /*////////////////////////////////////////////////////////////////////////////*/
+/*                       SASS VARS, MIXINS AND FUNCTIONS                      */
+/*////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////*/
 /*                                   RESET                                    */
 /*////////////////////////////////////////////////////////////////////////////*/
 * {
   margin: 0;
   padding: 0; }
 
-h1, h2, h3, h4, h5, h6, p, li {
-  font-weight: 300; }
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                  GENERAL                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+body {
+  max-width: 660px;
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  padding: 120px 0; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    FONT                                    */
+/*////////////////////////////////////////////////////////////////////////////*/
+html {
+  -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14pt;
+  line-height: 1.6em;
+  color: #575756; }
+
+h1, h2, h3, h4, h5, h6, p, li, div, span {
+  font-weight: 400; }
+
+p {
+  padding-bottom: 1.4em; }
 
 a {
   text-decoration: none;
-  color: inherit; }
+  color: #6176f6; }
+  a:hover {
+    color: #0d2be4;
+    text-decoration: underline; }
 
-html {
-  -webkit-font-smoothing: antialiased; }
+::selection {
+  background-color: #f1fc82; }
+
+::-moz-selection {
+  background-color: #f1fc82; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   HEADINGS                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+h1, h2, h3, h4, h5, h6 {
+  padding: 0.6em 0;
+  line-height: 1.2em; }
+
+h1 {
+  font-size: 28pt; }
+
+h2 {
+  font-size: 22pt; }
+
+h3 {
+  font-size: 18pt; }
+
+h4 {
+  font-size: 16pt; }
+
+h5 {
+  font-size: 14pt; }
+
+h6 {
+  font-size: 12pt; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    TITLE                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+#title {
+  text-align: center;
+  font-size: 36pt;
+  padding-bottom: 60px; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    ERROR                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+.error {
+  background-color: #f1fc82;
+  text-align: center;
+  padding: 0.4em 0;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 500;
+  color: #9fae04;
+  border-radius: 10px; }
+  .error a {
+    color: #c3d605;
+    text-decoration: underline; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    TOC                                     */
+/*////////////////////////////////////////////////////////////////////////////*/
+#toc {
+  padding-bottom: 60px; }
+  #toc ul {
+    list-style: none;
+    /* List should start on the left edge */
+    padding-left: 0px; }
+    #toc ul ul {
+      /* SubLists are indented*/
+      padding-left: 30px; }
+    #toc ul li > span {
+      display: inline-block;
+      max-width: 90%; }
+      #toc ul li > span span {
+        /* Make a white box around the text to hide the background dots */
+        height: 18pt;
+        padding-right: 4px;
+        background-color: white;
+        /* Move the Text a few Pixel deeper than its normal bottom */
+        /* Moving the Picture is not possible...for reasons...*/
+        position: relative;
+        bottom: -8px; }
+  #toc li {
+    /* Set a repeating background picture on the bottom */
+    background: url(dot.svg) repeat-x bottom left;
+    /* To give the Link a fix position */
+    position: relative; }
+  #toc a {
+    float: right;
+    /* Make a white box around the link to hide the background dots */
+    height: 18pt;
+    padding-left: 4px;
+    background-color: white;
+    display: block;
+    height: 100%;
+    position: absolute;
+    /* Move the Link a few Pixel deeper than its normal bottom */
+    bottom: -5px;
+    right: 0; }
+    #toc a span {
+      /* Move the Text to the bottom of List */
+      position: absolute;
+      bottom: 0; }

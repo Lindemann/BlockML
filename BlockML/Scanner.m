@@ -248,7 +248,7 @@
     // which should stay in one string and not become divided trough comments or LFs
     // For example a code tag with LFs
     if ([[self.openTags lastObject] intValue] == CODE_SB ||
-        [[self.openTags lastObject] intValue] == ICODE_SB ||
+        [[self.openTags lastObject] intValue] == C_SB ||
         [[self.openTags lastObject] intValue] == MATH_SB ||
         [[self.openTags lastObject] intValue] == HTML_SB) {
         return YES;

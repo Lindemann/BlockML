@@ -59,9 +59,9 @@
 - (void)errorWithParent:(HTMLElement*)parent andErrorMessage:(NSString*)message {
     Error *error = [Error new];
     Text *text = [Text new];
-    text.string = [NSString stringWithFormat:@"ERRRROR with %@", message];
+    text.string = [NSString stringWithFormat:@"Error with %@", message];
     [error addElement:text];
-    [self.document addElement:error];
+    [parent addElement:error];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -74,39 +74,39 @@
 - (void)documentWithParent:(HTMLElement*)parent {
     // Everything
     while (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= TITLE_SB)) {
-        // STRING
-        if (self.token.type == STRING) {
+        // STRING & Inline Tags
+        if (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
             Paragraph *paragraph = [Paragraph new];
             [parent addElement:paragraph];
-            [self textBlockWithParent:paragraph];
+            [self textBlock:paragraph];
         }
-        // Inline Tags
-        [self textBlockWithParent:parent];
         // Block Tags
-        [self blockTagWithParent:parent];
+        [self blockTag:parent];
     }
 }
 
-- (void)bracketsWithParent:(HTMLElement*)parent {
-    // Keep Parsing to find Erros
-    BOOL error;
-    while (self.token.type == OPEN_SB || self.token.type == CLOSE_SB) {
-        error = YES;
-        [self nextToken];
-    }
-    if (error) {
-        [self errorWithParent:parent andErrorMessage:@"Brackets"];
-        error = NO;
-    }
+//- (void)bracketsWithParent:(HTMLElement*)parent {
+//    // Keep Parsing to find Erros
+//    BOOL error;
+//    while (self.token.type == OPEN_SB || self.token.type == CLOSE_SB) {
+//        error = YES;
+//        [self nextToken];
+//    }
+//    if (error) {
+//        [self errorWithParent:parent andErrorMessage:@"Brackets"];
+//        error = NO;
+//    }
+//}
+
+- (void)inlineTag:(HTMLElement*)parent {
+    [self link:parent];
+    [self inlineCode:parent];
 }
 
-- (void)inlineTagWithParent:(HTMLElement*)parent {
-    [self linkWithParent:parent];
-}
-
-- (void)blockTagWithParent:(HTMLElement*)parent {
+- (void)blockTag:(HTMLElement*)parent {
     [self tableOfContent:parent];
     [self section:parent];
+    [self title:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -116,26 +116,33 @@
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 #pragma mark - Text
 
-- (void)textBlockWithParent:(HTMLElement*)parent {
+- (void)textBlock:(HTMLElement*)parent {
     if (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
-        [self textWithParent:parent];
+        [self text:parent];
         if (self.token.type == LF) {
             [self nextToken];
-            [self paragraphWithParent:parent.parent];
+            
+            // Parent for paragraph depends on from which methode
+            // - textBlockWithParent: was invoked
+            if ([parent isKindOfClass:[HTMLDocument class]]) {
+                [self paragraph:parent];
+            } else {
+                // Parent is paragraph
+                [self paragraph:parent.parent];
+            }
+            
             if (self.token.type != LF) {
-                
                 if (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
                     LineBreak *lineBreak = [LineBreak new];
                     [parent addElement:lineBreak];
                 }
-                
-                [self textBlockWithParent:parent];
+                [self textBlock:parent];
             }
         }
     }
 }
 
-- (void)textWithParent:(HTMLElement*)parent {
+- (void)text:(HTMLElement*)parent {
     if (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
         if (self.token.type == STRING) {
             
@@ -143,10 +150,9 @@
             [parent addElement:text];
             text.string = self.token.value;
             
-            
             [self nextToken];
         }
-        [self inlineTagWithParent:parent];
+        [self inlineTag:parent];
         while (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
             if (self.token.type == STRING) {
                 
@@ -156,30 +162,24 @@
                 
                 [self nextToken];
             }
-            [self inlineTagWithParent:parent];
+            [self inlineTag:parent];
         }
     }
 }
 
-- (void)paragraphWithParent:(HTMLElement*)parent {
+- (void)paragraph:(HTMLElement*)parent {
     if (self.token.type == LF) {
         [self nextToken];
         while (self.token.type == LF) {
             [self nextToken];
         }
         
-        if (self.token.type == STRING) {
+        if (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
             
             Paragraph *paragraph = [Paragraph new];
             [parent addElement:paragraph];
-            
-            [self textBlockWithParent:paragraph];
+            [self textBlock:paragraph];
         }
-        
-        if (self.token.type >= A_SB && self.token.type <= ID_SB) {
-            [self textBlockWithParent:parent];
-        }
-        
     }
 }
 
@@ -190,10 +190,11 @@
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 #pragma mark - INLINE TAGS
 
-- (void)linkWithParent:(HTMLElement*)parent {
+- (void)link:(HTMLElement*)parent {
     // a[
     if (self.token.type == A_SB) {
         Link *link = [Link new];
+        [parent addElement:link];
         [self nextToken];
         // STRING
         if (self.token.type == STRING) {
@@ -202,7 +203,6 @@
         }
         // ]
         if (self.token.type == CLOSE_SB) {
-            [parent addElement:link];
             [self nextToken];
             // ![
             if (self.token.type != OPEN_SB && link.href) {
@@ -233,6 +233,28 @@
     }
 }
 
+- (void)inlineCode:(HTMLElement*)parent {
+    // c[
+    if (self.token.type == C_SB) {
+        InlineCode *inlineCode = [InlineCode new];
+        [parent addElement:inlineCode];
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            Text *text = [Text new];
+            text.string = self.token.value;
+            [inlineCode addElement:text];
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Inline Code"];
+        }
+    }
+}
+
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 
 /*                                          BLOCK TAGS                                          */
@@ -245,6 +267,7 @@
     if (self.token.type == TOC_SB) {
         TableOfContent *tableOfContent = [TableOfContent new];
         self.document.tableOfContent = tableOfContent;
+        [parent addElement:tableOfContent];
         [self nextToken];
         // STRING
         if (self.token.type == STRING) {
@@ -258,8 +281,9 @@
         }
         // ]
         if (self.token.type == CLOSE_SB) {
-            [parent addElement:tableOfContent];
             [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Table of Content"];
         }
     }
 }
@@ -273,6 +297,7 @@
         text.string = @"";
         [section addElement:heading];
         [heading addElement:text];
+        [parent addElement:section];
         [self nextToken];
         // STRING
         if (self.token.type == STRING) {
@@ -281,7 +306,6 @@
         }
         // ]
         if (self.token.type == CLOSE_SB) {
-            [parent addElement:section];
             [self nextToken];
             // [
             if (self.token.type == OPEN_SB) {
@@ -291,8 +315,37 @@
                 // ]
                 if (self.token.type == CLOSE_SB) {
                     [self nextToken];
+                } else {
+                    [self errorWithParent:parent andErrorMessage:@"Section"];
                 }
             }
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Section"];
+        }
+    }
+}
+
+- (void)title:(HTMLElement*)parent {
+    // title[
+    if (self.token.type == TITLE_SB) {
+        Heading *heading = [Heading new];
+        heading.level = 1;
+        [heading.attributes setValue:@"title" forKey:ID];
+        [parent addElement:heading];
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            Text *text = [Text new];
+            text.string = self.token.value;
+            [heading addElement:text];
+            self.document.title = self.token.value;
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Title"];
         }
     }
 }

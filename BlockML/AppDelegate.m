@@ -57,27 +57,19 @@
     // Copy Images
     NSURL *ImagesSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"Images" isDirectory:YES];
     NSURL *ImagesDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"Images" isDirectory:YES];
-    if (![ImagesDestinationDirectory checkResourceIsReachableAndReturnError:nil]) {
-        [fileManager copyItemAtURL:ImagesSourceDirectory toURL:ImagesDestinationDirectory error:nil];
-    }
+    [fileManager copyItemAtURL:ImagesSourceDirectory toURL:ImagesDestinationDirectory error:nil];
     // Copy CSS
     NSURL *CSSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"CSS" isDirectory:YES];
     NSURL *CSSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"CSS" isDirectory:YES];
-    if (![CSSDestinationDirectory checkResourceIsReachableAndReturnError:nil]) {
-        [fileManager copyItemAtURL:CSSSourceDirectory toURL:CSSDestinationDirectory error:nil];
-    }
+    [fileManager copyItemAtURL:CSSSourceDirectory toURL:CSSDestinationDirectory error:nil];
     // Copy MathJax
     NSURL *mathJaxSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"MathJax" isDirectory:YES];
     NSURL *mathJaxDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"MathJax" isDirectory:YES];
-    if (![mathJaxDestinationDirectory checkResourceIsReachableAndReturnError:nil]) {
-        [fileManager copyItemAtURL:mathJaxSourceDirectory toURL:mathJaxDestinationDirectory error:nil];
-    }
+    [fileManager copyItemAtURL:mathJaxSourceDirectory toURL:mathJaxDestinationDirectory error:nil];
     // Copy HighlightJS
     NSURL *highlightJSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"HighlightJS" isDirectory:YES];
     NSURL *highlightJSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"HighlightJS" isDirectory:YES];
-    if (![highlightJSDestinationDirectory checkResourceIsReachableAndReturnError:nil]) {
-        [fileManager copyItemAtURL:highlightJSSourceDirectory toURL:highlightJSDestinationDirectory error:nil];
-    }
+    [fileManager copyItemAtURL:highlightJSSourceDirectory toURL:highlightJSDestinationDirectory error:nil];
     
     self.HTMLURL = [compiledDataDirectory URLByAppendingPathComponent:@"document.html"];
     NSString *textFileName = [self.fileURL lastPathComponent];

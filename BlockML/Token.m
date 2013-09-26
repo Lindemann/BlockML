@@ -51,7 +51,7 @@
     [stringList addObject:@[[NSNumber numberWithInt:A_SB], @"a["]];
     [stringList addObject:@[[NSNumber numberWithInt:FN_SB], @"fn["]];
     [stringList addObject:@[[NSNumber numberWithInt:HTML_SB], @"html["]];
-    [stringList addObject:@[[NSNumber numberWithInt:ICODE_SB], @"icode["]];
+    [stringList addObject:@[[NSNumber numberWithInt:C_SB], @"c["]];
     [stringList addObject:@[[NSNumber numberWithInt:B_SB], @"b["]];
     [stringList addObject:@[[NSNumber numberWithInt:I_SB], @"i["]];
     [stringList addObject:@[[NSNumber numberWithInt:U_SB], @"u["]];
@@ -61,6 +61,7 @@
     [stringList addObject:@[[NSNumber numberWithInt:CODE_SB], @"code["]];
     [stringList addObject:@[[NSNumber numberWithInt:SEC_SB], @"sec["]];
     [stringList addObject:@[[NSNumber numberWithInt:TOC_SB], @"toc["]];
+    [stringList addObject:@[[NSNumber numberWithInt:TITLE_SB], @"title["]];
     
     /* sqare brackets */
     [stringList addObject:@[[NSNumber numberWithInt:OPEN_SB], @"["]];

@@ -23,7 +23,7 @@ typedef enum {
     
     HTML_SB,    // html[
     
-    ICODE_SB,   // icode[
+    C_SB,       // c[
     
     B_SB,       // b[
     
