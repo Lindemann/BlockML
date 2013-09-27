@@ -30,6 +30,7 @@
 }
 
 $generalPadding: 60px;
+$paragraphPadding: 1.4em;
 
 $fontColor: #575756;
 $linkColor: #6176F6;
@@ -75,7 +76,7 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
 }
 
 p {
-	padding-bottom: 1.4em;
+	padding-bottom: $paragraphPadding;
 }
 
 a {
@@ -227,16 +228,10 @@ code {
 }
 
 .inlineCode {
+	font-size: 13pt;
 	font-weight: 500;
 	background-color: lighten($fontColor, 60%);
 	padding: 0 0.3em;
-}
-
-pre code, 
-pre code span {
-    font-family: "Menlo", monospace;
-    font-size: 10pt;
-    line-height: 1.6em;
 }
 
 pre {
@@ -244,16 +239,19 @@ pre {
   	display: table;
   	table-layout: fixed;
   	width: 100%;
-  	margin-bottom: 1.3em;
-
-  	font-family:"Menlo", monospace;
-    font-size: 10pt;
+    font-size: 11pt;
+    line-height: 1.6em;
 }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    IMAGE                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
 
-
-
-
+img {
+	max-width: 100%;
+	padding-bottom: $paragraphPadding;
+	@include center;
+}
 
 
 

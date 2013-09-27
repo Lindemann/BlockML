@@ -164,21 +164,24 @@ code {
   font-family: "Source Code Pro", monospace; }
 
 .inlineCode {
+  font-size: 13pt;
   font-weight: 500;
   background-color: #f0f0ef;
   padding: 0 0.3em; }
-
-pre code,
-pre code span {
-  font-family: "Menlo", monospace;
-  font-size: 10pt;
-  line-height: 1.6em; }
 
 pre {
   /* Creepy behavior of pre require use of CSS Table*/
   display: table;
   table-layout: fixed;
   width: 100%;
-  margin-bottom: 1.3em;
-  font-family: "Menlo", monospace;
-  font-size: 10pt; }
+  font-size: 11pt;
+  line-height: 1.6em; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    IMAGE                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+img {
+  max-width: 100%;
+  padding-bottom: 1.4em;
+  display: block;
+  margin: 0 auto; }

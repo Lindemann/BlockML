@@ -54,22 +54,6 @@
     if (![compiledDataDirectory checkResourceIsReachableAndReturnError:nil]) {
         [fileManager createDirectoryAtURL:compiledDataDirectory withIntermediateDirectories:NO attributes:nil error:nil];
     }
-    // Copy Images
-    NSURL *ImagesSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"Images" isDirectory:YES];
-    NSURL *ImagesDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"Images" isDirectory:YES];
-    [fileManager copyItemAtURL:ImagesSourceDirectory toURL:ImagesDestinationDirectory error:nil];
-    // Copy CSS
-    NSURL *CSSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"CSS" isDirectory:YES];
-    NSURL *CSSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"CSS" isDirectory:YES];
-    [fileManager copyItemAtURL:CSSSourceDirectory toURL:CSSDestinationDirectory error:nil];
-    // Copy MathJax
-    NSURL *mathJaxSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"MathJax" isDirectory:YES];
-    NSURL *mathJaxDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"MathJax" isDirectory:YES];
-    [fileManager copyItemAtURL:mathJaxSourceDirectory toURL:mathJaxDestinationDirectory error:nil];
-    // Copy Highlight.JS
-    NSURL *highlightJSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"highlight.js" isDirectory:YES];
-    NSURL *highlightJSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"highlight.js" isDirectory:YES];
-    [fileManager copyItemAtURL:highlightJSSourceDirectory toURL:highlightJSDestinationDirectory error:nil];
     
     self.HTMLURL = [compiledDataDirectory URLByAppendingPathComponent:@"document.html"];
     NSString *textFileName = [self.fileURL lastPathComponent];
@@ -92,6 +76,28 @@
             [self.progessIndicator stopAnimation:self];
             [self.recompileButton setEnabled:YES];
             [[NSWorkspace sharedWorkspace] openURL:self.HTMLURL];
+            
+            // Copy Images
+            NSURL *ImagesSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"Images" isDirectory:YES];
+            NSURL *ImagesDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"Images" isDirectory:YES];
+            [fileManager copyItemAtURL:ImagesSourceDirectory toURL:ImagesDestinationDirectory error:nil];
+            // Copy CSS
+            NSURL *CSSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"CSS" isDirectory:YES];
+            NSURL *CSSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"CSS" isDirectory:YES];
+            [fileManager copyItemAtURL:CSSSourceDirectory toURL:CSSDestinationDirectory error:nil];
+            // Copy MathJax
+            if (parser.document.mathJax) {
+                NSURL *mathJaxSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"MathJax" isDirectory:YES];
+                NSURL *mathJaxDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"MathJax" isDirectory:YES];
+                [fileManager copyItemAtURL:mathJaxSourceDirectory toURL:mathJaxDestinationDirectory error:nil];
+            }
+            // Copy Highlight.JS
+            if (parser.document.highlight) {
+                NSURL *highlightJSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"highlight.js" isDirectory:YES];
+                NSURL *highlightJSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"highlight.js" isDirectory:YES];
+                [fileManager copyItemAtURL:highlightJSSourceDirectory toURL:highlightJSDestinationDirectory error:nil];
+            }
+
         });
     });
 }

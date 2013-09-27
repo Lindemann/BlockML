@@ -20,3 +20,4 @@
 #import "Error.h"
 #import "InlineCode.h"
 #import "Code.h"
+#import "Image.h"

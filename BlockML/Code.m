@@ -20,7 +20,7 @@
 
 - (NSString*)closeTag {
     NSMutableString *result = [NSMutableString new];
-    [result appendString:[HTMLStringBuilder closingTag:@"code" indentation:self.openTagIndentation lineBreak:NO]];
+    [result appendString:[HTMLStringBuilder closingTag:@"code" indentation:self.closingTagIndentation lineBreak:NO]];
     [result appendString:[HTMLStringBuilder closingTag:@"pre" indentation:NO lineBreak:self.closingTagLineBreak]];
     return result;
 }

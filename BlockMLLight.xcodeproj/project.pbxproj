@@ -37,6 +37,7 @@
 		8215C34017E3648D00ABB0E6 /* Paragraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33F17E3648D00ABB0E6 /* Paragraph.m */; };
 		82AD8A6517F4941700859D26 /* InlineCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6417F4941700859D26 /* InlineCode.m */; };
 		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
+		82AD8A6B17F5F4D600859D26 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6A17F5F4D600859D26 /* Image.m */; };
 		82DEC4FB17E609D9007708D1 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FA17E609D9007708D1 /* Text.m */; };
 		82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FD17E609F8007708D1 /* LineBreak.m */; };
 		82DEC50217E975B1007708D1 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC50117E975B1007708D1 /* Link.m */; };
@@ -109,6 +110,8 @@
 		82AD8A6417F4941700859D26 /* InlineCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlineCode.m; sourceTree = "<group>"; };
 		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
 		82AD8A6717F4CC2200859D26 /* Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Code.m; sourceTree = "<group>"; };
+		82AD8A6917F5F4D600859D26 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		82AD8A6A17F5F4D600859D26 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		82DEC4F917E609D9007708D1 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		82DEC4FA17E609D9007708D1 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
 		82DEC4FC17E609F8007708D1 /* LineBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineBreak.h; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				82DEC50117E975B1007708D1 /* Link.m */,
 				8214B0E917EFED6100DF4061 /* Span.h */,
 				8214B0EA17EFED6100DF4061 /* Span.m */,
+				82AD8A6917F5F4D600859D26 /* Image.h */,
+				82AD8A6A17F5F4D600859D26 /* Image.m */,
 			);
 			name = HTMLElements;
 			sourceTree = "<group>";
@@ -495,6 +500,7 @@
 				8214B0EB17EFED6100DF4061 /* Span.m in Sources */,
 				8208100E172DCD1F008ABC58 /* DropView.m in Sources */,
 				82DEC51517EDDB4B007708D1 /* OrderedList.m in Sources */,
+				82AD8A6B17F5F4D600859D26 /* Image.m in Sources */,
 				82DEC50817EBF27A007708D1 /* Heading.m in Sources */,
 				8215C33617E004B900ABB0E6 /* HTMLElement.m in Sources */,
 			);

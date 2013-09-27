@@ -108,6 +108,7 @@
     [self section:parent];
     [self title:parent];
     [self code:parent];
+    [self image:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -385,6 +386,48 @@
             }
         } else {
             [self errorWithParent:parent andErrorMessage:@"Code"];
+        }
+    }
+}
+
+- (void)image:(HTMLElement*)parent {
+    // img[
+    if (self.token.type == IMG_SB) {
+        Image *image = [Image new];
+        [parent addElement:image];
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            image.source = self.token.value;
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+            if (self.token.type == OPEN_SB) {
+                [self nextToken];
+                // STRING
+                if (self.token.type == STRING) {
+                    NSRange searchStringRange = [self.token.value rangeOfString:@"," options:NSCaseInsensitiveSearch];
+                    if (searchStringRange.location != NSNotFound) {
+                        NSString *tmpIntValue = [[self.token.value componentsSeparatedByString:@","] objectAtIndex:0];
+                        image.witdh = [tmpIntValue intValue];
+                        tmpIntValue = [[self.token.value componentsSeparatedByString:@","] objectAtIndex:1];
+                        image.height = [tmpIntValue intValue];
+                    } else {
+                        [self errorWithParent:parent andErrorMessage:@"Image"];
+                    }
+                    [self nextToken];
+                }
+                // ]
+                if (self.token.type == CLOSE_SB) {
+                    [self nextToken];
+                } else {
+                    [self errorWithParent:parent andErrorMessage:@"Image"];
+                }
+            }
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Image"];
         }
     }
 }

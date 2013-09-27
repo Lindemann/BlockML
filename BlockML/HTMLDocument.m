@@ -142,7 +142,8 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
             if ([element isKindOfClass:[Section class]] ||
                 [element isKindOfClass:[TableOfContent class]] ||
                 [element isKindOfClass:[UnorderedList class]] ||
-                [element isKindOfClass:[UnorderedList class]]) {
+                [element isKindOfClass:[UnorderedList class]] ||
+                [element isKindOfClass:[Image class]]) {
                 element.openTagLineBreak = YES;
                 element.closingTagLineBreak = YES;
                 // +1 for body tag
