@@ -66,9 +66,9 @@
     NSURL *mathJaxSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"MathJax" isDirectory:YES];
     NSURL *mathJaxDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"MathJax" isDirectory:YES];
     [fileManager copyItemAtURL:mathJaxSourceDirectory toURL:mathJaxDestinationDirectory error:nil];
-    // Copy HighlightJS
-    NSURL *highlightJSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"HighlightJS" isDirectory:YES];
-    NSURL *highlightJSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"HighlightJS" isDirectory:YES];
+    // Copy Highlight.JS
+    NSURL *highlightJSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"highlight.js" isDirectory:YES];
+    NSURL *highlightJSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"highlight.js" isDirectory:YES];
     [fileManager copyItemAtURL:highlightJSSourceDirectory toURL:highlightJSDestinationDirectory error:nil];
     
     self.HTMLURL = [compiledDataDirectory URLByAppendingPathComponent:@"document.html"];

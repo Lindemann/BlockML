@@ -18,7 +18,7 @@
 		82080F4D172D0CEF008ABC58 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82080F4B172D0CEF008ABC58 /* InfoPlist.strings */; };
 		82080F50172D0CEF008ABC58 /* BlockMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F4F172D0CEF008ABC58 /* BlockMLTests.m */; };
 		82080F5F172D0E54008ABC58 /* MathJax in Resources */ = {isa = PBXBuildFile; fileRef = 82080F5E172D0E54008ABC58 /* MathJax */; };
-		82080F61172D0E67008ABC58 /* HighlightJS in Resources */ = {isa = PBXBuildFile; fileRef = 82080F60172D0E67008ABC58 /* HighlightJS */; };
+		82080F61172D0E67008ABC58 /* highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 82080F60172D0E67008ABC58 /* highlight.js */; };
 		82080F6A172D0FFB008ABC58 /* CSS in Resources */ = {isa = PBXBuildFile; fileRef = 82080F69172D0FFB008ABC58 /* CSS */; };
 		82080F73172D1C1F008ABC58 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F6E172D1C1F008ABC58 /* Token.m */; };
 		82080F74172D1C1F008ABC58 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F6E172D1C1F008ABC58 /* Token.m */; };
@@ -36,6 +36,7 @@
 		8215C33917E004CD00ABB0E6 /* HTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33817E004CD00ABB0E6 /* HTMLDocument.m */; };
 		8215C34017E3648D00ABB0E6 /* Paragraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33F17E3648D00ABB0E6 /* Paragraph.m */; };
 		82AD8A6517F4941700859D26 /* InlineCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6417F4941700859D26 /* InlineCode.m */; };
+		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
 		82DEC4FB17E609D9007708D1 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FA17E609D9007708D1 /* Text.m */; };
 		82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FD17E609F8007708D1 /* LineBreak.m */; };
 		82DEC50217E975B1007708D1 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC50117E975B1007708D1 /* Link.m */; };
@@ -79,7 +80,7 @@
 		82080F4E172D0CEF008ABC58 /* BlockMLTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockMLTests.h; sourceTree = "<group>"; };
 		82080F4F172D0CEF008ABC58 /* BlockMLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockMLTests.m; sourceTree = "<group>"; };
 		82080F5E172D0E54008ABC58 /* MathJax */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MathJax; sourceTree = "<group>"; };
-		82080F60172D0E67008ABC58 /* HighlightJS */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HighlightJS; sourceTree = "<group>"; };
+		82080F60172D0E67008ABC58 /* highlight.js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = highlight.js; sourceTree = "<group>"; };
 		82080F69172D0FFB008ABC58 /* CSS */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CSS; sourceTree = "<group>"; };
 		82080F6C172D1C1F008ABC58 /* TokenType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenType.h; sourceTree = "<group>"; };
 		82080F6D172D1C1F008ABC58 /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
@@ -106,6 +107,8 @@
 		8215C34417E36EFC00ABB0E6 /* HTMLTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLTree.h; sourceTree = "<group>"; };
 		82AD8A6317F4941700859D26 /* InlineCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlineCode.h; sourceTree = "<group>"; };
 		82AD8A6417F4941700859D26 /* InlineCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlineCode.m; sourceTree = "<group>"; };
+		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
+		82AD8A6717F4CC2200859D26 /* Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Code.m; sourceTree = "<group>"; };
 		82DEC4F917E609D9007708D1 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		82DEC4FA17E609D9007708D1 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
 		82DEC4FC17E609F8007708D1 /* LineBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineBreak.h; sourceTree = "<group>"; };
@@ -236,7 +239,7 @@
 			children = (
 				82DEC50417EAADF2007708D1 /* Images */,
 				82080F69172D0FFB008ABC58 /* CSS */,
-				82080F60172D0E67008ABC58 /* HighlightJS */,
+				82080F60172D0E67008ABC58 /* highlight.js */,
 				82080F5E172D0E54008ABC58 /* MathJax */,
 			);
 			path = Resources;
@@ -313,6 +316,8 @@
 			children = (
 				82AD8A6317F4941700859D26 /* InlineCode.h */,
 				82AD8A6417F4941700859D26 /* InlineCode.m */,
+				82AD8A6617F4CC2200859D26 /* Code.h */,
+				82AD8A6717F4CC2200859D26 /* Code.m */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -432,7 +437,7 @@
 				82080F3C172D0CEE008ABC58 /* MainMenu.xib in Resources */,
 				82080F5F172D0E54008ABC58 /* MathJax in Resources */,
 				82DEC50517EAADF2007708D1 /* Images in Resources */,
-				82080F61172D0E67008ABC58 /* HighlightJS in Resources */,
+				82080F61172D0E67008ABC58 /* highlight.js in Resources */,
 				82080F6A172D0FFB008ABC58 /* CSS in Resources */,
 				8208105B17329313008ABC58 /* icon.icns in Resources */,
 			);
@@ -480,6 +485,7 @@
 				82080F39172D0CEE008ABC58 /* AppDelegate.m in Sources */,
 				82080F73172D1C1F008ABC58 /* Token.m in Sources */,
 				82DEC51817EDDB5C007708D1 /* ListItem.m in Sources */,
+				82AD8A6817F4CC2200859D26 /* Code.m in Sources */,
 				8215C33317E0046D00ABB0E6 /* HTMLStringBuilder.m in Sources */,
 				82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */,
 				82080F75172D1C1F008ABC58 /* Scanner.m in Sources */,

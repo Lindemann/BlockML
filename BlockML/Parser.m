@@ -107,6 +107,7 @@
     [self tableOfContent:parent];
     [self section:parent];
     [self title:parent];
+    [self code:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -346,6 +347,44 @@
             [self nextToken];
         } else {
             [self errorWithParent:parent andErrorMessage:@"Title"];
+        }
+    }
+}
+
+- (void)code:(HTMLElement*)parent {
+    // code[
+    if (self.token.type == CODE_SB) {
+        Code *code = [Code new];
+        [parent addElement:code];
+        self.document.highlight = YES;
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            code.language = self.token.value;
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+            // [
+            if (self.token.type == OPEN_SB) {
+                [self nextToken];
+                // STRING
+                if (self.token.type == STRING) {
+                    Text *text = [Text new];
+                    text.string = self.token.value;
+                    [code addElement:text];
+                    [self nextToken];
+                }
+                // ]
+                if (self.token.type == CLOSE_SB) {
+                    [self nextToken];
+                } else {
+                    [self errorWithParent:parent andErrorMessage:@"Code"];
+                }
+            }
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Code"];
         }
     }
 }

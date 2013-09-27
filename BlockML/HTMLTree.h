@@ -19,3 +19,4 @@
 #import "Span.h"
 #import "Error.h"
 #import "InlineCode.h"
+#import "Code.h"

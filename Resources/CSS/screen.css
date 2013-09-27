@@ -41,7 +41,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14pt;
   line-height: 1.6em;
-  color: #575756; }
+  color: #575756;
+  word-wrap: break-word; }
 
 h1, h2, h3, h4, h5, h6, p, li, div, span {
   font-weight: 400; }
@@ -155,3 +156,29 @@ h6 {
       /* Move the Text to the bottom of List */
       position: absolute;
       bottom: 0; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   CODE                                     */
+/*////////////////////////////////////////////////////////////////////////////*/
+code {
+  font-family: "Source Code Pro", monospace; }
+
+.inlineCode {
+  font-weight: 500;
+  background-color: #f0f0ef;
+  padding: 0 0.3em; }
+
+pre code,
+pre code span {
+  font-family: "Menlo", monospace;
+  font-size: 10pt;
+  line-height: 1.6em; }
+
+pre {
+  /* Creepy behavior of pre require use of CSS Table*/
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  margin-bottom: 1.3em;
+  font-family: "Menlo", monospace;
+  font-size: 10pt; }

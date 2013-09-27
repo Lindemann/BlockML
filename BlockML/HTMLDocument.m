@@ -22,7 +22,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
 - (id)init {
     self = [super init];
     if (self) {
-        self.title = @"▲ BlockML ▲";
+        self.title = @"BlockML ▲ ▲ ▲ ";
         self.errors = [NSMutableArray new];
     }
     return self;
@@ -70,15 +70,28 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                                        @"media": @"print"}
                           indentation:2
                           lineBreak:YES]];
-    [result appendString:[HTMLStringBuilder openTag:@"title" attributes:nil indentation:2 lineBreak:NO]];
-    [result appendString:[HTMLStringBuilder text:self.title indentation:NO lineBreak:NO]];
-    [result appendString:[HTMLStringBuilder closingTag:@"title" indentation:0 lineBreak:YES]];
+    if (self.highlight) {
+        [result appendString:[HTMLStringBuilder
+                              openTag:@"link"
+                              attributes:@{HREF: @"highlight.js/styles/github.css",
+                                           @"type": @"text/css",
+                                           @"rel": @"stylesheet",
+                                           @"media": @"screen"}
+                              indentation:2
+                              lineBreak:YES]];
+        [result appendString:[HTMLStringBuilder openTag:@"script" attributes:@{@"src": @"highlight.js/highlight.pack.js"} indentation:2 lineBreak:NO]];
+        [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
+        [result appendString:[HTMLStringBuilder openTag:@"script" attributes:nil indentation:2 lineBreak:NO]];
+        [result appendString:[HTMLStringBuilder text:@"hljs.initHighlightingOnLoad();" indentation:NO lineBreak:NO]];
+        [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
+    }
     if (self.mathJax) {
         ;
     }
-    if (self.highlight) {
-        ;
-    }
+    [result appendString:[HTMLStringBuilder openTag:@"title" attributes:nil indentation:2 lineBreak:NO]];
+    [result appendString:[HTMLStringBuilder text:self.title indentation:NO lineBreak:NO]];
+    [result appendString:[HTMLStringBuilder closingTag:@"title" indentation:0 lineBreak:YES]];
+    
     [result appendString:[HTMLStringBuilder closingTag:@"head" indentation:1 lineBreak:YES]];
     [result appendString:[HTMLStringBuilder openTag:@"body" attributes:nil indentation:1 lineBreak:YES]];
 

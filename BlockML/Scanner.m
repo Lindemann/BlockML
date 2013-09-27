@@ -55,16 +55,20 @@
             continue;
         }
         if ([self isPreCommentString]) {
+            [self unescapeSquareBracketsAndEscapeHTMLSymbols];
             return self.token;
         }
         if ([self isKeyword]) {
+            [self unescapeSquareBracketsAndEscapeHTMLSymbols];
             return self.token;
         }
         if ([self isString]) {
+            [self unescapeSquareBracketsAndEscapeHTMLSymbols];
             return self.token;
         }
     }
     if ([self isParagraph]) {
+        [self unescapeSquareBracketsAndEscapeHTMLSymbols];
         return self.token;
     }
     self.token.type = END;
@@ -281,6 +285,22 @@
     // Push preserved tag back to the stack
     if ([self element:element hasTokenType:OPEN_SB]) {
         [self.openTags addObject:[NSNumber numberWithInt:self.lastAndProbablyStillOpenTag]];
+    }
+}
+
+// Removes Backslahes infront of Square Brackets
+// \] -> ] and \\] -> \]
+// Escape HTML Symbols
+// Used for Code and Math
+- (void)unescapeSquareBracketsAndEscapeHTMLSymbols {
+    
+    self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"\\]" withString:@"]"];
+    self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"\\[" withString:@"["];
+    
+    if (![[self.openTags lastObject] isEqual:[NSNumber numberWithInt:HTML_SB]]) {
+        
+        self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
+        self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
     }
 }
 
