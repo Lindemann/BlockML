@@ -62,6 +62,8 @@
     [stringList addObject:@[[NSNumber numberWithInt:SEC_SB], @"sec["]];
     [stringList addObject:@[[NSNumber numberWithInt:TOC_SB], @"toc["]];
     [stringList addObject:@[[NSNumber numberWithInt:IMG_SB], @"img["]];
+    [stringList addObject:@[[NSNumber numberWithInt:UL_SB], @"ul["]];
+    [stringList addObject:@[[NSNumber numberWithInt:OL_SB], @"ol["]];
     [stringList addObject:@[[NSNumber numberWithInt:TITLE_SB], @"title["]];
     
     /* sqare brackets */

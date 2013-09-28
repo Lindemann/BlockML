@@ -150,6 +150,7 @@ h6 {
 	font-weight: 500;
 	color: darken($selectionColor, 40%);
 	border-radius: 10px;
+	margin-bottom: $paragraphPadding;
 
 	a {
 		color: darken($selectionColor, 32%);
@@ -241,6 +242,7 @@ pre {
   	width: 100%;
     font-size: 11pt;
     line-height: 1.6em;
+    padding-bottom: $paragraphPadding;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/

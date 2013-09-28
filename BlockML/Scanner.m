@@ -54,6 +54,9 @@
         if ([self isComment]) {
             continue;
         }
+        if ([self isListDash]) {
+            continue;
+        }
         if ([self isPreCommentString]) {
             [self unescapeSquareBracketsAndEscapeHTMLSymbols];
             return self.token;
@@ -163,7 +166,11 @@
     // Inline Tags must be handeled like strings
     // Don't removes the whitespaces after inline tags
     // Because they are like whitespace between two strings
-    if (self.lastAndProbablyStillOpenTag >= A_SB && self.lastAndProbablyStillOpenTag <= ID_SB) {
+    if ([self isProbablyInlineTag] && ![self isList]) {
+        return NO;
+    }
+    // If a list is open only remove leading whitespace after a LF
+    if ([self isList] && self.token.type != LF) {
         return NO;
     }
     // Remove strings which contains only a LF
@@ -226,12 +233,47 @@
     return NO;
 }
 
+- (BOOL)isListDash {
+    // Removes dashes infront of a list item
+    if ([self isList]) {
+        
+        // Don't remove dashes from an item text
+        // e.g - c[foo]-bar
+        if ([self isProbablyInlineTag] && self.token.type != LF) {
+            return NO;
+        }
+        
+        NSString *DASH = @"-";
+        if ([self.currentString isEqual:DASH]) {
+            self.currentString = [NSMutableString new];
+            return YES;
+        }
+    }
+   
+    return NO;
+}
+
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 
 /*                                           HELPER                                             */
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 #pragma mark - Helper
+
+- (BOOL)isList {
+    if ([[self.openTags lastObject] intValue] == OL_SB ||
+        [[self.openTags lastObject] intValue] == UL_SB) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)isProbablyInlineTag {
+    if (self.lastAndProbablyStillOpenTag >= A_SB && self.lastAndProbablyStillOpenTag <= ID_SB) {
+        return YES;
+    }
+    return NO;
+}
 
 - (void)readNextCharacter {
     // range.location must become assigned every time again

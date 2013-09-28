@@ -106,7 +106,8 @@ h6 {
   font-family: "Source Code Pro", monospace;
   font-weight: 500;
   color: #9fae04;
-  border-radius: 10px; }
+  border-radius: 10px;
+  margin-bottom: 1.4em; }
   .error a {
     color: #c3d605;
     text-decoration: underline; }
@@ -175,7 +176,8 @@ pre {
   table-layout: fixed;
   width: 100%;
   font-size: 11pt;
-  line-height: 1.6em; }
+  line-height: 1.6em;
+  padding-bottom: 1.4em; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    IMAGE                                   */

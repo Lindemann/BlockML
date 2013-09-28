@@ -41,7 +41,7 @@
 }
 
 - (void)startParsing {
-//    [self scannerOutput];
+    [self scannerOutput];
     
     while (self.token.type != END) {
         self.token = [self.scanner getToken];
