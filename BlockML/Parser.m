@@ -41,7 +41,7 @@
 }
 
 - (void)startParsing {
-    [self scannerOutput];
+//    [self scannerOutput];
     
     while (self.token.type != END) {
         self.token = [self.scanner getToken];
@@ -109,6 +109,8 @@
     [self title:parent];
     [self code:parent];
     [self image:parent];
+    [self unorderedList:parent];
+    [self orderedList:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -431,5 +433,110 @@
         }
     }
 }
+
+
+- (void)unorderedList:(HTMLElement*)parent {
+    // ul[
+    if (self.token.type == UL_SB) {
+        UnorderedList *unorderedList = [UnorderedList new];
+        [parent addElement:unorderedList];
+        [self nextToken];
+        // STRING | List | LF
+        while (self.token.type == STRING ||
+               self.token.type == UL_SB || self.token.type == OL_SB ||
+               self.token.type == LF) {
+            [self listItem:unorderedList];
+            [self unorderedList:unorderedList];
+            [self orderedList:unorderedList];
+            if (self.token.type == LF) {
+                [self nextToken];
+            }
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Unordered List"];
+        }
+    }
+}
+
+- (void)orderedList:(HTMLElement*)parent {
+    // ol[
+    if (self.token.type == OL_SB) {
+        OrderedList *orderedList = [OrderedList new];
+        [parent addElement:orderedList];
+        [self nextToken];
+        // STRING | List | LF
+        while (self.token.type == STRING ||
+               self.token.type == UL_SB || self.token.type == OL_SB ||
+               self.token.type == LF) {
+            [self listItem:orderedList];
+            [self unorderedList:orderedList];
+            [self orderedList:orderedList];
+            if (self.token.type == LF) {
+                [self nextToken];
+            }
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Ordered List"];
+        }
+    }
+
+}
+
+- (void)listItem:(HTMLElement*)parent {
+    if (self.token.type == STRING || (self.token.type >= A_SB && self.token.type <= ID_SB)) {
+        ListItem *listItem = [ListItem new];
+        [parent addElement:listItem];
+        [self text:listItem];
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

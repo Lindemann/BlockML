@@ -142,7 +142,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
             if ([element isKindOfClass:[Section class]] ||
                 [element isKindOfClass:[TableOfContent class]] ||
                 [element isKindOfClass:[UnorderedList class]] ||
-                [element isKindOfClass:[UnorderedList class]] ||
+                [element isKindOfClass:[OrderedList class]] ||
                 [element isKindOfClass:[Image class]]) {
                 element.openTagLineBreak = YES;
                 element.closingTagLineBreak = YES;
@@ -211,11 +211,11 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                     Link *link = [Link new];
                     link.href = [NSString stringWithFormat:@"#sec-%@", section.sectionNumber];
                     Text *linkText = [Text new];
-                    linkText.string = @"[⚐]";
-                    [link addElement:linkText];
                     Span *linkSpan = [Span new];
-                    [linkSpan addElement:link];
-                    [listItem addElement:linkSpan];
+                    linkText.string = @"[⚐]";
+                    [linkSpan addElement:linkText];
+                    [link addElement:linkSpan];
+                    [listItem addElement:link];
                     
                     // Assambly TOC
                     int TOCLevel = heading.level - 1;
