@@ -54,7 +54,10 @@
         if ([self isComment]) {
             continue;
         }
-        if ([self isListDash]) {
+        if ([self isWhiteSpaceInList]) {
+            continue;
+        }
+        if ([self isListItemDash]) {
             continue;
         }
         if ([self isPreCommentString]) {
@@ -166,11 +169,7 @@
     // Inline Tags must be handeled like strings
     // Don't removes the whitespaces after inline tags
     // Because they are like whitespace between two strings
-    if ([self isProbablyInlineTag] && ![self isList]) {
-        return NO;
-    }
-    // If a list is open only remove leading whitespace after a LF
-    if ([self isList] && self.token.type != LF) {
+    if ([self isProbablyInlineTag]) {
         return NO;
     }
     // Remove strings which contains only a LF
@@ -233,7 +232,25 @@
     return NO;
 }
 
-- (BOOL)isListDash {
+- (BOOL)isWhiteSpaceInList {
+    // Don't remove whitespace after an inline tag in an item
+    if (([self isList] && ![self isProbablyInlineTag]) ||
+        // Remove whitspace infront of an item
+        // when a LF has indicated that the last item is closed
+        ([self isList] && self.token.type == LF)) {
+
+        // Remove leading TABs or SPACEs
+        NSString *SPACE = @" ";
+        NSString *TAB = @"\t";
+        if ([self.currentString isEqual:SPACE] || [self.currentString isEqual:TAB]) {
+            self.currentString = [NSMutableString new];
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)isListItemDash {
     // Removes dashes infront of a list item
     if ([self isList]) {
         
