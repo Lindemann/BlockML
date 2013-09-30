@@ -101,6 +101,7 @@
 - (void)inlineTag:(HTMLElement*)parent {
     [self link:parent];
     [self inlineCode:parent];
+    [self identifier:parent];
 }
 
 - (void)blockTag:(HTMLElement*)parent {
@@ -111,6 +112,7 @@
     [self image:parent];
     [self unorderedList:parent];
     [self orderedList:parent];
+    [self caption:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -259,6 +261,26 @@
     }
 }
 
+- (void)identifier:(HTMLElement*)parent {
+    // id[
+    if (self.token.type == ID_SB) {
+        Identifier *identifier = [Identifier new];
+        [parent addElement:identifier];
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            identifier.identfier = self.token.value;
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"ID"];
+        }
+    }
+}
+
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 
 /*                                          BLOCK TAGS                                          */
@@ -322,6 +344,8 @@
                 } else {
                     [self errorWithParent:parent andErrorMessage:@"Section"];
                 }
+            } else {
+                [self errorWithParent:parent andErrorMessage:@"Section"];
             }
         } else {
             [self errorWithParent:parent andErrorMessage:@"Section"];
@@ -385,6 +409,8 @@
                 } else {
                     [self errorWithParent:parent andErrorMessage:@"Code"];
                 }
+            } else {
+                [self errorWithParent:parent andErrorMessage:@"Code"];
             }
         } else {
             [self errorWithParent:parent andErrorMessage:@"Code"];
@@ -496,7 +522,55 @@
     }
 }
 
-
+- (void)caption:(HTMLElement*)parent {
+    // caption[
+    if (self.token.type == CAP_SB) {
+        Caption *caption = [Caption new];
+        [parent addElement:caption];
+        [self nextToken];
+        // STRING eg. Figure
+        if (self.token.type == STRING) {
+            Span *span = [Span new];
+            [caption addElement:span];
+            caption.description = self.token.value;
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+            // [
+            if (self.token.type == OPEN_SB) {
+                [self nextToken];
+                // text
+                [self text:caption];
+                // ]
+                if (self.token.type == CLOSE_SB) {
+                    [self nextToken];
+                    // [
+                    if (self.token.type == OPEN_SB) {
+                        [self nextToken];
+                        // STRING eg. FDERT
+                        if (self.token.type == STRING) {
+                            caption.identfier = self.token.value;
+                            [self nextToken];
+                        }
+                        if (self.token.type == CLOSE_SB) {
+                            [self nextToken];
+                        } else {
+                            [self errorWithParent:parent andErrorMessage:@"Caption"];
+                        }
+                    }
+                } else {
+                    [self errorWithParent:parent andErrorMessage:@"Caption"];
+                }
+            } else {
+                [self errorWithParent:parent andErrorMessage:@"Caption"];
+            }
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Caption"];
+        }
+    }
+}
 
 
 

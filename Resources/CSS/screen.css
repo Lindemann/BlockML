@@ -115,7 +115,7 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    TOC                                     */
 /*////////////////////////////////////////////////////////////////////////////*/
-/* i have written this code 1 year ago and i completly don't understand that messy shit anymore */
+/* Hä? */
 #toc {
   padding-bottom: 60px; }
   #toc ul {
@@ -124,7 +124,7 @@ h6 {
     padding-left: 0;
     padding-bottom: 0; }
     #toc ul ul {
-      /* SubLists are indented*/
+      /* SubLists are indented */
       padding-left: 1.4em; }
   #toc li {
     /* Set a repeating background picture on the bottom */
@@ -175,7 +175,7 @@ code {
   padding: 0 0.3em; }
 
 pre {
-  /* Creepy behavior of pre require use of CSS Table*/
+  /* Creepy behavior of pre require use of CSS Tables*/
   display: table;
   table-layout: fixed;
   width: 100%;
@@ -199,3 +199,15 @@ ul, ol {
   padding: 0 0 1.4em 1.4em; }
   ul ul, ul ol, ol ul, ol ol {
     padding: 0 0 0 2em; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   CAPTION                                  */
+/*////////////////////////////////////////////////////////////////////////////*/
+.cap {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  padding-bottom: 1.4em; }
+  .cap span {
+    font-weight: 600; }

@@ -12,6 +12,8 @@
 @interface HTMLDocument ()
 
 @property (nonatomic, strong) NSMutableArray *errors;
+@property (nonatomic, strong) Captions *captions;
+@property (nonatomic, strong) NSMutableArray *captionsOfSectionsAndDocument;
 
 @end
 
@@ -24,6 +26,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
     if (self) {
         self.title = @"BlockML ▲ ▲ ▲ ";
         self.errors = [NSMutableArray new];
+        self.captionsOfSectionsAndDocument = [NSMutableArray new];
     }
     return self;
 }
@@ -217,7 +220,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                     [link addElement:linkSpan];
                     [listItem addElement:link];
                     
-                    // Assambly TOC
+                    // Assembly TOC
                     int TOCLevel = heading.level - 1;
                     if (TOCLevel == 0) {
                         [self.tableOfContent addElement:unorderedList];
@@ -235,9 +238,20 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 error.count = self.errors.count;
             }
             
-            
-            
-            
+            // Caption
+            if ([element isKindOfClass:[Caption class]]) {
+                if (!self.captions) {
+                    self.captions = [Captions new];
+                }
+                Caption *caption = (Caption*)element;
+                [self.captions addCaption:caption];
+                
+                // Assembly String
+                Text *text = [Text new];
+                text.string = [NSString  stringWithFormat:@"%@ %@: ",caption.description, caption.captionNumber];
+                Span *span = [caption.elements objectAtIndex:0];
+                [span addElement:text];
+            }
             
             
             

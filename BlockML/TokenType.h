@@ -57,6 +57,8 @@ typedef enum {
     
     IMG_SB,     // img[
     
+    CAP_SB,     // cap[
+    
     Q_SB,       // q[
     
     PB_SB,      // pb[

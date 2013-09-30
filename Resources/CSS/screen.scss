@@ -162,7 +162,7 @@ h6 {
 /*                                    TOC                                     */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-/* i have written this code 1 year ago and i completly don't understand that messy shit anymore */
+/* Hä? */
 
 @mixin backgroundArea($paddingLeft, $paddingRight) {
 /* Make a white box around the text to hide the background dots */
@@ -182,7 +182,7 @@ h6 {
 		padding-bottom: 0;
 
 		ul {
-			/* SubLists are indented*/
+			/* SubLists are indented */
 			padding-left: 1.4em;
 		}
 	}
@@ -239,7 +239,7 @@ code {
 }
 
 pre {
-	/* Creepy behavior of pre require use of CSS Table*/
+	/* Creepy behavior of pre require use of CSS Tables*/
   	display: table;
   	table-layout: fixed;
   	width: 100%;
@@ -269,7 +269,19 @@ ul, ol {
 	}
 }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   CAPTION                                  */
+/*////////////////////////////////////////////////////////////////////////////*/
 
+.cap {
+	@include centerWithWidth(80%);
+	text-align: center;
+	padding-bottom: $paragraphPadding;
+
+	span {
+		font-weight: 600;
+	}
+}
 
 
 

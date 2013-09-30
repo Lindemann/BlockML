@@ -236,7 +236,7 @@
     // Don't remove whitespace after an inline tag in an item
     if (([self isList] && ![self isProbablyInlineTag]) ||
         // Remove whitspace infront of an item
-        // when a LF has indicated that the last item is closed
+        // when a LF has indicated that the previous item is closed
         ([self isList] && self.token.type == LF)) {
 
         // Remove leading TABs or SPACEs

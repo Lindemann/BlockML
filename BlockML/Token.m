@@ -56,12 +56,14 @@
 //    [stringList addObject:@[[NSNumber numberWithInt:I_SB], @"i["]];
 //    [stringList addObject:@[[NSNumber numberWithInt:U_SB], @"u["]];
 //    [stringList addObject:@[[NSNumber numberWithInt:M_SB], @"m["]];
+    [stringList addObject:@[[NSNumber numberWithInt:ID_SB], @"id["]];
     
     /* block */
     [stringList addObject:@[[NSNumber numberWithInt:CODE_SB], @"code["]];
     [stringList addObject:@[[NSNumber numberWithInt:SEC_SB], @"sec["]];
     [stringList addObject:@[[NSNumber numberWithInt:TOC_SB], @"toc["]];
     [stringList addObject:@[[NSNumber numberWithInt:IMG_SB], @"img["]];
+    [stringList addObject:@[[NSNumber numberWithInt:CAP_SB], @"cap["]];
     [stringList addObject:@[[NSNumber numberWithInt:UL_SB], @"ul["]];
     [stringList addObject:@[[NSNumber numberWithInt:OL_SB], @"ol["]];
     [stringList addObject:@[[NSNumber numberWithInt:TITLE_SB], @"title["]];

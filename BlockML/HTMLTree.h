@@ -21,3 +21,6 @@
 #import "InlineCode.h"
 #import "Code.h"
 #import "Image.h"
+#import "Caption.h"
+#import "Identifier.h"
+#import "Captions.h"
