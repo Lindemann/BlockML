@@ -59,6 +59,8 @@ typedef enum {
     
     CAP_SB,     // cap[
     
+    BIB_SB,     // bib[
+    
     Q_SB,       // q[
     
     PB_SB,      // pb[

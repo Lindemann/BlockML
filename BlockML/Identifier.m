@@ -16,6 +16,9 @@
     if (self.sectionNumber) {
         [self.attributes setValue:[NSString  stringWithFormat:@"#sec-%@",self.sectionNumber] forKey:HREF];
     }
+    if (self.bibliographyID) {
+        [self.attributes setValue:[NSString  stringWithFormat:@"bib-%@",self.bibliographyID] forKey:ID];
+    }
     [result appendString:[HTMLStringBuilder openTag:@"a" attributes:self.attributes indentation:self.openTagIndentation lineBreak:self.openTagLineBreak]];
     return result;
 }

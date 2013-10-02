@@ -50,10 +50,10 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
 p {
   padding-bottom: 1.4em; }
 
-a {
+a, a span {
   text-decoration: none;
   color: #6176f6; }
-  a:hover {
+  a:hover, a span:hover {
     color: #0d2be4;
     text-decoration: underline; }
 
@@ -211,3 +211,16 @@ ul, ol {
   padding-bottom: 1.4em; }
   .cap span {
     font-weight: 600; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                 BIBLIOGRAPHY                               */
+/*////////////////////////////////////////////////////////////////////////////*/
+.bib {
+  padding-bottom: 1.4em; }
+  .bib span {
+    display: block;
+    margin-left: 140px; }
+  .bib > a {
+    display: block;
+    width: 140px;
+    position: absolute; }

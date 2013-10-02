@@ -52,7 +52,7 @@
 }
 
 - (void)nextToken {
-    NSLog(@"%@", self.token);
+//    NSLog(@"%@", self.token);
     self.token = [self.scanner getToken];
 }
 
@@ -113,6 +113,7 @@
     [self unorderedList:parent];
     [self orderedList:parent];
     [self caption:parent];
+    [self bibliography:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -587,8 +588,49 @@
     }
 }
 
-
-
+- (void)bibliography:(HTMLElement*)parent {
+    // bib[
+    if (self.token.type == BIB_SB) {
+        Bibliography *bibliography = [Bibliography new];
+        [parent addElement:bibliography];
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            bibliography.identfier = self.token.value;
+            bibliography.linkString = self.token.value;
+            Link *link = [Link new];
+            [bibliography addElement:link];
+            bibliography.href = self.token.value;
+            link.href = bibliography.href;
+            Text *text = [Text new];
+            text.string = bibliography.linkString;
+            [link addElement:text];
+            
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+            // [
+            if (self.token.type == OPEN_SB) {
+                [self nextToken];
+                // text
+                Span *span = [Span new];
+                [bibliography addElement:span];
+                [self text:span];
+                if (self.token.type == CLOSE_SB) {
+                    [self nextToken];
+                } else {
+                    [self errorWithParent:parent andErrorMessage:@"Bibliography"];
+                }
+            } else {
+                [self errorWithParent:parent andErrorMessage:@"Bibliography"];
+            }
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Bibliography"];
+        }
+    }
+}
 
 
 

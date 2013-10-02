@@ -42,6 +42,7 @@
 		82AD8A7517F884F100859D26 /* Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A7417F884F100859D26 /* Identifier.m */; };
 		82AD8A7817F9C5E900859D26 /* Captions.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A7717F9C5E900859D26 /* Captions.m */; };
 		82AD8A7B17F9C6E700859D26 /* CaptionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A7A17F9C6E700859D26 /* CaptionStore.m */; };
+		82AD8A8017FC651A00859D26 /* Bibliography.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A7F17FC651A00859D26 /* Bibliography.m */; };
 		82DEC4FB17E609D9007708D1 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FA17E609D9007708D1 /* Text.m */; };
 		82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FD17E609F8007708D1 /* LineBreak.m */; };
 		82DEC50217E975B1007708D1 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC50117E975B1007708D1 /* Link.m */; };
@@ -124,6 +125,8 @@
 		82AD8A7717F9C5E900859D26 /* Captions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Captions.m; sourceTree = "<group>"; };
 		82AD8A7917F9C6E700859D26 /* CaptionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptionStore.h; sourceTree = "<group>"; };
 		82AD8A7A17F9C6E700859D26 /* CaptionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptionStore.m; sourceTree = "<group>"; };
+		82AD8A7E17FC651A00859D26 /* Bibliography.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bibliography.h; sourceTree = "<group>"; };
+		82AD8A7F17FC651A00859D26 /* Bibliography.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bibliography.m; sourceTree = "<group>"; };
 		82DEC4F917E609D9007708D1 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		82DEC4FA17E609D9007708D1 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
 		82DEC4FC17E609F8007708D1 /* LineBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineBreak.h; sourceTree = "<group>"; };
@@ -316,15 +319,15 @@
 				82DEC4FF17E77DA0007708D1 /* Text */,
 				82DEC50C17EBF747007708D1 /* Section + TOC */,
 				82DEC51917EDDB6B007708D1 /* Lists */,
+				82AD8A8117FC654100859D26 /* Image */,
 				8214B0EF17EFFEA400DF4061 /* Error */,
 				82AD8A6217F493F300859D26 /* Code */,
 				82AD8A6C17F7869C00859D26 /* Caption + ID */,
+				82AD8A7D17FC650100859D26 /* Bibliography */,
 				82DEC50017E975B1007708D1 /* Link.h */,
 				82DEC50117E975B1007708D1 /* Link.m */,
 				8214B0E917EFED6100DF4061 /* Span.h */,
 				8214B0EA17EFED6100DF4061 /* Span.m */,
-				82AD8A6917F5F4D600859D26 /* Image.h */,
-				82AD8A6A17F5F4D600859D26 /* Image.m */,
 			);
 			name = HTMLElements;
 			sourceTree = "<group>";
@@ -361,6 +364,24 @@
 				82AD8A7A17F9C6E700859D26 /* CaptionStore.m */,
 			);
 			name = Storage;
+			sourceTree = "<group>";
+		};
+		82AD8A7D17FC650100859D26 /* Bibliography */ = {
+			isa = PBXGroup;
+			children = (
+				82AD8A7E17FC651A00859D26 /* Bibliography.h */,
+				82AD8A7F17FC651A00859D26 /* Bibliography.m */,
+			);
+			name = Bibliography;
+			sourceTree = "<group>";
+		};
+		82AD8A8117FC654100859D26 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				82AD8A6917F5F4D600859D26 /* Image.h */,
+				82AD8A6A17F5F4D600859D26 /* Image.m */,
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 		82DEC4FF17E77DA0007708D1 /* Text */ = {
@@ -539,6 +560,7 @@
 				8214B0EB17EFED6100DF4061 /* Span.m in Sources */,
 				8208100E172DCD1F008ABC58 /* DropView.m in Sources */,
 				82DEC51517EDDB4B007708D1 /* OrderedList.m in Sources */,
+				82AD8A8017FC651A00859D26 /* Bibliography.m in Sources */,
 				82AD8A6B17F5F4D600859D26 /* Image.m in Sources */,
 				82DEC50817EBF27A007708D1 /* Heading.m in Sources */,
 				82AD8A7B17F9C6E700859D26 /* CaptionStore.m in Sources */,

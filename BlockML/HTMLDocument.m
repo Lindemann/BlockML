@@ -12,9 +12,10 @@
 @interface HTMLDocument ()
 
 @property (nonatomic, strong) NSMutableArray *errors;
-// Booth needed for IDs
+// Needed for IDs
 @property (nonatomic, strong) NSMutableArray *captionsOfSectionsAndDocument;
 @property (nonatomic, strong) NSMutableArray *sectionsForIdentifier;
+@property (nonatomic, strong) NSMutableArray *bibliographyForIdentifier;
 
 @end
 
@@ -240,7 +241,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                     [self.captionsOfSectionsAndDocument addObject:captions];
                 }
                 
-                // XRefs for Sections
+                // Prepare XRefs for sections
                 if (section.identfier) {
                     if (!self.sectionsForIdentifier) {
                         self.sectionsForIdentifier = [NSMutableArray new];
@@ -259,7 +260,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 error.count = self.errors.count;
             }
             
-            // Caption
+            // Captions
             if ([element isKindOfClass:[Caption class]]) {
                 if (self.captionsOfSectionsAndDocument.count == 0) {
                     Captions *captions = [Captions new];
@@ -273,6 +274,30 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 text.string = [NSString  stringWithFormat:@"%@ %@: ", caption.description, caption.captionNumber];
                 Span *span = [caption.elements objectAtIndex:0];
                 [span addElement:text];
+            }
+            
+            // Bibliography
+            if ([element isKindOfClass:[Bibliography class]]) {
+                // Prepare XRefs for IDs
+                Bibliography *bibliography = (Bibliography*)element;
+                if (!self.bibliographyForIdentifier) {
+                    self.bibliographyForIdentifier = [NSMutableArray new];
+                }
+                [self.bibliographyForIdentifier addObject:bibliography];
+                
+                // Sort bibliography items ascending
+                int j = i;
+                while (j > 0 && [[root.elements objectAtIndex:j-1] isKindOfClass:[Bibliography class]]) {
+                    NSComparisonResult result = [[[root.elements objectAtIndex:j] identfier] compare:[[root.elements objectAtIndex:j-1] identfier]];
+                    if (result == NSOrderedAscending) {
+                        Bibliography *tmpBib = [Bibliography new];
+                        tmpBib = [root.elements objectAtIndex:j-1];
+                        
+                        [root.elements replaceObjectAtIndex:j-1 withObject:[root.elements objectAtIndex:j]];
+                        [root.elements replaceObjectAtIndex:j withObject:tmpBib];
+                    }
+                    j--;
+                }
             }
             
             
@@ -316,8 +341,17 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                         }
                     }
                 }
-                // XRefs to BibRefs
-                
+                // XRefs to bibliography items
+                if (self.bibliographyForIdentifier) {
+                    for (Bibliography *bibliography in self.bibliographyForIdentifier) {
+                        if ([bibliography.identfier isEqual:identifier.identfier]) {
+                            Text *text = [Text new];
+                            text.string = [NSString  stringWithFormat:@"[%@]",identifier.identfier];
+                            [identifier addElement:text];
+                            identifier.bibliographyID = identifier.identfier;
+                        }
+                    }
+                }
                 
                 
                 

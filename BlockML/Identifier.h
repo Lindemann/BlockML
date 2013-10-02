@@ -11,6 +11,9 @@
 @interface Identifier : HTMLElement
 
 @property (nonatomic, strong) NSString *identfier;
+// If Identifier is a reference to a section
 @property (nonatomic, strong) NSString *sectionNumber;
+// If Identifier is a reference to a bibliographic item
+@property (nonatomic, strong) NSString *bibliographyID;
 
 @end

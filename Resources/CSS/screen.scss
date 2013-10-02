@@ -79,7 +79,7 @@ p {
 	padding-bottom: $paragraphPadding;
 }
 
-a {
+a, a span {
     text-decoration: none;
     color: $linkColor;
     &:hover {
@@ -282,6 +282,93 @@ ul, ol {
 		font-weight: 600;
 	}
 }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                 BIBLIOGRAPHY                               */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+.bib {
+	padding-bottom: $paragraphPadding;
+	span {
+		display: block;
+		margin-left: 140px;
+	}
+	> a {
+		display: block;
+		width: 140px;
+		position: absolute;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

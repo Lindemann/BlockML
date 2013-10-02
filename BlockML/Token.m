@@ -66,6 +66,7 @@
     [stringList addObject:@[[NSNumber numberWithInt:CAP_SB], @"cap["]];
     [stringList addObject:@[[NSNumber numberWithInt:UL_SB], @"ul["]];
     [stringList addObject:@[[NSNumber numberWithInt:OL_SB], @"ol["]];
+    [stringList addObject:@[[NSNumber numberWithInt:BIB_SB], @"bib["]];
     [stringList addObject:@[[NSNumber numberWithInt:TITLE_SB], @"title["]];
     
     /* sqare brackets */
