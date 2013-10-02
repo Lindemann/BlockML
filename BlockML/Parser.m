@@ -341,6 +341,21 @@
                 // ]
                 if (self.token.type == CLOSE_SB) {
                     [self nextToken];
+                    // [
+                    if (self.token.type == OPEN_SB) {
+                        [self nextToken];
+                        // STRING
+                        if (self.token.type == STRING) {
+                            section.identfier = self.token.value;
+                            [self nextToken];
+                        }
+                        // ]
+                        if (self.token.type == CLOSE_SB) {
+                            [self nextToken];
+                        } else {
+                            [self errorWithParent:parent andErrorMessage:@"Section"];
+                        }
+                    }
                 } else {
                     [self errorWithParent:parent andErrorMessage:@"Section"];
                 }

@@ -13,8 +13,7 @@
 - (NSString*)openTag {
     NSMutableString *result = [NSMutableString new];
     [self.attributes setValue:@"sec" forKey:CLASS];
-    NSString *IDString = [NSString stringWithFormat:@"sec-%@", self.sectionNumber];
-    [self.attributes setValue:IDString forKey:ID];
+    [self.attributes setValue:[NSString stringWithFormat:@"sec-%@", self.sectionNumber] forKey:ID];
     [result appendString:[HTMLStringBuilder openTag:DIV attributes:self.attributes indentation:self.openTagIndentation lineBreak:self.openTagLineBreak]];
     return result;
 }

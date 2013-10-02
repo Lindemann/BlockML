@@ -12,8 +12,9 @@
 @interface HTMLDocument ()
 
 @property (nonatomic, strong) NSMutableArray *errors;
-@property (nonatomic, strong) Captions *captions;
+// Booth needed for IDs
 @property (nonatomic, strong) NSMutableArray *captionsOfSectionsAndDocument;
+@property (nonatomic, strong) NSMutableArray *sectionsForIdentifier;
 
 @end
 
@@ -25,8 +26,6 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
     self = [super init];
     if (self) {
         self.title = @"BlockML ▲ ▲ ▲ ";
-        self.errors = [NSMutableArray new];
-        self.captionsOfSectionsAndDocument = [NSMutableArray new];
     }
     return self;
 }
@@ -117,6 +116,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
 
 - (void)generateHTML {
     [self assemblyNumbering:self];
+    [self assemblyCrossReferences:self];
     [self addErrorMessage];
     [self formatHTMLString:self];
     
@@ -229,10 +229,31 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                         [parentList addElement:unorderedList];
                     }
                 }
+                
+                // Prepare stuff for captions
+                if ([section.parent isKindOfClass:[HTMLDocument class]]) {
+                    if (!self.captionsOfSectionsAndDocument) {
+                        self.captionsOfSectionsAndDocument = [NSMutableArray new];
+                    }
+                    Captions *captions = [Captions new];
+                    captions.sectionIndex = section.sectionIndex;
+                    [self.captionsOfSectionsAndDocument addObject:captions];
+                }
+                
+                // XRefs for Sections
+                if (section.identfier) {
+                    if (!self.sectionsForIdentifier) {
+                        self.sectionsForIdentifier = [NSMutableArray new];
+                    }
+                    [self.sectionsForIdentifier addObject:section];
+                }
             }
             
             // Errors
             if ([element isKindOfClass:[Error class]]) {
+                if (!self.errors) {
+                    self.errors = [NSMutableArray new];
+                }
                 Error *error = (Error*)element;
                 [self.errors addObject:error];
                 error.count = self.errors.count;
@@ -240,24 +261,72 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
             
             // Caption
             if ([element isKindOfClass:[Caption class]]) {
-                if (!self.captions) {
-                    self.captions = [Captions new];
+                if (self.captionsOfSectionsAndDocument.count == 0) {
+                    Captions *captions = [Captions new];
+                    [self.captionsOfSectionsAndDocument addObject:captions];
                 }
                 Caption *caption = (Caption*)element;
-                [self.captions addCaption:caption];
+                [[self.captionsOfSectionsAndDocument lastObject] addCaption:caption];
                 
                 // Assembly String
                 Text *text = [Text new];
-                text.string = [NSString  stringWithFormat:@"%@ %@: ",caption.description, caption.captionNumber];
+                text.string = [NSString  stringWithFormat:@"%@ %@: ", caption.description, caption.captionNumber];
                 Span *span = [caption.elements objectAtIndex:0];
                 [span addElement:text];
             }
             
             
             
-            
-            
             [self assemblyNumbering:element];
+        }
+    }
+}
+
+- (void)assemblyCrossReferences:(HTMLElement*)root {
+    if (root.elements != nil && root.elements.count > 0) {
+        for (int i = 0; i < root.elements.count; ++i) {
+            HTMLElement *element = [root.elements objectAtIndex:i];
+            
+            if ([element isKindOfClass:[Identifier class]]) {
+                Identifier *identifier = (Identifier*)element;
+                
+                // XRefs to captions
+                if (self.captionsOfSectionsAndDocument) {
+                    for (Captions *captions in self.captionsOfSectionsAndDocument) {
+                        for (CaptionStore *captionStore in captions.captionStoreArray) {
+                            for (Caption *caption in captionStore.captionsArray) {
+                                if ([identifier.identfier isEqual:caption.identfier]) {
+                                    Text *text = [Text new];
+                                    text.string = [NSString  stringWithFormat:@"%@ %@", caption.description, caption.captionNumber];
+                                    [identifier addElement:text];
+                                }
+                            }
+                        }
+                    }
+                }
+                // XRefs to sections
+                if (self.sectionsForIdentifier) {
+                    for (Section *section in self.sectionsForIdentifier) {
+                        if ([section.identfier isEqual:identifier.identfier]) {
+                            identifier.sectionNumber = section.sectionNumber;
+                            Text *text = [Text new];
+                            Text *sectionHeadingText = [[[section.elements objectAtIndex:0] elements] objectAtIndex:0];
+                            text.string = sectionHeadingText.string;
+                            [identifier addElement:text];
+                        }
+                    }
+                }
+                // XRefs to BibRefs
+                
+                
+                
+                
+                
+                
+                
+                
+            }
+            [self assemblyCrossReferences:element];
         }
     }
 }

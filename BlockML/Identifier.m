@@ -13,6 +13,9 @@
 - (NSString*)openTag {
     NSMutableString *result = [NSMutableString new];
     [self.attributes setValue:[NSString  stringWithFormat:@"#id-%@",self.identfier] forKey:HREF];
+    if (self.sectionNumber) {
+        [self.attributes setValue:[NSString  stringWithFormat:@"#sec-%@",self.sectionNumber] forKey:HREF];
+    }
     [result appendString:[HTMLStringBuilder openTag:@"a" attributes:self.attributes indentation:self.openTagIndentation lineBreak:self.openTagLineBreak]];
     return result;
 }

@@ -11,5 +11,6 @@
 @interface Identifier : HTMLElement
 
 @property (nonatomic, strong) NSString *identfier;
+@property (nonatomic, strong) NSString *sectionNumber;
 
 @end

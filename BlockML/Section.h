@@ -13,5 +13,7 @@
 @property (nonatomic) int headingLevel; // H1 - H6
 @property (nonatomic) int sectionIndex; // 4
 @property (nonatomic, strong) NSString *sectionNumber; // 2.3.4 Section Title
+@property (nonatomic, strong) NSString *identfier; // eg. WIKIBI
+
 
 @end

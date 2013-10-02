@@ -24,3 +24,4 @@
 #import "Caption.h"
 #import "Identifier.h"
 #import "Captions.h"
+#import "CaptionStore.h"

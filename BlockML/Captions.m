@@ -31,8 +31,8 @@
         captionStore = [CaptionStore new];
         captionStore.description = caption.description;
         [captionStore.captionsArray addObject:caption];
+        [self.captionStoreArray addObject:captionStore];
     }
-    [self.captionStoreArray addObject:captionStore];
     
     if (self.sectionIndex) {
         caption.captionNumber = [NSString  stringWithFormat:@"%d.%lu", self.sectionIndex, (unsigned long)captionStore.captionsArray.count];
