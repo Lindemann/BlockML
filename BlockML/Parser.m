@@ -615,10 +615,12 @@
             // [
             if (self.token.type == OPEN_SB) {
                 [self nextToken];
-                // text
-                Span *span = [Span new];
-                [bibliography addElement:span];
-                [self text:span];
+                // textBlock
+                if (self.token.type == STRING) {
+                    Paragraph *paragraph = [Paragraph new];
+                    [bibliography addElement:paragraph];
+                    [self textBlock:paragraph];
+                }
                 if (self.token.type == CLOSE_SB) {
                     [self nextToken];
                 } else {
@@ -655,7 +657,7 @@
                 if (self.token.type == STRING) {
                     Source *source = [Source new];
                     [quote addElement:source];
-                    [self text:source]; 
+                    [self text:source];
                 }
                 // ]
                 if (self.token.type == CLOSE_SB) {

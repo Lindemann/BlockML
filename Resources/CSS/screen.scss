@@ -297,6 +297,12 @@ ul, ol {
 	> a {
 		position: absolute;
 	}
+	p {
+		margin-left: 140px;
+		&:last-of-type {
+			padding-bottom: 0;
+		}
+	}
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/

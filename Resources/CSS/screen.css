@@ -222,6 +222,10 @@ ul, ol {
     margin-left: 140px; }
   .bib > a {
     position: absolute; }
+  .bib p {
+    margin-left: 140px; }
+    .bib p:last-of-type {
+      padding-bottom: 0; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                	BLOCKQUOTE                                */
