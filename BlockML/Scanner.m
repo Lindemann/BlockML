@@ -313,6 +313,7 @@
     if ([[self.openTags lastObject] intValue] == CODE_SB ||
         [[self.openTags lastObject] intValue] == C_SB ||
         [[self.openTags lastObject] intValue] == MATH_SB ||
+        [[self.openTags lastObject] intValue] == IM_SB ||
         [[self.openTags lastObject] intValue] == HTML_SB) {
         return YES;
     }

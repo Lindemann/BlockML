@@ -33,6 +33,8 @@ typedef enum {
     
     M_SB,       // m[
     
+    IM_SB,      // im[
+    
     ID_SB,      // id[
     
     /* block */

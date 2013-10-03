@@ -217,11 +217,11 @@ ul, ol {
 /*////////////////////////////////////////////////////////////////////////////*/
 .bib {
   padding-bottom: 1.4em; }
-  .bib span {
-    display: block;
-    margin-left: 140px; }
   .bib > a {
-    position: absolute; }
+    position: absolute;
+    /* needed to break long links */
+    width: 130px;
+    display: block; }
   .bib p {
     margin-left: 140px; }
     .bib p:last-of-type {
@@ -253,3 +253,9 @@ ul, ol {
       content: "— "; }
     .quote .source a {
       color: #8a8a89; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                     MATH                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+.math {
+  padding-bottom: 1.4em; }

@@ -102,6 +102,7 @@
     [self link:parent];
     [self inlineCode:parent];
     [self identifier:parent];
+    [self inlineMath:parent];
 }
 
 - (void)blockTag:(HTMLElement*)parent {
@@ -115,6 +116,7 @@
     [self caption:parent];
     [self bibliography:parent];
     [self quote:parent];
+    [self math:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -279,6 +281,28 @@
             [self nextToken];
         } else {
             [self errorWithParent:parent andErrorMessage:@"ID"];
+        }
+    }
+}
+
+- (void)inlineMath:(HTMLElement*)parent {
+    // math[
+    if (self.token.type == IM_SB) {
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            self.document.mathJax = YES;
+            Text *text = [Text new];
+            text.string = self.token.value;
+            [parent addElement:text];
+            self.document.inlineMath = YES;
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Inline Math"];
         }
     }
 }
@@ -672,7 +696,28 @@
     }
 }
 
-
+- (void)math:(HTMLElement*)parent {
+    // math[
+    if (self.token.type == MATH_SB) {
+        Math *math = [Math new];
+        [parent addElement:math];
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            self.document.mathJax = YES;
+            Text *text = [Text new];
+            text.string = self.token.value;
+            [math addElement:text];
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Math"];
+        }
+    }
+}
 
 
 

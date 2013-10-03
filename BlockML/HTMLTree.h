@@ -28,3 +28,4 @@
 #import "Bibliography.h"
 #import "Quote.h"
 #import "Source.h"
+#import "Math.h"

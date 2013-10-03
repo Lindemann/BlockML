@@ -56,6 +56,8 @@
 //    [stringList addObject:@[[NSNumber numberWithInt:I_SB], @"i["]];
 //    [stringList addObject:@[[NSNumber numberWithInt:U_SB], @"u["]];
 //    [stringList addObject:@[[NSNumber numberWithInt:M_SB], @"m["]];
+    [stringList addObject:@[[NSNumber numberWithInt:IM_SB], @"im["]];
+
     [stringList addObject:@[[NSNumber numberWithInt:ID_SB], @"id["]];
     
     /* block */
@@ -68,6 +70,7 @@
     [stringList addObject:@[[NSNumber numberWithInt:OL_SB], @"ol["]];
     [stringList addObject:@[[NSNumber numberWithInt:BIB_SB], @"bib["]];
     [stringList addObject:@[[NSNumber numberWithInt:Q_SB], @"q["]];
+    [stringList addObject:@[[NSNumber numberWithInt:MATH_SB], @"math["]];
     [stringList addObject:@[[NSNumber numberWithInt:TITLE_SB], @"title["]];
     
     /* sqare brackets */

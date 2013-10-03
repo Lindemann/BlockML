@@ -12,6 +12,7 @@
 @interface HTMLDocument ()
 
 @property (nonatomic, strong) NSMutableArray *errors;
+@property (nonatomic, strong) NSMutableArray *footnotes;
 // Needed for IDs
 @property (nonatomic, strong) NSMutableArray *captionsOfSectionsAndDocument;
 @property (nonatomic, strong) NSMutableArray *sectionsForIdentifier;
@@ -73,6 +74,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                                        @"media": @"print"}
                           indentation:2
                           lineBreak:YES]];
+    
     if (self.highlight) {
         [result appendString:[HTMLStringBuilder
                               openTag:@"link"
@@ -82,15 +84,30 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                                            @"media": @"screen"}
                               indentation:2
                               lineBreak:YES]];
+        
         [result appendString:[HTMLStringBuilder openTag:@"script" attributes:@{@"src": @"highlight.js/highlight.pack.js"} indentation:2 lineBreak:NO]];
         [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
+        
         [result appendString:[HTMLStringBuilder openTag:@"script" attributes:nil indentation:2 lineBreak:NO]];
-        [result appendString:[HTMLStringBuilder text:@"hljs.initHighlightingOnLoad();" indentation:NO lineBreak:NO]];
+        [result appendString:[HTMLStringBuilder text:@"hljs.initHighlightingOnLoad();" indentation:0 lineBreak:NO]];
         [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
     }
-    if (self.mathJax) {
-        ;
+    
+    if (self.mathJax || self.inlineMath) {
+        [result appendString:[HTMLStringBuilder
+                              openTag:@"script"
+                              attributes:@{@"type": @"text/javascript",
+                                           @"src": @"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"}
+                              indentation:2
+                              lineBreak:NO]];
+        [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
     }
+    if (self.inlineMath) {
+        [result appendString:[HTMLStringBuilder openTag:@"script" attributes:@{@"type": @"text/x-mathjax-config"} indentation:2 lineBreak:YES]];
+        [result appendString:[HTMLStringBuilder text:@"MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']]}});" indentation:3 lineBreak:YES]];
+        [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:2 lineBreak:YES]];
+    }
+    
     [result appendString:[HTMLStringBuilder openTag:@"title" attributes:nil indentation:2 lineBreak:NO]];
     [result appendString:[HTMLStringBuilder text:self.title indentation:NO lineBreak:NO]];
     [result appendString:[HTMLStringBuilder closingTag:@"title" indentation:0 lineBreak:YES]];
