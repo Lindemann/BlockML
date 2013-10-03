@@ -221,6 +221,31 @@ ul, ol {
     display: block;
     margin-left: 140px; }
   .bib > a {
-    display: block;
-    width: 140px;
     position: absolute; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                	BLOCKQUOTE                                */
+/*////////////////////////////////////////////////////////////////////////////*/
+.quote {
+  font-style: italic;
+  display: block;
+  margin: 0 auto;
+  width: 70%; }
+  .quote p:last-of-type {
+    padding-bottom: 0; }
+  .quote p {
+    margin-left: 40px; }
+  .quote:before {
+    content: "“";
+    font-size: 70pt;
+    color: #8a8a89;
+    position: absolute;
+    line-height: 0.6em; }
+  .quote .source {
+    color: #a4a4a2;
+    font-size: 12.6pt;
+    margin-left: 40px; }
+    .quote .source:before {
+      content: "— "; }
+    .quote .source a {
+      color: #8a8a89; }

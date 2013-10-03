@@ -32,6 +32,7 @@
 $generalPadding: 60px;
 $paragraphPadding: 1.4em;
 
+$fontSize: 14pt;
 $fontColor: #575756;
 $linkColor: #6176F6;
 $selectionColor: #F1FC82;
@@ -65,7 +66,7 @@ html {
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 14pt;
+	font-size: $fontSize;
 	line-height: 1.6em;
 	color: $fontColor;
 	word-wrap: break-word;
@@ -294,16 +295,46 @@ ul, ol {
 		margin-left: 140px;
 	}
 	> a {
-		display: block;
-		width: 140px;
 		position: absolute;
 	}
 }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                	BLOCKQUOTE                                */
+/*////////////////////////////////////////////////////////////////////////////*/
 
+.quote {
+	font-style: italic;
+	@include centerWithWidth(70%);
 
+	p:last-of-type {
+		padding-bottom: 0;
+	}
 
+	p {
+		margin-left: 40px;
+	}
 
+	&:before {
+		content: "“";
+		font-size: $fontSize*5;
+		color: lighten($fontColor, 20%);
+		position: absolute;
+		line-height: 0.6em;
+	}
+
+	.source {
+		color: lighten($fontColor, 30%);
+		font-size: $fontSize*0.9;
+		margin-left: 40px;
+		&:before {
+			content: "— ";
+		}
+		a {
+			color: lighten($fontColor, 20%);
+		}
+	}
+}
 
 
 

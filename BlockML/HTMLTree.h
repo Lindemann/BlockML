@@ -26,3 +26,5 @@
 #import "Captions.h"
 #import "CaptionStore.h"
 #import "Bibliography.h"
+#import "Quote.h"
+#import "Source.h"

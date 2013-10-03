@@ -48,7 +48,7 @@
         [self documentWithParent:self.document];
     }
     [self.document generateHTML];
-    NSLog(@"%@", self.token);
+//    NSLog(@"%@", self.token);
 }
 
 - (void)nextToken {
@@ -114,6 +114,7 @@
     [self orderedList:parent];
     [self caption:parent];
     [self bibliography:parent];
+    [self quote:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -130,7 +131,7 @@
             [self nextToken];
             
             // Parent for paragraph depends on from which methode
-            // - textBlockWithParent: was invoked
+            // - textBlock: was invoked
             if ([parent isKindOfClass:[HTMLDocument class]]) {
                 [self paragraph:parent];
             } else {
@@ -632,7 +633,42 @@
     }
 }
 
-
+- (void)quote:(HTMLElement*)parent {
+    // q[
+    if (self.token.type == Q_SB) {
+        Quote *quote = [Quote new];
+        [parent addElement:quote];
+        [self nextToken];
+        // textBlock
+        if (self.token.type == STRING) {
+            Paragraph *paragraph = [Paragraph new];
+            [quote addElement:paragraph];
+            [self textBlock:paragraph];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+            // [
+            if (self.token.type == OPEN_SB) {
+                [self nextToken];
+                // text
+                if (self.token.type == STRING) {
+                    Source *source = [Source new];
+                    [quote addElement:source];
+                    [self text:source]; 
+                }
+                // ]
+                if (self.token.type == CLOSE_SB) {
+                    [self nextToken];
+                } else {
+                    [self errorWithParent:parent andErrorMessage:@"Quote"];
+                }
+            }
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Quote"];
+        }
+    }
+}
 
 
 
