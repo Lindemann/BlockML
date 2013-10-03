@@ -29,7 +29,7 @@
 }
 
 - (NSString*)linkString {
-    return [NSString  stringWithFormat:@"[%@] ↩", _linkString];
+    return [NSString  stringWithFormat:@"[%@]↩", _linkString];
 }
 
 @end

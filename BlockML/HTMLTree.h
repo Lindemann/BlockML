@@ -29,3 +29,6 @@
 #import "Quote.h"
 #import "Source.h"
 #import "Math.h"
+#import "Sup.h"
+#import "Footnote.h"
+#import "Endnote.h"

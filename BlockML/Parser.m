@@ -103,6 +103,7 @@
     [self inlineCode:parent];
     [self identifier:parent];
     [self inlineMath:parent];
+    [self footnote:parent];
 }
 
 - (void)blockTag:(HTMLElement*)parent {
@@ -306,6 +307,32 @@
         }
     }
 }
+
+- (void)footnote:(HTMLElement*)parent {
+    // fn[
+    if (self.token.type == FN_SB) {
+        Footnote *footnote = [Footnote new];
+        [parent addElement:footnote];
+        [self nextToken];
+        // text
+        if (self.token.type == STRING) {
+            Endnote *endnote = [Endnote new];
+            footnote.endnote = endnote;
+            // Insert a " " infront of the string
+            NSString *tmpValueString = [NSString  stringWithFormat:@" %@",self.token.value];
+            self.token.value = tmpValueString;
+            [self text:endnote];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Footnote"];
+        }
+    }
+}
+
+
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 

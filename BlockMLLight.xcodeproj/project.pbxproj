@@ -35,6 +35,9 @@
 		8215C33617E004B900ABB0E6 /* HTMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33517E004B900ABB0E6 /* HTMLElement.m */; };
 		8215C33917E004CD00ABB0E6 /* HTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33817E004CD00ABB0E6 /* HTMLDocument.m */; };
 		8215C34017E3648D00ABB0E6 /* Paragraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215C33F17E3648D00ABB0E6 /* Paragraph.m */; };
+		827E346F17FD9F9900A6B82D /* Footnote.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E346E17FD9F9800A6B82D /* Footnote.m */; };
+		827E347217FD9FAB00A6B82D /* Endnote.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E347117FD9FAB00A6B82D /* Endnote.m */; };
+		827E347517FD9FF500A6B82D /* Sup.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E347417FD9FF500A6B82D /* Sup.m */; };
 		82AD8A6517F4941700859D26 /* InlineCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6417F4941700859D26 /* InlineCode.m */; };
 		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
 		82AD8A6B17F5F4D600859D26 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6A17F5F4D600859D26 /* Image.m */; };
@@ -114,6 +117,12 @@
 		8215C33E17E3648D00ABB0E6 /* Paragraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paragraph.h; sourceTree = "<group>"; };
 		8215C33F17E3648D00ABB0E6 /* Paragraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paragraph.m; sourceTree = "<group>"; };
 		8215C34417E36EFC00ABB0E6 /* HTMLTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLTree.h; sourceTree = "<group>"; };
+		827E346D17FD9F9800A6B82D /* Footnote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Footnote.h; sourceTree = "<group>"; };
+		827E346E17FD9F9800A6B82D /* Footnote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Footnote.m; sourceTree = "<group>"; };
+		827E347017FD9FAB00A6B82D /* Endnote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Endnote.h; sourceTree = "<group>"; };
+		827E347117FD9FAB00A6B82D /* Endnote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Endnote.m; sourceTree = "<group>"; };
+		827E347317FD9FF500A6B82D /* Sup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sup.h; sourceTree = "<group>"; };
+		827E347417FD9FF500A6B82D /* Sup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sup.m; sourceTree = "<group>"; };
 		82AD8A6317F4941700859D26 /* InlineCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlineCode.h; sourceTree = "<group>"; };
 		82AD8A6417F4941700859D26 /* InlineCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlineCode.m; sourceTree = "<group>"; };
 		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
@@ -327,7 +336,7 @@
 				8215C34417E36EFC00ABB0E6 /* HTMLTree.h */,
 				82DEC4FF17E77DA0007708D1 /* Text */,
 				82DEC50C17EBF747007708D1 /* Section + TOC */,
-				82DEC51917EDDB6B007708D1 /* Lists */,
+				82DEC51917EDDB6B007708D1 /* List */,
 				82AD8A8117FC654100859D26 /* Image */,
 				8214B0EF17EFFEA400DF4061 /* Error */,
 				82AD8A6217F493F300859D26 /* Code */,
@@ -335,12 +344,42 @@
 				82AD8A7D17FC650100859D26 /* Bibliography */,
 				82AD8A8817FCB9B500859D26 /* Quote */,
 				82AD8A8C17FD70C400859D26 /* Math */,
+				827E346A17FD9F4800A6B82D /* Footnote */,
+				827E346C17FD9F6B00A6B82D /* StyleModifier */,
+				827E346B17FD9F5100A6B82D /* Table */,
 				82DEC50017E975B1007708D1 /* Link.h */,
 				82DEC50117E975B1007708D1 /* Link.m */,
 				8214B0E917EFED6100DF4061 /* Span.h */,
 				8214B0EA17EFED6100DF4061 /* Span.m */,
 			);
 			name = HTMLElements;
+			sourceTree = "<group>";
+		};
+		827E346A17FD9F4800A6B82D /* Footnote */ = {
+			isa = PBXGroup;
+			children = (
+				827E346D17FD9F9800A6B82D /* Footnote.h */,
+				827E346E17FD9F9800A6B82D /* Footnote.m */,
+				827E347017FD9FAB00A6B82D /* Endnote.h */,
+				827E347117FD9FAB00A6B82D /* Endnote.m */,
+			);
+			name = Footnote;
+			sourceTree = "<group>";
+		};
+		827E346B17FD9F5100A6B82D /* Table */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
+		827E346C17FD9F6B00A6B82D /* StyleModifier */ = {
+			isa = PBXGroup;
+			children = (
+				827E347317FD9FF500A6B82D /* Sup.h */,
+				827E347417FD9FF500A6B82D /* Sup.m */,
+			);
+			name = StyleModifier;
 			sourceTree = "<group>";
 		};
 		82AD8A6217F493F300859D26 /* Code */ = {
@@ -441,7 +480,7 @@
 			name = "Section + TOC";
 			sourceTree = "<group>";
 		};
-		82DEC51917EDDB6B007708D1 /* Lists */ = {
+		82DEC51917EDDB6B007708D1 /* List */ = {
 			isa = PBXGroup;
 			children = (
 				82DEC51017EDDB36007708D1 /* UnorderedList.h */,
@@ -451,7 +490,7 @@
 				82DEC51617EDDB5C007708D1 /* ListItem.h */,
 				82DEC51717EDDB5C007708D1 /* ListItem.m */,
 			);
-			name = Lists;
+			name = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,6 +610,7 @@
 				82DEC50217E975B1007708D1 /* Link.m in Sources */,
 				82AD8A7817F9C5E900859D26 /* Captions.m in Sources */,
 				82DEC4FB17E609D9007708D1 /* Text.m in Sources */,
+				827E346F17FD9F9900A6B82D /* Footnote.m in Sources */,
 				82DEC51217EDDB36007708D1 /* UnorderedList.m in Sources */,
 				8215C33917E004CD00ABB0E6 /* HTMLDocument.m in Sources */,
 				82DEC50F17EBF7A9007708D1 /* TableOfContent.m in Sources */,
@@ -590,6 +630,7 @@
 				82AD8A8417FCB99B00859D26 /* Quote.m in Sources */,
 				82080F77172D1C1F008ABC58 /* Parser.m in Sources */,
 				82AD8A6517F4941700859D26 /* InlineCode.m in Sources */,
+				827E347517FD9FF500A6B82D /* Sup.m in Sources */,
 				82DEC50B17EBF73A007708D1 /* Section.m in Sources */,
 				8214B0EB17EFED6100DF4061 /* Span.m in Sources */,
 				8208100E172DCD1F008ABC58 /* DropView.m in Sources */,
@@ -599,6 +640,7 @@
 				82DEC50817EBF27A007708D1 /* Heading.m in Sources */,
 				82AD8A7B17F9C6E700859D26 /* CaptionStore.m in Sources */,
 				8215C33617E004B900ABB0E6 /* HTMLElement.m in Sources */,
+				827E347217FD9FAB00A6B82D /* Endnote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

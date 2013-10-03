@@ -94,10 +94,18 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
     }
     
     if (self.mathJax || self.inlineMath) {
+        //CDN
+//        [result appendString:[HTMLStringBuilder
+//                              openTag:@"script"
+//                              attributes:@{@"type": @"text/javascript",
+//                                           @"src": @"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"}
+//                              indentation:2
+//                              lineBreak:NO]];
+        // Local
         [result appendString:[HTMLStringBuilder
                               openTag:@"script"
                               attributes:@{@"type": @"text/javascript",
-                                           @"src": @"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"}
+                                           @"src": @"MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"}
                               indentation:2
                               lineBreak:NO]];
         [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
@@ -136,6 +144,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
     [self assemblyNumbering:self];
     [self assemblyCrossReferences:self];
     [self addErrorMessage];
+    [self appendEndnotes];
     [self formatHTMLString:self];
     
     // Write Content to File
@@ -321,6 +330,20 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 }
             }
             
+            // Footnotes
+            if ([element isKindOfClass:[Footnote class]]) {
+                Footnote *footnote = (Footnote*)element;
+                if (!self.footnotes) {
+                    self.footnotes = [NSMutableArray new];
+                }
+                [self.footnotes addObject:footnote];
+                footnote.footnoteNumber = self.footnotes.count;
+                Sup *sup = [Sup new];
+                Text *text = [Text new];
+                text.string = footnote.linkString;
+                [sup addElement:text];
+                [footnote addElement:sup];
+            }
             
             
             [self assemblyNumbering:element];
@@ -392,6 +415,22 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 #pragma mark - Helper
+
+- (void)appendEndnotes {
+    for (Footnote *footnote in self.footnotes) {
+        Endnote *endnote = footnote.endnote;
+        
+        Link *link = [Link new];
+        link.href = endnote.href;
+        Text *text = [Text new];
+        [link addElement:text];
+        text.string = endnote.linkString;
+        link.parent = endnote;
+        [endnote.elements insertObject:link atIndex:0];
+        
+        [self addElement:endnote];
+    }
+}
 
 - (UnorderedList*)lastElementOfTOCForLevel:(int)level {
     UnorderedList *root = [self.tableOfContent.elements lastObject];

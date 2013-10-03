@@ -349,11 +349,27 @@ ul, ol {
     padding-bottom: $paragraphPadding;
 }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   ENDNOTES                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+//.en {
+//    border-top: 1px solid #272822;
+//    margin: 4.6em auto 1.6em auto;
+//    padding-top: 1.6em;
+//}
 
 
+// #fn-1 is always the first endnote
+#fn-1 {
+	padding-top: $paragraphPadding;
+	margin-top: $paragraphPadding;
+	border-top: 1px solid $fontColor;
+}
 
-
-
+.en {
+	padding-bottom: $paragraphPadding;
+}
 
 
 

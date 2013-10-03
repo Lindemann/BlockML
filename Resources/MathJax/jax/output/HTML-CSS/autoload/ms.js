@@ -1,16 +1,56 @@
-/*
- *  /MathJax/jax/output/HTML-CSS/autoload/ms.js
+/* -*- Mode: Javascript; indent-tabs-mode:nil; js-indent-level: 2 -*- */
+/* vim: set ts=2 et sw=2 tw=80: */
+
+/*************************************************************
+ *
+ *  MathJax/jax/output/HTML-CSS/autoload/ms.js
  *  
- *  Copyright (c) 2012 Design Science, Inc.
+ *  Implements the HTML-CSS output for <ms> elements.
  *
- *  Part of the MathJax library.
- *  See http://www.mathjax.org for details.
+ *  ---------------------------------------------------------------------
+ *  
+ *  Copyright (c) 2010-2013 The MathJax Consortium
  * 
- *  Licensed under the Apache License, Version 2.0;
+ *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
- *
+ *  You may obtain a copy of the License at
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
-MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function(){var c="2.0";var a=MathJax.ElementJax.mml,b=MathJax.OutputJax["HTML-CSS"];a.ms.Augment({toHTML:function(e){e=this.HTMLhandleSize(this.HTMLcreateSpan(e));var d=this.getValues("lquote","rquote");var g=this.data.join("");var f=[];if(d.lquote.length===1){f.push(this.HTMLquoteRegExp(d.lquote))}if(d.rquote.length===1){f.push(this.HTMLquoteRegExp(d.rquote))}if(f.length){g=g.replace(RegExp("("+f.join("|")+")","g"),"\\$1")}this.HTMLhandleVariant(e,this.HTMLgetVariant(),d.lquote+g+d.rquote);this.HTMLhandleSpace(e);this.HTMLhandleColor(e);return e},HTMLquoteRegExp:function(d){return d.replace(/([.*+?|{}()\[\]\\])/g,"\\$1")}});a.ms.prototype.defaults.mathvariant="monospace";MathJax.Hub.Startup.signal.Post("HTML-CSS ms Ready");MathJax.Ajax.loadComplete(b.autoloadDir+"/ms.js")});
+MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
+  var VERSION = "2.2";
+  var MML = MathJax.ElementJax.mml,
+      HTMLCSS = MathJax.OutputJax["HTML-CSS"];
+  
+  MML.ms.Augment({
+    toHTML: function (span) {
+      span = this.HTMLhandleSize(this.HTMLcreateSpan(span));
+      var values = this.getValues("lquote","rquote");
+      var text = this.data.join("");  // FIXME:  handle mglyph?
+      var pattern = [];
+      if (values.lquote.length === 1) {pattern.push(this.HTMLquoteRegExp(values.lquote))}
+      if (values.rquote.length === 1) {pattern.push(this.HTMLquoteRegExp(values.rquote))}
+      if (pattern.length) {text = text.replace(RegExp("("+pattern.join("|")+")","g"),"\\$1")}
+      this.HTMLhandleVariant(span,this.HTMLgetVariant(),values.lquote+text+values.rquote);
+      this.HTMLhandleSpace(span);
+      this.HTMLhandleColor(span);
+      return span;
+    },
+    HTMLquoteRegExp: function (string) {
+      return string.replace(/([.*+?|{}()\[\]\\])/g,"\\$1");
+    }
+  });
+  MML.ms.prototype.defaults.mathvariant = 'monospace';
+  
+  MathJax.Hub.Startup.signal.Post("HTML-CSS ms Ready");
+  MathJax.Ajax.loadComplete(HTMLCSS.autoloadDir+"/ms.js");
+
+});
 
