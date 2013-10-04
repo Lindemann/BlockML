@@ -70,6 +70,10 @@
     [stringList addObject:@[[NSNumber numberWithInt:BIB_SB], @"bib["]];
     [stringList addObject:@[[NSNumber numberWithInt:Q_SB], @"q["]];
     [stringList addObject:@[[NSNumber numberWithInt:MATH_SB], @"math["]];
+    [stringList addObject:@[[NSNumber numberWithInt:TABLE_SB], @"table["]];
+    [stringList addObject:@[[NSNumber numberWithInt:TR_SB], @"tr["]];
+    [stringList addObject:@[[NSNumber numberWithInt:TH_SB], @"th["]];
+    [stringList addObject:@[[NSNumber numberWithInt:TD_SB], @"td["]];
     [stringList addObject:@[[NSNumber numberWithInt:TITLE_SB], @"title["]];
     
     /* sqare brackets */

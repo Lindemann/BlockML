@@ -45,6 +45,11 @@ typedef enum {
     H4_SB,      // h4[
     H5_SB,      // h5[
     H6_SB,      // h6[
+        
+    TABLE_SB,   // table[
+    TR_SB,      // tr[
+    TH_SB,      // th[
+    TD_SB,      // td[
     
     UL_SB,      // ul[
     OL_SB,      // ol[

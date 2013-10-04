@@ -32,3 +32,7 @@
 #import "Sup.h"
 #import "Footnote.h"
 #import "Endnote.h"
+#import "Table.h"
+#import "TableRow.h"
+#import "TableData.h"
+#import "TableHeader.h"

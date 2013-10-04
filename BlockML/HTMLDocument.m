@@ -166,7 +166,9 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 [element.parent isKindOfClass:[UnorderedList class]] ||
                 [element.parent isKindOfClass:[OrderedList class]] ||
                 [element.parent isKindOfClass:[Quote class]] ||
-                [element.parent isKindOfClass:[Bibliography class]]) {
+                [element.parent isKindOfClass:[Bibliography class]] ||
+                [element.parent isKindOfClass:[Table class]] ||
+                [element.parent isKindOfClass:[TableRow class]]) {
                 element.closingTagLineBreak = YES;
                 // +1 for body tag
                 element.openTagIndentation = element.parentCount + 1;
@@ -177,7 +179,9 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 [element isKindOfClass:[OrderedList class]] ||
                 [element isKindOfClass:[Image class]] ||
                 [element isKindOfClass:[Quote class]] ||
-                [element isKindOfClass:[Bibliography class]]) {
+                [element isKindOfClass:[Bibliography class]] ||
+                [element isKindOfClass:[Table class]] ||
+                [element isKindOfClass:[TableRow class]]) {
                 element.openTagLineBreak = YES;
                 element.closingTagLineBreak = YES;
                 // +1 for body tag
@@ -292,6 +296,9 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
             
             // Captions
             if ([element isKindOfClass:[Caption class]]) {
+                if (!self.captionsOfSectionsAndDocument) {
+                    self.captionsOfSectionsAndDocument = [NSMutableArray new];
+                }
                 if (self.captionsOfSectionsAndDocument.count == 0) {
                     Captions *captions = [Captions new];
                     [self.captionsOfSectionsAndDocument addObject:captions];
@@ -366,7 +373,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                             for (Caption *caption in captionStore.captionsArray) {
                                 if ([identifier.identfier isEqual:caption.identfier]) {
                                     Text *text = [Text new];
-                                    text.string = [NSString  stringWithFormat:@"%@ %@", caption.description, caption.captionNumber];
+                                    text.string = [NSString stringWithFormat:@"%@ %@", caption.description, caption.captionNumber];
                                     [identifier addElement:text];
                                 }
                             }
@@ -396,12 +403,6 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                         }
                     }
                 }
-                
-                
-                
-                
-                
-                
                 
             }
             [self assemblyCrossReferences:element];

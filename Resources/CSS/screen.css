@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
   font-weight: 400; }
 
 p {
-  padding-bottom: 1.4em; }
+  padding-bottom: 1.6em; }
 
 a, a span {
   text-decoration: none;
@@ -107,7 +107,7 @@ h6 {
   font-weight: 500;
   color: #9fae04;
   border-radius: 10px;
-  margin-bottom: 1.4em; }
+  margin-bottom: 1.6em; }
   .error a {
     color: #c3d605;
     text-decoration: underline; }
@@ -181,14 +181,14 @@ pre {
   width: 100%;
   font-size: 11pt;
   line-height: 1.6em;
-  padding-bottom: 1.4em; }
+  padding-bottom: 1.6em; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    IMAGE                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 img {
   max-width: 100%;
-  padding-bottom: 1.4em;
+  padding-bottom: 1.6em;
   display: block;
   margin: 0 auto; }
 
@@ -196,7 +196,7 @@ img {
 /*                                     LIST                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 ul, ol {
-  padding: 0 0 1.4em 1.4em; }
+  padding: 0 0 1.6em 1.4em; }
   ul ul, ul ol, ol ul, ol ol {
     padding: 0 0 0 2em; }
 
@@ -208,7 +208,7 @@ ul, ol {
   margin: 0 auto;
   width: 80%;
   text-align: center;
-  padding-bottom: 1.4em; }
+  padding-bottom: 1.6em; }
   .cap span {
     font-weight: 600; }
 
@@ -216,7 +216,7 @@ ul, ol {
 /*                                 BIBLIOGRAPHY                               */
 /*////////////////////////////////////////////////////////////////////////////*/
 .bib {
-  padding-bottom: 1.4em; }
+  padding-bottom: 1.6em; }
   .bib > a {
     position: absolute;
     /* needed to break long links */
@@ -258,15 +258,41 @@ ul, ol {
 /*                                     MATH                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 .math {
-  padding-bottom: 1.4em; }
+  padding-bottom: 1.6em; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                   ENDNOTES                                 */
 /*////////////////////////////////////////////////////////////////////////////*/
 #fn-1 {
-  padding-top: 1.4em;
-  margin-top: 1.4em;
+  padding-top: 1.6em;
+  margin-top: 1.6em;
   border-top: 1px solid #575756; }
 
 .en {
-  padding-bottom: 1.4em; }
+  padding-bottom: 1.6em; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    TABLE                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+table {
+  margin-bottom: 1.6em;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+table, td, td {
+  padding: 0 10px; }
+  table :last-child, td :last-child, td :last-child {
+    padding-bottom: 0; }
+
+td, th {
+  border: 1px solid #bdbdbc;
+  height: 40px; }
+
+th {
+  background: #f0f0ef; }
+  th * {
+    font-weight: 600; }
+
+td {
+  background: #fafafa; }

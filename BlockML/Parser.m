@@ -118,6 +118,7 @@
     [self bibliography:parent];
     [self quote:parent];
     [self math:parent];
+    [self table:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -745,6 +746,113 @@
         }
     }
 }
+
+- (void)table:(HTMLElement*)parent {
+    // table[
+    if (self.token.type == TABLE_SB) {
+        Table *table = [Table new];
+        [parent addElement:table];
+        [self nextToken];
+        // tableRow
+        while (self.token.type == TR_SB) {
+            [self tableRow:table];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Table"];
+        }
+    }
+}
+
+- (void)tableRow:(HTMLElement*)parent {
+    // tr[
+    if (self.token.type == TR_SB) {
+        TableRow *tableRow = [TableRow new];
+        [parent addElement:tableRow];
+        [self nextToken];
+        // TableHeader || TableData
+        while (self.token.type == TH_SB ||
+               self.token.type == TD_SB) {
+            [self tableHeader:tableRow];
+            [self tableData:tableRow];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Table Row"];
+        }
+    }
+}
+
+- (void)tableHeader:(HTMLElement*)parent {
+    // th[
+    if (self.token.type == TH_SB) {
+        TableHeader *tableHeader = [TableHeader new];
+        [parent addElement:tableHeader];
+        [self nextToken];
+        // Document
+        [self documentWithParent:tableHeader];
+//        // STRING
+//        if (self.token.type == STRING) {
+//            Text *text = [Text new];
+//            text.string = self.token.value;
+//            
+//            [self nextToken];
+//        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Table Header"];
+        }
+    }
+}
+
+- (void)tableData:(HTMLElement*)parent {
+    // td[
+    if (self.token.type == TD_SB) {
+        TableData *tableData = [TableData new];
+        [parent addElement:tableData];
+        [self nextToken];
+        // Document
+        [self documentWithParent:tableData];
+//        // STRING
+//        if (self.token.type == STRING) {
+//            Text *text = [Text new];
+//            text.string = self.token.value;
+//            [self nextToken];
+//        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Table"];
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

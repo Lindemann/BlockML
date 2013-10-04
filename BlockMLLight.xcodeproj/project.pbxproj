@@ -38,6 +38,10 @@
 		827E346F17FD9F9900A6B82D /* Footnote.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E346E17FD9F9800A6B82D /* Footnote.m */; };
 		827E347217FD9FAB00A6B82D /* Endnote.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E347117FD9FAB00A6B82D /* Endnote.m */; };
 		827E347517FD9FF500A6B82D /* Sup.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E347417FD9FF500A6B82D /* Sup.m */; };
+		827E347817FEE3E500A6B82D /* TableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E347717FEE3E500A6B82D /* TableRow.m */; };
+		827E347B17FEE3FE00A6B82D /* TableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E347A17FEE3FE00A6B82D /* TableData.m */; };
+		827E347E17FEE40F00A6B82D /* TableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E347D17FEE40F00A6B82D /* TableHeader.m */; };
+		827E348117FF405100A6B82D /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E348017FF405100A6B82D /* Table.m */; };
 		82AD8A6517F4941700859D26 /* InlineCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6417F4941700859D26 /* InlineCode.m */; };
 		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
 		82AD8A6B17F5F4D600859D26 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6A17F5F4D600859D26 /* Image.m */; };
@@ -123,6 +127,14 @@
 		827E347117FD9FAB00A6B82D /* Endnote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Endnote.m; sourceTree = "<group>"; };
 		827E347317FD9FF500A6B82D /* Sup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sup.h; sourceTree = "<group>"; };
 		827E347417FD9FF500A6B82D /* Sup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sup.m; sourceTree = "<group>"; };
+		827E347617FEE3E500A6B82D /* TableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableRow.h; sourceTree = "<group>"; };
+		827E347717FEE3E500A6B82D /* TableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableRow.m; sourceTree = "<group>"; };
+		827E347917FEE3FE00A6B82D /* TableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableData.h; sourceTree = "<group>"; };
+		827E347A17FEE3FE00A6B82D /* TableData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableData.m; sourceTree = "<group>"; };
+		827E347C17FEE40F00A6B82D /* TableHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableHeader.h; sourceTree = "<group>"; };
+		827E347D17FEE40F00A6B82D /* TableHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableHeader.m; sourceTree = "<group>"; };
+		827E347F17FF405100A6B82D /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
+		827E348017FF405100A6B82D /* Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Table.m; sourceTree = "<group>"; };
 		82AD8A6317F4941700859D26 /* InlineCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlineCode.h; sourceTree = "<group>"; };
 		82AD8A6417F4941700859D26 /* InlineCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlineCode.m; sourceTree = "<group>"; };
 		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
@@ -369,6 +381,14 @@
 		827E346B17FD9F5100A6B82D /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				827E347F17FF405100A6B82D /* Table.h */,
+				827E348017FF405100A6B82D /* Table.m */,
+				827E347617FEE3E500A6B82D /* TableRow.h */,
+				827E347717FEE3E500A6B82D /* TableRow.m */,
+				827E347917FEE3FE00A6B82D /* TableData.h */,
+				827E347A17FEE3FE00A6B82D /* TableData.m */,
+				827E347C17FEE40F00A6B82D /* TableHeader.h */,
+				827E347D17FEE40F00A6B82D /* TableHeader.m */,
 			);
 			name = Table;
 			sourceTree = "<group>";
@@ -607,10 +627,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8214B0EE17EFFE9D00DF4061 /* Error.m in Sources */,
+				827E347817FEE3E500A6B82D /* TableRow.m in Sources */,
 				82DEC50217E975B1007708D1 /* Link.m in Sources */,
 				82AD8A7817F9C5E900859D26 /* Captions.m in Sources */,
 				82DEC4FB17E609D9007708D1 /* Text.m in Sources */,
 				827E346F17FD9F9900A6B82D /* Footnote.m in Sources */,
+				827E348117FF405100A6B82D /* Table.m in Sources */,
 				82DEC51217EDDB36007708D1 /* UnorderedList.m in Sources */,
 				8215C33917E004CD00ABB0E6 /* HTMLDocument.m in Sources */,
 				82DEC50F17EBF7A9007708D1 /* TableOfContent.m in Sources */,
@@ -627,10 +649,12 @@
 				8215C33317E0046D00ABB0E6 /* HTMLStringBuilder.m in Sources */,
 				82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */,
 				82080F75172D1C1F008ABC58 /* Scanner.m in Sources */,
+				827E347B17FEE3FE00A6B82D /* TableData.m in Sources */,
 				82AD8A8417FCB99B00859D26 /* Quote.m in Sources */,
 				82080F77172D1C1F008ABC58 /* Parser.m in Sources */,
 				82AD8A6517F4941700859D26 /* InlineCode.m in Sources */,
 				827E347517FD9FF500A6B82D /* Sup.m in Sources */,
+				827E347E17FEE40F00A6B82D /* TableHeader.m in Sources */,
 				82DEC50B17EBF73A007708D1 /* Section.m in Sources */,
 				8214B0EB17EFED6100DF4061 /* Span.m in Sources */,
 				8208100E172DCD1F008ABC58 /* DropView.m in Sources */,
