@@ -123,6 +123,7 @@
     [self tableData:parent];
     [self tableHeader:parent];
     [self tableRow:parent];
+    [self heading:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -881,9 +882,49 @@
     }
 }
 
-
-
-
+- (void)heading:(HTMLElement*)parent {
+    // title[
+    if (self.token.type >= H1_SB && self.token.type <= H6_SB) {
+        Heading *heading = [Heading new];
+        [parent addElement:heading];
+        switch (self.token.type) {
+            case H1_SB:
+                heading.level = 1;
+                break;
+            case H2_SB:
+                heading.level = 2;
+                break;
+            case H3_SB:
+                heading.level = 3;
+                break;
+            case H4_SB:
+                heading.level = 4;
+                break;
+            case H5_SB:
+                heading.level = 5;
+                break;
+            case H6_SB:
+                heading.level = 6;
+                break;
+            default:
+                break;
+        }
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            Text *text = [Text new];
+            text.string = self.token.value;
+            [heading addElement:text];
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Heading"];
+        }
+    }
+}
 
 
 

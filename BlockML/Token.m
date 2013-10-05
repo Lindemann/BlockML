@@ -74,6 +74,12 @@
     [stringList addObject:@[[NSNumber numberWithInt:TR_SB], @"tr["]];
     [stringList addObject:@[[NSNumber numberWithInt:TH_SB], @"th["]];
     [stringList addObject:@[[NSNumber numberWithInt:TD_SB], @"td["]];
+    [stringList addObject:@[[NSNumber numberWithInt:H1_SB], @"h1["]];
+    [stringList addObject:@[[NSNumber numberWithInt:H2_SB], @"h2["]];
+    [stringList addObject:@[[NSNumber numberWithInt:H3_SB], @"h3["]];
+    [stringList addObject:@[[NSNumber numberWithInt:H4_SB], @"h4["]];
+    [stringList addObject:@[[NSNumber numberWithInt:H5_SB], @"h5["]];
+    [stringList addObject:@[[NSNumber numberWithInt:H6_SB], @"h6["]];
     [stringList addObject:@[[NSNumber numberWithInt:TITLE_SB], @"title["]];
     
     /* sqare brackets */
