@@ -309,6 +309,7 @@ ul, ol {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 .quote {
+	padding-bottom: $paragraphPadding;
 	font-style: italic;
 	@include centerWithWidth(70%);
 

@@ -334,6 +334,8 @@
     // The stack is sufficent for the "special cases"
     if ([self isRealTag:element]) {
         [self.openTags addObject:[NSNumber numberWithInt:self.token.type]];
+        // When a new Tag is open the lastAndProbablyStillOpenTag is definitely closed
+        self.lastAndProbablyStillOpenTag = 666;
     }
     // Remove tags from the stack, when the tag became closed by a "]"
     // Preserve tag for the case that he was not really closed like in "a[][]"

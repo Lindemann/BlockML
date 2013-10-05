@@ -231,6 +231,7 @@ ul, ol {
 /*                                	BLOCKQUOTE                                */
 /*////////////////////////////////////////////////////////////////////////////*/
 .quote {
+  padding-bottom: 1.6em;
   font-style: italic;
   display: block;
   margin: 0 auto;
