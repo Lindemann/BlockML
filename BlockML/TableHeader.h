@@ -7,7 +7,8 @@
 //
 
 #import "HTMLElement.h"
+#import "TableCell.h"
 
-@interface TableHeader : HTMLElement
+@interface TableHeader : TableCell
 
 @end

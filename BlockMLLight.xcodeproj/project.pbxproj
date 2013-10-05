@@ -42,6 +42,7 @@
 		827E347B17FEE3FE00A6B82D /* TableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E347A17FEE3FE00A6B82D /* TableData.m */; };
 		827E347E17FEE40F00A6B82D /* TableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E347D17FEE40F00A6B82D /* TableHeader.m */; };
 		827E348117FF405100A6B82D /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E348017FF405100A6B82D /* Table.m */; };
+		827E348417FF8C3C00A6B82D /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E348317FF8C3C00A6B82D /* TableCell.m */; };
 		82AD8A6517F4941700859D26 /* InlineCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6417F4941700859D26 /* InlineCode.m */; };
 		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
 		82AD8A6B17F5F4D600859D26 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6A17F5F4D600859D26 /* Image.m */; };
@@ -135,6 +136,8 @@
 		827E347D17FEE40F00A6B82D /* TableHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableHeader.m; sourceTree = "<group>"; };
 		827E347F17FF405100A6B82D /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
 		827E348017FF405100A6B82D /* Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Table.m; sourceTree = "<group>"; };
+		827E348217FF8C3C00A6B82D /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
+		827E348317FF8C3C00A6B82D /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
 		82AD8A6317F4941700859D26 /* InlineCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlineCode.h; sourceTree = "<group>"; };
 		82AD8A6417F4941700859D26 /* InlineCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlineCode.m; sourceTree = "<group>"; };
 		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
@@ -389,6 +392,8 @@
 				827E347A17FEE3FE00A6B82D /* TableData.m */,
 				827E347C17FEE40F00A6B82D /* TableHeader.h */,
 				827E347D17FEE40F00A6B82D /* TableHeader.m */,
+				827E348217FF8C3C00A6B82D /* TableCell.h */,
+				827E348317FF8C3C00A6B82D /* TableCell.m */,
 			);
 			name = Table;
 			sourceTree = "<group>";
@@ -664,6 +669,7 @@
 				82DEC50817EBF27A007708D1 /* Heading.m in Sources */,
 				82AD8A7B17F9C6E700859D26 /* CaptionStore.m in Sources */,
 				8215C33617E004B900ABB0E6 /* HTMLElement.m in Sources */,
+				827E348417FF8C3C00A6B82D /* TableCell.m in Sources */,
 				827E347217FD9FAB00A6B82D /* Endnote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

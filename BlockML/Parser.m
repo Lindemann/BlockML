@@ -119,6 +119,10 @@
     [self quote:parent];
     [self math:parent];
     [self table:parent];
+    // Not realy Block Tags but keep parsing
+    [self tableData:parent];
+    [self tableHeader:parent];
+    [self tableRow:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -795,16 +799,37 @@
         [self nextToken];
         // Document
         [self documentWithParent:tableHeader];
-//        // STRING
-//        if (self.token.type == STRING) {
-//            Text *text = [Text new];
-//            text.string = self.token.value;
-//            
-//            [self nextToken];
-//        }
         // ]
         if (self.token.type == CLOSE_SB) {
             [self nextToken];
+            // [
+            if (self.token.type == OPEN_SB) {
+                [self nextToken];
+                // STRING
+                if (self.token.type == STRING) {
+                    NSRange searchStringRange = [self.token.value rangeOfString:@":" options:NSCaseInsensitiveSearch];
+                    if (searchStringRange.location != NSNotFound) {
+                        NSString *tmpIntValue = [[self.token.value componentsSeparatedByString:@":"] objectAtIndex:0];
+                        if ([tmpIntValue isEqual:@"v"]) {
+                            tableHeader.spanDirection = VERTICAL;
+                        }
+                        if ([tmpIntValue isEqual:@"h"]) {
+                            tableHeader.spanDirection = HORIZONTAL;
+                        }
+                        tmpIntValue = [[self.token.value componentsSeparatedByString:@":"] objectAtIndex:1];
+                        tableHeader.spanWidth = [tmpIntValue intValue];
+                    } else {
+                        [self errorWithParent:parent andErrorMessage:@"Table Header"];
+                    }
+                    [self nextToken];
+                }
+                // ]
+                if (self.token.type == CLOSE_SB) {
+                    [self nextToken];
+                } else {
+                    [self errorWithParent:parent andErrorMessage:@"Table Header"];
+                }
+            }
         } else {
             [self errorWithParent:parent andErrorMessage:@"Table Header"];
         }
@@ -819,17 +844,39 @@
         [self nextToken];
         // Document
         [self documentWithParent:tableData];
-//        // STRING
-//        if (self.token.type == STRING) {
-//            Text *text = [Text new];
-//            text.string = self.token.value;
-//            [self nextToken];
-//        }
         // ]
         if (self.token.type == CLOSE_SB) {
             [self nextToken];
+            // [
+            if (self.token.type == OPEN_SB) {
+                [self nextToken];
+                // STRING
+                if (self.token.type == STRING) {
+                    NSRange searchStringRange = [self.token.value rangeOfString:@":" options:NSCaseInsensitiveSearch];
+                    if (searchStringRange.location != NSNotFound) {
+                        NSString *tmpIntValue = [[self.token.value componentsSeparatedByString:@":"] objectAtIndex:0];
+                        if ([tmpIntValue isEqual:@"v"]) {
+                            tableData.spanDirection = VERTICAL;
+                        }
+                        if ([tmpIntValue isEqual:@"h"]) {
+                            tableData.spanDirection = HORIZONTAL;
+                        }
+                        tmpIntValue = [[self.token.value componentsSeparatedByString:@":"] objectAtIndex:1];
+                        tableData.spanWidth = [tmpIntValue intValue];
+                    } else {
+                        [self errorWithParent:parent andErrorMessage:@"Table Data"];
+                    }
+                    [self nextToken];
+                }
+                // ]
+                if (self.token.type == CLOSE_SB) {
+                    [self nextToken];
+                } else {
+                    [self errorWithParent:parent andErrorMessage:@"Table Data"];
+                }
+            }
         } else {
-            [self errorWithParent:parent andErrorMessage:@"Table"];
+            [self errorWithParent:parent andErrorMessage:@"Table Data"];
         }
     }
 }

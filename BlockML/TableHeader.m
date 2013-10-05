@@ -12,6 +12,12 @@
 
 - (NSString*)openTag {
     NSMutableString *result = [NSMutableString new];
+    if (self.spanDirection == VERTICAL) {
+        [self.attributes setValue:[NSString  stringWithFormat:@"%d",self.spanWidth] forKey:@"rowspan"];
+    }
+    if (self.spanDirection == HORIZONTAL) {
+        [self.attributes setValue:[NSString  stringWithFormat:@"%d",self.spanWidth] forKey:@"colspan"];
+    }
     [result appendString:[HTMLStringBuilder openTag:@"th" attributes:self.attributes indentation:self.openTagIndentation lineBreak:self.openTagLineBreak]];
     return result;
 }
