@@ -14,7 +14,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [self.recompileButton setHidden:YES];
-    
+
     // Remove this!
     self.fileURL = [NSURL fileURLWithPath:@"/Users/LINDEMANN/Desktop/test.txt"];
     [self processFile];

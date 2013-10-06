@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "82080F21172D0CEE008ABC58"
-               BuildableName = "BlockMLLight.app"
-               BlueprintName = "BlockMLLight"
-               ReferencedContainer = "container:BlockMLLight.xcodeproj">
+               BuildableName = "BlockML.app"
+               BlueprintName = "BlockML"
+               ReferencedContainer = "container:BlockML.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "82080F41172D0CEF008ABC58"
-               BuildableName = "BlockMLLightTests.octest"
-               BlueprintName = "BlockMLLightTests"
-               ReferencedContainer = "container:BlockMLLight.xcodeproj">
+               BuildableName = "BlockMLTests.octest"
+               BlueprintName = "BlockMLTests"
+               ReferencedContainer = "container:BlockML.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "82080F21172D0CEE008ABC58"
-            BuildableName = "BlockMLLight.app"
-            BlueprintName = "BlockMLLight"
-            ReferencedContainer = "container:BlockMLLight.xcodeproj">
+            BuildableName = "BlockML.app"
+            BlueprintName = "BlockML"
+            ReferencedContainer = "container:BlockML.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "82080F21172D0CEE008ABC58"
-            BuildableName = "BlockMLLight.app"
-            BlueprintName = "BlockMLLight"
-            ReferencedContainer = "container:BlockMLLight.xcodeproj">
+            BuildableName = "BlockML.app"
+            BlueprintName = "BlockML"
+            ReferencedContainer = "container:BlockML.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "82080F21172D0CEE008ABC58"
-            BuildableName = "BlockMLLight.app"
-            BlueprintName = "BlockMLLight"
-            ReferencedContainer = "container:BlockMLLight.xcodeproj">
+            BuildableName = "BlockML.app"
+            BlueprintName = "BlockML"
+            ReferencedContainer = "container:BlockML.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

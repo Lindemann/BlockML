@@ -308,12 +308,12 @@ td {
 
 .code {
   font-family: "Source Code Pro", monospace;
-  font-size: 13pt;
+  font-size: 12pt;
   font-weight: 500;
-  background-color: #f0f0ef;
+  background-color: #f7f7f7;
   padding: 0 0.3em;
   -webkit-border-radius: 3px;
-  border: solid #bdbdbc 1px; }
+  border: solid #d6d6d6 1px; }
 
 .italic {
   font-style: italic; }
@@ -327,9 +327,9 @@ td {
 .frontpage {
   text-align: center;
   padding-bottom: 60px; }
-  .frontpage #title, .frontpage img {
+  .frontpage img {
     padding-bottom: 0; }
   .frontpage h6 {
     color: #a4a4a2; }
-  .frontpage h1, .frontpage h2, .frontpage h3, .frontpage h4, .frontpage h5, .frontpage h6 {
-    padding: 0 0; }
+  .frontpage h1, .frontpage h2, .frontpage h3, .frontpage h4, .frontpage h5, .frontpage h6, .frontpage #title {
+    padding: 0.2em 0; }
