@@ -14,10 +14,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [self.recompileButton setHidden:YES];
+    [self.recompileMenuItem setEnabled:NO];
 
     // Remove this!
-    self.fileURL = [NSURL fileURLWithPath:@"/Users/LINDEMANN/Desktop/test.txt"];
-    [self processFile];
+//    self.fileURL = [NSURL fileURLWithPath:@"/Users/LINDEMANN/Desktop/test.txt"];
+//    [self processFile];
     // Really! Remove this!
 }
 
@@ -65,6 +66,7 @@
     [self.progessIndicator startAnimation:self];
     [self.recompileButton setEnabled:NO];
     [self.recompileButton setHidden:NO];
+    [self.recompileMenuItem setEnabled:YES];
     
     Parser *parser = [Parser parserWithString:content];
     parser.document.HTMLURL = self.HTMLURL;
@@ -103,6 +105,10 @@
 }
 
 - (IBAction)recompileButtonWasPressed:(id)sender {
+    [self processFile];
+}
+
+- (IBAction)recompileMenuItemWasPressed:(id)sender {
     [self processFile];
 }
 

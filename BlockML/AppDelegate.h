@@ -14,11 +14,13 @@
 @property (weak) IBOutlet NSProgressIndicator *progessIndicator;
 @property (weak) IBOutlet NSButton *recompileButton;
 @property (weak) IBOutlet NSTextField *fileNameTextField;
+@property (weak) IBOutlet NSMenuItem *recompileMenuItem;
 
 @property (strong) NSURL *fileURL; // Text File
 @property (strong) NSURL *HTMLURL;
 
 - (IBAction)recompileButtonWasPressed:(id)sender;
+- (IBAction)recompileMenuItemWasPressed:(id)sender;
 - (void)processFile;
 
 @end

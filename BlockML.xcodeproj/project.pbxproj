@@ -56,6 +56,7 @@
 		82AD8A8417FCB99B00859D26 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A8317FCB99B00859D26 /* Quote.m */; };
 		82AD8A8717FCB9B000859D26 /* Source.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A8617FCB9B000859D26 /* Source.m */; };
 		82AD8A8B17FD70BD00859D26 /* Math.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A8A17FD70BD00859D26 /* Math.m */; };
+		82B09F0C18021F4800F33625 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B09F0B18021F4800F33625 /* Images.xcassets */; };
 		82DEC4FB17E609D9007708D1 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FA17E609D9007708D1 /* Text.m */; };
 		82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FD17E609F8007708D1 /* LineBreak.m */; };
 		82DEC50217E975B1007708D1 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC50117E975B1007708D1 /* Link.m */; };
@@ -166,6 +167,7 @@
 		82AD8A8617FCB9B000859D26 /* Source.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Source.m; sourceTree = "<group>"; };
 		82AD8A8917FD70BD00859D26 /* Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Math.h; sourceTree = "<group>"; };
 		82AD8A8A17FD70BD00859D26 /* Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Math.m; sourceTree = "<group>"; };
+		82B09F0B18021F4800F33625 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		82DEC4F917E609D9007708D1 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		82DEC4FA17E609D9007708D1 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
 		82DEC4FC17E609F8007708D1 /* LineBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineBreak.h; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				82080F79172D1DCE008ABC58 /* HTMLTree */,
 				82080F6B172D17D7008ABC58 /* Compiler */,
 				8208100B172DCCA4008ABC58 /* UI */,
+				82B09F0B18021F4800F33625 /* Images.xcassets */,
 				82080F2C172D0CEE008ABC58 /* Supporting Files */,
 			);
 			path = BlockML;
@@ -623,6 +626,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82B09F0C18021F4800F33625 /* Images.xcassets in Resources */,
 				82080F30172D0CEE008ABC58 /* InfoPlist.strings in Resources */,
 				82080F36172D0CEE008ABC58 /* Credits.rtf in Resources */,
 				82080F3C172D0CEE008ABC58 /* MainMenu.xib in Resources */,
@@ -828,6 +832,7 @@
 		82080F54172D0CEF008ABC58 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BlockML/BlockML-Prefix.pch";
@@ -840,6 +845,7 @@
 		82080F55172D0CEF008ABC58 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BlockML/BlockML-Prefix.pch";
