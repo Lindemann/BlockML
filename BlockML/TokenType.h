@@ -23,15 +23,12 @@ typedef enum {
     
     HTML_SB,    // html[
     
-    C_SB,       // c[
-    
     B_SB,       // b[
-    
+    C_SB,       // c[
     I_SB,       // i[
-    
-    U_SB,       // u[
-    
     M_SB,       // m[
+    S_SB,       // s[
+    U_SB,       // u[
     
     IM_SB,      // im[
     
@@ -45,7 +42,7 @@ typedef enum {
     H4_SB,      // h4[
     H5_SB,      // h5[
     H6_SB,      // h6[
-        
+    
     TABLE_SB,   // table[
     TR_SB,      // tr[
     TH_SB,      // th[
@@ -72,7 +69,7 @@ typedef enum {
     
     PB_SB,      // pb[
     
-    FRONTPAGE_SB,// frontpage[
+    FP_SB,// frontpage[
     
     TITLE_SB,    // title[
     

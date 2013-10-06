@@ -110,23 +110,23 @@ h1 {
 }
 
 h2 {
-	font-size: 22pt;
+	font-size: 26pt;
 }
 
 h3 {
-	font-size: 18pt;
+	font-size: 24pt;
 }
 
 h4 {
-	font-size: 16pt;
+	font-size: 22pt;
 }
 
 h5 {
-	font-size: 14pt;
+	font-size: 20pt;
 }
 
 h6 {
-	font-size: 12pt;
+	font-size: 18pt;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -175,7 +175,6 @@ h6 {
 
 #toc {
 	padding-bottom: $generalPadding;
-
 	ul {
 		list-style: none;
 		/* List should start on the left edge */
@@ -206,8 +205,6 @@ h6 {
 	}
 	a {
 		float: right;
-		@include backgroundArea(0.4em, 0em);
-
 		display: block;
 		height: 100%;
 
@@ -220,6 +217,8 @@ h6 {
 			/* Move the Text to the bottom of List */
 			position: absolute; 
 			bottom: 0;
+			right: 0;
+			@include backgroundArea(0.3em, 0em);
 		}
 	}
 }
@@ -230,13 +229,6 @@ h6 {
 
 code {
 	font-family:"Source Code Pro", monospace;
-}
-
-.inlineCode {
-	font-size: 13pt;
-	font-weight: 500;
-	background-color: lighten($fontColor, 60%);
-	padding: 0 0.3em;
 }
 
 pre {
@@ -357,7 +349,7 @@ ul, ol {
 // #fn-1 is always the first endnote
 #fn-1 {
 	padding-top: $paragraphPadding;
-	margin-top: $paragraphPadding;
+	margin-top: $generalPadding;
 	border-top: 1px solid $fontColor;
 }
 
@@ -399,65 +391,57 @@ td {
 	background: lighten($fontColor, 64%);
 }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                             STYLE MODIFIER                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
 
+.marked {
+	background-color: $selectionColor;
+	padding: 0 0.3em;
+}
 
+.bold {
+	font-weight: 600;
+}
 
+.underline {
+	text-decoration: underline;
+}
 
+.code {
+	font-family:"Source Code Pro", monospace;
+	font-size: 13pt;
+	font-weight: 500;
+	background-color: lighten($fontColor, 60%);
+	padding: 0 0.3em;
 
+	-webkit-border-radius: 3px;
+	border: solid lighten($fontColor, 40%) 1px;
+}
 
+.italic {
+	font-style: italic;
+}
 
+.strikethrough {
+	text-decoration: line-through;
+}
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                	FRONTPAGE                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.frontpage {
+	text-align: center;
+	padding-bottom: $generalPadding;
+	#title, img, {
+		padding-bottom: 0;
+	}
+	h6 {
+		color: lighten($fontColor, 30%);
+	}
+	h1, h2, h3, h4, h5, h6 {
+		padding: 0 0;
+	}
+}
 

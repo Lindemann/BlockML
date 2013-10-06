@@ -43,7 +43,9 @@
 		827E347E17FEE40F00A6B82D /* TableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E347D17FEE40F00A6B82D /* TableHeader.m */; };
 		827E348117FF405100A6B82D /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E348017FF405100A6B82D /* Table.m */; };
 		827E348417FF8C3C00A6B82D /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E348317FF8C3C00A6B82D /* TableCell.m */; };
-		82AD8A6517F4941700859D26 /* InlineCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6417F4941700859D26 /* InlineCode.m */; };
+		827E3487180067CA00A6B82D /* StyleModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E3486180067CA00A6B82D /* StyleModifier.m */; };
+		827E348D1800EC2300A6B82D /* FrontPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E348C1800EC2300A6B82D /* FrontPage.m */; };
+		827E34901800EC4D00A6B82D /* PageBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E348F1800EC4D00A6B82D /* PageBreak.m */; };
 		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
 		82AD8A6B17F5F4D600859D26 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6A17F5F4D600859D26 /* Image.m */; };
 		82AD8A7217F788E100859D26 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A7117F788E100859D26 /* Caption.m */; };
@@ -138,8 +140,12 @@
 		827E348017FF405100A6B82D /* Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Table.m; sourceTree = "<group>"; };
 		827E348217FF8C3C00A6B82D /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
 		827E348317FF8C3C00A6B82D /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
-		82AD8A6317F4941700859D26 /* InlineCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlineCode.h; sourceTree = "<group>"; };
-		82AD8A6417F4941700859D26 /* InlineCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlineCode.m; sourceTree = "<group>"; };
+		827E3485180067CA00A6B82D /* StyleModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleModifier.h; sourceTree = "<group>"; };
+		827E3486180067CA00A6B82D /* StyleModifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleModifier.m; sourceTree = "<group>"; };
+		827E348B1800EC2300A6B82D /* FrontPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrontPage.h; sourceTree = "<group>"; };
+		827E348C1800EC2300A6B82D /* FrontPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrontPage.m; sourceTree = "<group>"; };
+		827E348E1800EC4D00A6B82D /* PageBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageBreak.h; sourceTree = "<group>"; };
+		827E348F1800EC4D00A6B82D /* PageBreak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageBreak.m; sourceTree = "<group>"; };
 		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
 		82AD8A6717F4CC2200859D26 /* Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Code.m; sourceTree = "<group>"; };
 		82AD8A6917F5F4D600859D26 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -362,10 +368,9 @@
 				827E346A17FD9F4800A6B82D /* Footnote */,
 				827E346C17FD9F6B00A6B82D /* StyleModifier */,
 				827E346B17FD9F5100A6B82D /* Table */,
-				82DEC50017E975B1007708D1 /* Link.h */,
-				82DEC50117E975B1007708D1 /* Link.m */,
-				8214B0E917EFED6100DF4061 /* Span.h */,
-				8214B0EA17EFED6100DF4061 /* Span.m */,
+				827E34911801052800A6B82D /* FrontPage + PageBreak */,
+				827E34921801054D00A6B82D /* Link */,
+				827E34931801055800A6B82D /* Span */,
 			);
 			name = HTMLElements;
 			sourceTree = "<group>";
@@ -403,15 +408,44 @@
 			children = (
 				827E347317FD9FF500A6B82D /* Sup.h */,
 				827E347417FD9FF500A6B82D /* Sup.m */,
+				827E3485180067CA00A6B82D /* StyleModifier.h */,
+				827E3486180067CA00A6B82D /* StyleModifier.m */,
 			);
 			name = StyleModifier;
+			sourceTree = "<group>";
+		};
+		827E34911801052800A6B82D /* FrontPage + PageBreak */ = {
+			isa = PBXGroup;
+			children = (
+				827E348B1800EC2300A6B82D /* FrontPage.h */,
+				827E348C1800EC2300A6B82D /* FrontPage.m */,
+				827E348E1800EC4D00A6B82D /* PageBreak.h */,
+				827E348F1800EC4D00A6B82D /* PageBreak.m */,
+			);
+			name = "FrontPage + PageBreak";
+			sourceTree = "<group>";
+		};
+		827E34921801054D00A6B82D /* Link */ = {
+			isa = PBXGroup;
+			children = (
+				82DEC50017E975B1007708D1 /* Link.h */,
+				82DEC50117E975B1007708D1 /* Link.m */,
+			);
+			name = Link;
+			sourceTree = "<group>";
+		};
+		827E34931801055800A6B82D /* Span */ = {
+			isa = PBXGroup;
+			children = (
+				8214B0E917EFED6100DF4061 /* Span.h */,
+				8214B0EA17EFED6100DF4061 /* Span.m */,
+			);
+			name = Span;
 			sourceTree = "<group>";
 		};
 		82AD8A6217F493F300859D26 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				82AD8A6317F4941700859D26 /* InlineCode.h */,
-				82AD8A6417F4941700859D26 /* InlineCode.m */,
 				82AD8A6617F4CC2200859D26 /* Code.h */,
 				82AD8A6717F4CC2200859D26 /* Code.m */,
 			);
@@ -631,6 +665,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827E348D1800EC2300A6B82D /* FrontPage.m in Sources */,
 				8214B0EE17EFFE9D00DF4061 /* Error.m in Sources */,
 				827E347817FEE3E500A6B82D /* TableRow.m in Sources */,
 				82DEC50217E975B1007708D1 /* Link.m in Sources */,
@@ -648,6 +683,7 @@
 				82AD8A8B17FD70BD00859D26 /* Math.m in Sources */,
 				82AD8A7217F788E100859D26 /* Caption.m in Sources */,
 				82080F39172D0CEE008ABC58 /* AppDelegate.m in Sources */,
+				827E3487180067CA00A6B82D /* StyleModifier.m in Sources */,
 				82080F73172D1C1F008ABC58 /* Token.m in Sources */,
 				82DEC51817EDDB5C007708D1 /* ListItem.m in Sources */,
 				82AD8A6817F4CC2200859D26 /* Code.m in Sources */,
@@ -657,7 +693,7 @@
 				827E347B17FEE3FE00A6B82D /* TableData.m in Sources */,
 				82AD8A8417FCB99B00859D26 /* Quote.m in Sources */,
 				82080F77172D1C1F008ABC58 /* Parser.m in Sources */,
-				82AD8A6517F4941700859D26 /* InlineCode.m in Sources */,
+				827E34901800EC4D00A6B82D /* PageBreak.m in Sources */,
 				827E347517FD9FF500A6B82D /* Sup.m in Sources */,
 				827E347E17FEE40F00A6B82D /* TableHeader.m in Sources */,
 				82DEC50B17EBF73A007708D1 /* Section.m in Sources */,

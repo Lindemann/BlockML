@@ -74,19 +74,19 @@ h1 {
   font-size: 28pt; }
 
 h2 {
-  font-size: 22pt; }
+  font-size: 26pt; }
 
 h3 {
-  font-size: 18pt; }
+  font-size: 24pt; }
 
 h4 {
-  font-size: 16pt; }
+  font-size: 22pt; }
 
 h5 {
-  font-size: 14pt; }
+  font-size: 20pt; }
 
 h6 {
-  font-size: 12pt; }
+  font-size: 18pt; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    TITLE                                   */
@@ -146,11 +146,6 @@ h6 {
         bottom: -0.4em; }
   #toc a {
     float: right;
-    /* Make a white box around the text to hide the background dots */
-    height: 1.6em;
-    padding-left: 0.4em;
-    padding-right: 0em;
-    background-color: white;
     display: block;
     height: 100%;
     position: absolute;
@@ -160,19 +155,19 @@ h6 {
     #toc a span {
       /* Move the Text to the bottom of List */
       position: absolute;
-      bottom: 0; }
+      bottom: 0;
+      right: 0;
+      /* Make a white box around the text to hide the background dots */
+      height: 1.6em;
+      padding-left: 0.3em;
+      padding-right: 0em;
+      background-color: white; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                   CODE                                     */
 /*////////////////////////////////////////////////////////////////////////////*/
 code {
   font-family: "Source Code Pro", monospace; }
-
-.inlineCode {
-  font-size: 13pt;
-  font-weight: 500;
-  background-color: #f0f0ef;
-  padding: 0 0.3em; }
 
 pre {
   /* Creepy behavior of pre require use of CSS Tables*/
@@ -266,7 +261,7 @@ ul, ol {
 /*////////////////////////////////////////////////////////////////////////////*/
 #fn-1 {
   padding-top: 1.6em;
-  margin-top: 1.6em;
+  margin-top: 60px;
   border-top: 1px solid #575756; }
 
 .en {
@@ -297,3 +292,44 @@ th {
 
 td {
   background: #fafafa; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                             STYLE MODIFIER                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+.marked {
+  background-color: #f1fc82;
+  padding: 0 0.3em; }
+
+.bold {
+  font-weight: 600; }
+
+.underline {
+  text-decoration: underline; }
+
+.code {
+  font-family: "Source Code Pro", monospace;
+  font-size: 13pt;
+  font-weight: 500;
+  background-color: #f0f0ef;
+  padding: 0 0.3em;
+  -webkit-border-radius: 3px;
+  border: solid #bdbdbc 1px; }
+
+.italic {
+  font-style: italic; }
+
+.strikethrough {
+  text-decoration: line-through; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                	FRONTPAGE                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+.frontpage {
+  text-align: center;
+  padding-bottom: 60px; }
+  .frontpage #title, .frontpage img {
+    padding-bottom: 0; }
+  .frontpage h6 {
+    color: #a4a4a2; }
+  .frontpage h1, .frontpage h2, .frontpage h3, .frontpage h4, .frontpage h5, .frontpage h6 {
+    padding: 0 0; }

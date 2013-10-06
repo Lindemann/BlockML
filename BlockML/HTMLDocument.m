@@ -27,7 +27,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
 - (id)init {
     self = [super init];
     if (self) {
-        self.title = @"BlockML ▲ ▲ ▲ ";
+        self.title = @"BlockML";
     }
     return self;
 }
@@ -45,12 +45,14 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                                        @"content": @"text/html; charset=UTF-8"}
                           indentation:2
                           lineBreak:YES]];
-    [result appendString:[HTMLStringBuilder
-                          openTag:@"meta"
-                          attributes:@{@"name": @"viewport",
-                                       @"content": @"width=device-width, initial-scale=1, maximum-scale=1"}
-                          indentation:2
-                          lineBreak:YES]];
+    
+//    [result appendString:[HTMLStringBuilder
+//                          openTag:@"meta"
+//                          attributes:@{@"name": @"viewport",
+//                                       @"content": @"width=device-width, initial-scale=1, maximum-scale=1"}
+//                          indentation:2
+//                          lineBreak:YES]];
+    
     [result appendString:[HTMLStringBuilder
                           openTag:@"link"
                           attributes:@{HREF: @"images/favicon.ico",
@@ -170,7 +172,8 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 [element.parent isKindOfClass:[Table class]] ||
                 [element.parent isKindOfClass:[TableRow class]] ||
                 [element.parent isKindOfClass:[TableHeader class]] ||
-                [element.parent isKindOfClass:[TableData class]]) {
+                [element.parent isKindOfClass:[TableData class]] ||
+                [element.parent isKindOfClass:[FrontPage class]]) {
                 element.closingTagLineBreak = YES;
                 // +1 for body tag
                 element.openTagIndentation = element.parentCount + 1;
@@ -185,7 +188,8 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 [element isKindOfClass:[Table class]] ||
                 [element isKindOfClass:[TableRow class]] ||
                 [element isKindOfClass:[TableHeader class]] ||
-                [element isKindOfClass:[TableData class]]) {
+                [element isKindOfClass:[TableData class]] ||
+                [element isKindOfClass:[FrontPage class]]) {
                 element.openTagLineBreak = YES;
                 element.closingTagLineBreak = YES;
                 // +1 for body tag

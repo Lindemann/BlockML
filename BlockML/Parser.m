@@ -100,10 +100,11 @@
 
 - (void)inlineTag:(HTMLElement*)parent {
     [self link:parent];
-    [self inlineCode:parent];
     [self identifier:parent];
     [self inlineMath:parent];
     [self footnote:parent];
+    [self styleModifier:parent];
+    [self html:parent];
 }
 
 - (void)blockTag:(HTMLElement*)parent {
@@ -124,6 +125,8 @@
     [self tableHeader:parent];
     [self tableRow:parent];
     [self heading:parent];
+    [self frontPage:parent];
+    [self pageBreak:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -205,7 +208,7 @@
 /*                                         INLINE TAGS                                          */
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
-#pragma mark - INLINE TAGS
+#pragma mark - Inline Tags
 
 - (void)link:(HTMLElement*)parent {
     // a[
@@ -246,28 +249,6 @@
             }
         } else {
             [self errorWithParent:parent andErrorMessage:@"Link"];
-        }
-    }
-}
-
-- (void)inlineCode:(HTMLElement*)parent {
-    // c[
-    if (self.token.type == C_SB) {
-        InlineCode *inlineCode = [InlineCode new];
-        [parent addElement:inlineCode];
-        [self nextToken];
-        // STRING
-        if (self.token.type == STRING) {
-            Text *text = [Text new];
-            text.string = self.token.value;
-            [inlineCode addElement:text];
-            [self nextToken];
-        }
-        // ]
-        if (self.token.type == CLOSE_SB) {
-            [self nextToken];
-        } else {
-            [self errorWithParent:parent andErrorMessage:@"Inline Code"];
         }
     }
 }
@@ -338,7 +319,78 @@
     }
 }
 
+- (void)styleModifier:(HTMLElement*)parent {
+    // $styleModifier[
+    if (self.token.type >= B_SB && self.token.type <= U_SB) {
+        StyleModifier *styleModifier = [StyleModifier new];
+        [parent addElement:styleModifier];
+        
+        NSString *errorString;
+        
+        switch (self.token.type) {
+            case M_SB:
+                styleModifier.style = MARKED;
+                errorString = @"Marked Style";
+                break;
+            case B_SB:
+                styleModifier.style = BOLD;
+                errorString = @"Bold Style";
+                break;
+            case U_SB:
+                styleModifier.style = UNDERLINE;
+                errorString = @"Underline Style";
+                break;
+            case C_SB:
+                styleModifier.style = CODE;
+                errorString = @"Inline Code";
+                break;
+            case I_SB:
+                styleModifier.style = ITALIC;
+                errorString = @"Italic Style";
+                break;
+            case S_SB:
+                styleModifier.style = STRIKETHROUGH;
+                errorString = @"Strikethrough Style";
+                break;
+            default:
+                break;
+        }
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            Text *text = [Text new];
+            text.string = self.token.value;
+            [styleModifier addElement:text];
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:errorString];
+        }
+    }
+}
 
+- (void)html:(HTMLElement*)parent {
+    // html[
+    if (self.token.type == HTML_SB) {
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            Text *text = [Text new];
+            text.string = self.token.value;
+            [parent addElement:text];
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"HTML"];
+        }
+    }
+}
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 
@@ -926,54 +978,42 @@
     }
 }
 
+- (void)frontPage:(HTMLElement*)parent {
+    // fp[
+    if (self.token.type == FP_SB) {
+        FrontPage *frontPage = [FrontPage new];
+        [parent addElement:frontPage];
+        [self nextToken];
+        // Heading | Image | Title
+        while ((self.token.type >= H1_SB && self.token.type <= H6_SB) ||
+               self.token.type == IMG_SB ||
+               self.token.type == TITLE_SB) {
+            [self heading:frontPage];
+            [self image:frontPage];
+            [self title:frontPage];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"Front Page"];
+        }
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- (void)pageBreak:(HTMLElement*)parent {
+    // pb[
+    if (self.token.type == PB_SB) {
+        PageBreak *pageBreak = [PageBreak new];
+        [parent addElement:pageBreak];
+        [self nextToken];
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"TITLE"];
+        }
+    }
+}
 
 @end

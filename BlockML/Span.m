@@ -12,13 +12,13 @@
 
 - (NSString*)openTag {
     NSMutableString *result = [NSMutableString new];
-    [result appendString:[HTMLStringBuilder openTag:@"span" attributes:self.attributes indentation:self.openTagIndentation lineBreak:self.openTagLineBreak]];
+    [result appendString:[HTMLStringBuilder openTag:SPAN attributes:self.attributes indentation:self.openTagIndentation lineBreak:self.openTagLineBreak]];
     return result;
 }
 
 - (NSString*)closeTag {
     NSMutableString *result = [NSMutableString new];
-    [result appendString:[HTMLStringBuilder closingTag:@"span" indentation:self.closingTagIndentation lineBreak:self.closingTagLineBreak]];
+    [result appendString:[HTMLStringBuilder closingTag:SPAN indentation:self.closingTagIndentation lineBreak:self.closingTagLineBreak]];
     return result;
 }
 

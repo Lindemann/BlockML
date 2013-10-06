@@ -65,7 +65,6 @@
             return self.token;
         }
         if ([self isKeyword]) {
-            [self unescapeSquareBracketsAndEscapeHTMLSymbols];
             return self.token;
         }
         if ([self isString]) {
