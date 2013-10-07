@@ -17,8 +17,6 @@
 		82080F45172D0CEF008ABC58 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82080F25172D0CEE008ABC58 /* Cocoa.framework */; };
 		82080F4D172D0CEF008ABC58 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82080F4B172D0CEF008ABC58 /* InfoPlist.strings */; };
 		82080F50172D0CEF008ABC58 /* BlockMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F4F172D0CEF008ABC58 /* BlockMLTests.m */; };
-		82080F5F172D0E54008ABC58 /* MathJax in Resources */ = {isa = PBXBuildFile; fileRef = 82080F5E172D0E54008ABC58 /* MathJax */; };
-		82080F61172D0E67008ABC58 /* highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 82080F60172D0E67008ABC58 /* highlight.js */; };
 		82080F6A172D0FFB008ABC58 /* CSS in Resources */ = {isa = PBXBuildFile; fileRef = 82080F69172D0FFB008ABC58 /* CSS */; };
 		82080F73172D1C1F008ABC58 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F6E172D1C1F008ABC58 /* Token.m */; };
 		82080F74172D1C1F008ABC58 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F6E172D1C1F008ABC58 /* Token.m */; };
@@ -99,8 +97,6 @@
 		82080F4C172D0CEF008ABC58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		82080F4E172D0CEF008ABC58 /* BlockMLTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockMLTests.h; sourceTree = "<group>"; };
 		82080F4F172D0CEF008ABC58 /* BlockMLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockMLTests.m; sourceTree = "<group>"; };
-		82080F5E172D0E54008ABC58 /* MathJax */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MathJax; sourceTree = "<group>"; };
-		82080F60172D0E67008ABC58 /* highlight.js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = highlight.js; sourceTree = "<group>"; };
 		82080F69172D0FFB008ABC58 /* CSS */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CSS; sourceTree = "<group>"; };
 		82080F6C172D1C1F008ABC58 /* TokenType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenType.h; sourceTree = "<group>"; };
 		82080F6D172D1C1F008ABC58 /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
@@ -299,8 +295,6 @@
 			children = (
 				82DEC50417EAADF2007708D1 /* Images */,
 				82080F69172D0FFB008ABC58 /* CSS */,
-				82080F60172D0E67008ABC58 /* highlight.js */,
-				82080F5E172D0E54008ABC58 /* MathJax */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -630,9 +624,7 @@
 				82080F30172D0CEE008ABC58 /* InfoPlist.strings in Resources */,
 				82080F36172D0CEE008ABC58 /* Credits.rtf in Resources */,
 				82080F3C172D0CEE008ABC58 /* MainMenu.xib in Resources */,
-				82080F5F172D0E54008ABC58 /* MathJax in Resources */,
 				82DEC50517EAADF2007708D1 /* Images in Resources */,
-				82080F61172D0E67008ABC58 /* highlight.js in Resources */,
 				82080F6A172D0FFB008ABC58 /* CSS in Resources */,
 				8208105B17329313008ABC58 /* icon.icns in Resources */,
 			);

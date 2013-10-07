@@ -78,6 +78,8 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                           lineBreak:YES]];
     
     if (self.highlight) {
+        /*
+        // local
         [result appendString:[HTMLStringBuilder
                               openTag:@"link"
                               attributes:@{HREF: @"highlight.js/styles/github.css",
@@ -88,6 +90,11 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                               lineBreak:YES]];
         
         [result appendString:[HTMLStringBuilder openTag:@"script" attributes:@{@"src": @"highlight.js/highlight.pack.js"} indentation:2 lineBreak:NO]];
+        */
+        
+        // CDN and CSS is called in style.css
+        [result appendString:[HTMLStringBuilder openTag:@"script" attributes:@{@"src": @"http://yandex.st/highlightjs/7.3/highlight.min.js"} indentation:2 lineBreak:NO]];
+        
         [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
         
         [result appendString:[HTMLStringBuilder openTag:@"script" attributes:nil indentation:2 lineBreak:NO]];
@@ -97,12 +104,13 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
     
     if (self.mathJax || self.inlineMath) {
         //CDN
-//        [result appendString:[HTMLStringBuilder
-//                              openTag:@"script"
-//                              attributes:@{@"type": @"text/javascript",
-//                                           @"src": @"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"}
-//                              indentation:2
-//                              lineBreak:NO]];
+        [result appendString:[HTMLStringBuilder
+                              openTag:@"script"
+                              attributes:@{@"type": @"text/javascript",
+                                           @"src": @"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"}
+                              indentation:2
+                              lineBreak:NO]];
+        /*
         // Local
         [result appendString:[HTMLStringBuilder
                               openTag:@"script"
@@ -110,6 +118,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                                            @"src": @"MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"}
                               indentation:2
                               lineBreak:NO]];
+        */
         [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
     }
     if (self.inlineMath) {

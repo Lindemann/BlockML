@@ -17,8 +17,8 @@
     [self.recompileMenuItem setEnabled:NO];
 
     // Remove this!
-//    self.fileURL = [NSURL fileURLWithPath:@"/Users/LINDEMANN/Desktop/test.txt"];
-//    [self processFile];
+    self.fileURL = [NSURL fileURLWithPath:@"/Users/LINDEMANN/Desktop/test.txt"];
+    [self processFile];
     // Really! Remove this!
 }
 
@@ -87,6 +87,8 @@
             NSURL *CSSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"CSS" isDirectory:YES];
             NSURL *CSSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"CSS" isDirectory:YES];
             [fileManager copyItemAtURL:CSSSourceDirectory toURL:CSSDestinationDirectory error:nil];
+            
+            /*
             // Copy MathJax
             if (parser.document.mathJax || parser.document.inlineMath) {
                 NSURL *mathJaxSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"MathJax" isDirectory:YES];
@@ -99,6 +101,7 @@
                 NSURL *highlightJSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"highlight.js" isDirectory:YES];
                 [fileManager copyItemAtURL:highlightJSSourceDirectory toURL:highlightJSDestinationDirectory error:nil];
             }
+            */
 
         });
     });

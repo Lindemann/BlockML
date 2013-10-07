@@ -51,13 +51,13 @@
     [stringList addObject:@[[NSNumber numberWithInt:A_SB], @"a["]];
     [stringList addObject:@[[NSNumber numberWithInt:FN_SB], @"fn["]];
     [stringList addObject:@[[NSNumber numberWithInt:HTML_SB], @"html["]];
+    [stringList addObject:@[[NSNumber numberWithInt:IM_SB], @"im["]];
     [stringList addObject:@[[NSNumber numberWithInt:C_SB], @"c["]];
     [stringList addObject:@[[NSNumber numberWithInt:B_SB], @"b["]];
     [stringList addObject:@[[NSNumber numberWithInt:I_SB], @"i["]];
     [stringList addObject:@[[NSNumber numberWithInt:S_SB], @"s["]];
     [stringList addObject:@[[NSNumber numberWithInt:U_SB], @"u["]];
     [stringList addObject:@[[NSNumber numberWithInt:M_SB], @"m["]];
-    [stringList addObject:@[[NSNumber numberWithInt:IM_SB], @"im["]];
     [stringList addObject:@[[NSNumber numberWithInt:ID_SB], @"id["]];
     
     /* block */
