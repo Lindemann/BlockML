@@ -31,12 +31,10 @@
 
 // Reopen window from dock after it was closed
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag {
-    if (flag) {
-        return NO;
-    } else {
+
         [self.window orderFront:self];
         return YES;
-    }
+    
 }
 
 // Action!
