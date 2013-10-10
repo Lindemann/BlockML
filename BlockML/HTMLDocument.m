@@ -98,6 +98,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
         [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
         
         [result appendString:[HTMLStringBuilder openTag:@"script" attributes:nil indentation:2 lineBreak:NO]];
+        [result appendString:[HTMLStringBuilder text:@"hljs.tabReplace = '    ';" indentation:0 lineBreak:NO]];
         [result appendString:[HTMLStringBuilder text:@"hljs.initHighlightingOnLoad();" indentation:0 lineBreak:NO]];
         [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
     }

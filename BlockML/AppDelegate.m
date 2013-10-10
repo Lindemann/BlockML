@@ -17,8 +17,8 @@
     [self.recompileMenuItem setEnabled:NO];
 
     // Remove this!
-    self.fileURL = [NSURL fileURLWithPath:@"/Users/LINDEMANN/Desktop/test.txt"];
-    [self processFile];
+//    self.fileURL = [NSURL fileURLWithPath:@"/Users/LINDEMANN/Desktop/test.txt"];
+//    [self processFile];
     // Really! Remove this!
 }
 
@@ -33,7 +33,7 @@
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag {
 
         [self.window orderFront:self];
-        return YES;
+        return YES; 
     
 }
 

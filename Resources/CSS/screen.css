@@ -77,19 +77,19 @@ h1 {
   font-size: 28pt; }
 
 h2 {
-  font-size: 26pt; }
-
-h3 {
   font-size: 24pt; }
 
-h4 {
+h3 {
   font-size: 22pt; }
 
-h5 {
+h4 {
   font-size: 20pt; }
 
-h6 {
+h5 {
   font-size: 18pt; }
+
+h6 {
+  font-size: 16pt; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    TITLE                                   */
@@ -180,6 +180,9 @@ pre {
   font-size: 11pt;
   line-height: 1.6em;
   padding-bottom: 1.6em; }
+
+pre, code, span {
+  tab-size: 400; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    IMAGE                                   */

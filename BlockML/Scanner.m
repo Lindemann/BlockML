@@ -359,7 +359,6 @@
     self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"\\[" withString:@"["];
     
     if (![[self.openTags lastObject] isEqual:[NSNumber numberWithInt:HTML_SB]]) {
-        
         self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
         self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
     }
