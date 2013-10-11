@@ -44,6 +44,7 @@
 		827E3487180067CA00A6B82D /* StyleModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E3486180067CA00A6B82D /* StyleModifier.m */; };
 		827E348D1800EC2300A6B82D /* FrontPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E348C1800EC2300A6B82D /* FrontPage.m */; };
 		827E34901800EC4D00A6B82D /* PageBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E348F1800EC4D00A6B82D /* PageBreak.m */; };
+		829AE17018076987002BF377 /* highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 829AE16F18076987002BF377 /* highlight.js */; };
 		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
 		82AD8A6B17F5F4D600859D26 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6A17F5F4D600859D26 /* Image.m */; };
 		82AD8A7217F788E100859D26 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A7117F788E100859D26 /* Caption.m */; };
@@ -143,6 +144,7 @@
 		827E348C1800EC2300A6B82D /* FrontPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrontPage.m; sourceTree = "<group>"; };
 		827E348E1800EC4D00A6B82D /* PageBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageBreak.h; sourceTree = "<group>"; };
 		827E348F1800EC4D00A6B82D /* PageBreak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageBreak.m; sourceTree = "<group>"; };
+		829AE16F18076987002BF377 /* highlight.js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = highlight.js; sourceTree = "<group>"; };
 		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
 		82AD8A6717F4CC2200859D26 /* Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Code.m; sourceTree = "<group>"; };
 		82AD8A6917F5F4D600859D26 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		82080F5D172D0E45008ABC58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				829AE16F18076987002BF377 /* highlight.js */,
 				82DEC50417EAADF2007708D1 /* Images */,
 				82080F69172D0FFB008ABC58 /* CSS */,
 			);
@@ -621,6 +624,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82B09F0C18021F4800F33625 /* Images.xcassets in Resources */,
+				829AE17018076987002BF377 /* highlight.js in Resources */,
 				82080F30172D0CEE008ABC58 /* InfoPlist.strings in Resources */,
 				82080F36172D0CEE008ABC58 /* Credits.rtf in Resources */,
 				82080F3C172D0CEE008ABC58 /* MainMenu.xib in Resources */,

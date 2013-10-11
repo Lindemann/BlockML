@@ -21,4 +21,7 @@
 + (NSString*)stringForStringListElement:(NSArray*)element;
 + (TokenType)tokenTypeForStringListElement:(NSArray*)element;
 
+// Only needed for extern syntax highlighting stuff like the tmBundle
++ (void)printAllTokenWithDelimiter:(NSString*)delimiter;
+
 @end

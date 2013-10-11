@@ -88,12 +88,15 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                                            @"media": @"screen"}
                               indentation:2
                               lineBreak:YES]];
-        
-        [result appendString:[HTMLStringBuilder openTag:@"script" attributes:@{@"src": @"highlight.js/highlight.pack.js"} indentation:2 lineBreak:NO]];
         */
         
+        [result appendString:[HTMLStringBuilder openTag:@"script" attributes:@{@"src": @"highlight.js/highlight.pack.js"} indentation:2 lineBreak:NO]];
+        
+        
+        /*
         // CDN and CSS is called in style.css
         [result appendString:[HTMLStringBuilder openTag:@"script" attributes:@{@"src": @"http://yandex.st/highlightjs/7.3/highlight.min.js"} indentation:2 lineBreak:NO]];
+        */
         
         [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
         

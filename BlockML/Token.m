@@ -95,4 +95,12 @@
     return stringList;
 }
 
++ (void)printAllTokenWithDelimiter:(NSString*)delimiter {
+    NSMutableString *string = [NSMutableString new];
+    for (NSArray *array in [Token stringList]) {
+        [string appendString:[NSString  stringWithFormat:@"%@%@",[Token stringForStringListElement:array], delimiter]];
+    }
+    NSLog(@"%@", string);
+}
+
 @end

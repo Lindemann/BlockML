@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
-@import url(http://yandex.st/highlightjs/7.3/styles/github.min.css);
+@import url(../highlight.js/styles/github.css);
 /*
     ____  __           __   __  _____ 
    / __ )/ /___  _____/ /__/  |/  / / 
@@ -170,19 +170,38 @@ h6 {
 /*                                   CODE                                     */
 /*////////////////////////////////////////////////////////////////////////////*/
 code {
-  font-family: "Source Code Pro", monospace; }
+  font-family: "Source Code Pro", monospace;
+  /* Decoration */
+  border: solid #d6d6d6 1px;
+  -webkit-border-radius: 3px;
+  /* Add a scrollbar for looooooong code */
+  word-wrap: normal;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: auto; }
 
 pre {
-  /* Creepy behavior of pre require use of CSS Tables*/
-  display: table;
-  table-layout: fixed;
   width: 100%;
   font-size: 11pt;
-  line-height: 1.6em;
-  padding-bottom: 1.6em; }
+  line-height: 1.6em; }
 
-pre, code, span {
-  tab-size: 400; }
+/* Creepy method to give pre a padding-bottom, 
+which is as height as the other padding-bottoms,
+where the font size is $fontSize and not 11pt */
+pre:after {
+  content: " ";
+  display: block;
+  font-size: 14pt;
+  padding-bottom: 1.6em;
+  height: 0; }
+
+/* Some "improvements" of the github.css */
+pre code {
+  background-color: #f7f7f7; }
+
+pre .title,
+pre .id {
+  color: #00AB7D; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    IMAGE                                   */
@@ -319,7 +338,8 @@ td {
   background-color: #f7f7f7;
   padding: 0 0.3em;
   -webkit-border-radius: 3px;
-  border: solid #d6d6d6 1px; }
+  border: solid #d6d6d6 1px;
+  white-space: nowrap; }
 
 .italic {
   font-style: italic; }
