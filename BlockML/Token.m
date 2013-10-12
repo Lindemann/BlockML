@@ -50,7 +50,7 @@
     /* inline */
     [stringList addObject:@[[NSNumber numberWithInt:A_SB], @"a["]];
     [stringList addObject:@[[NSNumber numberWithInt:FN_SB], @"fn["]];
-    [stringList addObject:@[[NSNumber numberWithInt:HTML_SB], @"html["]];
+    [stringList addObject:@[[NSNumber numberWithInt:IHTML_SB], @"ihtml["]];
     [stringList addObject:@[[NSNumber numberWithInt:IM_SB], @"im["]];
     [stringList addObject:@[[NSNumber numberWithInt:C_SB], @"c["]];
     [stringList addObject:@[[NSNumber numberWithInt:B_SB], @"b["]];
@@ -71,6 +71,7 @@
     [stringList addObject:@[[NSNumber numberWithInt:BIB_SB], @"bib["]];
     [stringList addObject:@[[NSNumber numberWithInt:Q_SB], @"q["]];
     [stringList addObject:@[[NSNumber numberWithInt:MATH_SB], @"math["]];
+    [stringList addObject:@[[NSNumber numberWithInt:HTML_SB], @"html["]];
     [stringList addObject:@[[NSNumber numberWithInt:TABLE_SB], @"table["]];
     [stringList addObject:@[[NSNumber numberWithInt:TR_SB], @"tr["]];
     [stringList addObject:@[[NSNumber numberWithInt:TH_SB], @"th["]];

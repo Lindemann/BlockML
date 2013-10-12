@@ -313,7 +313,8 @@
         [[self.openTags lastObject] intValue] == C_SB ||
         [[self.openTags lastObject] intValue] == MATH_SB ||
         [[self.openTags lastObject] intValue] == IM_SB ||
-        [[self.openTags lastObject] intValue] == HTML_SB) {
+        [[self.openTags lastObject] intValue] == HTML_SB ||
+        [[self.openTags lastObject] intValue] == IHTML_SB) {
         return YES;
     }
     return NO;
@@ -358,7 +359,8 @@
     self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"\\]" withString:@"]"];
     self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"\\[" withString:@"["];
     
-    if (![[self.openTags lastObject] isEqual:[NSNumber numberWithInt:HTML_SB]]) {
+    if (![[self.openTags lastObject] isEqual:[NSNumber numberWithInt:HTML_SB]] &&
+        ![[self.openTags lastObject] isEqual:[NSNumber numberWithInt:IHTML_SB]]) {
         self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
         self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
     }

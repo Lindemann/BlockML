@@ -21,7 +21,7 @@ typedef enum {
     
     FN_SB,      // fn[
     
-    HTML_SB,    // html[
+    IHTML_SB,    // ihtml[
     
     B_SB,       // b[
     C_SB,       // c[
@@ -58,6 +58,8 @@ typedef enum {
     CODE_SB,    // code[
     
     MATH_SB,    // math[
+    
+    HTML_SB,    // html[
     
     IMG_SB,     // img[
     

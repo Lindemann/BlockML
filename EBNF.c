@@ -25,9 +25,9 @@ string = UTF8Character {UTF8Character}. // character could be every UTF-8 sign a
 
 blockTag = tableOfContent | title | frontpage | pageBreak
            section | image | math | code | heading | list |
-           quote | table | caption | bibliography | love.
+           quote | table | caption | bibliography | love | html.
 
-inlineTag = footnote | link  | html | styleModifier |
+inlineTag = footnote | link  | inlineHTML | styleModifier |
             inlineCode | inlineMath.
 
 /*/////////////////////////////////////////////////////////////*/
@@ -84,6 +84,8 @@ tableData = "td[" document "]""[" string "]".
 
 love = "<3[]".
 
+html = "html[" text "]".
+
 /*/////////////////////////////////////////////////////////////*/
 
 /*                         InlineTag                           */
@@ -95,7 +97,7 @@ footnote = "fn[" text "]".
 link = "a[" string "]""[" string "]" |
        "a[" string "]".
 
-html = "html[" text "]".
+inlineHTML = "html[" text "]".
 
 inlineCode = "c[" string "]".
 

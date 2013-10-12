@@ -105,7 +105,7 @@
     [self inlineMath:parent];
     [self footnote:parent];
     [self styleModifier:parent];
-    [self html:parent];
+    [self inlineHTML:parent];
 }
 
 - (void)blockTag:(HTMLElement*)parent {
@@ -120,14 +120,17 @@
     [self bibliography:parent];
     [self quote:parent];
     [self math:parent];
+    
     [self table:parent];
     // Not realy Block Tags but keep parsing
     [self tableData:parent];
     [self tableHeader:parent];
     [self tableRow:parent];
+    
     [self heading:parent];
     [self frontPage:parent];
     [self pageBreak:parent];
+    [self html:parent];
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -373,9 +376,9 @@
     }
 }
 
-- (void)html:(HTMLElement*)parent {
-    // html[
-    if (self.token.type == HTML_SB) {
+- (void)inlineHTML:(HTMLElement*)parent {
+    // ihtml[
+    if (self.token.type == IHTML_SB) {
         [self nextToken];
         // STRING
         if (self.token.type == STRING) {
@@ -388,7 +391,7 @@
         if (self.token.type == CLOSE_SB) {
             [self nextToken];
         } else {
-            [self errorWithParent:parent andErrorMessage:@"HTML"];
+            [self errorWithParent:parent andErrorMessage:@"Inline HTML"];
         }
     }
 }
@@ -1013,6 +1016,26 @@
             [self nextToken];
         } else {
             [self errorWithParent:parent andErrorMessage:@"TITLE"];
+        }
+    }
+}
+
+- (void)html:(HTMLElement*)parent {
+    // html[
+    if (self.token.type == HTML_SB) {
+        [self nextToken];
+        // STRING
+        if (self.token.type == STRING) {
+            Text *text = [Text new];
+            text.string = [HTMLStringBuilder text:self.token.value indentation:0 lineBreak:YES];
+            [parent addElement:text];
+            [self nextToken];
+        }
+        // ]
+        if (self.token.type == CLOSE_SB) {
+            [self nextToken];
+        } else {
+            [self errorWithParent:parent andErrorMessage:@"HTML"];
         }
     }
 }

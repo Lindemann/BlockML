@@ -30,7 +30,7 @@
 }
 
 - (NSString*)linkString {
-    return [NSString  stringWithFormat:@"[%d]↩", self.footnote.footnoteNumber];
+    return [NSString  stringWithFormat:@"[%d]↵", self.footnote.footnoteNumber];
 }
 
 @end
