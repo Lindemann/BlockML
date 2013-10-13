@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSMutableArray *openTags;
 @property (nonatomic) int lastAndProbablyStillOpenTag;
 @property (nonatomic) BOOL commentIsOpen;
+@property (nonatomic) int backslashCounter;
 
 @end
 
@@ -136,10 +137,15 @@
 }
 
 - (BOOL)isEscapedBracket {
+    [self countBackslashes];
     NSString *ESCAPED_OPEN_SB = @"\\[";
     NSString *ESCAPED_CLOSE_SB = @"\\]";
-    if ([self.currentString hasSuffix:ESCAPED_OPEN_SB] || [self.currentString hasSuffix:ESCAPED_CLOSE_SB] ||
-        [self.currentString isEqualToString:ESCAPED_OPEN_SB] || [self.currentString isEqualToString:ESCAPED_CLOSE_SB]) {
+    if ([self.currentString hasSuffix:ESCAPED_OPEN_SB] || [self.currentString hasSuffix:ESCAPED_CLOSE_SB]) {
+        if (self.backslashCounter % 2 == 0) {
+            self.backslashCounter = 0;
+            return NO;
+        }
+        self.backslashCounter = 0;
         return YES;
     }
     return NO;
@@ -356,6 +362,8 @@
 // Used for Code and Math
 - (void)unescapeSquareBracketsAndEscapeHTMLSymbols {
     
+    self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"\\\\" withString:@"\\"];
+    
     self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"\\]" withString:@"]"];
     self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"\\[" withString:@"["];
     
@@ -364,6 +372,19 @@
         self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
         self.token.value = [self.token.value stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
     }
+}
+
+- (void)countBackslashes {
+    // To investigate if a backslash escape a bracket or escape another backslash
+    // "\\"-> escape another backslash
+    if ([self.currentString hasSuffix:@"\\"]) {
+        ++ self.backslashCounter;
+        return;
+    }
+    if ([self.currentString hasSuffix:@"["] || [self.currentString hasSuffix:@"]"]) {
+        return;
+    }
+    self.backslashCounter = 0;
 }
 
 @end
