@@ -155,7 +155,8 @@ h6 {
 	font-family:"Source Code Pro", monospace;
 	font-weight: 500;
 	color: darken($selectionColor, 40%);
-	border-radius: 10px;
+	border-radius: 6px;
+	border: solid darken($selectionColor, 30%) 1px;
 	margin-bottom: $paragraphPadding;
 
 	a {
