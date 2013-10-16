@@ -45,6 +45,8 @@
 		829AE17E180A5BC4002BF377 /* HTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE179180A5BC4002BF377 /* HTMLDocument.m */; };
 		829AE17F180A5BC4002BF377 /* HTMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE17B180A5BC4002BF377 /* HTMLElement.m */; };
 		829AE180180A5BC4002BF377 /* HTMLStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE17D180A5BC4002BF377 /* HTMLStringBuilder.m */; };
+		829AE1CC180BE8AA002BF377 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE1C9180BE8AA002BF377 /* INAppStoreWindow.m */; };
+		829AE1CD180BE8AA002BF377 /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE1CB180BE8AA002BF377 /* INWindowButton.m */; };
 		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
 		82AD8A6B17F5F4D600859D26 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6A17F5F4D600859D26 /* Image.m */; };
 		82AD8A7217F788E100859D26 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A7117F788E100859D26 /* Caption.m */; };
@@ -145,6 +147,10 @@
 		829AE17B180A5BC4002BF377 /* HTMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLElement.m; sourceTree = "<group>"; };
 		829AE17C180A5BC4002BF377 /* HTMLStringBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLStringBuilder.h; sourceTree = "<group>"; };
 		829AE17D180A5BC4002BF377 /* HTMLStringBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLStringBuilder.m; sourceTree = "<group>"; };
+		829AE1C8180BE8AA002BF377 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindow.h; sourceTree = "<group>"; };
+		829AE1C9180BE8AA002BF377 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
+		829AE1CA180BE8AA002BF377 /* INWindowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INWindowButton.h; sourceTree = "<group>"; };
+		829AE1CB180BE8AA002BF377 /* INWindowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INWindowButton.m; sourceTree = "<group>"; };
 		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
 		82AD8A6717F4CC2200859D26 /* Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Code.m; sourceTree = "<group>"; };
 		82AD8A6917F5F4D600859D26 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -447,6 +453,10 @@
 		829AE1C7180BE7B6002BF377 /* INAppStoreWindow */ = {
 			isa = PBXGroup;
 			children = (
+				829AE1C8180BE8AA002BF377 /* INAppStoreWindow.h */,
+				829AE1C9180BE8AA002BF377 /* INAppStoreWindow.m */,
+				829AE1CA180BE8AA002BF377 /* INWindowButton.h */,
+				829AE1CB180BE8AA002BF377 /* INWindowButton.m */,
 			);
 			name = INAppStoreWindow;
 			sourceTree = "<group>";
@@ -691,6 +701,7 @@
 				82AD8A8B17FD70BD00859D26 /* Math.m in Sources */,
 				82AD8A7217F788E100859D26 /* Caption.m in Sources */,
 				82080F39172D0CEE008ABC58 /* AppDelegate.m in Sources */,
+				829AE1CD180BE8AA002BF377 /* INWindowButton.m in Sources */,
 				827E3487180067CA00A6B82D /* StyleModifier.m in Sources */,
 				82080F73172D1C1F008ABC58 /* Token.m in Sources */,
 				82DEC51817EDDB5C007708D1 /* ListItem.m in Sources */,
@@ -707,6 +718,7 @@
 				829AE180180A5BC4002BF377 /* HTMLStringBuilder.m in Sources */,
 				8214B0EB17EFED6100DF4061 /* Span.m in Sources */,
 				8208100E172DCD1F008ABC58 /* DropView.m in Sources */,
+				829AE1CC180BE8AA002BF377 /* INAppStoreWindow.m in Sources */,
 				82DEC51517EDDB4B007708D1 /* OrderedList.m in Sources */,
 				82AD8A8017FC651A00859D26 /* Bibliography.m in Sources */,
 				82AD8A6B17F5F4D600859D26 /* Image.m in Sources */,
