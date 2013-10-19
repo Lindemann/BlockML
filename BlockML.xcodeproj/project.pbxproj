@@ -47,6 +47,11 @@
 		829AE180180A5BC4002BF377 /* HTMLStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE17D180A5BC4002BF377 /* HTMLStringBuilder.m */; };
 		829AE1CC180BE8AA002BF377 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE1C9180BE8AA002BF377 /* INAppStoreWindow.m */; };
 		829AE1CD180BE8AA002BF377 /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE1CB180BE8AA002BF377 /* INWindowButton.m */; };
+		82A06266181264F2007A7F17 /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A06265181264F2007A7F17 /* DocumentController.m */; };
+		82A0626A18126514007A7F17 /* BlockMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A0626818126514007A7F17 /* BlockMLDocument.m */; };
+		82A0626B18126514007A7F17 /* BlockMLDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A0626918126514007A7F17 /* BlockMLDocument.xib */; };
+		82A0626E181282AD007A7F17 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A0626D181282AD007A7F17 /* MainWindowController.m */; };
+		82A06272181283C6007A7F17 /* CustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A06271181283C6007A7F17 /* CustomWindow.m */; };
 		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
 		82AD8A6B17F5F4D600859D26 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6A17F5F4D600859D26 /* Image.m */; };
 		82AD8A7217F788E100859D26 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A7117F788E100859D26 /* Caption.m */; };
@@ -151,6 +156,15 @@
 		829AE1C9180BE8AA002BF377 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
 		829AE1CA180BE8AA002BF377 /* INWindowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INWindowButton.h; sourceTree = "<group>"; };
 		829AE1CB180BE8AA002BF377 /* INWindowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INWindowButton.m; sourceTree = "<group>"; };
+		82A06264181264F2007A7F17 /* DocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentController.h; sourceTree = "<group>"; };
+		82A06265181264F2007A7F17 /* DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentController.m; sourceTree = "<group>"; };
+		82A0626718126514007A7F17 /* BlockMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockMLDocument.h; sourceTree = "<group>"; };
+		82A0626818126514007A7F17 /* BlockMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockMLDocument.m; sourceTree = "<group>"; };
+		82A0626918126514007A7F17 /* BlockMLDocument.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlockMLDocument.xib; sourceTree = "<group>"; };
+		82A0626C181282AD007A7F17 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		82A0626D181282AD007A7F17 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		82A06270181283C6007A7F17 /* CustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWindow.h; sourceTree = "<group>"; };
+		82A06271181283C6007A7F17 /* CustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWindow.m; sourceTree = "<group>"; };
 		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
 		82AD8A6717F4CC2200859D26 /* Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Code.m; sourceTree = "<group>"; };
 		82AD8A6917F5F4D600859D26 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -339,12 +353,14 @@
 		8208100B172DCCA4008ABC58 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				829AE1C7180BE7B6002BF377 /* INAppStoreWindow */,
+				82A06273181284E7007A7F17 /* Main Window */,
+				82A062751812851B007A7F17 /* Escape Text Window */,
+				82A0627418128508007A7F17 /* About Window */,
+				82A0626F1812838B007A7F17 /* Custom Window */,
+				82A06263181264CA007A7F17 /* Document Based Stuff */,
 				82080F37172D0CEE008ABC58 /* AppDelegate.h */,
 				82080F38172D0CEE008ABC58 /* AppDelegate.m */,
 				82080F3A172D0CEE008ABC58 /* MainMenu.xib */,
-				8208100C172DCD1F008ABC58 /* DropView.h */,
-				8208100D172DCD1F008ABC58 /* DropView.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -459,6 +475,61 @@
 				829AE1CB180BE8AA002BF377 /* INWindowButton.m */,
 			);
 			name = INAppStoreWindow;
+			sourceTree = "<group>";
+		};
+		829AE211180E2E8D002BF377 /* DropView */ = {
+			isa = PBXGroup;
+			children = (
+				8208100C172DCD1F008ABC58 /* DropView.h */,
+				8208100D172DCD1F008ABC58 /* DropView.m */,
+			);
+			name = DropView;
+			sourceTree = "<group>";
+		};
+		82A06263181264CA007A7F17 /* Document Based Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				82A06264181264F2007A7F17 /* DocumentController.h */,
+				82A06265181264F2007A7F17 /* DocumentController.m */,
+				82A0626718126514007A7F17 /* BlockMLDocument.h */,
+				82A0626818126514007A7F17 /* BlockMLDocument.m */,
+				82A0626918126514007A7F17 /* BlockMLDocument.xib */,
+			);
+			name = "Document Based Stuff";
+			sourceTree = "<group>";
+		};
+		82A0626F1812838B007A7F17 /* Custom Window */ = {
+			isa = PBXGroup;
+			children = (
+				829AE1C7180BE7B6002BF377 /* INAppStoreWindow */,
+				82A06270181283C6007A7F17 /* CustomWindow.h */,
+				82A06271181283C6007A7F17 /* CustomWindow.m */,
+			);
+			name = "Custom Window";
+			sourceTree = "<group>";
+		};
+		82A06273181284E7007A7F17 /* Main Window */ = {
+			isa = PBXGroup;
+			children = (
+				829AE211180E2E8D002BF377 /* DropView */,
+				82A0626C181282AD007A7F17 /* MainWindowController.h */,
+				82A0626D181282AD007A7F17 /* MainWindowController.m */,
+			);
+			name = "Main Window";
+			sourceTree = "<group>";
+		};
+		82A0627418128508007A7F17 /* About Window */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "About Window";
+			sourceTree = "<group>";
+		};
+		82A062751812851B007A7F17 /* Escape Text Window */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Escape Text Window";
 			sourceTree = "<group>";
 		};
 		82AD8A6217F493F300859D26 /* Code */ = {
@@ -642,6 +713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82B09F0C18021F4800F33625 /* Images.xcassets in Resources */,
+				82A0626B18126514007A7F17 /* BlockMLDocument.xib in Resources */,
 				829AE17018076987002BF377 /* highlight.js in Resources */,
 				82080F30172D0CEE008ABC58 /* InfoPlist.strings in Resources */,
 				82080F36172D0CEE008ABC58 /* Credits.rtf in Resources */,
@@ -687,6 +759,7 @@
 				8214B0EE17EFFE9D00DF4061 /* Error.m in Sources */,
 				827E347817FEE3E500A6B82D /* TableRow.m in Sources */,
 				829AE17F180A5BC4002BF377 /* HTMLElement.m in Sources */,
+				82A0626E181282AD007A7F17 /* MainWindowController.m in Sources */,
 				82DEC50217E975B1007708D1 /* Link.m in Sources */,
 				82AD8A7817F9C5E900859D26 /* Captions.m in Sources */,
 				82DEC4FB17E609D9007708D1 /* Text.m in Sources */,
@@ -705,16 +778,19 @@
 				827E3487180067CA00A6B82D /* StyleModifier.m in Sources */,
 				82080F73172D1C1F008ABC58 /* Token.m in Sources */,
 				82DEC51817EDDB5C007708D1 /* ListItem.m in Sources */,
+				82A06266181264F2007A7F17 /* DocumentController.m in Sources */,
 				82AD8A6817F4CC2200859D26 /* Code.m in Sources */,
 				82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */,
 				82080F75172D1C1F008ABC58 /* Scanner.m in Sources */,
 				827E347B17FEE3FE00A6B82D /* TableData.m in Sources */,
+				82A06272181283C6007A7F17 /* CustomWindow.m in Sources */,
 				82AD8A8417FCB99B00859D26 /* Quote.m in Sources */,
 				82080F77172D1C1F008ABC58 /* Parser.m in Sources */,
 				827E34901800EC4D00A6B82D /* PageBreak.m in Sources */,
 				827E347517FD9FF500A6B82D /* Sup.m in Sources */,
 				827E347E17FEE40F00A6B82D /* TableHeader.m in Sources */,
 				82DEC50B17EBF73A007708D1 /* Section.m in Sources */,
+				82A0626A18126514007A7F17 /* BlockMLDocument.m in Sources */,
 				829AE180180A5BC4002BF377 /* HTMLStringBuilder.m in Sources */,
 				8214B0EB17EFED6100DF4061 /* Span.m in Sources */,
 				8208100E172DCD1F008ABC58 /* DropView.m in Sources */,

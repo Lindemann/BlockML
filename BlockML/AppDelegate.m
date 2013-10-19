@@ -23,11 +23,11 @@
 }
 
 // Get file path after drag and drop a file on the dock icon
-- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
-    self.fileURL = [NSURL fileURLWithPath:filename];
-    [self processFile];
-    return YES;
-}
+//- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
+//    self.fileURL = [NSURL fileURLWithPath:filename];
+//    [self processFile];
+//    return YES;
+//}
 
 // Reopen window from dock after it was closed
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag {

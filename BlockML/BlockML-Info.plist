@@ -12,9 +12,11 @@
 				<string>txt</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>TextFile</string>
+			<string>Plain Text</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
+			<key>NSDocumentClass</key>
+			<string>BlockMLDocument</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -22,9 +24,11 @@
 				<string>blockml</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>BlockMLTextFile</string>
+			<string>BlockML</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
+			<key>NSDocumentClass</key>
+			<string>BlockMLDocument</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
