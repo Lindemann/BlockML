@@ -73,95 +73,20 @@
                                     <action selector="showHelp:" target="-1" id="493"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="veZ-tP-B6g"/>
+                            <menuItem title="Escape Text" keyEquivalent="e" id="Zld-YL-veu">
+                                <connections>
+                                    <action selector="openEscapeTextWindowMenuItemWasPressed:" target="494" id="bJ5-gQ-4lv"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
             </items>
         </menu>
-        <window title="BlockML" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="400" height="250"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
-            <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="250"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="536" customClass="DropView">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="250"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="544">
-                                <rect key="frame" x="242" y="13" width="106" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Recompile" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="545">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <string key="keyEquivalent">b</string>
-                                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="recompileButtonWasPressed:" target="494" id="742"/>
-                                </connections>
-                            </button>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="548">
-                                <rect key="frame" x="47" y="107" width="306" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="558"/>
-                                    <constraint firstAttribute="width" constant="300" id="562"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Drop your Text File here" id="549">
-                                    <font key="font" size="24" name="LucidaGrande"/>
-                                    <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <progressIndicator maxValue="100" displayedWhenStopped="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="594">
-                                <rect key="frame" x="184" y="169" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </progressIndicator>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="656">
-                                <rect key="frame" x="55" y="22" width="188" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="657">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="544" firstAttribute="centerY" secondItem="656" secondAttribute="centerY" id="662"/>
-                            <constraint firstItem="544" firstAttribute="leading" secondItem="656" secondAttribute="trailing" constant="8" symbolic="YES" id="663"/>
-                            <constraint firstAttribute="bottom" secondItem="544" secondAttribute="bottom" constant="20" symbolic="YES" id="668"/>
-                            <constraint firstItem="656" firstAttribute="leading" secondItem="536" secondAttribute="leading" constant="58" id="732"/>
-                            <constraint firstItem="548" firstAttribute="centerX" secondItem="536" secondAttribute="centerX" id="736"/>
-                            <constraint firstItem="594" firstAttribute="centerX" secondItem="548" secondAttribute="centerX" id="738"/>
-                            <constraint firstItem="548" firstAttribute="centerY" secondItem="536" secondAttribute="centerY" id="739"/>
-                            <constraint firstItem="594" firstAttribute="top" secondItem="536" secondAttribute="top" constant="49" id="740"/>
-                            <constraint firstItem="544" firstAttribute="leading" secondItem="536" secondAttribute="leading" constant="248" id="749"/>
-                        </constraints>
-                    </customView>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="536" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="538"/>
-                    <constraint firstItem="536" firstAttribute="top" secondItem="372" secondAttribute="top" id="540"/>
-                    <constraint firstItem="536" firstAttribute="trailing" secondItem="372" secondAttribute="trailing" id="541"/>
-                    <constraint firstItem="536" firstAttribute="bottom" secondItem="372" secondAttribute="bottom" id="542"/>
-                </constraints>
-            </view>
-            <connections>
-                <outlet property="delegate" destination="494" id="543"/>
-            </connections>
-        </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
-                <outlet property="fileNameTextField" destination="656" id="747"/>
-                <outlet property="progessIndicator" destination="594" id="650"/>
-                <outlet property="recompileButton" destination="544" id="741"/>
-                <outlet property="recompileMenuItem" destination="4nJ-Ob-JaE" id="dVq-yb-zJ1"/>
-                <outlet property="window" destination="371" id="532"/>
+                <outlet property="openRecentMenuItem" destination="mf5-vh-23H" id="bg5-cD-ZlB"/>
             </connections>
         </customObject>
     </objects>

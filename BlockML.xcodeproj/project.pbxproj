@@ -49,9 +49,12 @@
 		829AE1CD180BE8AA002BF377 /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE1CB180BE8AA002BF377 /* INWindowButton.m */; };
 		82A06266181264F2007A7F17 /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A06265181264F2007A7F17 /* DocumentController.m */; };
 		82A0626A18126514007A7F17 /* BlockMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A0626818126514007A7F17 /* BlockMLDocument.m */; };
-		82A0626B18126514007A7F17 /* BlockMLDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A0626918126514007A7F17 /* BlockMLDocument.xib */; };
 		82A0626E181282AD007A7F17 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A0626D181282AD007A7F17 /* MainWindowController.m */; };
 		82A06272181283C6007A7F17 /* CustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A06271181283C6007A7F17 /* CustomWindow.m */; };
+		82A062781812D799007A7F17 /* EscapeTextWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A062771812D799007A7F17 /* EscapeTextWindowController.m */; };
+		82A0627A1812D7AE007A7F17 /* EscapeText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A062791812D7AE007A7F17 /* EscapeText.xib */; };
+		82A0627C181375E1007A7F17 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A0627B181375E1007A7F17 /* Main.xib */; };
+		82A0627F1813B045007A7F17 /* BugFixSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A0627E1813B045007A7F17 /* BugFixSegmentedCell.m */; };
 		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
 		82AD8A6B17F5F4D600859D26 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6A17F5F4D600859D26 /* Image.m */; };
 		82AD8A7217F788E100859D26 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A7117F788E100859D26 /* Caption.m */; };
@@ -160,11 +163,16 @@
 		82A06265181264F2007A7F17 /* DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentController.m; sourceTree = "<group>"; };
 		82A0626718126514007A7F17 /* BlockMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockMLDocument.h; sourceTree = "<group>"; };
 		82A0626818126514007A7F17 /* BlockMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockMLDocument.m; sourceTree = "<group>"; };
-		82A0626918126514007A7F17 /* BlockMLDocument.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlockMLDocument.xib; sourceTree = "<group>"; };
 		82A0626C181282AD007A7F17 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		82A0626D181282AD007A7F17 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		82A06270181283C6007A7F17 /* CustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWindow.h; sourceTree = "<group>"; };
 		82A06271181283C6007A7F17 /* CustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWindow.m; sourceTree = "<group>"; };
+		82A062761812D799007A7F17 /* EscapeTextWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EscapeTextWindowController.h; sourceTree = "<group>"; };
+		82A062771812D799007A7F17 /* EscapeTextWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EscapeTextWindowController.m; sourceTree = "<group>"; };
+		82A062791812D7AE007A7F17 /* EscapeText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EscapeText.xib; sourceTree = "<group>"; };
+		82A0627B181375E1007A7F17 /* Main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
+		82A0627D1813B045007A7F17 /* BugFixSegmentedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugFixSegmentedCell.h; sourceTree = "<group>"; };
+		82A0627E1813B045007A7F17 /* BugFixSegmentedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugFixSegmentedCell.m; sourceTree = "<group>"; };
 		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
 		82AD8A6717F4CC2200859D26 /* Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Code.m; sourceTree = "<group>"; };
 		82AD8A6917F5F4D600859D26 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -493,7 +501,6 @@
 				82A06265181264F2007A7F17 /* DocumentController.m */,
 				82A0626718126514007A7F17 /* BlockMLDocument.h */,
 				82A0626818126514007A7F17 /* BlockMLDocument.m */,
-				82A0626918126514007A7F17 /* BlockMLDocument.xib */,
 			);
 			name = "Document Based Stuff";
 			sourceTree = "<group>";
@@ -512,8 +519,10 @@
 			isa = PBXGroup;
 			children = (
 				829AE211180E2E8D002BF377 /* DropView */,
+				82A062801813B127007A7F17 /* SegmentedControl BugFix */,
 				82A0626C181282AD007A7F17 /* MainWindowController.h */,
 				82A0626D181282AD007A7F17 /* MainWindowController.m */,
+				82A0627B181375E1007A7F17 /* Main.xib */,
 			);
 			name = "Main Window";
 			sourceTree = "<group>";
@@ -528,8 +537,20 @@
 		82A062751812851B007A7F17 /* Escape Text Window */ = {
 			isa = PBXGroup;
 			children = (
+				82A062761812D799007A7F17 /* EscapeTextWindowController.h */,
+				82A062771812D799007A7F17 /* EscapeTextWindowController.m */,
+				82A062791812D7AE007A7F17 /* EscapeText.xib */,
 			);
 			name = "Escape Text Window";
+			sourceTree = "<group>";
+		};
+		82A062801813B127007A7F17 /* SegmentedControl BugFix */ = {
+			isa = PBXGroup;
+			children = (
+				82A0627D1813B045007A7F17 /* BugFixSegmentedCell.h */,
+				82A0627E1813B045007A7F17 /* BugFixSegmentedCell.m */,
+			);
+			name = "SegmentedControl BugFix";
 			sourceTree = "<group>";
 		};
 		82AD8A6217F493F300859D26 /* Code */ = {
@@ -713,12 +734,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				82B09F0C18021F4800F33625 /* Images.xcassets in Resources */,
-				82A0626B18126514007A7F17 /* BlockMLDocument.xib in Resources */,
 				829AE17018076987002BF377 /* highlight.js in Resources */,
 				82080F30172D0CEE008ABC58 /* InfoPlist.strings in Resources */,
 				82080F36172D0CEE008ABC58 /* Credits.rtf in Resources */,
+				82A0627C181375E1007A7F17 /* Main.xib in Resources */,
 				82080F3C172D0CEE008ABC58 /* MainMenu.xib in Resources */,
 				82DEC50517EAADF2007708D1 /* Images in Resources */,
+				82A0627A1812D7AE007A7F17 /* EscapeText.xib in Resources */,
 				82080F6A172D0FFB008ABC58 /* CSS in Resources */,
 				8208105B17329313008ABC58 /* icon.icns in Resources */,
 			);
@@ -759,11 +781,13 @@
 				8214B0EE17EFFE9D00DF4061 /* Error.m in Sources */,
 				827E347817FEE3E500A6B82D /* TableRow.m in Sources */,
 				829AE17F180A5BC4002BF377 /* HTMLElement.m in Sources */,
+				82A0627F1813B045007A7F17 /* BugFixSegmentedCell.m in Sources */,
 				82A0626E181282AD007A7F17 /* MainWindowController.m in Sources */,
 				82DEC50217E975B1007708D1 /* Link.m in Sources */,
 				82AD8A7817F9C5E900859D26 /* Captions.m in Sources */,
 				82DEC4FB17E609D9007708D1 /* Text.m in Sources */,
 				827E346F17FD9F9900A6B82D /* Footnote.m in Sources */,
+				82A062781812D799007A7F17 /* EscapeTextWindowController.m in Sources */,
 				827E348117FF405100A6B82D /* Table.m in Sources */,
 				82DEC51217EDDB36007708D1 /* UnorderedList.m in Sources */,
 				82DEC50F17EBF7A9007708D1 /* TableOfContent.m in Sources */,

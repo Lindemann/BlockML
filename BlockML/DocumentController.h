@@ -8,6 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol DocumentControllerDelegate;
+
 @interface DocumentController : NSDocumentController
+
+@property (nonatomic, weak) id <DocumentControllerDelegate> delegate;
+
+@end
+
+@protocol  DocumentControllerDelegate <NSObject>
+
+- (void)currentDocumentHasChanged:(NSDocument*)document;
 
 @end

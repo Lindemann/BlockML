@@ -1,5 +1,5 @@
 //
-//  CustomWindow.h
+//  EscapeTextWindowController.h
 //  BlockML
 //
 //  Created by Lindemann on 19.10.13.
@@ -7,8 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "INAppStoreWindow.h"
 
-@interface CustomWindow : NSWindow
+@interface EscapeTextWindowController : NSWindowController
 
 @end

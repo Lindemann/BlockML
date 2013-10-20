@@ -8,6 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol DropViewDelegate;
+
 @interface DropView : NSView <NSDraggingDestination>
+
+@property (weak) id <DropViewDelegate> delegate;
+
+@end
+
+@protocol DropViewDelegate <NSObject>
+
+- (void)dropedFileWithURL:(NSURL*)URL;
 
 @end

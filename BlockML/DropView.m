@@ -13,38 +13,24 @@
 
 - (id)initWithFrame:(NSRect)frameRect {
     if (self = [super initWithFrame:frameRect]) {
-//        [self registerForDraggedTypes:@[NSURLPboardType]];
         [self registerForDraggedTypes:@[NSFilenamesPboardType]];
     }
     return self;
 }
 
 - (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender {
-//    return NSDragOperationCopy;
     return NSDragOperationGeneric;
 }
-
-//- (BOOL)prepareForDragOperation:(id<NSDraggingInfo>)sender {
-//    return YES;
-//}
 
 - (BOOL)performDragOperation:(id<NSDraggingInfo>)sender {
     NSPasteboard *pastboard = [sender draggingPasteboard];
     NSURL *URL = [NSURL URLFromPasteboard:pastboard];
-
-    if (![URL.pathExtension isEqualToString:@"txt"]) {
+    if (![URL.pathExtension caseInsensitiveCompare:@"txt"] == NSOrderedSame &&
+        ![URL.pathExtension caseInsensitiveCompare:@"blockml"] == NSOrderedSame) {
         return NO;
     }
-    
-    AppDelegate *appDelegate = [NSApp delegate];
-    appDelegate.fileURL = URL;
-    [appDelegate processFile];
-    
+    [self.delegate dropedFileWithURL:URL];
     return YES;
 }
-
-//- (void)concludeDragOperation:(id < NSDraggingInfo >)sender {
-//    [self setNeedsDisplay:YES];
-//}
 
 @end
