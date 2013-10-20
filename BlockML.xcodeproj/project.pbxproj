@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		82080F26172D0CEE008ABC58 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82080F25172D0CEE008ABC58 /* Cocoa.framework */; };
 		82080F30172D0CEE008ABC58 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82080F2E172D0CEE008ABC58 /* InfoPlist.strings */; };
 		82080F32172D0CEE008ABC58 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F31172D0CEE008ABC58 /* main.m */; };
 		82080F36172D0CEE008ABC58 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 82080F34172D0CEE008ABC58 /* Credits.rtf */; };
@@ -55,6 +54,7 @@
 		82A0627A1812D7AE007A7F17 /* EscapeText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A062791812D7AE007A7F17 /* EscapeText.xib */; };
 		82A0627C181375E1007A7F17 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A0627B181375E1007A7F17 /* Main.xib */; };
 		82A0627F1813B045007A7F17 /* BugFixSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A0627E1813B045007A7F17 /* BugFixSegmentedCell.m */; };
+		82A062831813F2CD007A7F17 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82080F25172D0CEE008ABC58 /* Cocoa.framework */; };
 		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
 		82AD8A6B17F5F4D600859D26 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6A17F5F4D600859D26 /* Image.m */; };
 		82AD8A7217F788E100859D26 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A7117F788E100859D26 /* Caption.m */; };
@@ -173,6 +173,7 @@
 		82A0627B181375E1007A7F17 /* Main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
 		82A0627D1813B045007A7F17 /* BugFixSegmentedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugFixSegmentedCell.h; sourceTree = "<group>"; };
 		82A0627E1813B045007A7F17 /* BugFixSegmentedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugFixSegmentedCell.m; sourceTree = "<group>"; };
+		82A062811813ED08007A7F17 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
 		82AD8A6717F4CC2200859D26 /* Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Code.m; sourceTree = "<group>"; };
 		82AD8A6917F5F4D600859D26 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -220,7 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82080F26172D0CEE008ABC58 /* Cocoa.framework in Frameworks */,
+				82A062831813F2CD007A7F17 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +260,7 @@
 		82080F24172D0CEE008ABC58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				82A062811813ED08007A7F17 /* QuartzCore.framework */,
 				82080F25172D0CEE008ABC58 /* Cocoa.framework */,
 				82080F43172D0CEF008ABC58 /* SenTestingKit.framework */,
 				82080F27172D0CEE008ABC58 /* Other Frameworks */,

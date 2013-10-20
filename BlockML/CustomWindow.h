@@ -9,6 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "INAppStoreWindow.h"
 
-@interface CustomWindow : NSWindow
+@interface CustomWindow : INAppStoreWindow
 
 @end
