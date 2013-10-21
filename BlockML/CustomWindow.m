@@ -35,12 +35,11 @@
         self.trafficLightButtonsLeftMargin = 10;
         
         INWindowButton *closeButton = [INWindowButton windowButtonWithSize:NSMakeSize(15, 15) groupIdentifier:nil];
-        closeButton.activeImage = [NSImage imageNamed:@"CloseButton"];
-        NSImage *image = [NSImage imageNamed:@"CloseButton"];
-        closeButton.activeNotKeyWindowImage = image;
-        closeButton.inactiveImage = image;
-        closeButton.pressedImage = image;
-        closeButton.rolloverImage = image;
+        closeButton.activeImage = [NSImage imageNamed:@"CloseButtonActive"];
+        closeButton.activeNotKeyWindowImage = [NSImage imageNamed:@"CloseButtonInactive"];
+        closeButton.inactiveImage = [NSImage imageNamed:@"CloseButtonInactive"];
+        closeButton.pressedImage = [NSImage imageNamed:@"CloseButtonPressed"];
+        closeButton.rolloverImage = [NSImage imageNamed:@"CloseButtonRollOver"];
         self.closeButton = closeButton;
         
         [self setMovableByWindowBackground:YES];

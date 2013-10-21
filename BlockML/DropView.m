@@ -19,10 +19,20 @@
 }
 
 - (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender {
+    NSLog(@"draggingEntered:");
     return NSDragOperationGeneric;
 }
 
+- (void)draggingEnded:(id < NSDraggingInfo >)sender {
+    NSLog(@"draggingEnded:");
+}
+
+- (void)draggingExited:(id < NSDraggingInfo >)sender {
+    NSLog(@"draggingExited:");
+}
+
 - (BOOL)performDragOperation:(id<NSDraggingInfo>)sender {
+    NSLog(@"performDragOperation:");
     NSPasteboard *pastboard = [sender draggingPasteboard];
     NSURL *URL = [NSURL URLFromPasteboard:pastboard];
     if (![URL.pathExtension caseInsensitiveCompare:@"txt"] == NSOrderedSame &&
