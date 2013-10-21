@@ -11,21 +11,11 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-//@property (assign) IBOutlet NSWindow *window;
-//@property (weak) IBOutlet NSProgressIndicator *progessIndicator;
-//@property (weak) IBOutlet NSButton *recompileButton;
-//@property (weak) IBOutlet NSTextField *fileNameTextField;
-//@property (weak) IBOutlet NSMenuItem *recompileMenuItem;
-//
-//@property (strong) NSURL *fileURL; // Text File
-//@property (strong) NSURL *HTMLURL;
-//
-//- (IBAction)recompileButtonWasPressed:(id)sender;
-//- (void)processFile;
-
 @property (weak) IBOutlet NSMenu *openRecentMenuItem;
 
 - (IBAction)recompileMenuItemWasPressed:(id)sender;
 - (IBAction)openEscapeTextWindowMenuItemWasPressed:(id)sender;
+- (IBAction)openHelpMenuItemWasPressed:(id)sender;
+- (IBAction)aboutMenuItemWasPressed:(id)sender;
 
 @end

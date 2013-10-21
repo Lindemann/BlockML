@@ -20,7 +20,7 @@
                             <menuItem title="About BlockML" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                    <action selector="aboutMenuItemWasPressed:" target="494" id="tpa-3w-9C4"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="236">
@@ -133,7 +133,7 @@
                         <items>
                             <menuItem title="BlockML Help" keyEquivalent="?" id="492">
                                 <connections>
-                                    <action selector="showHelp:" target="-1" id="493"/>
+                                    <action selector="openHelpMenuItemWasPressed:" target="494" id="eEt-3e-3TD"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="veZ-tP-B6g"/>

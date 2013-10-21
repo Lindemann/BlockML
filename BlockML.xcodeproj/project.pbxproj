@@ -55,6 +55,8 @@
 		82A0627C181375E1007A7F17 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A0627B181375E1007A7F17 /* Main.xib */; };
 		82A0627F1813B045007A7F17 /* BugFixSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A0627E1813B045007A7F17 /* BugFixSegmentedCell.m */; };
 		82A062831813F2CD007A7F17 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82080F25172D0CEE008ABC58 /* Cocoa.framework */; };
+		82A062871815671E007A7F17 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A062861815671E007A7F17 /* AboutWindowController.m */; };
+		82A0628918156731007A7F17 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A0628818156731007A7F17 /* About.xib */; };
 		82AD8A6817F4CC2200859D26 /* Code.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6717F4CC2200859D26 /* Code.m */; };
 		82AD8A6B17F5F4D600859D26 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A6A17F5F4D600859D26 /* Image.m */; };
 		82AD8A7217F788E100859D26 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A7117F788E100859D26 /* Caption.m */; };
@@ -174,6 +176,9 @@
 		82A0627D1813B045007A7F17 /* BugFixSegmentedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugFixSegmentedCell.h; sourceTree = "<group>"; };
 		82A0627E1813B045007A7F17 /* BugFixSegmentedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugFixSegmentedCell.m; sourceTree = "<group>"; };
 		82A062811813ED08007A7F17 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		82A062851815671E007A7F17 /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
+		82A062861815671E007A7F17 /* AboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
+		82A0628818156731007A7F17 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
 		82AD8A6617F4CC2200859D26 /* Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.h; sourceTree = "<group>"; };
 		82AD8A6717F4CC2200859D26 /* Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Code.m; sourceTree = "<group>"; };
 		82AD8A6917F5F4D600859D26 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -532,6 +537,9 @@
 		82A0627418128508007A7F17 /* About Window */ = {
 			isa = PBXGroup;
 			children = (
+				82A062851815671E007A7F17 /* AboutWindowController.h */,
+				82A062861815671E007A7F17 /* AboutWindowController.m */,
+				82A0628818156731007A7F17 /* About.xib */,
 			);
 			name = "About Window";
 			sourceTree = "<group>";
@@ -741,6 +749,7 @@
 				82080F36172D0CEE008ABC58 /* Credits.rtf in Resources */,
 				82A0627C181375E1007A7F17 /* Main.xib in Resources */,
 				82080F3C172D0CEE008ABC58 /* MainMenu.xib in Resources */,
+				82A0628918156731007A7F17 /* About.xib in Resources */,
 				82DEC50517EAADF2007708D1 /* Images in Resources */,
 				82A0627A1812D7AE007A7F17 /* EscapeText.xib in Resources */,
 				82080F6A172D0FFB008ABC58 /* CSS in Resources */,
@@ -805,6 +814,7 @@
 				82080F73172D1C1F008ABC58 /* Token.m in Sources */,
 				82DEC51817EDDB5C007708D1 /* ListItem.m in Sources */,
 				82A06266181264F2007A7F17 /* DocumentController.m in Sources */,
+				82A062871815671E007A7F17 /* AboutWindowController.m in Sources */,
 				82AD8A6817F4CC2200859D26 /* Code.m in Sources */,
 				82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */,
 				82080F75172D1C1F008ABC58 /* Scanner.m in Sources */,
