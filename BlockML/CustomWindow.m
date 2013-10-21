@@ -14,7 +14,7 @@
     self = [super initWithContentRect:contentRect styleMask:windowStyle backing:bufferingType defer:deferCreation];
     if (self) {
         
-        NSColor *color = [NSColor colorWithCalibratedRed:1.f green:1.f blue:1.f alpha:1.00f];
+        NSColor *color = [NSColor whiteColor];
         [self setBackgroundColor:color];
         
         self.titleBarStartColor     = color;
@@ -24,9 +24,6 @@
         self.inactiveTitleBarEndColor       = color;
         self.inactiveTitleBarStartColor     = color;
         self.inactiveBaselineSeparatorColor = color;
-        
-        self.zoomButton = [INWindowButton new];
-        self.minimizeButton = [INWindowButton new];
         
         self.centerFullScreenButton = YES;
         self.fullScreenButtonRightMargin = 10;
@@ -41,6 +38,8 @@
         closeButton.pressedImage = [NSImage imageNamed:@"CloseButtonPressed"];
         closeButton.rolloverImage = [NSImage imageNamed:@"CloseButtonRollOver"];
         self.closeButton = closeButton;
+        self.zoomButton = [INWindowButton new];
+        self.minimizeButton = [INWindowButton new];
         
         [self setMovableByWindowBackground:YES];
     }

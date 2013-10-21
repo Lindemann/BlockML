@@ -19,20 +19,23 @@
 }
 
 - (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender {
-    NSLog(@"draggingEntered:");
+//    NSLog(@"draggingEntered:");
+    [self.delegate draggingStarted];
     return NSDragOperationGeneric;
 }
 
 - (void)draggingEnded:(id < NSDraggingInfo >)sender {
-    NSLog(@"draggingEnded:");
+//    NSLog(@"draggingEnded:");
+    [self.delegate draggingEnded];
 }
 
 - (void)draggingExited:(id < NSDraggingInfo >)sender {
-    NSLog(@"draggingExited:");
+//    NSLog(@"draggingExited:");
+    [self.delegate draggingEnded];
 }
 
 - (BOOL)performDragOperation:(id<NSDraggingInfo>)sender {
-    NSLog(@"performDragOperation:");
+//    NSLog(@"performDragOperation:");
     NSPasteboard *pastboard = [sender draggingPasteboard];
     NSURL *URL = [NSURL URLFromPasteboard:pastboard];
     if (![URL.pathExtension caseInsensitiveCompare:@"txt"] == NSOrderedSame &&
@@ -40,6 +43,7 @@
         return NO;
     }
     [self.delegate dropedFileWithURL:URL];
+    [self.delegate draggingEnded];
     return YES;
 }
 

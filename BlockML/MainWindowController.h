@@ -18,6 +18,7 @@
 
 @property (weak) IBOutlet NSProgressIndicator *progressIndicator;
 @property (weak) IBOutlet NSTextField *fileNameTextField;
+@property (weak) IBOutlet NSTextField *dropYourFileHereTextField;
 @property (weak) IBOutlet NSSegmentedControl *segmentedControl;
 @property (weak) IBOutlet DropView *dropView;
 

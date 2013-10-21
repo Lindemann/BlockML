@@ -28,6 +28,9 @@
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     self.dropView.delegate = self;
     self.fileNameTextField.stringValue = @"";
+    
+    NSImage *segentedControlImage = [self.segmentedControl imageForSegment:0];
+    [segentedControlImage setTemplate:YES];
 }
 
 - (void)processFile {
@@ -117,6 +120,14 @@
 
 - (void)dropedFileWithURL:(NSURL*)URL {
     [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:URL display:NO completionHandler:nil];
+}
+
+- (void)draggingStarted {
+
+}
+
+- (void)draggingEnded {
+
 }
 
 @end

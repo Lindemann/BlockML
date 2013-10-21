@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
             <connections>
                 <outlet property="dropView" destination="FTa-fM-fUV" id="aVO-Fe-mHX"/>
+                <outlet property="dropYourFileHereTextField" destination="Nga-jw-UCJ" id="z6l-xr-Ruh"/>
                 <outlet property="fileNameTextField" destination="l36-W5-6l8" id="JjX-yK-wwe"/>
                 <outlet property="progressIndicator" destination="GcV-e4-84O" id="0kz-v2-qo2"/>
                 <outlet property="segmentedControl" destination="gYY-Wq-VgI" id="JWk-pF-c7R"/>
@@ -16,7 +17,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1" customClass="CustomWindow">
+        <window title="BlockML" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1" customClass="CustomWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <rect key="contentRect" x="196" y="240" width="430" height="260"/>
@@ -59,7 +60,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="&lt;textFileName.txt>" id="CFL-7e-ozn">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" red="0.16084778708133973" green="0.16084778708133973" blue="0.16084778708133973" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.24767307117224879" green="0.24767307117224879" blue="0.24767307117224879" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>

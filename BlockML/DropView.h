@@ -19,5 +19,7 @@
 @protocol DropViewDelegate <NSObject>
 
 - (void)dropedFileWithURL:(NSURL*)URL;
+- (void)draggingStarted;
+- (void)draggingEnded;
 
 @end

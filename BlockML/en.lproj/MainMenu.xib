@@ -64,6 +64,69 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="Edit" id="i5j-4f-zth">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Edit" id="RiF-kR-DDt">
+                        <items>
+                            <menuItem title="Undo" keyEquivalent="z" id="T5V-ce-8uK">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="J86-Uf-u4k"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Redo" keyEquivalent="Z" id="JrQ-Oh-1Fg">
+                                <connections>
+                                    <action selector="redo:" target="-1" id="62C-k1-UYo"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="BPu-6e-5tk"/>
+                            <menuItem title="Cut" keyEquivalent="x" id="Bnd-Bp-RVd">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="xxi-3w-6yc"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="NnO-cW-sIg">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="XVq-Vp-Ygk"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="4rz-pi-9Co">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="vIj-bS-HIh"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete" id="Rih-lf-zb6">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="delete:" target="-1" id="3lX-rd-0aV"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="adx-Dt-Til">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="v6J-0e-H83"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" id="Cfd-r5-kbH">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Window" systemMenu="window" id="VPa-54-rah">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="EXX-rt-AVc">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="boC-Yk-vWM"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="J0S-Tu-Ifm"/>
+                            <menuItem title="Bring All to Front" id="n1E-Vf-Nja">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="far-Ly-5ep"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
                 <menuItem title="Help" id="490">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="491">

@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface EscapeTextWindowController : NSWindowController
+@interface EscapeTextWindowController : NSWindowController <NSTextViewDelegate>
+
+@property (unsafe_unretained) IBOutlet NSTextView *input;
+@property (unsafe_unretained) IBOutlet NSTextView *output;
+@property (weak) IBOutlet NSSplitView *splitView;
 
 @end
