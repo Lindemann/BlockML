@@ -74,11 +74,11 @@
             
             // Copy Images
             NSURL *ImagesSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"Images" isDirectory:YES];
-            NSURL *ImagesDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"Images" isDirectory:YES];
+            NSURL *ImagesDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"images" isDirectory:YES];
             [fileManager copyItemAtURL:ImagesSourceDirectory toURL:ImagesDestinationDirectory error:nil];
             // Copy CSS
             NSURL *CSSSourceDirectory = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"CSS" isDirectory:YES];
-            NSURL *CSSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"CSS" isDirectory:YES];
+            NSURL *CSSDestinationDirectory = [compiledDataDirectory URLByAppendingPathComponent:@"css" isDirectory:YES];
             [fileManager copyItemAtURL:CSSSourceDirectory toURL:CSSDestinationDirectory error:nil];
             
             /*
