@@ -11,6 +11,7 @@
 @interface AboutWindowController : NSWindowController
 
 @property (weak) IBOutlet NSTextField *versionTextField;
+@property (weak) IBOutlet NSTextField *awwAppsTextField;
 
 - (IBAction)creditsButtonWasPressed:(id)sender;
 

@@ -27,7 +27,9 @@
 {
     [super windowDidLoad];
 
-    self.versionTextField.stringValue = [NSString stringWithFormat:@"Version %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+    self.versionTextField.stringValue = [NSString stringWithFormat:@"Version %@, Build %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]];
+    [self.versionTextField setSelectable:YES];
+    [self.awwAppsTextField setSelectable:YES];
 }
 
 - (IBAction)creditsButtonWasPressed:(id)sender {

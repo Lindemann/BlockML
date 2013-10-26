@@ -28,6 +28,7 @@
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     self.dropView.delegate = self;
     self.fileNameTextField.stringValue = @"";
+    [self.fileNameTextField setSelectable:YES];
     
     NSImage *segentedControlImage = [self.segmentedControl imageForSegment:0];
     [segentedControlImage setTemplate:YES];
