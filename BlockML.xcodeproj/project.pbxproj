@@ -67,6 +67,7 @@
 		82AD8A8417FCB99B00859D26 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A8317FCB99B00859D26 /* Quote.m */; };
 		82AD8A8717FCB9B000859D26 /* Source.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A8617FCB9B000859D26 /* Source.m */; };
 		82AD8A8B17FD70BD00859D26 /* Math.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A8A17FD70BD00859D26 /* Math.m */; };
+		82B00D14181A9627004C5D10 /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = 82B00D13181A9627004C5D10 /* Credits */; };
 		82B09F0C18021F4800F33625 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B09F0B18021F4800F33625 /* Images.xcassets */; };
 		82DEC4FB17E609D9007708D1 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FA17E609D9007708D1 /* Text.m */; };
 		82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FD17E609F8007708D1 /* LineBreak.m */; };
@@ -199,6 +200,7 @@
 		82AD8A8617FCB9B000859D26 /* Source.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Source.m; sourceTree = "<group>"; };
 		82AD8A8917FD70BD00859D26 /* Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Math.h; sourceTree = "<group>"; };
 		82AD8A8A17FD70BD00859D26 /* Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Math.m; sourceTree = "<group>"; };
+		82B00D13181A9627004C5D10 /* Credits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Credits; sourceTree = "<group>"; };
 		82B09F0B18021F4800F33625 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		82DEC4F917E609D9007708D1 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		82DEC4FA17E609D9007708D1 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 		82080F5D172D0E45008ABC58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				82B00D13181A9627004C5D10 /* Credits */,
 				829AE16F18076987002BF377 /* highlight.js */,
 				82DEC50417EAADF2007708D1 /* Images */,
 				82080F69172D0FFB008ABC58 /* CSS */,
@@ -752,6 +755,7 @@
 				820659FD1815705B0055F959 /* About.xib in Resources */,
 				82DEC50517EAADF2007708D1 /* Images in Resources */,
 				82A0627A1812D7AE007A7F17 /* EscapeText.xib in Resources */,
+				82B00D14181A9627004C5D10 /* Credits in Resources */,
 				82080F6A172D0FFB008ABC58 /* CSS in Resources */,
 				8208105B17329313008ABC58 /* icon.icns in Resources */,
 			);

@@ -44,7 +44,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14pt;
   line-height: 1.6em;
-  color: #424242;
+  color: #575756;
   word-wrap: break-word; }
 
 h1, h2, h3, h4, h5, h6, p, li, div, span {
@@ -109,8 +109,7 @@ h6 {
   font-family: "Source Code Pro", monospace;
   font-weight: 500;
   color: #9fae04;
-  border-radius: 6px;
-  border: solid #cce005 1px;
+  border-radius: 10px;
   margin-bottom: 1.6em; }
   .error a {
     color: #c3d605;
@@ -172,37 +171,22 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 code {
   font-family: "Source Code Pro", monospace;
-  /* Decoration */
-  border: solid #dbdbdb 1px;
+  border: solid #d6d6d6 1px;
   -webkit-border-radius: 3px;
-  /* Add a scrollbar for looooooong code */
   word-wrap: normal;
   overflow: scroll;
   overflow-y: auto;
   overflow-x: auto; }
 
-pre {
-  width: 100%;
-  font-size: 11pt;
-  line-height: 1.6em; }
-
-/* Creepy method to give pre a padding-bottom, 
-which is as height as the other padding-bottoms,
-where the font size is $fontSize and not 11pt */
-pre:after {
-  content: " ";
-  display: block;
-  font-size: 14pt;
-  padding-bottom: 1.6em;
-  height: 0; }
-
-/* Some "improvements" of the github.css */
 pre code {
   background-color: #f7f7f7; }
 
-pre .title,
-pre .id {
-  color: #00AB7D; }
+pre {
+  /* Creepy behavior of pre require use of CSS Tables*/
+  width: 100%;
+  font-size: 11pt;
+  line-height: 1.6em;
+  padding-bottom: 1.6em; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    IMAGE                                   */
@@ -264,17 +248,17 @@ ul, ol {
   .quote:before {
     content: "“";
     font-size: 70pt;
-    color: #757575;
+    color: #8a8a89;
     position: absolute;
     line-height: 0.6em; }
   .quote .source {
-    color: #8f8f8f;
+    color: #a4a4a2;
     font-size: 12.6pt;
     margin-left: 40px; }
     .quote .source:before {
       content: "— "; }
     .quote .source a {
-      color: #757575; }
+      color: #8a8a89; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                     MATH                                   */
@@ -288,7 +272,7 @@ ul, ol {
 #fn-1 {
   padding-top: 1.6em;
   margin-top: 60px;
-  border-top: 1px solid #424242; }
+  border-top: 1px solid #575756; }
 
 .en {
   padding-bottom: 1.6em; }
@@ -308,11 +292,11 @@ table, td, td {
     padding-bottom: 0; }
 
 td, th {
-  border: 1px solid #c2c2c2;
+  border: 1px solid #bdbdbc;
   height: 40px; }
 
 th {
-  background: #efefef; }
+  background: #f0f0ef; }
   th * {
     font-weight: 600; }
 
@@ -339,8 +323,7 @@ td {
   background-color: #f7f7f7;
   padding: 0 0.3em;
   -webkit-border-radius: 3px;
-  border: solid #dbdbdb 1px;
-  white-space: nowrap; }
+  border: solid #d6d6d6 1px; }
 
 .italic {
   font-style: italic; }
@@ -357,6 +340,6 @@ td {
   .frontpage img {
     padding-bottom: 0; }
   .frontpage h6 {
-    color: #8f8f8f; }
+    color: #a4a4a2; }
   .frontpage h1, .frontpage h2, .frontpage h3, .frontpage h4, .frontpage h5, .frontpage h6, .frontpage #title {
     padding: 0.2em 0; }

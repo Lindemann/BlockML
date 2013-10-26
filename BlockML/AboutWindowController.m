@@ -27,9 +27,17 @@
 {
     [super windowDidLoad];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+//    [NSString stringWithFormat:@"Version %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+//    
+//    NSMutableAttributedString *version = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"BlockML V %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]]];
+//    [version addAttribute:NSFontAttributeName value:[NSFont boldSystemFontOfSize:54] range:NSMakeRange(0, 7)];
+//    self.versionTextField.attributedStringValue = version;
+    
+    self.versionTextField.stringValue = [NSString stringWithFormat:@"Version %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
 }
 
 - (IBAction)creditsButtonWasPressed:(id)sender {
+    NSURL *url = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"Credits/Credits/document.html"];
+    [[NSWorkspace sharedWorkspace] openURL:url];
 }
 @end
