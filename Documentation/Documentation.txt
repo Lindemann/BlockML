@@ -1,0 +1,343 @@
+/*
+    ____  __           __   __  _____ 
+   / __ )/ /___  _____/ /__/  |/  / / 
+  / __  / / __ \/ ___/ //_/ /|_/ / /  
+ / /_/ / / /_/ / /__/ ,< / /  / / /___
+/_____/_/\____/\___/_/|_/_/  /_/_____/
+
+*/
+
+title[BlockML Documentation]
+
+toc[Contents]
+
+sec[Introduction][
+
+sec[General Approach/Getting Started?][
+
+Info graphic, file types, App, directories, CSS, JS, resources are online, App don't touch the resources in derived data after the first compilation
+
+The App is basically a compiler with an UI...
+It is no necessary to use TextMate...
+Output directory
+img[info.svg]
+
+]/*General Approach*/
+
+sec[Syntax][
+Little Example Document
+]/*Syntx*/
+
+sec[Block Elements and Inline Elements][
+If you never heard about block or inline HTML, don't worry so much about it. In the first place it is very unlikely that you use block and inline elements in the wrong context and if you do, you will notice it immediately, because you get an error message or the result looks creepy.
+
+]/*Block Elements and Inline Elements*/
+
+]/*Overview*/
+
+sec[Markup Elements][
+
+sec[Paragraphs, Line Breaks and White Space][
+
+code[markdown][This is a paragraph.↵
+↵ 
+This is a second paragraph.↵
+This is a new line.]
+
+code[markdown][↵ 
+↵ 
+↵ 
+↵ 
+The BlockML parser removes useless white space like the LFs above.↵
+••••Or this TAB in front of this sentence.]
+
+code[markdown][img\[image.png\]↵
+↵
+↵
+↵
+code\[java\]\[System.out.print("Java™!!1!");\]]
+
+]/*Paragraphs, Line Breaks and White Space*/
+
+sec[Title][
+This element returns a centered, clown sized heading and it sets the c[<title>] of your HTML document.
+
+code[no-highlight][title\[Document Title\]]
+html[<h1 style="padding: 0" id="title">Document Title</h1><p></p>]
+img[title.png]
+
+]/*Title*/
+
+sec[Sections][
+Sections consist of an section heading and section content. These content can be text and every BlockML markup element, regardless that not every element makes sense in that context, for example c[Title] and c[TOC] elements.
+
+Nest the sections to get a section hierarchy.
+
+code[vala][sec\[Section Heading\]\[This section contains text.\]/*Section*/
+
+sec\[Section Heading\]\[
+
+	sec\[SubSection Heading\]\[\]/*SubSection*/
+
+	sec\[SubSection Heading\]\[
+
+		sec\[SubSubSection Heading\]\[
+		This section contains text too.
+		\]/*SubSubSection*/
+
+	\]/*SubSection*/
+
+\]/*Section*/
+
+sec\[Section Heading\]\[
+This section contains two paragraphs. This is the first one.
+
+And this is the second one with a link inside a\[http://awwapps.com\].
+\]/*Section*/]
+
+html[<div class="sec" id="sec-1">
+	<h1>1 Section Heading</h1>
+	<p>This section contains text.</p>
+</div>
+<div class="sec" id="sec-2">
+	<h1>2 Section Heading</h1>
+	<div class="sec" id="sec-2.1">
+		<h2>2.1 SubSection Heading</h2>
+	</div>
+	<div class="sec" id="sec-2.2">
+		<h2>2.2 SubSection Heading</h2>
+		<div class="sec" id="sec-2.2.1">
+			<h3>2.2.1 SubSubSection Heading</h3>
+			<p>This section contains text too.</p>
+		</div>
+	</div>
+</div>
+<div class="sec" id="sec-3">
+	<h1>3 Section Heading</h1>
+	<p>This section contains two paragraphs. This is the first one.</p>
+	<p>And this is the second one with a link inside <a href="http://awwapps.com">http://awwapps.com</a>.</p>
+</div>]
+
+]/*Sections*/
+
+sec[Table of Contents][
+To get a Table of Contents use the TOC tag. The Table of Contents gets assembled from the section headings.
+
+code[no-highlight][toc\[TOC Title\]]
+
+The Table of Contents for the section example above looks like this:
+
+html[<div id="toc" style="padding-top: 0; padding-bottom: 1.6em">
+	<h1 style="padding-top: 0">TOC Title</h1>
+	<ul>
+		<li><span><span>1 Section Heading</span></span><a href="#sec-1"><span>\[⚐\]</span></a></li>
+	</ul>
+	<ul>
+		<li><span><span>2 Section Heading</span></span><a href="#sec-2"><span>\[⚐\]</span></a></li>
+		<ul>
+			<li><span><span>2.1 SubSection Heading</span></span><a href="#sec-2.1"><span>\[⚐\]</span></a></li>
+		</ul>
+		<ul>
+			<li><span><span>2.2 SubSection Heading</span></span><a href="#sec-2.2"><span>\[⚐\]</span></a></li>
+			<ul>
+				<li><span><span>2.2.1 SubSubSection Heading</span></span><a href="#sec-2.2.1"><span>\[⚐\]</span></a></li>
+			</ul>
+		</ul>
+	</ul>
+	<ul>
+		<li><span><span>3 Section Heading</span></span><a href="#sec-3"><span>\[⚐\]</span></a></li>
+	</ul>
+</div>]
+
+]/*Table of Contents*/
+
+sec[Links][
+A Link consists of an URL or of an URL and a link description.
+
+code[no-highlight][a\[http://awwapps.com\]
+a\[http://awwapps.com\]\[Description Text\]]
+
+a[http://awwapps.com]
+a[http://awwapps.com][Description Text]
+
+]/*Links*/
+
+sec[Images][
+To embed a local image into the document, copy that image inside the auto generated c[Images]-Folder, which is part of the Derived Data-Folder. Then call the image without any path references.
+
+img[embedImage.png]
+code[no-highlight][img\[localImage.png\]]
+
+img[dribbble.png]
+
+You can also embed images from the internet, when you use their URL.
+
+code[no-highlight][img\[http://internetImage.jpg\]]
+
+If an image don't fit into the document, resize its width or its height or both with a second block: c[\[w, h\]]
+
+m[Don't forget the comma...]
+
+code[vala][/*adjust width and height*/
+img\[localImage.png\]\[400, 300\]
+
+/*adjust only the width*/
+img\[localImage.png\]\[400,\]
+
+/*adjust only the height*/
+img\[localImage.png\]\[,300\]]
+
+img[dribbble.png][400,]
+
+]/*Images*/
+
+sec[Headings][
+
+There are headings from c[<h1>] - c[<h6>]. Headings don't get used for the TOC. If you want a fancy TOC use sections.
+
+code[no-highlight][h1\[Heading 1\]
+h2\[Heading 2\]
+h3\[Heading 3\]
+h4\[Heading 4\]
+h5\[Heading 5\]
+h6\[Heading 6\]]
+
+]/*Headings*/
+
+sec[Code with Syntax Highlighting][
+
+Languages, CSS, no-highlight
+m[Don't forget to escape the square brackets!] For more information read id[ESCAPE].
+
+]/*Code with Syntax Highlighting*/
+
+sec[Math Formulas][
+m[Don't forget to escape the square brackets!]
+]/*Math Formulas*/
+
+sec[Tables][
+
+table[
+tr[ th[Header 1] th[Header 2] ]
+tr[   td[Data 1]   td[Data 2] ]
+]
+
+table[
+tr[ th[Header 1] td[Data 1] ]
+tr[ th[Header 2] td[Data 2] ]
+]
+
+table[
+tr[ 	  th[Header][h:2] ]
+tr[ td[Data 1] td[Data 2] ]
+]
+
+table[
+tr[ th[Header][v:2] td[Data 2] ]
+tr[ 				td[Data 1] ]
+]
+
+table[
+tr[ th[Header 1] th[Header 2] ]
+tr[			  td[Data 1][h:2] ]
+]
+
+]/*Tables*/
+
+sec[Captions][]/*Captions*/
+
+sec[Lists][
+
+sec[Ordered Lists][]/*Ordered Lists*/
+
+sec[Unordered Lists][]/*Unordered Lists*/
+
+]/*Lists*/
+
+sec[Footnotes][]/*Footnotes*/
+
+sec[Cross References][
+
+sec[References to Captions][]/*References to Captions*/
+
+sec[References to Sections][]/*References to Sections*/
+
+sec[References to Bibliography Items][]/*References to Bibliography Items*/
+
+]/*Cross References*/
+
+sec[Bibliography][]/*Bibliography*/
+
+sec[Quotes][
+There are block quotation with or without a source.
+
+code[no-highlight][q\[Block quotation with one paragraph and a source.\]\[The Source\]]
+
+q[Block quotation with one paragraph and a source.][The Source]
+
+code[no-highlight][q\[Block quotation with one paragraph.
+
+And a second paragraph, but without a source.\]]
+
+q[Block quotation with one paragraph.
+
+And a second paragraph, but without a source.]
+
+]/*Quotes*/
+
+sec[Text Styles][
+
+sec[Bold][]/*Bold*/
+
+]/*Text Styles*/
+
+sec[Document Header and Front Page][]/*Document Header or Front Page*/
+
+sec[Page Break][]/*Page Break*/
+
+sec[Embed HTML][
+
+sec[Inline HTML][]/*Inline HTML*/
+
+sec[Block HTML][]/*Block HTML*/
+
+]/*Embed HTML*/
+
+sec[Comments][
+
+code[vala][/* Comment */
+
+/* Comment
+over
+multiple
+lines */
+
+Some text with a comment /* a\[http://awwapps.com\] */ inside.] 
+]/*Comments*/
+
+]/*Markup Elements*/
+
+sec[Escape of Special Characters][
+Since square brackets c[\[\]] have a very special meaning in BlockML it is necessary to escape them, if you want to use them in a non markup context. For example in code or mathematical formulas. 
+code[objectivec][\[self.window orderFront:self\];]
+
+To escape the square brackets just set a backslash c[\\] in front of them.
+code[objectivec][\\\[self.window orderFront:self\\\];]
+
+if you need an expression like this c[] for your fancy LaTeX math formula stuff, it gets a little bit trickier. Like it is usual in programming the occurrence of a trailing backslash c[\\\\] means, that the first backslash c[\\] gets escaped, because the first backslash loses their meaning as escape symbol and gets a normal character. 
+
+That means you have to use 6786 backslashes c[] to print c[] with 2 backslashes.
+
+But luckily the BlockML App helps you to manage all the backslashes...
+
+][ESCAPE]/*Escape of Special Characters*/
+
+sec[Error Warnings][]/*Errors*/
+
+sec[Use Custom CSS][]/*Use Custom CSS*/
+
+sec[Convert the HTML into a PDF][]/*Convert your HTML Document into a PDF*/
+
+sec[Setup TextMate][
+If you have ever used TextMate, this section isn't for you. Just "install" the tmBundle, the color schemes and activate spell checking.
+]/*Setup TextMate*/

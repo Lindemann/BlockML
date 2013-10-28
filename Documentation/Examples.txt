@@ -1,0 +1,92 @@
+title[Document Title]
+
+This is a paragraph.↵
+↵ 
+This is a second paragraph.↵ 
+This is a new line.
+↵ 
+↵ 
+↵ 
+The BlockML parser removes useless white space like the LFs above.↵ 
+	Or this TAB in front of this sentence.
+img[image.png]↵ 
+↵
+↵
+↵
+code[java][System.out.print("Java!!1!");]
+
+
+title[Document Title]
+
+h1[Heading 1]
+h2[Heading 2]
+h3[Heading 3]
+h4[Heading 4]
+h5[Heading 5]
+h6[Heading 6]
+
+toc[TOC Title]
+
+sec[Section Heading][This section contains text.]/*Section*/
+
+sec[Section Heading][
+
+	sec[SubSection Heading][]/*SubSection*/
+
+	sec[SubSection Heading][
+
+		sec[SubSubSection Heading][
+		This section contains text too.
+		]/*SubSubSection*/
+
+	]/*SubSection*/
+
+]/*Section*/
+
+sec[Section Heading][
+This section contains two paragraphs. This is the first one.
+
+And this is the second one with a link inside a[http://awwapps.com].
+]/*Section*/
+
+a[http://awwapps.com]
+a[http://awwapps.com][Aww Apps]
+
+/*adjust only the width*/
+img[image.png][200,]
+/*adjust only the height*/
+img[image.png][,200]
+/*adjust width and height*/
+img[image.png][200, 200]
+
+
+q[Block quotation with one paragraph and a source.][The Source]
+
+q[Block quotation with one paragraph.
+
+And a second paragraph, but without a source.]
+
+table[
+tr[ th[Header 1] th[Header 2] ]
+tr[   td[Data 1]   td[Data 2] ]
+]
+
+table[
+tr[ th[Header 1] td[Data 1] ]
+tr[ th[Header 2] td[Data 2] ]
+]
+
+table[
+tr[ 	  th[Header][h:2] ]
+tr[ td[Data 1] td[Data 2] ]
+]
+
+table[
+tr[ th[Header][v:2] td[Data 2] ]
+tr[ 				td[Data 1] ]
+]
+
+table[
+tr[ th[Header 1] th[Header 2] ]
+tr[			  td[Data 1][h:2] ]
+]
