@@ -13,9 +13,165 @@
 		<link type="image/x-icon" href="images/favicon.ico" rel="icon">
 		<link media="screen" href="css/screen.css" type="text/css" rel="stylesheet">
 		<link media="print" href="css/print.css" type="text/css" rel="stylesheet">
+		<script src="highlight.js/highlight.pack.js"></script>
+		<script>hljs.tabReplace = '    ';hljs.initHighlightingOnLoad();</script>
 		<title>Document Title</title>
 	</head>
 	<body>
 		<h1 id="title">Document Title</h1>
+		<p>This is a paragraph.↵<br>↵ <br>This is a second paragraph.↵ <br>This is a new line.<br>↵ <br>↵ <br>↵ <br>The BlockML parser removes useless white space like the LFs above.↵ <br>Or this TAB in front of this sentence.</p>
+		<img src="images/image.png">
+		<p>↵ <br>↵<br>↵<br>↵</p>
+		<pre><code class="java">System.out.print("Java!!1!");</code></pre>
+		<h1 id="title">Document Title</h1>
+		<h1>Heading 1</h1>
+		<h2>Heading 2</h2>
+		<h3>Heading 3</h3>
+		<h4>Heading 4</h4>
+		<h5>Heading 5</h5>
+		<h6>Heading 6</h6>
+		<div id="toc">
+			<h1>TOC Title</h1>
+			<ul>
+				<li><span><span>1 Section Heading</span></span><a href="#sec-1"><span>[⚐]</span></a></li>
+			</ul>
+			<ul>
+				<li><span><span>2 Section Heading</span></span><a href="#sec-2"><span>[⚐]</span></a></li>
+				<ul>
+					<li><span><span>2.1 SubSection Heading</span></span><a href="#sec-2.1"><span>[⚐]</span></a></li>
+				</ul>
+				<ul>
+					<li><span><span>2.2 SubSection Heading</span></span><a href="#sec-2.2"><span>[⚐]</span></a></li>
+					<ul>
+						<li><span><span>2.2.1 SubSubSection Heading</span></span><a href="#sec-2.2.1"><span>[⚐]</span></a></li>
+					</ul>
+				</ul>
+			</ul>
+			<ul>
+				<li><span><span>3 Section Heading</span></span><a href="#sec-3"><span>[⚐]</span></a></li>
+			</ul>
+		</div>
+		<div class="sec" id="sec-1">
+			<h1>1 Section Heading</h1>
+			<p>This section contains text.</p>
+		</div>
+		<div class="sec" id="sec-2">
+			<h1>2 Section Heading</h1>
+			<div class="sec" id="sec-2.1">
+				<h2>2.1 SubSection Heading</h2>
+			</div>
+			<div class="sec" id="sec-2.2">
+				<h2>2.2 SubSection Heading</h2>
+				<div class="sec" id="sec-2.2.1">
+					<h3>2.2.1 SubSubSection Heading</h3>
+					<p>This section contains text too.</p>
+				</div>
+			</div>
+		</div>
+		<div class="sec" id="sec-3">
+			<h1>3 Section Heading</h1>
+			<p>This section contains two paragraphs. This is the first one.</p>
+			<p>And this is the second one with a link inside <a href="http://awwapps.com">http://awwapps.com</a>.</p>
+		</div>
+		<p><a href="http://awwapps.com">http://awwapps.com</a><br><a href="http://awwapps.com">Aww Apps</a></p>
+		<img src="images/image.png" width="200">
+		<img src="images/image.png" height="200">
+		<img src="images/image.png" width="200" height="200">
+		<pre><code class="objectivec">#import &lt;Cocoa/Cocoa.h>
+
+int main(int argc, char *argv[])
+{
+    return NSApplicationMain(argc, (const char **)argv);
+}
+</code></pre>
+		<div class="quote">
+			<p>Block quotation with one paragraph and a source.</p>
+			<div class="source">The Source</div>
+		</div>
+		<div class="quote">
+			<p>Block quotation with one paragraph.</p>
+			<p>And a second paragraph, but without a source.</p>
+		</div>
+		<table>
+			<tr>
+				<th>
+					<p>Header 1</p>
+				</th>
+				<th>
+					<p>Header 2</p>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<p>Data 1</p>
+				</td>
+				<td>
+					<p>Data 2</p>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>
+					<p>Header 1</p>
+				</th>
+				<td>
+					<p>Data 1</p>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<p>Header 2</p>
+				</th>
+				<td>
+					<p>Data 2</p>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th colspan="2">
+					<p>Header</p>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<p>Data 1</p>
+				</td>
+				<td>
+					<p>Data 2</p>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th rowspan="2">
+					<p>Header</p>
+				</th>
+				<td>
+					<p>Data 2</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Data 1</p>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>
+					<p>Header 1</p>
+				</th>
+				<th>
+					<p>Header 2</p>
+				</th>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<p>Data 1</p>
+				</td>
+			</tr>
+		</table>
 	</body>
 </html>

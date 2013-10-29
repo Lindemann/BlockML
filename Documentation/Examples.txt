@@ -60,6 +60,26 @@ img[image.png][,200]
 img[image.png][200, 200]
 
 
+code[objectivec][#import <Cocoa/Cocoa.h>
+
+int main(int argc, char *argv\[\])
+{
+    return NSApplicationMain(argc, (const char **)argv);
+}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
 q[Block quotation with one paragraph and a source.][The Source]
 
 q[Block quotation with one paragraph.

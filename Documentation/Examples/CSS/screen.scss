@@ -38,9 +38,12 @@ $generalPadding: 60px;
 $paragraphPadding: 1.6em;
 
 $fontSize: 14pt;
-$fontColor: #575756;
+$fontColor: #424242;
 $linkColor: #6176F6;
 $selectionColor: #F1FC82;
+
+$codeBackgroundColor: lighten($fontColor, 71%);
+$codeBorder: solid lighten($fontColor, 60%) 1px;
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                   RESET                                    */
@@ -148,15 +151,10 @@ h6 {
 /*                                    ERROR                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-.error {
-	background-color: $selectionColor;
-	text-align: center;
-	padding: 0.4em 0;
-	font-family:"Source Code Pro", monospace;
-	font-weight: 500;
-	color: darken($selectionColor, 40%);
-	border-radius: 10px;
-	margin-bottom: $paragraphPadding;
+.error {     background-color: $selectionColor;     text-align: center; padding:
+0.4em 0;     font-family:"Source Code Pro", monospace;     font-weight: 500;
+color: darken($selectionColor, 40%);     border-radius: 6px; border: solid
+darken($selectionColor, 30%) 1px;     margin-bottom: $paragraphPadding;
 
 	a {
 		color: darken($selectionColor, 32%);
@@ -234,25 +232,43 @@ h6 {
 
 code {
 	font-family:"Source Code Pro", monospace;
-	border: solid lighten($fontColor, 50%) 1px;
+
+	/* Decoration */
+	border: $codeBorder;
 	-webkit-border-radius: 3px;
 
+	/* Add a scrollbar for looooooong code */
 	word-wrap: normal;
 	overflow: scroll;
 	overflow-y: auto;
 	overflow-x: auto;
 }
 
-pre code {
-	background-color: lighten($fontColor, 63%);
-}
-
 pre {
-	/* Creepy behavior of pre require use of CSS Tables*/
   	width: 100%;
     font-size: 11pt;
     line-height: 1.6em;
+}
+
+/* Creepy method to give pre a padding-bottom, 
+which is as height as the other padding-bottoms,
+where the font size is $fontSize and not 11pt */
+pre:after {
+	content: " ";
+    display: block;
+    font-size: $fontSize;
     padding-bottom: $paragraphPadding;
+    height: 0;
+}
+
+/* Some "improvements" of the github.css */
+pre code {
+	background-color: $codeBackgroundColor;
+}
+pre .title,
+pre .id {
+//  color: #00AB7D;
+	color: #9537FF;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -390,19 +406,19 @@ table, td, td {
 }
 
 td, th { 
-	border: 1px solid lighten($fontColor, 40%); 
+	border: 1px solid lighten($fontColor, 50%); 
 	height: 40px; 
 }
 
 th {
-	background: lighten($fontColor, 60%);
+	background: lighten($fontColor, 68%);
 	* {
 		font-weight: 600;
 	}
 }
 
 td {
-	background: lighten($fontColor, 64%);
+	background: lighten($fontColor, 72%);
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -426,11 +442,13 @@ td {
 	font-family:"Source Code Pro", monospace;
 	font-size: 12pt;
 	font-weight: 500;
-	background-color: lighten($fontColor, 63%);
+	background-color: $codeBackgroundColor;
 	padding: 0 0.3em;
 
 	-webkit-border-radius: 3px;
-	border: solid lighten($fontColor, 50%) 1px;
+	border: $codeBorder;
+
+	white-space: nowrap;
 }
 
 .italic {

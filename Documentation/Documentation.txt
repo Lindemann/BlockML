@@ -28,11 +28,6 @@ sec[Syntax][
 Little Example Document
 ]/*Syntx*/
 
-sec[Block Elements and Inline Elements][
-If you never heard about block or inline HTML, don't worry so much about it. In the first place it is very unlikely that you use block and inline elements in the wrong context and if you do, you will notice it immediately, because you get an error message or the result looks creepy.
-
-]/*Block Elements and Inline Elements*/
-
 ]/*Overview*/
 
 sec[Markup Elements][
@@ -60,7 +55,7 @@ code\[java\]\[System.out.print("Java™!!1!");\]]
 ]/*Paragraphs, Line Breaks and White Space*/
 
 sec[Title][
-This element returns a centered, clown sized heading and it sets the c[<title>] of your HTML document.
+This element creates a centered, clown sized heading and it sets the c[<title>] of your HTML document.
 
 code[no-highlight][title\[Document Title\]]
 html[<h1 style="padding: 0" id="title">Document Title</h1><p></p>]
@@ -121,7 +116,7 @@ html[<div class="sec" id="sec-1">
 ]/*Sections*/
 
 sec[Table of Contents][
-To get a Table of Contents use the TOC tag. The Table of Contents gets assembled from the section headings.
+To get a Table of Contents use the TOC element. The Table of Contents gets assembled from the section headings.
 
 code[no-highlight][toc\[TOC Title\]]
 
@@ -163,18 +158,18 @@ a[http://awwapps.com][Description Text]
 ]/*Links*/
 
 sec[Images][
-To embed a local image into the document, copy that image inside the auto generated c[Images]-Folder, which is part of the Derived Data-Folder. Then call the image without any path references.
+To embed a local image into the document, copy that image into the auto generated c[images]-Folder, which is part of the c[Output]-Folder. Then embed the image name without any path references.
 
 img[embedImage.png]
 code[no-highlight][img\[localImage.png\]]
 
 img[dribbble.png]
 
-You can also embed images from the internet, when you use their URL.
+You can also embed images from the interweb, when you use their URL.
 
-code[no-highlight][img\[http://internetImage.jpg\]]
+code[no-highlight][img\[http://interwebImage.jpg\]]
 
-If an image don't fit into the document, resize its width or its height or both with a second block: c[\[w, h\]]
+If an image doesn't fit into the document, resize its width or its height or both with a second block: c[\[w, h\]]
 
 m[Don't forget the comma...]
 
@@ -202,12 +197,27 @@ h4\[Heading 4\]
 h5\[Heading 5\]
 h6\[Heading 6\]]
 
+html[<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>]
+
 ]/*Headings*/
 
-sec[Code with Syntax Highlighting][
+sec[Code][
 
 Languages, CSS, no-highlight
 m[Don't forget to escape the square brackets!] For more information read id[ESCAPE].
+
+For code blocks
+
+code[no-highlight][code\[objectivec\]\[self.scanner = \\\[Scanner scannerWithString:string\\\];
+self.document = \\\[HTMLDocument new\\\];\]]
+
+code[objectivec][self.scanner = \[Scanner scannerWithString:string\];
+self.document = \[HTMLDocument new\];]
 
 ]/*Code with Syntax Highlighting*/
 
@@ -329,6 +339,8 @@ if you need an expression like this c[] for your fancy LaTeX math formula stuff,
 That means you have to use 6786 backslashes c[] to print c[] with 2 backslashes.
 
 But luckily the BlockML App helps you to manage all the backslashes...
+
+img[escape.png]
 
 ][ESCAPE]/*Escape of Special Characters*/
 
