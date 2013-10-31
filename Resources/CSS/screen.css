@@ -198,11 +198,11 @@ pre:after {
 
 /* Some "improvements" of the github.css */
 pre code {
-  background-color: #f7f7f7; }
+  background-color: #fafafa; }
 
 pre .title,
 pre .id {
-  color: #00AB7D; }
+  color: #AC64E1; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    IMAGE                                   */
@@ -312,7 +312,7 @@ td, th {
   height: 40px; }
 
 th {
-  background: #efefef; }
+  background: #eaeaea; }
   th * {
     font-weight: 600; }
 
@@ -336,7 +336,7 @@ td {
   font-family: "Source Code Pro", monospace;
   font-size: 12pt;
   font-weight: 500;
-  background-color: #f7f7f7;
+  background-color: #fafafa;
   padding: 0 0.3em;
   -webkit-border-radius: 3px;
   border: solid #dbdbdb 1px;

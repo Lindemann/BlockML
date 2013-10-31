@@ -18,7 +18,7 @@ h2[INAppStoreWindow]
 a[https://github.com/indragiek/INAppStoreWindow][INAppStoreWindow] is licensed under the a[http://opensource.org/licenses/bsd-license.php][BSD license].
 
 h2[Highlight.js]
-a[http://softwaremaniacs.org/soft/highlight/en/][Highlight.js] is copyright Ivan Sagalaev.
+a[http://softwaremaniacs.org/soft/highlight/en/][Highlight.js] copyright by Ivan Sagalaev.
 h6[License:]
 code[no-highlight][Copyright (c) 2006, Ivan Sagalaev
 All rights reserved.

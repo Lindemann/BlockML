@@ -50,7 +50,7 @@
                                 <rect key="frame" x="18" y="145" width="394" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Drop Your Text File Here" id="MJw-o1-DOb">
-                                    <font key="font" metaFont="system" size="22"/>
+                                    <font key="font" size="22" name="LucidaGrande"/>
                                     <color key="textColor" red="0.76384943181818188" green="0.76384943181818188" blue="0.76384943181818188" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>

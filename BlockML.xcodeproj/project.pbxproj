@@ -698,6 +698,7 @@
 				82080F1E172D0CEE008ABC58 /* Sources */,
 				82080F1F172D0CEE008ABC58 /* Frameworks */,
 				82080F20172D0CEE008ABC58 /* Resources */,
+				82B00D19181C5C4C004C5D10 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -797,6 +798,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		82B00D19181C5C4C004C5D10 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMMITS=$(git rev-list HEAD | wc -l)\nCOMMITS=$(($COMMITS))\ndefaults write \"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH%.*}\" \"CFBundleVersion\" \"${COMMITS}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

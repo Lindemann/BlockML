@@ -42,7 +42,7 @@ $fontColor: #424242;
 $linkColor: #6176F6;
 $selectionColor: #F1FC82;
 
-$codeBackgroundColor: lighten($fontColor, 71%);
+$codeBackgroundColor: lighten($fontColor, 72%);
 $codeBorder: solid lighten($fontColor, 60%) 1px;
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -267,7 +267,7 @@ pre code {
 }
 pre .title,
 pre .id {
-  color: #00AB7D;
+	color: #AC64E1;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -410,7 +410,7 @@ td, th {
 }
 
 th {
-	background: lighten($fontColor, 68%);
+	background: lighten($fontColor, 66%);
 	* {
 		font-weight: 600;
 	}
