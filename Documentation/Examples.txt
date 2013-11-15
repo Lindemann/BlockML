@@ -60,13 +60,8 @@ img[image.png][,200]
 img[image.png][200, 200]
 
 
-code[objectivec][#import <Cocoa/Cocoa.h>
-
-int main(int argc, char *argv\[\])
-{
-    return NSApplicationMain(argc, (const char **)argv);
-}
-]
+code[objectivec][self.scanner = \[Scanner scannerWithString:string\];
+self.document = \[HTMLDocument new\];]
 
 
 

@@ -22,6 +22,7 @@ It is no necessary to use TextMate...
 Output directory
 img[info.svg]
 
+
 ]/*General Approach*/
 
 sec[Syntax][
@@ -206,12 +207,17 @@ html[<h1>Heading 1</h1>
 
 ]/*Headings*/
 
-sec[Code][
+sec[Code Listings][
+
+For code listings you have to use the following syntax:
+
+code[no-highlight][code\[Language\]\[Code\]]
+
+BlockML makes use of a[][Highlight.js] to provide 
+
 
 Languages, CSS, no-highlight
 m[Don't forget to escape the square brackets!] For more information read id[ESCAPE].
-
-For code blocks
 
 code[no-highlight][code\[objectivec\]\[self.scanner = \\\[Scanner scannerWithString:string\\\];
 self.document = \\\[HTMLDocument new\\\];\]]
