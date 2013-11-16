@@ -355,7 +355,8 @@
         [self.openTags addObject:[NSNumber numberWithInt:self.lastAndProbablyStillOpenTag]];
     }
 }
-
+// Unescapes backslashes
+// \\\\ -> \\
 // Removes Backslahes infront of Square Brackets
 // \] -> ] and \\] -> \]
 // Escape HTML Symbols
