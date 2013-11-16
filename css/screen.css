@@ -1,6 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
-@import url(../highlight.js/styles/github.css);
 /*
     ____  __           __   __  _____ 
    / __ )/ /___  _____/ /__/  |/  / / 
@@ -47,49 +46,79 @@ a, a span {
   a:hover, a span:hover {
     text-decoration: underline; }
 
+::selection {
+  background-color: #f1fc82; }
+
+::-moz-selection {
+  background-color: #f1fc82; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   HEADINGS                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+h1, h2, h3, h4, h5, h6 {
+  padding: 0.6em 0;
+  line-height: 1.2em; }
+
+h1 {
+  font-size: 28pt; }
+
+h2 {
+  font-size: 24pt; }
+
+h3 {
+  font-size: 22pt; }
+
+h4 {
+  font-size: 20pt; }
+
+h5 {
+  font-size: 18pt; }
+
+h6 {
+  font-size: 16pt; }
+
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                NAVIGATION BAR                              */
 /*////////////////////////////////////////////////////////////////////////////*/
-@media screen and (min-width: 700px) {
-  #navBar {
-    background-color: red;
-    background-color: RGBA(255, 255, 255, 0.95);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px; }
-    #navBar ul {
-      text-align: right;
-      margin: 22.55556px 0;
-      margin-right: 40px; }
-      #navBar ul li {
-        display: inline;
-        margin: 0 10px; }
-        #navBar ul li a {
-          color: #424242; }
-          #navBar ul li a:hover {
-            color: #0f0f0f; }
-    #navBar img {
-      float: left;
-      height: 50px;
-      margin: 10px; } }
-@media screen and (max-width: 700px) {
-  #navBar {
-    background-color: white; }
-    #navBar img {
-      display: block;
-      margin: 0 auto;
-      height: 70px;
-      padding: 20px; }
-    #navBar ul {
-      text-align: center; }
-      #navBar ul li {
-        line-height: 2em;
-        border-top: 1px solid #f2f2f2; }
-        #navBar ul li a {
-          color: #424242; }
-          #navBar ul li a:hover {
-            color: #0f0f0f; } }
+#navBar {
+  z-index: 9999; }
+  #navBar a {
+    color: #424242; }
+    #navBar a:hover {
+      color: #0f0f0f; }
+  @media screen and (min-width: 700px) {
+    #navBar {
+      background-color: red;
+      background-color: RGBA(255, 255, 255, 0.95);
+      border-bottom: 1px solid #f2f2f2;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px; }
+      #navBar ul {
+        text-align: right;
+        margin: 22.55556px 0;
+        margin-right: 40px; }
+        #navBar ul li {
+          display: inline;
+          margin: 0 10px; }
+      #navBar img {
+        float: left;
+        height: 50px;
+        margin: 10px; } }
+  @media screen and (max-width: 700px) {
+    #navBar {
+      background-color: white; }
+      #navBar img {
+        display: block;
+        margin: 0 auto;
+        height: 70px;
+        padding: 20px; }
+      #navBar ul {
+        text-align: center; }
+        #navBar ul li {
+          line-height: 2em;
+          border-top: 1px solid #f2f2f2; } }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    HEADER                                  */
@@ -115,3 +144,9 @@ a, a span {
         width: 300px;
         top: 80px;
         left: 100px; } }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    BLOCKML                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+#blockML {
+  height: 1000px; }

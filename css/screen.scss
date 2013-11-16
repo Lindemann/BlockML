@@ -16,7 +16,7 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
 
 /* highlight.js */
-@import url(../highlight.js/styles/github.css);
+//@import url(../highlight.js/styles/github.css);
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                       SASS VARS, MIXINS AND FUNCTIONS                      */
@@ -104,45 +104,45 @@ a, a span {
 	}
 }
 
-//::selection { 
-//	background-color: $selectionColor;
-//}
-//::-moz-selection { 
-//	background-color: $selectionColor; 
-//}
+::selection { 
+	background-color: $selectionColor;
+}
+::-moz-selection { 
+	background-color: $selectionColor; 
+}
 
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                   HEADINGS                                 */
-///*////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   HEADINGS                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
 
-//h1, h2, h3, h4, h5, h6 {
-//	padding: 0.6em 0;
-//	line-height: 1.2em;
-//}
+h1, h2, h3, h4, h5, h6 {
+	padding: 0.6em 0;
+	line-height: 1.2em;
+}
 
-//h1 {
-//	font-size: 28pt;
-//}
+h1 {
+	font-size: 28pt;
+}
 
-//h2 {
-//	font-size: 24pt;
-//}
+h2 {
+	font-size: 24pt;
+}
 
-//h3 {
-//	font-size: 22pt;
-//}
+h3 {
+	font-size: 22pt;
+}
 
-//h4 {
-//	font-size: 20pt;
-//}
+h4 {
+	font-size: 20pt;
+}
 
-//h5 {
-//	font-size: 18pt;
-//}
+h5 {
+	font-size: 18pt;
+}
 
-//h6 {
-//	font-size: 16pt;
-//}
+h6 {
+	font-size: 16pt;
+}
 
 ///*////////////////////////////////////////////////////////////////////////////*/
 ///*                                    TITLE                                   */
@@ -489,11 +489,16 @@ a, a span {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #navBar {
+	z-index:9999;
+	a {
+		@include linkColor($fontColor);
+	}
 	// Desktop
 	@media screen and (min-width: $mobile) {
 		background-color: red;
 		$navBarHeight: 70px;
 		background-color: RGBA(255.00, 255.00, 255.00, 0.95);
+		border-bottom:1px solid darken(white, 5%);
 		position: fixed;
 		top: 0;
 		width: 100%;
@@ -507,9 +512,6 @@ a, a span {
 			li {
 				display: inline;
 				margin: 0 10px;
-				a {
-					@include linkColor($fontColor);
-				}
 			}
 		}
 		img {
@@ -532,9 +534,6 @@ a, a span {
 			li {
 				line-height: 2em;
 				border-top:1px solid darken(white, 5%);
-				a {
-					@include linkColor($fontColor);
-				}
 			}
 		}
 	}
@@ -550,7 +549,6 @@ a, a span {
 	background-image: url(../images/stars.svg);
 	background-size: 250px;
 	overflow: hidden;
-//	background-repeat: no-repeat;
 	img {
 		@include center;
 		width: 500px;
@@ -569,3 +567,35 @@ a, a span {
 		}
 	}
 }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    BLOCKML                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#blockML {
+	height: 1000px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
