@@ -57,9 +57,8 @@ a, a span {
   color: #6176f6;
   text-decoration: none; }
   a:hover, a span:hover {
+    text-decoration: underline;
     color: #0d2be4; }
-  a:hover, a span:hover {
-    text-decoration: underline; }
 
 ::selection {
   background-color: #f1fc82; }
@@ -93,15 +92,31 @@ h6 {
   font-size: 16pt; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
+/*                                     BUTTON                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+.hollowButton {
+  display: block;
+  border: 1px solid #424242;
+  padding: 5px 0;
+  width: 160px;
+  color: #424242; }
+  .hollowButton:hover {
+    text-decoration: none;
+    color: #8f8f8f;
+    border: 1px solid #8f8f8f; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
 /*                                NAVIGATION BAR                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 #navBar {
   z-index: 9999;
   line-height: normal; }
   #navBar a {
-    color: #424242; }
+    color: #424242;
+    text-decoration: none; }
     #navBar a:hover {
-      color: #0f0f0f; }
+      text-decoration: none;
+      color: #8f8f8f; }
   @media screen and (min-width: 700px) {
     #navBar {
       background-color: red;
@@ -165,3 +180,13 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    BLOCKML                                 */
 /*////////////////////////////////////////////////////////////////////////////*/
+#blockML .grid {
+  display: block;
+  margin: 0 auto;
+  width: 350px;
+  padding: 1.6em 0;
+  overflow: hidden; }
+  #blockML .grid .hollowButton:nth-child(1) {
+    float: left; }
+  #blockML .grid .hollowButton:nth-child(2) {
+    float: right; }

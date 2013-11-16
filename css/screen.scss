@@ -33,13 +33,6 @@
 	margin: 0 auto;
 }
 
-@mixin linkColor($color) {
-    color: $color;
-    &:hover {
-		color: darken($color, 20%);
-	}
-}
-
 $mobile: 700px;
 
 $generalPadding: 60px;
@@ -98,10 +91,11 @@ p {
 }
 
 a, a span {
-	@include linkColor($linkColor);
+	color: $linkColor;
     text-decoration: none;
     &:hover {
 		text-decoration: underline;
+		color: darken($linkColor, 20%);
 	}
 }
 
@@ -143,6 +137,28 @@ h5 {
 
 h6 {
 	font-size: 16pt;
+}
+
+//#title {
+//	font-size: 36pt;
+//}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                     BUTTON                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+.hollowButton {
+	display: block;
+	border: 1px solid $fontColor;
+	padding: 5px 0;
+	width: 160px;
+	color: $fontColor;
+	&:hover {
+		text-decoration: none;
+		$hoverColor: lighten($fontColor, 30%);
+		color: $hoverColor;
+		border: 1px solid $hoverColor;
+	}
 }
 
 ///*////////////////////////////////////////////////////////////////////////////*/
@@ -490,9 +506,14 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #navBar {
-	z-index:9999;
+	z-index: 9999;
 	a {
-		@include linkColor($fontColor);
+		color: $fontColor;
+	    text-decoration: none;
+	    &:hover {
+			text-decoration: none;
+			color: lighten($fontColor, 30%);
+		}
 	}
 	line-height: normal;
 	// Desktop
@@ -500,7 +521,7 @@ h6 {
 		background-color: red;
 		$navBarHeight: 70px;
 		background-color: RGBA(255.00, 255.00, 255.00, 0.95);
-		border-bottom:1px solid darken(white, 5%);
+		border-bottom: 1px solid darken(white, 5%);
 		position: fixed;
 		top: 0;
 		width: 100%;
@@ -576,9 +597,19 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #blockML {
+	.grid {
+		@include centerWithWidth(350px);
+		padding: $paragraphPadding 0;
+		.hollowButton:nth-child(1) {
+			float: left;
+		}
+		.hollowButton:nth-child(2) {
+			float: right;
+		}
+		overflow: hidden; // Why does this halp??? WHY!?
+
+	}
 }
-
-
 
 
 
