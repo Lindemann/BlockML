@@ -60,9 +60,9 @@ $codeBorder: solid lighten($fontColor, 60%) 1px;
     padding: 0;
 }
 
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                  GENERAL                                   */
-///*////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                  GENERAL                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
 
 //body {
 //	max-width: 660px;
@@ -486,35 +486,56 @@ a, a span {
 /*                                NAVIGATION BAR                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-
 #navBar {
-	$navBarHeight: 70px;
-	background-color: RGBA(255.00, 255.00, 255.00, 0.9);
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: $navBarHeight;
-	a {
-		@include linkColor($fontColor);
-	}
-	ul {
-		text-align: right;
-//		background-color: red;
-		// center ul vertically
-		// $fontSize*96/72 converts pt to px
-		margin: ($navBarHeight - ($fontSize * 96 / 72)) / 2 0;
-		margin-right: 40px;
-		li {
-			display: inline;
-			margin: 0 10px;
+	$mobile: 700px;
+	// Desktop
+	@media screen and (min-width: $mobile) {
+		background-color: red;
+		$navBarHeight: 70px;
+		background-color: RGBA(255.00, 255.00, 255.00, 0.9);
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: $navBarHeight;
+		ul {
+			text-align: right;
+			// center ul vertically
+			// $fontSize*96/72 converts pt to px
+			margin: ($navBarHeight - ($fontSize * 96 / 72)) / 2 0;
+			margin-right: 40px;
+			li {
+				display: inline;
+				margin: 0 10px;
+				a {
+					@include linkColor($fontColor);
+				}
+			}
+		}
+		img {
+			float: left;
+			$iconPadding: 10px;
+			height: $navBarHeight - ($iconPadding * 2);
+			margin: $iconPadding;
 		}
 	}
-	img {
-		float: left;
-		$iconPadding: 10px;
-		height: $navBarHeight - ($iconPadding * 2);
-		padding: $iconPadding 0px;
-		margin: 0 $iconPadding;
+	// Mobile
+	@media screen and (max-width: $mobile) {
+		background-color: white;
+		img {
+			@include center;
+			height: 70px;
+			padding: 20px;
+		}
+		ul {
+			text-align: center;
+			li {
+				line-height: 2em;
+				border-top:1px solid darken(white, 5%);
+				a {
+					@include linkColor($fontColor);
+				}
+			}
+		}
 	}
 }
 
