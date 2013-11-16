@@ -27,10 +27,10 @@
 /*                                  GENERAL                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 .in {
-  max-width: 660px;
+  width: 70%;
   display: block;
   margin: 0 auto;
-  width: 70%;
+  max-width: 660px;
   padding: 60px 0; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -94,16 +94,26 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                     BUTTON                                 */
 /*////////////////////////////////////////////////////////////////////////////*/
-.hollowButton {
+.hollowButton, .filledButton {
   display: block;
-  border: 1px solid #424242;
   padding: 5px 0;
-  width: 160px;
-  color: #424242; }
+  width: 160px; }
+
+.hollowButton {
+  color: #424242;
+  border: 1px solid #424242; }
   .hollowButton:hover {
     text-decoration: none;
     color: #8f8f8f;
     border: 1px solid #8f8f8f; }
+
+.filledButton {
+  color: white;
+  background-color: #6176f6; }
+  .filledButton:hover {
+    text-decoration: none;
+    background-color: #314cf3;
+    color: white; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                NAVIGATION BAR                              */
@@ -183,10 +193,34 @@ h6 {
 #blockML .grid {
   display: block;
   margin: 0 auto;
-  width: 350px;
+  max-width: 350px;
   padding: 1.6em 0;
   overflow: hidden; }
   #blockML .grid .hollowButton:nth-child(1) {
     float: left; }
   #blockML .grid .hollowButton:nth-child(2) {
     float: right; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                HOW IT WORKS                                */
+/*////////////////////////////////////////////////////////////////////////////*/
+#howItWorks {
+  background-color: #262929;
+  color: #e6e6e6; }
+  #howItWorks img {
+    padding: 3.2em 0;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; }
+  #howItWorks .filledButton {
+    display: block;
+    margin: 0 auto; }
+  #howItWorks .container {
+    display: block;
+    margin: 0 auto;
+    max-width: 160px;
+    padding: 1.6em 0; }
+  #howItWorks p {
+    display: block;
+    margin: 0 auto;
+    max-width: 450px; }

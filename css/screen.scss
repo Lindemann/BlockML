@@ -25,7 +25,7 @@
 @mixin centerWithWidth($width) {
 	display: block;
 	margin: 0 auto;
-	width: $width;
+	max-width: $width;
 }
 
 @mixin center {
@@ -42,6 +42,8 @@ $fontSize: 14pt;
 $fontColor: #424242;
 $linkColor: #6176F6;
 $selectionColor: #F1FC82;
+
+$buttonWidth: 160px;
 
 //$codeBackgroundColor: lighten($fontColor, 71%);
 //$codeBorder: solid lighten($fontColor, 60%) 1px;
@@ -60,8 +62,8 @@ $selectionColor: #F1FC82;
 /*////////////////////////////////////////////////////////////////////////////*/
 
 .in{
-	max-width: 660px;
-	@include centerWithWidth(70%);
+	width: 70%;
+	@include centerWithWidth(660px);
 	padding: $generalPadding 0;
 }
 
@@ -147,17 +149,31 @@ h6 {
 /*                                     BUTTON                                 */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-.hollowButton {
+.hollowButton, .filledButton {
 	display: block;
-	border: 1px solid $fontColor;
 	padding: 5px 0;
-	width: 160px;
+	width: $buttonWidth;
+}
+
+.hollowButton {
 	color: $fontColor;
+	border: 1px solid $fontColor;
 	&:hover {
 		text-decoration: none;
 		$hoverColor: lighten($fontColor, 30%);
 		color: $hoverColor;
 		border: 1px solid $hoverColor;
+	}
+}
+
+.filledButton {
+	color: white;
+	background-color: $linkColor;
+	&:hover {
+		text-decoration: none;
+		$hoverColor: lighten($fontColor, 30%);
+		background-color: darken($linkColor, 10%);
+		color: white;
 	}
 }
 
@@ -607,11 +623,31 @@ h6 {
 			float: right;
 		}
 		overflow: hidden; // Why does this halp??? WHY!?
-
 	}
 }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                HOW IT WORKS                                */
+/*////////////////////////////////////////////////////////////////////////////*/
 
+#howItWorks {
+	background-color: #262929;
+	color: darken(white, 10%);
+	img {
+		padding: $paragraphPadding * 2 0;
+		@include centerWithWidth(100%);
+	}
+	.filledButton {
+		@include center;
+	}
+	.container {
+		@include centerWithWidth($buttonWidth);
+		padding: $paragraphPadding 0;
+	}
+	p {
+		@include centerWithWidth(450px);;
+	}
+}
 
 
 
