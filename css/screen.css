@@ -53,7 +53,7 @@ a, a span {
 @media screen and (min-width: 700px) {
   #navBar {
     background-color: red;
-    background-color: RGBA(255, 255, 255, 0.9);
+    background-color: RGBA(255, 255, 255, 0.95);
     position: fixed;
     top: 0;
     width: 100%;
@@ -91,6 +91,27 @@ a, a span {
           #navBar ul li a:hover {
             color: #0f0f0f; } }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    HEADER                                  */
+/*////////////////////////////////////////////////////////////////////////////*/
 #header {
   background-color: #262929;
-  height: 500px; }
+  height: 500px;
+  background-image: url(../images/stars.svg);
+  background-size: 250px;
+  overflow: hidden; }
+  #header img {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    position: relative;
+    top: 150px;
+    left: 150px; }
+  @media screen and (max-width: 700px) {
+    #header {
+      height: 300px;
+      background-size: 150px; }
+      #header img {
+        width: 300px;
+        top: 80px;
+        left: 100px; } }

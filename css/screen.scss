@@ -33,23 +33,25 @@
 	margin: 0 auto;
 }
 
-$generalPadding: 60px;
-$paragraphPadding: 1.6em;
-
-$fontSize: 14pt;
-$fontColor: #424242;
-$linkColor: #6176F6;
-$selectionColor: #F1FC82;
-
-$codeBackgroundColor: lighten($fontColor, 71%);
-$codeBorder: solid lighten($fontColor, 60%) 1px;
-
 @mixin linkColor($color) {
     color: $color;
     &:hover {
 		color: darken($color, 20%);
 	}
 }
+
+$mobile: 700px;
+
+//$generalPadding: 60px;
+//$paragraphPadding: 1.6em;
+
+$fontSize: 14pt;
+$fontColor: #424242;
+$linkColor: #6176F6;
+$selectionColor: #F1FC82;
+
+//$codeBackgroundColor: lighten($fontColor, 71%);
+//$codeBorder: solid lighten($fontColor, 60%) 1px;
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                   RESET                                    */
@@ -487,12 +489,11 @@ a, a span {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #navBar {
-	$mobile: 700px;
 	// Desktop
 	@media screen and (min-width: $mobile) {
 		background-color: red;
 		$navBarHeight: 70px;
-		background-color: RGBA(255.00, 255.00, 255.00, 0.9);
+		background-color: RGBA(255.00, 255.00, 255.00, 0.95);
 		position: fixed;
 		top: 0;
 		width: 100%;
@@ -539,7 +540,32 @@ a, a span {
 	}
 }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    HEADER                                  */
+/*////////////////////////////////////////////////////////////////////////////*/
+
 #header {
 	background-color: #262929;
 	height: 500px;
+	background-image: url(../images/stars.svg);
+	background-size: 250px;
+	overflow: hidden;
+//	background-repeat: no-repeat;
+	img {
+		@include center;
+		width: 500px;
+		position: relative;
+		top: 150px;
+		left: 150px;
+	}
+	// Mobile
+	@media screen and (max-width: $mobile) {
+		height: 300px;
+		background-size: 150px;
+		img {
+			width: 300px;
+			top: 80px;
+			left: 100px;
+		}
+	}
 }
