@@ -439,17 +439,19 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
 
 - (void)appendEndnotes {
     for (Footnote *footnote in self.footnotes) {
-        Endnote *endnote = footnote.endnote;
-        
-        Link *link = [Link new];
-        link.href = endnote.href;
-        Text *text = [Text new];
-        [link addElement:text];
-        text.string = endnote.linkString;
-        link.parent = endnote;
-        [endnote.elements insertObject:link atIndex:0];
-        
-        [self addElement:endnote];
+        if (footnote.endnote) {
+            Endnote *endnote = footnote.endnote;
+            
+            Link *link = [Link new];
+            link.href = endnote.href;
+            Text *text = [Text new];
+            [link addElement:text];
+            text.string = endnote.linkString;
+            link.parent = endnote;
+            [endnote.elements insertObject:link atIndex:0];
+            
+            [self addElement:endnote];
+        }
     }
 }
 

@@ -82,7 +82,7 @@ tableHeader = "th[" document "]""[" string "]".
 
 tableData = "td[" document "]""[" string "]".
 
-love = "<3[]".
+//love = "<3[]".
 
 html = "html[" text "]".
 
