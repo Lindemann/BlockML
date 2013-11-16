@@ -44,6 +44,13 @@ $selectionColor: #F1FC82;
 $codeBackgroundColor: lighten($fontColor, 71%);
 $codeBorder: solid lighten($fontColor, 60%) 1px;
 
+@mixin linkColor($color) {
+    color: $color;
+    &:hover {
+		color: darken($color, 20%);
+	}
+}
+
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                   RESET                                    */
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -63,21 +70,21 @@ $codeBorder: solid lighten($fontColor, 60%) 1px;
 //	padding: $generalPadding*2 0;
 //}
 
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                    FONT                                    */
-///*////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    FONT                                    */
+/*////////////////////////////////////////////////////////////////////////////*/
 
-//html {
-//	-webkit-font-smoothing: antialiased;
-//}
+html {
+	-webkit-font-smoothing: antialiased;
+}
 
-//body {
-//	font-family: 'Source Sans Pro', sans-serif;
-//	font-size: $fontSize;
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: $fontSize;
 //	line-height: 1.6em;
-//	color: $fontColor;
-//	word-wrap: break-word;
-//}
+	color: $fontColor;
+	word-wrap: break-word;
+}
 
 //h1, h2, h3, h4, h5, h6, p, li, div, span {
 //	font-weight: 400;
@@ -87,14 +94,13 @@ $codeBorder: solid lighten($fontColor, 60%) 1px;
 //	padding-bottom: $paragraphPadding;
 //}
 
-//a, a span {
-//    text-decoration: none;
-//    color: $linkColor;
-//    &:hover {
-//		color: darken($linkColor, 20%);
-//		text-decoration: underline;
-//	}
-//}
+a, a span {
+	@include linkColor($linkColor);
+    text-decoration: none;
+    &:hover {
+		text-decoration: underline;
+	}
+}
 
 //::selection { 
 //	background-color: $selectionColor;
@@ -480,11 +486,36 @@ $codeBorder: solid lighten($fontColor, 60%) 1px;
 /*                                NAVIGATION BAR                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 
+
 #navBar {
+	$navBarHeight: 70px;
 	background-color: RGBA(255.00, 255.00, 255.00, 0.9);
 	position: fixed;
 	top: 0;
 	width: 100%;
+	height: $navBarHeight;
+	a {
+		@include linkColor($fontColor);
+	}
+	ul {
+		text-align: right;
+//		background-color: red;
+		// center ul vertically
+		// $fontSize*96/72 converts pt to px
+		margin: ($navBarHeight - ($fontSize * 96 / 72)) / 2 0;
+		margin-right: 40px;
+		li {
+			display: inline;
+			margin: 0 10px;
+		}
+	}
+	img {
+		float: left;
+		$iconPadding: 10px;
+		height: $navBarHeight - ($iconPadding * 2);
+		padding: $iconPadding 0px;
+		margin: 0 $iconPadding;
+	}
 }
 
 #header {
