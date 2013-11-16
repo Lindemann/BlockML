@@ -26,6 +26,13 @@
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                  GENERAL                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
+.in {
+  max-width: 660px;
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  padding: 60px 0; }
+
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    FONT                                    */
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -35,8 +42,16 @@ html {
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14pt;
+  line-height: 1.6em;
   color: #424242;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  text-align: center; }
+
+h1, h2, h3, h4, h5, h6, p, li, div, span {
+  font-weight: 400; }
+
+p {
+  padding-bottom: 1.6em; }
 
 a, a span {
   color: #6176f6;
@@ -81,7 +96,8 @@ h6 {
 /*                                NAVIGATION BAR                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 #navBar {
-  z-index: 9999; }
+  z-index: 9999;
+  line-height: normal; }
   #navBar a {
     color: #424242; }
     #navBar a:hover {
@@ -115,6 +131,7 @@ h6 {
         height: 70px;
         padding: 20px; }
       #navBar ul {
+        list-style: none;
         text-align: center; }
         #navBar ul li {
           line-height: 2em;
@@ -148,5 +165,3 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    BLOCKML                                 */
 /*////////////////////////////////////////////////////////////////////////////*/
-#blockML {
-  height: 1000px; }

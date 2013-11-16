@@ -42,8 +42,8 @@
 
 $mobile: 700px;
 
-//$generalPadding: 60px;
-//$paragraphPadding: 1.6em;
+$generalPadding: 60px;
+$paragraphPadding: 1.6em;
 
 $fontSize: 14pt;
 $fontColor: #424242;
@@ -66,11 +66,11 @@ $selectionColor: #F1FC82;
 /*                                  GENERAL                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-//body {
-//	max-width: 660px;
-//	@include centerWithWidth(70%);
-//	padding: $generalPadding*2 0;
-//}
+.in{
+	max-width: 660px;
+	@include centerWithWidth(70%);
+	padding: $generalPadding 0;
+}
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    FONT                                    */
@@ -83,18 +83,19 @@ html {
 body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: $fontSize;
-//	line-height: 1.6em;
+	line-height: 1.6em;
 	color: $fontColor;
 	word-wrap: break-word;
+	text-align:center
 }
 
-//h1, h2, h3, h4, h5, h6, p, li, div, span {
-//	font-weight: 400;
-//}
+h1, h2, h3, h4, h5, h6, p, li, div, span {
+	font-weight: 400;
+}
 
-//p {
-//	padding-bottom: $paragraphPadding;
-//}
+p {
+	padding-bottom: $paragraphPadding;
+}
 
 a, a span {
 	@include linkColor($linkColor);
@@ -493,6 +494,7 @@ h6 {
 	a {
 		@include linkColor($fontColor);
 	}
+	line-height: normal;
 	// Desktop
 	@media screen and (min-width: $mobile) {
 		background-color: red;
@@ -530,6 +532,7 @@ h6 {
 			padding: 20px;
 		}
 		ul {
+			list-style: none;
 			text-align: center;
 			li {
 				line-height: 2em;
@@ -573,7 +576,6 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #blockML {
-	height: 1000px;
 }
 
 
