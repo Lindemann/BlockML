@@ -191,15 +191,25 @@ h6 {
 /*                                    BLOCKML                                 */
 /*////////////////////////////////////////////////////////////////////////////*/
 #blockML .grid {
-  display: block;
-  margin: 0 auto;
-  max-width: 350px;
-  padding: 1.6em 0;
-  overflow: hidden; }
-  #blockML .grid .hollowButton:nth-child(1) {
-    float: left; }
-  #blockML .grid .hollowButton:nth-child(2) {
-    float: right; }
+  padding: 1.6em 0; }
+  @media screen and (min-width: 700px) {
+    #blockML .grid {
+      display: block;
+      margin: 0 auto;
+      max-width: 350px;
+      overflow: hidden; }
+      #blockML .grid .hollowButton:nth-child(1) {
+        float: left; }
+      #blockML .grid .hollowButton:nth-child(2) {
+        float: right; } }
+  @media screen and (max-width: 700px) {
+    #blockML .grid .hollowButton:nth-child(1) {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 15px; }
+    #blockML .grid .hollowButton:nth-child(2) {
+      display: block;
+      margin: 0 auto; } }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                HOW IT WORKS                                */
@@ -224,3 +234,36 @@ h6 {
     display: block;
     margin: 0 auto;
     max-width: 450px; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                           FEATURES AND SYNTAX                              */
+/*////////////////////////////////////////////////////////////////////////////*/
+.titleBar {
+  background-color: gray;
+  height: 60px;
+  border-radius: 10px;
+  position: relative;
+  top: 10px;
+  z-index: -10; }
+
+.titleBarButtons {
+  position: relative;
+  top: 7px;
+  left: 7px;
+  background-color: yellow; }
+
+.titleBarButton {
+  height: 15px;
+  width: 15px;
+  border-radius: 100px;
+  margin: 6px;
+  background-color: black;
+  float: left; }
+
+.titleBarTitle {
+  position: relative;
+  top: 50px;
+  margin-top: -1.6em; }
+
+.window {
+  background-color: lightgray; }

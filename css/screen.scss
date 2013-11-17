@@ -614,15 +614,28 @@ h6 {
 
 #blockML {
 	.grid {
-		@include centerWithWidth(350px);
 		padding: $paragraphPadding 0;
-		.hollowButton:nth-child(1) {
-			float: left;
+		// Desktop
+		@media screen and (min-width: $mobile) {
+			@include centerWithWidth(350px);
+			.hollowButton:nth-child(1) {
+				float: left;
+			}
+			.hollowButton:nth-child(2) {
+				float: right;
+			}
+			overflow: hidden; // Why does this halp??? WHY!?
 		}
-		.hollowButton:nth-child(2) {
-			float: right;
+		// Mobile
+		@media screen and (max-width: $mobile) {
+			.hollowButton:nth-child(1) {
+				@include center;
+				margin-bottom: 15px;
+			}
+			.hollowButton:nth-child(2) {
+				@include center;
+			}
 		}
-		overflow: hidden; // Why does this halp??? WHY!?
 	}
 }
 
@@ -649,9 +662,45 @@ h6 {
 	}
 }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                           FEATURES AND SYNTAX                              */
+/*////////////////////////////////////////////////////////////////////////////*/
 
+.titleBar {
+	background-color: gray;
+	height: 60px;
+	border-radius: 10px;
+	position: relative;
+	top: 10px;
+	z-index: -10;
+}
 
+.titleBarButtons {
+	position: relative;
+	top: 7px;
+	left: 7px;
+	background-color: yellow;
+}
 
+.titleBarButton {
+	$titleBarButtonSize: 15px;
+	height: $titleBarButtonSize;
+	width: $titleBarButtonSize;
+	border-radius: 100px;
+	margin: 6px;
+	background-color: black;
+	float: left;
+}
+
+.titleBarTitle {
+	position: relative;
+	top: 50px;
+	margin-top: -$paragraphPadding;
+}
+
+.window {
+	background-color: lightgray;
+}
 
 
 
