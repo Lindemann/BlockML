@@ -127,7 +127,7 @@ h6 {
     #navBar a:hover {
       text-decoration: none;
       color: #8f8f8f; }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 880px) {
     #navBar {
       background-color: red;
       background-color: RGBA(255, 255, 255, 0.95);
@@ -146,8 +146,10 @@ h6 {
       #navBar img {
         float: left;
         height: 50px;
-        margin: 10px; } }
-  @media screen and (max-width: 700px) {
+        margin: 10px; }
+      #navBar a img:hover {
+        opacity: 0.8; } }
+  @media screen and (max-width: 880px) {
     #navBar {
       background-color: white; }
       #navBar img {
@@ -178,7 +180,7 @@ h6 {
     position: relative;
     top: 150px;
     left: 150px; }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 500px) {
     #header {
       height: 300px;
       background-size: 150px; }
@@ -192,7 +194,7 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 #blockML .grid {
   padding: 1.6em 0; }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 500px) {
     #blockML .grid {
       display: block;
       margin: 0 auto;
@@ -202,7 +204,7 @@ h6 {
         float: left; }
       #blockML .grid .hollowButton:nth-child(2) {
         float: right; } }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 500px) {
     #blockML .grid .hollowButton:nth-child(1) {
       display: block;
       margin: 0 auto;
@@ -239,7 +241,7 @@ h6 {
 /*                           FEATURES AND SYNTAX                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 .titleBar {
-  background-color: gray;
+  background-color: #EDEDED;
   height: 60px;
   border-radius: 10px;
   position: relative;
@@ -249,21 +251,26 @@ h6 {
 .titleBarButtons {
   position: relative;
   top: 7px;
-  left: 7px;
-  background-color: yellow; }
+  left: 7px; }
 
 .titleBarButton {
   height: 15px;
   width: 15px;
   border-radius: 100px;
   margin: 6px;
-  background-color: black;
+  background-color: #878787;
   float: left; }
 
-.titleBarTitle {
-  position: relative;
-  top: 50px;
-  margin-top: -1.6em; }
+@media screen and (min-width: 500px) {
+  .titleBarTitle {
+    position: relative;
+    top: 50px;
+    margin-top: -1.6em;
+    color: #878787;
+    font-family: "Source Code Pro", monospace; } }
+@media screen and (max-width: 500px) {
+  .titleBarTitle {
+    display: none; } }
 
 .window {
-  background-color: lightgray; }
+  background-color: #262929; }

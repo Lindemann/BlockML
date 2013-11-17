@@ -33,7 +33,7 @@
 	margin: 0 auto;
 }
 
-$mobile: 700px;
+$mobile: 500px;
 
 $generalPadding: 60px;
 $paragraphPadding: 1.6em;
@@ -522,6 +522,7 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #navBar {
+	$breakPoint: 880px;
 	z-index: 9999;
 	a {
 		color: $fontColor;
@@ -533,7 +534,7 @@ h6 {
 	}
 	line-height: normal;
 	// Desktop
-	@media screen and (min-width: $mobile) {
+	@media screen and (min-width: $breakPoint) {
 		background-color: red;
 		$navBarHeight: 70px;
 		background-color: RGBA(255.00, 255.00, 255.00, 0.95);
@@ -559,9 +560,12 @@ h6 {
 			height: $navBarHeight - ($iconPadding * 2);
 			margin: $iconPadding;
 		}
+		a img:hover {
+			opacity:0.8;
+		}
 	}
 	// Mobile
-	@media screen and (max-width: $mobile) {
+	@media screen and (max-width: $breakPoint) {
 		background-color: white;
 		img {
 			@include center;
@@ -607,6 +611,7 @@ h6 {
 		}
 	}
 }
+
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    BLOCKML                                 */
@@ -667,7 +672,7 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 .titleBar {
-	background-color: gray;
+	background-color: #EDEDED;
 	height: 60px;
 	border-radius: 10px;
 	position: relative;
@@ -679,7 +684,6 @@ h6 {
 	position: relative;
 	top: 7px;
 	left: 7px;
-	background-color: yellow;
 }
 
 .titleBarButton {
@@ -688,20 +692,60 @@ h6 {
 	width: $titleBarButtonSize;
 	border-radius: 100px;
 	margin: 6px;
-	background-color: black;
+	background-color: #878787;
 	float: left;
 }
 
 .titleBarTitle {
-	position: relative;
-	top: 50px;
-	margin-top: -$paragraphPadding;
+	// Desktop
+	@media screen and (min-width: $mobile) {
+		position: relative;
+		top: 50px;
+		margin-top: -$paragraphPadding;
+		color: #878787;
+		font-family:"Source Code Pro", monospace;
+	}
+	// Mobile
+	@media screen and (max-width: $mobile) {
+		display: none;
+	}
 }
 
 .window {
-	background-color: lightgray;
+	background-color: #262929;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Desktop
+@media screen and (min-width: $mobile) {
+
+}
+// Mobile
+@media screen and (max-width: $mobile) {
+
+}
 
 
 
