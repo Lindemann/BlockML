@@ -81,7 +81,7 @@ body {
 	line-height: 1.6em;
 	color: $fontColor;
 	word-wrap: break-word;
-	text-align:center
+	text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6, p, li, div, span {
@@ -175,6 +175,11 @@ h6 {
 		background-color: darken($linkColor, 10%);
 		color: white;
 	}
+}
+
+.container {
+	@include centerWithWidth($buttonWidth);
+	padding: $paragraphPadding 0;
 }
 
 ///*////////////////////////////////////////////////////////////////////////////*/
@@ -427,39 +432,38 @@ h6 {
 //	padding-bottom: $paragraphPadding;
 //}
 
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                    TABLE                                   */
-///*////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    TABLE                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
 
-//table {
-//	margin-bottom: $paragraphPadding;
-//	width: 100%; 
-//	border-collapse: collapse; 
-//	border-spacing: 0; 
-//}
+table {
+	margin-bottom: $paragraphPadding;
+	width: 100%; 
+	border-collapse: collapse; 
+	border-spacing: 0; 
+	table-layout: fixed;
+}
 
-//table, td, td {
-//	:last-child {
-//		padding-bottom: 0;
-//	}
-//	padding: 0 10px;
-//}
+td, th { 
+	border: 1px solid lighten($fontColor, 50%); 
+	height: 40px;
+	:last-child {
+		padding-bottom: 0;
+	}
+	padding: 0 10px;
+}
 
-//td, th { 
-//	border: 1px solid lighten($fontColor, 50%); 
-//	height: 40px; 
-//}
+th {
+	background: lighten($fontColor, 68%);
+	* {
+		font-weight: 600;
+	}
+}
 
-//th {
-//	background: lighten($fontColor, 68%);
-//	* {
-//		font-weight: 600;
-//	}
-//}
-
-//td {
-//	background: lighten($fontColor, 72%);
-//}
+td {
+	background: lighten($fontColor, 72%);
+	text-align: left;
+}
 
 ///*////////////////////////////////////////////////////////////////////////////*/
 ///*                             STYLE MODIFIER                                 */
@@ -669,12 +673,8 @@ h6 {
 	.filledButton {
 		@include center;
 	}
-	.container {
-		@include centerWithWidth($buttonWidth);
-		padding: $paragraphPadding 0;
-	}
 	p {
-		@include centerWithWidth(450px);;
+		@include centerWithWidth(500px);;
 	}
 }
 
@@ -684,6 +684,12 @@ h6 {
 
 #featuresAndSyntax {
 	background-color: white;
+	.in {
+		padding-bottom: 0px;
+	}
+	table {
+		margin: $paragraphPadding 0 $paragraphPadding * 2 0;
+	}
 }
 
 .titleBar {
@@ -694,7 +700,7 @@ h6 {
 
 .titleBarButtons {
 	position: relative;
-	top: 7px;
+	top: 13px;
 	left: 7px;
 }
 
@@ -725,10 +731,37 @@ h6 {
 
 .window {
 	background-color: #262929;
+	font-family:"Source Code Pro", monospace;
+	text-align: left;
+	color: white;
+	$fakeCodePaddingAndLineHeight: 1.0em;
+	p:nth-child(1) {
+		padding-top: $fakeCodePaddingAndLineHeight * 2;
+	}
+	p:last-child {
+		padding-bottom: $fakeCodePaddingAndLineHeight * 2
+	}
+	p {
+		padding: 0 $fakeCodePaddingAndLineHeight $fakeCodePaddingAndLineHeight $fakeCodePaddingAndLineHeight * 2;
+		line-height: $fakeCodePaddingAndLineHeight;
+	}
+	.keyword {
+		color: $linkColor;
+		background-color: rgba($linkColor, 0.2);
+	}
+	.sectionHeading {
+		color: #E586FC;
+		background-color: rgba(#E586FC, 0.2);
+	}
 }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                             EXAMPLE DOCUMENTS                              */
+/*////////////////////////////////////////////////////////////////////////////*/
 
-
+#exampleDocuments {
+	background-color: #DADADA;
+}
 
 
 

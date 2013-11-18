@@ -115,6 +115,38 @@ h6 {
     background-color: #314cf3;
     color: white; }
 
+.container {
+  display: block;
+  margin: 0 auto;
+  max-width: 160px;
+  padding: 1.6em 0; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                    TABLE                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+table {
+  margin-bottom: 1.6em;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed; }
+
+td, th {
+  border: 1px solid #c2c2c2;
+  height: 40px;
+  padding: 0 10px; }
+  td :last-child, th :last-child {
+    padding-bottom: 0; }
+
+th {
+  background: #efefef; }
+  th * {
+    font-weight: 600; }
+
+td {
+  background: #fafafa;
+  text-align: left; }
+
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                NAVIGATION BAR                              */
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -237,21 +269,20 @@ h6 {
   #howItWorks .filledButton {
     display: block;
     margin: 0 auto; }
-  #howItWorks .container {
-    display: block;
-    margin: 0 auto;
-    max-width: 160px;
-    padding: 1.6em 0; }
   #howItWorks p {
     display: block;
     margin: 0 auto;
-    max-width: 450px; }
+    max-width: 500px; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                           FEATURES AND SYNTAX                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 #featuresAndSyntax {
   background-color: white; }
+  #featuresAndSyntax .in {
+    padding-bottom: 0px; }
+  #featuresAndSyntax table {
+    margin: 1.6em 0 3.2em 0; }
 
 .titleBar {
   background-color: #EDEDED;
@@ -260,7 +291,7 @@ h6 {
 
 .titleBarButtons {
   position: relative;
-  top: 7px;
+  top: 13px;
   left: 7px; }
 
 .titleBarButton {
@@ -283,4 +314,26 @@ h6 {
     display: none; } }
 
 .window {
-  background-color: #262929; }
+  background-color: #262929;
+  font-family: "Source Code Pro", monospace;
+  text-align: left;
+  color: white; }
+  .window p:nth-child(1) {
+    padding-top: 2em; }
+  .window p:last-child {
+    padding-bottom: 2em; }
+  .window p {
+    padding: 0 1em 1em 2em;
+    line-height: 1em; }
+  .window .keyword {
+    color: #6176f6;
+    background-color: rgba(97, 118, 246, 0.2); }
+  .window .sectionHeading {
+    color: #E586FC;
+    background-color: rgba(229, 134, 252, 0.2); }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                             EXAMPLE DOCUMENTS                              */
+/*////////////////////////////////////////////////////////////////////////////*/
+#exampleDocuments {
+  background-color: #DADADA; }
