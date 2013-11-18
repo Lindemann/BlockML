@@ -532,6 +532,9 @@ h6 {
 			color: lighten($fontColor, 30%);
 		}
 	}
+	a img:hover {
+			opacity:0.8;
+		}
 	line-height: normal;
 	// Desktop
 	@media screen and (min-width: $breakPoint) {
@@ -560,13 +563,11 @@ h6 {
 			height: $navBarHeight - ($iconPadding * 2);
 			margin: $iconPadding;
 		}
-		a img:hover {
-			opacity:0.8;
-		}
 	}
 	// Mobile
 	@media screen and (max-width: $breakPoint) {
 		background-color: white;
+		background-color: RGBA(255.00, 255.00, 255.00, 0.95);
 		img {
 			@include center;
 			height: 70px;
@@ -577,7 +578,7 @@ h6 {
 			text-align: center;
 			li {
 				line-height: 2em;
-				border-top:1px solid darken(white, 5%);
+				border-top:1px solid darken(white, 10%);
 			}
 		}
 	}
@@ -588,10 +589,17 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #header {
-	background-color: #262929;
+	#parallaxBG {
+		background-image: url(../images/stars.svg);
+		background-color: #262929;
+		background-size: 250px;
+		height: 100%;
+		width: 100%;
+		z-index: -9999;
+		position: fixed;
+		top: 0;
+	}
 	height: 500px;
-	background-image: url(../images/stars.svg);
-	background-size: 250px;
 	overflow: hidden;
 	img {
 		@include center;
@@ -603,7 +611,9 @@ h6 {
 	// Mobile
 	@media screen and (max-width: $mobile) {
 		height: 300px;
-		background-size: 150px;
+		#parallaxBG {
+			background-size: 150px;
+		}
 		img {
 			width: 300px;
 			top: 80px;
@@ -618,6 +628,7 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #blockML {
+	background-color: white;
 	.grid {
 		padding: $paragraphPadding 0;
 		// Desktop
@@ -671,13 +682,14 @@ h6 {
 /*                           FEATURES AND SYNTAX                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 
+#featuresAndSyntax {
+	background-color: white;
+}
+
 .titleBar {
 	background-color: #EDEDED;
-	height: 60px;
-	border-radius: 10px;
-	position: relative;
-	top: 10px;
-	z-index: -10;
+	height: 50px;
+	border-radius: 10px 10px 0 0;
 }
 
 .titleBarButtons {
@@ -700,8 +712,8 @@ h6 {
 	// Desktop
 	@media screen and (min-width: $mobile) {
 		position: relative;
-		top: 50px;
-		margin-top: -$paragraphPadding;
+		top: 40px;
+		padding-top: - 40px;
 		color: #878787;
 		font-family:"Source Code Pro", monospace;
 	}
