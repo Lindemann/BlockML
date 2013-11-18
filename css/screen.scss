@@ -16,7 +16,7 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
 
 /* highlight.js */
-//@import url(../highlight.js/styles/github.css);
+@import url(../highlight.js/styles/github.css);
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                       SASS VARS, MIXINS AND FUNCTIONS                      */
@@ -45,8 +45,8 @@ $selectionColor: #F1FC82;
 
 $buttonWidth: 160px;
 
-//$codeBackgroundColor: lighten($fontColor, 71%);
-//$codeBorder: solid lighten($fontColor, 60%) 1px;
+$codeBackgroundColor: lighten($fontColor, 71%);
+$codeBorder: solid lighten($fontColor, 60%) 1px;
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                   RESET                                    */
@@ -271,50 +271,51 @@ h6 {
 //	}
 //}
 
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                   CODE                                     */
-///*////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   CODE                                     */
+/*////////////////////////////////////////////////////////////////////////////*/
 
-//code {
-//	font-family:"Source Code Pro", monospace;
+code {
+	font-family:"Source Code Pro", monospace;
+	text-align: left;
 
-//	/* Decoration */
-//	border: $codeBorder;
-//	-webkit-border-radius: 3px;
+	/* Decoration */
+	border: $codeBorder;
+	-webkit-border-radius: 3px;
 
-//	/* Add a scrollbar for looooooong code */
-//	word-wrap: normal;
-//	overflow: scroll;
-//	overflow-y: auto;
-//	overflow-x: auto;
-//}
+	/* Add a scrollbar for looooooong code */
+	word-wrap: normal;
+	overflow: scroll;
+	overflow-y: auto;
+	overflow-x: auto;
+}
 
-//pre {
-//  	width: 100%;
-//    font-size: 11pt;
-//    line-height: 1.6em;
-//}
+pre {
+  	width: 100%;
+    font-size: 11pt;
+    line-height: 1.6em;
+}
 
-///* Creepy method to give pre a padding-bottom, 
-//which is as height as the other padding-bottoms,
-//where the font size is $fontSize and not 11pt */
-//pre:after {
-//	content: " ";
-//    display: block;
-//    font-size: $fontSize;
-//    padding-bottom: $paragraphPadding;
-//    height: 0;
-//}
+/* Creepy method to give pre a padding-bottom, 
+which is as height as the other padding-bottoms,
+where the font size is $fontSize and not 11pt */
+pre:after {
+	content: " ";
+    display: block;
+    font-size: $fontSize;
+    padding-bottom: $paragraphPadding;
+    height: 0;
+}
 
-///* Some "improvements" of the github.css */
-//pre code {
-//	background-color: $codeBackgroundColor;
-//}
-//pre .title,
-//pre .id {
-////  color: #00AB7D;
-//	color: #9537FF;
-//}
+/* Some "improvements" of the github.css */
+pre code {
+	background-color: $codeBackgroundColor;
+}
+pre .title,
+pre .id {
+//  color: #00AB7D;
+	color: #9537FF;
+}
 
 ///*////////////////////////////////////////////////////////////////////////////*/
 ///*                                    IMAGE                                   */
@@ -465,43 +466,43 @@ td {
 	text-align: left;
 }
 
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                             STYLE MODIFIER                                 */
-///*////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                             STYLE MODIFIER                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
 
-//.marked {
-//	background-color: $selectionColor;
-//	padding: 0 0.3em;
-//}
+.marked {
+	background-color: $selectionColor;
+	padding: 0 0.3em;
+}
 
-//.bold {
-//	font-weight: 600;
-//}
+.bold {
+	font-weight: 600;
+}
 
-//.underline {
-//	text-decoration: underline;
-//}
+.underline {
+	text-decoration: underline;
+}
 
-//.code {
-//	font-family:"Source Code Pro", monospace;
-//	font-size: 12pt;
-//	font-weight: 500;
-//	background-color: $codeBackgroundColor;
-//	padding: 0 0.3em;
+.code {
+	font-family:"Source Code Pro", monospace;
+	font-size: 12pt;
+	font-weight: 500;
+	background-color: $codeBackgroundColor;
+	padding: 0 0.3em;
 
-//	-webkit-border-radius: 3px;
-//	border: $codeBorder;
+	-webkit-border-radius: 3px;
+	border: $codeBorder;
 
-//	white-space: nowrap;
-//}
+	white-space: nowrap;
+}
 
-//.italic {
-//	font-style: italic;
-//}
+.italic {
+	font-style: italic;
+}
 
-//.strikethrough {
-//	text-decoration: line-through;
-//}
+.strikethrough {
+	text-decoration: line-through;
+}
 
 ///*////////////////////////////////////////////////////////////////////////////*/
 ///*                                	FRONTPAGE                                 */
@@ -690,6 +691,9 @@ td {
 	table {
 		margin: $paragraphPadding 0 $paragraphPadding * 2 0;
 	}
+//	p {
+//		text-align: left;
+//	}
 }
 
 .titleBar {

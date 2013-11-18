@@ -53,7 +53,7 @@
 					<h1>BlockML</h1>
 					<p>BlockML is a free and open source markup language for scientific documents. It is also pretty well suited for documentations, blog articles and other complex stuff.</p>
 					<p>BlockML has nearly<a id="fn-back-1" href="#fn-1"><sup>[1]</sup></a> the power of LaTeX but it is super lightweight, logic and easy to learn.</p>
-					<p>The BlockML OSX App turns minimally marked-up plain text into well formatted HTML documents, which are perfectly readable in the browser and on mobile devices. It comes with a nice default CSS theme, but basically, you can style your output HTML however you want.</p>
+					<p>The BlockML OSX App turns minimally marked-up plain text into well formatted HTML documents, which are perfectly readable in the browser and on mobile devices. It comes with an nice default CSS theme, but basically, you can style your output HTML however you want.</p>
 					<div class = "grid">
 						<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">SOURCE CODE</a>
 						<a class = "hollowButton" href="">DOWNLOAD</a>
@@ -85,6 +85,10 @@
 			<div class = "out">
 				<div class= "in"> 
 					<h1>Features And Syntax</h1>
+						<p>The main goal of BlockML is to combine the most useful functions of LaTeX with the simplicity and advantages of lightweight markup languages like Markdown.</p>
+						<p>BlockML provides a couple of features wich are especially needed for scientific documents, like sections, tables of contents, bibliographic references and for instance captions. BlockML also provides features wich are common for lightweight markup languages, like links, headings, images and so on.</p>
+
+						<p>For detailed information about the available markup elemensts and the syntax look into the documentation.</p>
 
 					<div class = "container"><a class = "hollowButton" href="documentation/document.html">DOCUMENTATION</a></div>
 
@@ -99,7 +103,7 @@
 								<p>Sections with numbered section headings</p>
 							</td>
 							<td>
-								<p>Auto generated table of contents</p>
+								<p>Auto generated tables of contents</p>
 							</td>
 						</tr>
 						<tr>
@@ -184,8 +188,7 @@
 						</tr>
 					</table>
 
-
-					<p>Just drag and drop a plain text file, which is marked-up with BlockML on the BlockML OSX App. Than it happens some magic and the App compiles an HTML-file out of it.</p>
+					<p>The syntax of BlockML has the approach to be consistent<br>and memorable. A BlockML markup element consists of a <span class="code">selector</span>, who defines the type of the element and one or more <span class="code">blocks</span>, which embed the text you want to mark up: <span class="code">selector[block]</span></p>
 
 					<div class = "titleBarTitle">PhDThesis.txt</div>
 					<div class = "titleBar">

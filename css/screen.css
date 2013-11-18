@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
+@import url(../highlight.js/styles/github.css);
 /*
     ____  __           __   __  _____ 
    / __ )/ /___  _____/ /__/  |/  / / 
@@ -122,6 +123,44 @@ h6 {
   padding: 1.6em 0; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
+/*                                   CODE                                     */
+/*////////////////////////////////////////////////////////////////////////////*/
+code {
+  font-family: "Source Code Pro", monospace;
+  text-align: left;
+  /* Decoration */
+  border: solid #dbdbdb 1px;
+  -webkit-border-radius: 3px;
+  /* Add a scrollbar for looooooong code */
+  word-wrap: normal;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: auto; }
+
+pre {
+  width: 100%;
+  font-size: 11pt;
+  line-height: 1.6em; }
+
+/* Creepy method to give pre a padding-bottom, 
+which is as height as the other padding-bottoms,
+where the font size is $fontSize and not 11pt */
+pre:after {
+  content: " ";
+  display: block;
+  font-size: 14pt;
+  padding-bottom: 1.6em;
+  height: 0; }
+
+/* Some "improvements" of the github.css */
+pre code {
+  background-color: #f7f7f7; }
+
+pre .title,
+pre .id {
+  color: #9537FF; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
 /*                                    TABLE                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 table {
@@ -146,6 +185,35 @@ th {
 td {
   background: #fafafa;
   text-align: left; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                             STYLE MODIFIER                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+.marked {
+  background-color: #f1fc82;
+  padding: 0 0.3em; }
+
+.bold {
+  font-weight: 600; }
+
+.underline {
+  text-decoration: underline; }
+
+.code {
+  font-family: "Source Code Pro", monospace;
+  font-size: 12pt;
+  font-weight: 500;
+  background-color: #f7f7f7;
+  padding: 0 0.3em;
+  -webkit-border-radius: 3px;
+  border: solid #dbdbdb 1px;
+  white-space: nowrap; }
+
+.italic {
+  font-style: italic; }
+
+.strikethrough {
+  text-decoration: line-through; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                NAVIGATION BAR                              */
