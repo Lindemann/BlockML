@@ -774,6 +774,52 @@ td {
 
 #getStarted {
 	background-color: #EDEDED;
+	img {
+		max-width: 100%;
+	}
+	pre:before {
+		content: " ";
+	    display: block;
+	    font-size: $fontSize;
+	    padding-bottom: $paragraphPadding;
+	    height: 0;
+	}
+	.grid {
+		// Must > 50%
+		$imageSizeForOverlap: 70%;
+		img:nth-child(1) {
+			float: left;
+			width: $imageSizeForOverlap;
+
+		}
+		img:nth-child(2) {
+			float: right;
+			width: $imageSizeForOverlap;
+			margin-left: -100%;
+			position: relative;
+			padding-top: 5%;
+		}
+		overflow: hidden;
+		padding: $paragraphPadding 0;
+	}
+//	.grid {
+//		padding: $paragraphPadding 0;
+//		// Desktop
+//		@media screen and (min-width: $mobile) {
+//			img:nth-child(1) {
+//				float: left;
+//				width: 50%;
+//			}
+//			img:nth-child(2) {
+//				float: right;
+//				width: 50%;
+//			}
+//			overflow: hidden; // Why does this halp??? WHY!?
+//		}
+//		// Mobile
+//		@media screen and (max-width: $mobile) {
+//		}
+//	}
 }
 
 .number {
@@ -790,9 +836,13 @@ td {
 }
 
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                             	     FOOTER                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
 
-
-
+#footer {
+	background-color: #262929;
+}
 
 
 
