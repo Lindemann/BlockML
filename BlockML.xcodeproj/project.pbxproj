@@ -17,7 +17,7 @@
 		82080F45172D0CEF008ABC58 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82080F25172D0CEE008ABC58 /* Cocoa.framework */; };
 		82080F4D172D0CEF008ABC58 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82080F4B172D0CEF008ABC58 /* InfoPlist.strings */; };
 		82080F50172D0CEF008ABC58 /* BlockMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F4F172D0CEF008ABC58 /* BlockMLTests.m */; };
-		82080F6A172D0FFB008ABC58 /* CSS in Resources */ = {isa = PBXBuildFile; fileRef = 82080F69172D0FFB008ABC58 /* CSS */; };
+		82080F6A172D0FFB008ABC58 /* css in Resources */ = {isa = PBXBuildFile; fileRef = 82080F69172D0FFB008ABC58 /* css */; };
 		82080F73172D1C1F008ABC58 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F6E172D1C1F008ABC58 /* Token.m */; };
 		82080F74172D1C1F008ABC58 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F6E172D1C1F008ABC58 /* Token.m */; };
 		82080F75172D1C1F008ABC58 /* Scanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F70172D1C1F008ABC58 /* Scanner.m */; };
@@ -66,13 +66,13 @@
 		82AD8A8417FCB99B00859D26 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A8317FCB99B00859D26 /* Quote.m */; };
 		82AD8A8717FCB9B000859D26 /* Source.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A8617FCB9B000859D26 /* Source.m */; };
 		82AD8A8B17FD70BD00859D26 /* Math.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD8A8A17FD70BD00859D26 /* Math.m */; };
-		82B00D14181A9627004C5D10 /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = 82B00D13181A9627004C5D10 /* Credits */; };
+		82B00D14181A9627004C5D10 /* credits in Resources */ = {isa = PBXBuildFile; fileRef = 82B00D13181A9627004C5D10 /* credits */; };
 		82B00D17181BF00D004C5D10 /* BugFixImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B00D16181BF00D004C5D10 /* BugFixImageView.m */; };
 		82B09F0C18021F4800F33625 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B09F0B18021F4800F33625 /* Images.xcassets */; };
 		82DEC4FB17E609D9007708D1 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FA17E609D9007708D1 /* Text.m */; };
 		82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FD17E609F8007708D1 /* LineBreak.m */; };
 		82DEC50217E975B1007708D1 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC50117E975B1007708D1 /* Link.m */; };
-		82DEC50517EAADF2007708D1 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 82DEC50417EAADF2007708D1 /* Images */; };
+		82DEC50517EAADF2007708D1 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 82DEC50417EAADF2007708D1 /* images */; };
 		82DEC50817EBF27A007708D1 /* Heading.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC50717EBF27A007708D1 /* Heading.m */; };
 		82DEC50B17EBF73A007708D1 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC50A17EBF73A007708D1 /* Section.m */; };
 		82DEC50F17EBF7A9007708D1 /* TableOfContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC50E17EBF7A9007708D1 /* TableOfContent.m */; };
@@ -112,7 +112,7 @@
 		82080F4C172D0CEF008ABC58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		82080F4E172D0CEF008ABC58 /* BlockMLTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockMLTests.h; sourceTree = "<group>"; };
 		82080F4F172D0CEF008ABC58 /* BlockMLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockMLTests.m; sourceTree = "<group>"; };
-		82080F69172D0FFB008ABC58 /* CSS */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CSS; sourceTree = "<group>"; };
+		82080F69172D0FFB008ABC58 /* css */ = {isa = PBXFileReference; lastKnownFileType = folder; path = css; sourceTree = "<group>"; };
 		82080F6C172D1C1F008ABC58 /* TokenType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenType.h; sourceTree = "<group>"; };
 		82080F6D172D1C1F008ABC58 /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
 		82080F6E172D1C1F008ABC58 /* Token.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Token.m; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		82AD8A8617FCB9B000859D26 /* Source.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Source.m; sourceTree = "<group>"; };
 		82AD8A8917FD70BD00859D26 /* Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Math.h; sourceTree = "<group>"; };
 		82AD8A8A17FD70BD00859D26 /* Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Math.m; sourceTree = "<group>"; };
-		82B00D13181A9627004C5D10 /* Credits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Credits; sourceTree = "<group>"; };
+		82B00D13181A9627004C5D10 /* credits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = credits; sourceTree = "<group>"; };
 		82B00D15181BF00D004C5D10 /* BugFixImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugFixImageView.h; sourceTree = "<group>"; };
 		82B00D16181BF00D004C5D10 /* BugFixImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugFixImageView.m; sourceTree = "<group>"; };
 		82B09F0B18021F4800F33625 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 		82DEC4FD17E609F8007708D1 /* LineBreak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineBreak.m; sourceTree = "<group>"; };
 		82DEC50017E975B1007708D1 /* Link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
 		82DEC50117E975B1007708D1 /* Link.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Link.m; sourceTree = "<group>"; };
-		82DEC50417EAADF2007708D1 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		82DEC50417EAADF2007708D1 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		82DEC50617EBF27A007708D1 /* Heading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heading.h; sourceTree = "<group>"; };
 		82DEC50717EBF27A007708D1 /* Heading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heading.m; sourceTree = "<group>"; };
 		82DEC50917EBF73A007708D1 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
@@ -332,10 +332,10 @@
 		82080F5D172D0E45008ABC58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				82B00D13181A9627004C5D10 /* Credits */,
+				82B00D13181A9627004C5D10 /* credits */,
 				829AE16F18076987002BF377 /* highlight.js */,
-				82DEC50417EAADF2007708D1 /* Images */,
-				82080F69172D0FFB008ABC58 /* CSS */,
+				82DEC50417EAADF2007708D1 /* images */,
+				82080F69172D0FFB008ABC58 /* css */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -764,10 +764,10 @@
 				82A0627C181375E1007A7F17 /* Main.xib in Resources */,
 				82080F3C172D0CEE008ABC58 /* MainMenu.xib in Resources */,
 				820659FD1815705B0055F959 /* About.xib in Resources */,
-				82DEC50517EAADF2007708D1 /* Images in Resources */,
+				82DEC50517EAADF2007708D1 /* images in Resources */,
 				82A0627A1812D7AE007A7F17 /* EscapeText.xib in Resources */,
-				82B00D14181A9627004C5D10 /* Credits in Resources */,
-				82080F6A172D0FFB008ABC58 /* CSS in Resources */,
+				82B00D14181A9627004C5D10 /* credits in Resources */,
+				82080F6A172D0FFB008ABC58 /* css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

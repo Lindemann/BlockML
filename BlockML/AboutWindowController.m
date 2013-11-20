@@ -33,7 +33,7 @@
 }
 
 - (IBAction)creditsButtonWasPressed:(id)sender {
-    NSURL *url = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"Credits/Credits/document.html"];
+    NSURL *url = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"credits/Credits/document.html"];
     [[NSWorkspace sharedWorkspace] openURL:url];
 }
 @end
