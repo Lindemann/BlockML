@@ -527,6 +527,7 @@ td {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #navBar {
+	background-color: RGBA(255.00, 255.00, 255.00, 0.95);
 	$breakPoint: 880px;
 	z-index: 9999;
 	a {
@@ -543,9 +544,7 @@ td {
 	line-height: normal;
 	// Desktop
 	@media screen and (min-width: $breakPoint) {
-		background-color: red;
 		$navBarHeight: 70px;
-		background-color: RGBA(255.00, 255.00, 255.00, 0.95);
 		border-bottom: 1px solid darken(white, 5%);
 		position: fixed;
 		top: 0;
@@ -571,8 +570,6 @@ td {
 	}
 	// Mobile
 	@media screen and (max-width: $breakPoint) {
-		background-color: white;
-		background-color: RGBA(255.00, 255.00, 255.00, 0.95);
 		img {
 			@include center;
 			height: 70px;
@@ -691,10 +688,36 @@ td {
 	table {
 		margin: $paragraphPadding 0 $paragraphPadding * 2 0;
 	}
-//	p {
-//		text-align: left;
-//	}
+	.window {
+		background-color: #262929;
+		font-family:"Source Code Pro", monospace;
+		text-align: left;
+		color: white;
+		$fakeCodePaddingAndLineHeight: 1.0em;
+		p:nth-child(1) {
+			padding-top: $fakeCodePaddingAndLineHeight * 2;
+		}
+		p:last-child {
+			padding-bottom: $fakeCodePaddingAndLineHeight * 2
+		}
+		p {
+			padding: 0 $fakeCodePaddingAndLineHeight $fakeCodePaddingAndLineHeight $fakeCodePaddingAndLineHeight * 2;
+			line-height: $fakeCodePaddingAndLineHeight;
+		}
+		.keyword {
+			color: $linkColor;
+			background-color: rgba($linkColor, 0.2);
+		}
+		.sectionHeading {
+			color: #E586FC;
+			background-color: rgba(#E586FC, 0.2);
+		}
+	}
 }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                               FAKE APP WINDOWS                             */
+/*////////////////////////////////////////////////////////////////////////////*/
 
 .titleBar {
 	background-color: #EDEDED;
@@ -733,38 +756,28 @@ td {
 	}
 }
 
-.window {
-	background-color: #262929;
-	font-family:"Source Code Pro", monospace;
-	text-align: left;
-	color: white;
-	$fakeCodePaddingAndLineHeight: 1.0em;
-	p:nth-child(1) {
-		padding-top: $fakeCodePaddingAndLineHeight * 2;
-	}
-	p:last-child {
-		padding-bottom: $fakeCodePaddingAndLineHeight * 2
-	}
-	p {
-		padding: 0 $fakeCodePaddingAndLineHeight $fakeCodePaddingAndLineHeight $fakeCodePaddingAndLineHeight * 2;
-		line-height: $fakeCodePaddingAndLineHeight;
-	}
-	.keyword {
-		color: $linkColor;
-		background-color: rgba($linkColor, 0.2);
-	}
-	.sectionHeading {
-		color: #E586FC;
-		background-color: rgba(#E586FC, 0.2);
-	}
-}
-
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                             EXAMPLE DOCUMENTS                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #exampleDocuments {
 	background-color: #DADADA;
+	.window {
+		background-color: white;
+	}
+	.in {
+		padding-bottom: 0px;
+	}
+}
+
+.textField {
+	div {
+		height: 30px;
+		max-width: 100%;
+		background-color: white;
+		border-radius: 100px;
+	}
+	padding: 10px 20px 0 100px;
 }
 
 
@@ -802,24 +815,6 @@ td {
 		overflow: hidden;
 		padding: $paragraphPadding 0;
 	}
-//	.grid {
-//		padding: $paragraphPadding 0;
-//		// Desktop
-//		@media screen and (min-width: $mobile) {
-//			img:nth-child(1) {
-//				float: left;
-//				width: 50%;
-//			}
-//			img:nth-child(2) {
-//				float: right;
-//				width: 50%;
-//			}
-//			overflow: hidden; // Why does this halp??? WHY!?
-//		}
-//		// Mobile
-//		@media screen and (max-width: $mobile) {
-//		}
-//	}
 }
 
 .number {
@@ -841,8 +836,8 @@ td {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #footer {
-	background-color: #262929;
-	color: #706F6F;
+	background-color: white;
+	color: #C6C6C6;
 	a:hover {
 		opacity:0.5;
 	}
@@ -865,10 +860,6 @@ td {
 		.in {
 			overflow: hidden;
 		}
-	}
-	// Mobile
-	@media screen and (max-width: $mobile) {
-
 	}
 }
 

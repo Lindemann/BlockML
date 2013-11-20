@@ -219,6 +219,7 @@ td {
 /*                                NAVIGATION BAR                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 #navBar {
+  background-color: RGBA(255, 255, 255, 0.95);
   z-index: 9999;
   line-height: normal; }
   #navBar a {
@@ -231,8 +232,6 @@ td {
     opacity: 0.8; }
   @media screen and (min-width: 880px) {
     #navBar {
-      background-color: red;
-      background-color: RGBA(255, 255, 255, 0.95);
       border-bottom: 1px solid #f2f2f2;
       position: fixed;
       top: 0;
@@ -250,20 +249,17 @@ td {
         height: 50px;
         margin: 10px; } }
   @media screen and (max-width: 880px) {
-    #navBar {
-      background-color: white;
-      background-color: RGBA(255, 255, 255, 0.95); }
-      #navBar img {
-        display: block;
-        margin: 0 auto;
-        height: 70px;
-        padding: 20px; }
-      #navBar ul {
-        list-style: none;
-        text-align: center; }
-        #navBar ul li {
-          line-height: 2em;
-          border-top: 1px solid #e6e6e6; } }
+    #navBar img {
+      display: block;
+      margin: 0 auto;
+      height: 70px;
+      padding: 20px; }
+    #navBar ul {
+      list-style: none;
+      text-align: center; }
+      #navBar ul li {
+        line-height: 2em;
+        border-top: 1px solid #e6e6e6; } }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    HEADER                                  */
@@ -351,7 +347,28 @@ td {
     padding-bottom: 0px; }
   #featuresAndSyntax table {
     margin: 1.6em 0 3.2em 0; }
+  #featuresAndSyntax .window {
+    background-color: #262929;
+    font-family: "Source Code Pro", monospace;
+    text-align: left;
+    color: white; }
+    #featuresAndSyntax .window p:nth-child(1) {
+      padding-top: 2em; }
+    #featuresAndSyntax .window p:last-child {
+      padding-bottom: 2em; }
+    #featuresAndSyntax .window p {
+      padding: 0 1em 1em 2em;
+      line-height: 1em; }
+    #featuresAndSyntax .window .keyword {
+      color: #6176f6;
+      background-color: rgba(97, 118, 246, 0.2); }
+    #featuresAndSyntax .window .sectionHeading {
+      color: #E586FC;
+      background-color: rgba(229, 134, 252, 0.2); }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                               FAKE APP WINDOWS                             */
+/*////////////////////////////////////////////////////////////////////////////*/
 .titleBar {
   background-color: #EDEDED;
   height: 50px;
@@ -381,30 +398,23 @@ td {
   .titleBarTitle {
     display: none; } }
 
-.window {
-  background-color: #262929;
-  font-family: "Source Code Pro", monospace;
-  text-align: left;
-  color: white; }
-  .window p:nth-child(1) {
-    padding-top: 2em; }
-  .window p:last-child {
-    padding-bottom: 2em; }
-  .window p {
-    padding: 0 1em 1em 2em;
-    line-height: 1em; }
-  .window .keyword {
-    color: #6176f6;
-    background-color: rgba(97, 118, 246, 0.2); }
-  .window .sectionHeading {
-    color: #E586FC;
-    background-color: rgba(229, 134, 252, 0.2); }
-
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                             EXAMPLE DOCUMENTS                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 #exampleDocuments {
   background-color: #DADADA; }
+  #exampleDocuments .window {
+    background-color: white; }
+  #exampleDocuments .in {
+    padding-bottom: 0px; }
+
+.textField {
+  padding: 10px 20px 0 100px; }
+  .textField div {
+    height: 30px;
+    max-width: 100%;
+    background-color: white;
+    border-radius: 100px; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                             	   GET STARTED                                */
@@ -446,8 +456,8 @@ td {
 /*                             	     FOOTER                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 #footer {
-  background-color: #262929;
-  color: #706F6F; }
+  background-color: white;
+  color: #C6C6C6; }
   #footer a:hover {
     opacity: 0.5; }
   #footer img {
