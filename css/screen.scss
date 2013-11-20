@@ -43,7 +43,7 @@ $fontColor: #424242;
 $linkColor: #6176F6;
 $selectionColor: #F1FC82;
 
-$buttonWidth: 160px;
+$buttonWidth: 170px;
 
 $codeBackgroundColor: lighten($fontColor, 71%);
 $codeBorder: solid lighten($fontColor, 60%) 1px;
@@ -151,7 +151,7 @@ h6 {
 
 .hollowButton, .filledButton {
 	display: block;
-	padding: 5px 0;
+	padding: 10px 0;
 	width: $buttonWidth;
 }
 
@@ -638,7 +638,7 @@ td {
 		padding: $paragraphPadding 0;
 		// Desktop
 		@media screen and (min-width: $mobile) {
-			@include centerWithWidth(350px);
+			@include centerWithWidth(370px);
 			.hollowButton:nth-child(1) {
 				float: left;
 			}
@@ -842,6 +842,34 @@ td {
 
 #footer {
 	background-color: #262929;
+	color: #706F6F;
+	a:hover {
+		opacity:0.5;
+	}
+	img {
+		height: 20px;
+		padding: 0 10px;
+	}
+
+	// Desktop
+	@media screen and (min-width: $mobile) {
+		p {
+			float: left;
+			line-height: 1em;
+			padding: 0;
+		}
+		.grid {
+			float: right;
+			line-height: 0em;
+		}
+		.in {
+			overflow: hidden;
+		}
+	}
+	// Mobile
+	@media screen and (max-width: $mobile) {
+
+	}
 }
 
 

@@ -97,8 +97,8 @@ h6 {
 /*////////////////////////////////////////////////////////////////////////////*/
 .hollowButton, .filledButton {
   display: block;
-  padding: 5px 0;
-  width: 160px; }
+  padding: 10px 0;
+  width: 170px; }
 
 .hollowButton {
   color: #424242;
@@ -119,7 +119,7 @@ h6 {
 .container {
   display: block;
   margin: 0 auto;
-  max-width: 160px;
+  max-width: 170px;
   padding: 1.6em 0; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -308,7 +308,7 @@ td {
       #blockML .grid {
         display: block;
         margin: 0 auto;
-        max-width: 350px;
+        max-width: 370px;
         overflow: hidden; }
         #blockML .grid .hollowButton:nth-child(1) {
           float: left; }
@@ -446,4 +446,20 @@ td {
 /*                             	     FOOTER                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 #footer {
-  background-color: #262929; }
+  background-color: #262929;
+  color: #706F6F; }
+  #footer a:hover {
+    opacity: 0.5; }
+  #footer img {
+    height: 20px;
+    padding: 0 10px; }
+  @media screen and (min-width: 500px) {
+    #footer p {
+      float: left;
+      line-height: 1em;
+      padding: 0; }
+    #footer .grid {
+      float: right;
+      line-height: 0em; }
+    #footer .in {
+      overflow: hidden; } }
