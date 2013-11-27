@@ -50,8 +50,8 @@
 				<div class= "in"> 
 					<h1>BlockML</h1>
 					<p>BlockML is a free and open source markup language for scientific documents. It is also pretty well suited for documentations, blog articles and other complex stuff.</p>
-					<p>BlockML has nearly<a id="fn-back-1" href="#fn-1"><sup>[1]</sup></a> the power of LaTeX but it is super lightweight, logic and easy to learn.</p>
-					<p>The BlockML OSX App turns minimally marked-up plain text into well formatted HTML documents, which are perfectly readable in the browser and on mobile devices. It comes with an nice default CSS theme, but basically, you can style your output HTML however you want.</p>
+					<p>The main goal of BlockML is to combine the most useful functions of LaTeX with the simplicity and advantages of lightweight markup languages like Markdown.</p>
+					<p>The BlockML OSX App turns minimally marked-up plain text into well formatted HTML documents, which are perfectly readable in the browser and on mobile devices. It comes with a nice default CSS theme, but basically, you can style your output HTML however you want.</p>
 					<div class = "grid">
 						<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">SOURCE CODE</a>
 						<a class = "hollowButton" href="">DOWNLOAD</a>
@@ -69,7 +69,7 @@
 				<div class= "in"> 
 					<h1>How It Works</h1>
 					<img src="images/infoGraphic.svg">
-					<p>Just drag and drop a plain text file, which is marked-up with BlockML on the BlockML OSX App. Than it happens some magic and the App compiles an HTML-file out of it.</p>
+					<p>Just drag and drop a plain text file, which is marked-up with BlockML on the BlockML OSX App. Then the App compiles an HTML-file out of it.</p>
 					<div class = "container"><a class = "filledButton" href="">DOWNLOAD</a></div>
 				</div>
 			</div>
@@ -83,8 +83,7 @@
 			<div class = "out">
 				<div class= "in"> 
 					<h1>Features And Syntax</h1>
-						<p>The main goal of BlockML is to combine the most useful functions of LaTeX with the simplicity and advantages of lightweight markup languages like Markdown.</p>
-						<p>BlockML provides a couple of features wich are especially needed for scientific documents, like sections, tables of contents, bibliographic references and for instance captions. BlockML also provides features wich are common for lightweight markup languages, like links, headings, images and so on.</p>
+						<p>BlockML provides a couple of features wich are especially needed for academic documents, like sections, tables of contents, bibliographic references or captions. BlockML also provides features wich are common for lightweight markup languages, like links, headings, images and so on.</p>
 
 						<p>For detailed information about the available markup elemensts and the syntax look into the documentation.</p>
 
@@ -186,9 +185,9 @@
 						</tr>
 					</table>
 
-					<p>The syntax of BlockML is designed to be consistent and memorable. A BlockML markup element consists of a <span class="code">selector</span>, who defines the type of the element and one or more <span class="code">blocks</span>, which embed the text you want to mark up: <span class="code">selector[block]</span></p>
+					<p>The syntax of BlockML is slightly S-Expression inspired and designed to be consistent and memorable. A BlockML markup element consists of a <span class="code">selector</span>, who defines the type of the element and one or more <span class="code">blocks</span>, which embed the text you want to mark up: <span class="code">selector[block]</span></p>
 
-					<div class = "titleBarTitle">PhDThesis.txt</div>
+					<div class = "titleBarTitle">document.txt</div>
 					<div class = "titleBar">
 						<div class = "titleBarButtons">
 							<div class = "titleBarButton"></div>
@@ -218,12 +217,25 @@
 					<h1>Example Documents</h1>
 					<h3>Documentation</h3>
 
-					<h3>Functionality Showcase</h3>
+					<div class = "grid">
+						<div class = "grid">
+							<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">TXT</a>
+							<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">HTML</a>
+						</div>
+						<a class = "filledButton" href="documentation/document.html" target="_blank">DOWNLOAD</a>
+					</div>
 
+					<h3>Features Showcase</h3>
 
+					<div class = "grid">
+						<div class = "grid">
+							<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">TXT</a>
+							<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">HTML</a>
+						</div>
+						<a class = "filledButton" href="documentation/document.html" target="_blank">DOWNLOAD</a>
+					</div>
 
-
-					<div class = "titleBarTitle">PhDThesis.html</div>
+					<div class = "titleBarTitle">document.html</div>
 					<div class = "titleBar">
 						<div class = "titleBarButtons">
 							<div class = "titleBarButton"></div>
@@ -259,7 +271,7 @@
 					<p>Download TextMate 2 for free. The BlockML OSX App is basically a compiler for the BlockML markup language. To create plain text files you will need a separate text editor. You can use whatever text editor you like, but it is highly recommended to use TextMate in combination with the BlockML tmBundle and the tmThemes, to get syntax highlighting.</p>
 					<div class = "container"><a class = "filledButton" href="http://macromates.com/download" target="_blank">TEXTMATE</a></div>
 					<div class = "container"><h1 class = "number">3</h1></div>
-					<p>Install the tmBundle and tmThemes files on TextMate. Than set BlockML as language and choose between the "BlockML Day" or "BlockML Night" color scheme. For a detailed instruction read "Setup TextMate" in the documentation.</p>
+					<p>Install the tmBundle and tmThemes files on TextMate. Then set BlockML as language and choose between the "BlockML Day" or "BlockML Night" color scheme. For a detailed instruction read "Setup TextMate" in the documentation.</p>
 					<div class = "container"><a class = "filledButton" href="documentation/document.html" target="_blank">DOCUMENTATION</a></div>
 
 					<div class = "grid">
@@ -269,7 +281,7 @@
 
 
 					<div class = "container"><h1 class = "number">4</h1></div>
-					<p>Copy and paste that example text into a .txt or .blockML file. Drag and drop this file onto the BlockML OSX App. Enjoy...</p>
+					<p>Copy and paste that example text into a .txt or .blockML file. Drag and drop this file onto the BlockML OSX App. Rainbows!</p>
 
 
 <pre><code class="no-highlight">title[BlockML Documentation]toc[Contents]
@@ -321,9 +333,9 @@ code[markdown][↵ </code></pre>
 				<div class= "in"> 
 					<p>© 2013 Aww Apps</p>
 					<div class = "grid">
+						<a href="http://awwapps.com" target="_blank"><img src="images/awwApps.svg" alt = "Aww Apps"></a>
 						<a href="https://twitter.com/L_INDEMANN" target="_blank"><img src="images/twitter.svg" alt = "Twitter"></a>
 			            <a href="https://github.com/Lindemann/BlockML" target="_blank"><img src="images/github.svg" alt = "Github"></a>
-			            <a href="http://awwapps.com" target="_blank"><img src="images/awwApps.svg" alt = "Aww Apps"></a>
 					</div>
 				</div>
 			</div>

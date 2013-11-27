@@ -101,6 +101,8 @@ h6 {
   width: 170px; }
 
 .hollowButton {
+  width: 168px;
+  padding: 9px 0;
   color: #424242;
   border: 1px solid #424242; }
   .hollowButton:hover {
@@ -232,7 +234,7 @@ td {
     opacity: 0.8; }
   @media screen and (min-width: 880px) {
     #navBar {
-      border-bottom: 1px solid #f2f2f2;
+      border-bottom: 1px solid #e6e6e6;
       position: fixed;
       top: 0;
       width: 100%;
@@ -407,6 +409,24 @@ td {
     background-color: white; }
   #exampleDocuments .in {
     padding-bottom: 0px; }
+  #exampleDocuments .grid {
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+    max-width: 360px; }
+    #exampleDocuments .grid *:nth-child(1) {
+      float: left; }
+    #exampleDocuments .grid *:nth-child(2) {
+      float: right; }
+    #exampleDocuments .grid .grid {
+      width: 170px; }
+      #exampleDocuments .grid .grid .hollowButton {
+        width: 73px; }
+  #exampleDocuments .in > .grid {
+    padding: 0.8em 0 1.6em 0; }
+  #exampleDocuments .titleBarTitle {
+    text-align: left;
+    padding-left: 120px; }
 
 .textField {
   padding: 10px 20px 0 100px; }

@@ -156,6 +156,10 @@ h6 {
 }
 
 .hollowButton {
+	// subtract 1px because border
+	width: $buttonWidth - 2px;
+	padding: 9px 0;
+
 	color: $fontColor;
 	border: 1px solid $fontColor;
 	&:hover {
@@ -529,6 +533,7 @@ td {
 #navBar {
 	background-color: RGBA(255.00, 255.00, 255.00, 0.95);
 	$breakPoint: 880px;
+	$borderColor: darken(white, 10%);
 	z-index: 9999;
 	a {
 		color: $fontColor;
@@ -545,7 +550,7 @@ td {
 	// Desktop
 	@media screen and (min-width: $breakPoint) {
 		$navBarHeight: 70px;
-		border-bottom: 1px solid darken(white, 5%);
+		border-bottom: 1px solid $borderColor;
 		position: fixed;
 		top: 0;
 		width: 100%;
@@ -580,7 +585,7 @@ td {
 			text-align: center;
 			li {
 				line-height: 2em;
-				border-top:1px solid darken(white, 10%);
+				border-top:1px solid $borderColor;
 			}
 		}
 	}
@@ -767,6 +772,29 @@ td {
 	}
 	.in {
 		padding-bottom: 0px;
+	}
+	.grid {
+		*:nth-child(1) {
+				float: left;
+			}
+		*:nth-child(2) {
+			float: right;
+		}
+		overflow: hidden;
+		@include centerWithWidth(360px);
+		.grid {
+			width: $buttonWidth;
+			.hollowButton {
+				width: $buttonWidth / 2 - 12px;
+			}
+		}
+	}
+	.in>.grid {
+		padding: $paragraphPadding / 2 0 $paragraphPadding 0;
+	}
+	.titleBarTitle {
+		text-align: left;
+		padding-left: 120px;
 	}
 }
 
