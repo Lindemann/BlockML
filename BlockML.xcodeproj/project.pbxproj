@@ -40,7 +40,6 @@
 		827E3487180067CA00A6B82D /* StyleModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E3486180067CA00A6B82D /* StyleModifier.m */; };
 		827E348D1800EC2300A6B82D /* FrontPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E348C1800EC2300A6B82D /* FrontPage.m */; };
 		827E34901800EC4D00A6B82D /* PageBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E348F1800EC4D00A6B82D /* PageBreak.m */; };
-		829AE17018076987002BF377 /* highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 829AE16F18076987002BF377 /* highlight.js */; };
 		829AE17E180A5BC4002BF377 /* HTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE179180A5BC4002BF377 /* HTMLDocument.m */; };
 		829AE17F180A5BC4002BF377 /* HTMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE17B180A5BC4002BF377 /* HTMLElement.m */; };
 		829AE180180A5BC4002BF377 /* HTMLStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AE17D180A5BC4002BF377 /* HTMLStringBuilder.m */; };
@@ -69,6 +68,7 @@
 		82B00D14181A9627004C5D10 /* credits in Resources */ = {isa = PBXBuildFile; fileRef = 82B00D13181A9627004C5D10 /* credits */; };
 		82B00D17181BF00D004C5D10 /* BugFixImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B00D16181BF00D004C5D10 /* BugFixImageView.m */; };
 		82B09F0C18021F4800F33625 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B09F0B18021F4800F33625 /* Images.xcassets */; };
+		82B72092184FED13004509D4 /* highlight in Resources */ = {isa = PBXBuildFile; fileRef = 82B72091184FED13004509D4 /* highlight */; };
 		82DEC4FB17E609D9007708D1 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FA17E609D9007708D1 /* Text.m */; };
 		82DEC4FE17E609F8007708D1 /* LineBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC4FD17E609F8007708D1 /* LineBreak.m */; };
 		82DEC50217E975B1007708D1 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DEC50117E975B1007708D1 /* Link.m */; };
@@ -151,7 +151,6 @@
 		827E348C1800EC2300A6B82D /* FrontPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrontPage.m; sourceTree = "<group>"; };
 		827E348E1800EC4D00A6B82D /* PageBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageBreak.h; sourceTree = "<group>"; };
 		827E348F1800EC4D00A6B82D /* PageBreak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageBreak.m; sourceTree = "<group>"; };
-		829AE16F18076987002BF377 /* highlight.js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = highlight.js; sourceTree = "<group>"; };
 		829AE178180A5BC4002BF377 /* HTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLDocument.h; sourceTree = "<group>"; };
 		829AE179180A5BC4002BF377 /* HTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLDocument.m; sourceTree = "<group>"; };
 		829AE17A180A5BC4002BF377 /* HTMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLElement.h; sourceTree = "<group>"; };
@@ -203,6 +202,7 @@
 		82B00D15181BF00D004C5D10 /* BugFixImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugFixImageView.h; sourceTree = "<group>"; };
 		82B00D16181BF00D004C5D10 /* BugFixImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugFixImageView.m; sourceTree = "<group>"; };
 		82B09F0B18021F4800F33625 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		82B72091184FED13004509D4 /* highlight */ = {isa = PBXFileReference; lastKnownFileType = folder; path = highlight; sourceTree = "<group>"; };
 		82DEC4F917E609D9007708D1 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		82DEC4FA17E609D9007708D1 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
 		82DEC4FC17E609F8007708D1 /* LineBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineBreak.h; sourceTree = "<group>"; };
@@ -332,8 +332,8 @@
 		82080F5D172D0E45008ABC58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				82B72091184FED13004509D4 /* highlight */,
 				82B00D13181A9627004C5D10 /* credits */,
-				829AE16F18076987002BF377 /* highlight.js */,
 				82DEC50417EAADF2007708D1 /* images */,
 				82080F69172D0FFB008ABC58 /* css */,
 			);
@@ -758,7 +758,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82B09F0C18021F4800F33625 /* Images.xcassets in Resources */,
-				829AE17018076987002BF377 /* highlight.js in Resources */,
+				82B72092184FED13004509D4 /* highlight in Resources */,
 				82080F30172D0CEE008ABC58 /* InfoPlist.strings in Resources */,
 				82080F36172D0CEE008ABC58 /* Credits.rtf in Resources */,
 				82A0627C181375E1007A7F17 /* Main.xib in Resources */,

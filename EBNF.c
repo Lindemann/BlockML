@@ -21,7 +21,7 @@ text = (string | inlineTag) {string | inlineTag}.
 
 paragraph = "LF" {"LF"} textBlock.
 
-string = UTF8Character {UTF8Character}. // character could be every UTF-8 sign and space
+string = UTF8Character {UTF8Character}.
 
 blockTag = tableOfContent | title | frontpage | pageBreak
            section | image | math | code | heading | list |
@@ -82,7 +82,7 @@ tableHeader = "th[" document "]""[" string "]".
 
 tableData = "td[" document "]""[" string "]".
 
-//love = "<3[]".
+// credit = "<3[]".
 
 html = "html[" text "]".
 

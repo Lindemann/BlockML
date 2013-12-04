@@ -90,7 +90,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                               lineBreak:YES]];
         */
         
-        [result appendString:[HTMLStringBuilder openTag:@"script" attributes:@{@"src": @"highlight.js/highlight.pack.js"} indentation:2 lineBreak:NO]];
+        [result appendString:[HTMLStringBuilder openTag:@"script" attributes:@{@"src": @"highlight/highlight.pack.js"} indentation:2 lineBreak:NO]];
         
         /*
         // CDN and CSS is called in style.css
