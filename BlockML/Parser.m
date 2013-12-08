@@ -325,7 +325,7 @@
 
 - (void)styleModifier:(HTMLElement*)parent {
     // $styleModifier[
-    if (self.token.type >= B_SB && self.token.type <= U_SB) {
+    if (self.token.type >= SUB_SB && self.token.type <= U_SB) {
         StyleModifier *styleModifier = [StyleModifier new];
         [parent addElement:styleModifier];
         
@@ -355,6 +355,14 @@
             case S_SB:
                 styleModifier.style = STRIKETHROUGH;
                 errorString = @"Strikethrough Style";
+                break;
+            case SUB_SB:
+                styleModifier.style = SUB;
+                errorString = @"Sub Style";
+                break;
+            case SUP_SB:
+                styleModifier.style = SUP;
+                errorString = @"Sup Style";
                 break;
             default:
                 break;

@@ -33,6 +33,12 @@
         case STRIKETHROUGH:
             styleString = @"strikethrough";
             break;
+        case SUB:
+            styleString = @"sub";
+            break;
+        case SUP:
+            styleString = @"sup";
+            break;
             
         default:
             break;

@@ -26,7 +26,7 @@
 @mixin centerWithWidth($width) {
 	display: block;
 	margin: 0 auto;
-	width: $width;
+	max-width: $width;
 }
 
 @mixin center {
@@ -59,7 +59,7 @@ $codeBorder: solid lighten($fontColor, 60%) 1px;
 /*////////////////////////////////////////////////////////////////////////////*/
 
 body {
-	max-width: 660px;
+	width: 660px;
 	@include centerWithWidth(70%);
 	padding: $generalPadding*2 0;
 }
@@ -394,7 +394,8 @@ table {
 	margin-bottom: $paragraphPadding;
 	width: 100%; 
 	border-collapse: collapse; 
-	border-spacing: 0; 
+	border-spacing: 0;
+	table-layout: fixed;
 }
 
 table, td, td {
@@ -456,6 +457,18 @@ td {
 
 .strikethrough {
 	text-decoration: line-through;
+}
+
+.sub, .sup {
+	font-size: 80%;
+}
+
+.sub {
+	vertical-align: sub;
+}
+
+.sup {
+	vertical-align: super;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/

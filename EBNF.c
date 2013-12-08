@@ -115,4 +115,8 @@ strikethrough = "s[" string "]".
 
 underline = "u[" string "]".
 
+sub = "sub[" string "]".
+
+sup = "sup[" string "]".
+
 identifier = "id[" string "]".

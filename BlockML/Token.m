@@ -52,6 +52,8 @@
     [stringList addObject:@[[NSNumber numberWithInt:FN_SB], @"fn["]];
     [stringList addObject:@[[NSNumber numberWithInt:IHTML_SB], @"ihtml["]];
     [stringList addObject:@[[NSNumber numberWithInt:IM_SB], @"im["]];
+    [stringList addObject:@[[NSNumber numberWithInt:SUB_SB], @"sub["]];
+    [stringList addObject:@[[NSNumber numberWithInt:SUP_SB], @"sup["]];
     [stringList addObject:@[[NSNumber numberWithInt:C_SB], @"c["]];
     [stringList addObject:@[[NSNumber numberWithInt:B_SB], @"b["]];
     [stringList addObject:@[[NSNumber numberWithInt:I_SB], @"i["]];

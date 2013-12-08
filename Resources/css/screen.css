@@ -28,10 +28,10 @@
 /*                                  GENERAL                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 body {
-  max-width: 660px;
+  width: 660px;
   display: block;
   margin: 0 auto;
-  width: 70%;
+  max-width: 70%;
   padding: 120px 0; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -227,7 +227,7 @@ ul, ol {
 .cap {
   display: block;
   margin: 0 auto;
-  width: 80%;
+  max-width: 80%;
   text-align: center;
   padding-bottom: 1.6em; }
   .cap span {
@@ -256,7 +256,7 @@ ul, ol {
   font-style: italic;
   display: block;
   margin: 0 auto;
-  width: 70%; }
+  max-width: 70%; }
   .quote p:last-of-type {
     padding-bottom: 0; }
   .quote p {
@@ -300,7 +300,8 @@ table {
   margin-bottom: 1.6em;
   width: 100%;
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+  table-layout: fixed; }
 
 table, td, td {
   padding: 0 10px; }
@@ -347,6 +348,15 @@ td {
 
 .strikethrough {
   text-decoration: line-through; }
+
+.sub, .sup {
+  font-size: 80%; }
+
+.sub {
+  vertical-align: sub; }
+
+.sup {
+  vertical-align: super; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                	FRONTPAGE                                 */

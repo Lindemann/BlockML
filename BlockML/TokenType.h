@@ -23,6 +23,8 @@ typedef enum {
     
     IHTML_SB,    // ihtml[
     
+    SUB_SB,     // sub[
+    SUP_SB,     // sup[
     B_SB,       // b[
     C_SB,       // c[
     I_SB,       // i[

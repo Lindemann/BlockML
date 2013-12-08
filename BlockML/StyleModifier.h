@@ -14,7 +14,9 @@ typedef enum {
     ITALIC,
     STRIKETHROUGH,
     UNDERLINE,
-    CODE
+    CODE,
+    SUP,
+    SUB
 } TextStyle;
 
 @interface StyleModifier : HTMLElement
