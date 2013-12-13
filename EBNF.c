@@ -84,7 +84,7 @@ tableData = "td[" document "]""[" string "]".
 
 // credit = "<3[]".
 
-html = "html[" text "]".
+html = "html[" string "]".
 
 /*/////////////////////////////////////////////////////////////*/
 

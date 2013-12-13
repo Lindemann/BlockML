@@ -372,8 +372,11 @@
         if (self.token.type == STRING) {
             Text *text = [Text new];
             text.string = self.token.value;
+            
             [styleModifier addElement:text];
             [self nextToken];
+            
+//            [self text:styleModifier];
         }
         // ]
         if (self.token.type == CLOSE_SB) {
@@ -607,6 +610,7 @@
         [self nextToken];
         // STRING | List | LF
         while (self.token.type == STRING ||
+               (self.token.type >= A_SB && self.token.type <= ID_SB) ||
                self.token.type == UL_SB || self.token.type == OL_SB ||
                self.token.type == LF) {
             [self listItem:unorderedList];
@@ -633,6 +637,7 @@
         [self nextToken];
         // STRING | List | LF
         while (self.token.type == STRING ||
+               (self.token.type >= A_SB && self.token.type <= ID_SB) ||
                self.token.type == UL_SB || self.token.type == OL_SB ||
                self.token.type == LF) {
             [self listItem:orderedList];
