@@ -90,6 +90,7 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
 
 p {
 	padding-bottom: $paragraphPadding;
+	text-align: left;
 }
 
 a, a span {
@@ -677,7 +678,8 @@ td {
 		@include center;
 	}
 	p {
-		@include centerWithWidth(500px);;
+		@include centerWithWidth(500px);
+		text-align: center;
 	}
 }
 

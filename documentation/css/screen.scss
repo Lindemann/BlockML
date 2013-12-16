@@ -17,7 +17,7 @@
 
 /* highlight.js */
 //@import url(http://yandex.st/highlightjs/7.3/styles/github.min.css);
-@import url(../highlight.js/styles/github.css);
+@import url(../highlight/styles/github.css);
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                       SASS VARS, MIXINS AND FUNCTIONS                      */
@@ -26,7 +26,7 @@
 @mixin centerWithWidth($width) {
 	display: block;
 	margin: 0 auto;
-	width: $width;
+	max-width: $width;
 }
 
 @mixin center {
@@ -42,7 +42,7 @@ $fontColor: #424242;
 $linkColor: #6176F6;
 $selectionColor: #F1FC82;
 
-$codeBackgroundColor: lighten($fontColor, 71%);
+$codeBackgroundColor: lighten($fontColor, 72%);
 $codeBorder: solid lighten($fontColor, 60%) 1px;
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -59,7 +59,7 @@ $codeBorder: solid lighten($fontColor, 60%) 1px;
 /*////////////////////////////////////////////////////////////////////////////*/
 
 body {
-	max-width: 660px;
+	width: 660px;
 	@include centerWithWidth(70%);
 	padding: $generalPadding*2 0;
 }
@@ -267,8 +267,7 @@ pre code {
 }
 pre .title,
 pre .id {
-//  color: #00AB7D;
-	color: #9537FF;
+	color: #AC64E1;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -395,7 +394,8 @@ table {
 	margin-bottom: $paragraphPadding;
 	width: 100%; 
 	border-collapse: collapse; 
-	border-spacing: 0; 
+	border-spacing: 0;
+	table-layout: fixed;
 }
 
 table, td, td {
@@ -411,7 +411,7 @@ td, th {
 }
 
 th {
-	background: lighten($fontColor, 68%);
+	background: lighten($fontColor, 66%);
 	* {
 		font-weight: 600;
 	}
@@ -431,7 +431,7 @@ td {
 }
 
 .bold {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 .underline {
@@ -457,6 +457,18 @@ td {
 
 .strikethrough {
 	text-decoration: line-through;
+}
+
+.sub, .sup {
+	font-size: 80%;
+}
+
+.sub {
+	vertical-align: sub;
+}
+
+.sup {
+	vertical-align: super;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/

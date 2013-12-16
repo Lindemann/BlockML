@@ -52,7 +52,8 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
   font-weight: 400; }
 
 p {
-  padding-bottom: 1.6em; }
+  padding-bottom: 1.6em;
+  text-align: left; }
 
 a, a span {
   color: #6176f6;
@@ -338,7 +339,8 @@ td {
   #howItWorks p {
     display: block;
     margin: 0 auto;
-    max-width: 500px; }
+    max-width: 500px;
+    text-align: center; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                           FEATURES AND SYNTAX                              */
