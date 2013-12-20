@@ -303,7 +303,64 @@ And a second paragraph, but without a source.]
 
 sec[Text Styles][
 
-sec[Bold][]/*Bold*/
+You can style your text as b[bold], i[italic], u[underlined], m[marked], s[strikethrough], subscript sub[text], superscript sup[text] and as c[inline code].
+
+sec[Bold][
+
+code[no-highlight][My b\[bold\] text.]
+My b[bold] text.
+
+]/*Bold*/
+
+sec[Italic][
+
+code[no-highlight][My i\[italic\] text.]
+My i[italic] text.
+
+]/*Italic*/
+
+sec[Underlined][
+
+code[no-highlight][My u\[underlined\] text.]
+My u[underlined] text.
+
+]/*Underlined*/
+
+sec[Marked][
+
+code[no-highlight][My m\[marked\] text.]
+My m[marked] text.
+
+]/*Marked*/
+
+sec[Strikethrough][
+
+code[no-highlight][My s\[strikethrough\] text.]
+My s[strikethrough] text.
+
+]/*strikethrough*/
+
+sec[Subscript][
+
+code[no-highlight][My subscript sub\[text\].]
+My subscript sub[text].
+
+]/*Subscript*/
+
+sec[Superscript][
+
+code[no-highlight][My superscript sup\[text\].]
+My superscript sup[text].
+
+]/*Subscript*/
+
+sec[Inline code][
+
+code[no-highlight][My c\[inline code\].]
+My c[inline code].
+
+]/*Bold*/
+
 
 ]/*Text Styles*/
 
@@ -354,7 +411,7 @@ sec[Error Warnings][]/*Errors*/
 
 sec[Use Custom CSS][]/*Use Custom CSS*/
 
-sec[Convert the HTML into a PDF][]/*Convert your HTML Document into a PDF*/
+sec[Converting HTML into a PDF][]/*Convert your HTML Document into a PDF*/
 
 sec[Setup TextMate][
 If you have ever used TextMate, this section isn't for you. Just "install" the tmBundle, the color schemes and activate spell checking.
