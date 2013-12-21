@@ -82,9 +82,11 @@ tableHeader = "th[" document "]""[" string "]".
 
 tableData = "td[" document "]""[" string "]".
 
+html = "html[" string "]".
+
 // credit = "<3[]".
 
-html = "html[" string "]".
+// download = "dl[]".
 
 /*/////////////////////////////////////////////////////////////*/
 
@@ -99,15 +101,15 @@ link = "a[" string "]""[" string "]" |
 
 inlineHTML = "html[" text "]".
 
-inlineCode = "c[" string "]".
-
 inlineMath = "im[" string "]".
 
-styleModifier = bold | italic | inlineCode | marked | strikethrough | underline.
+styleModifier = bold | italic | inlineCode | marked | strikethrough | underline | sup | sub.
 
 bold = "b[" string "]".
 
 italic = "i[" string "]".
+
+inlineCode = "c[" string "]".
 
 marked = "m[" string "]".
 

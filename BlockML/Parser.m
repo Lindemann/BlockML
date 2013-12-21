@@ -42,6 +42,7 @@
 
 - (void)startParsing {
 //    [self scannerOutput];
+
 //    [Token printAllTokenWithDelimiter:@" "];
     
     while (self.token.type != END) {
