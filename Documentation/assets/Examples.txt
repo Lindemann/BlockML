@@ -63,18 +63,6 @@ img[image.png][200, 200]
 code[objectivec][self.scanner = \[Scanner scannerWithString:string\];
 self.document = \[HTMLDocument new\];]
 
-
-
-
-
-
-
-
-
-
-
-
-
 q[Block quotation with one paragraph and a source.][The Source]
 
 q[Block quotation with one paragraph.
@@ -104,4 +92,26 @@ tr[ 				td[Data 1] ]
 table[
 tr[ th[Header 1] th[Header 2] ]
 tr[			  td[Data 1][h:2] ]
+]
+
+ul[
+- item
+- item
+- item
+]
+
+ul[
+item
+-item
+ - item
+]
+
+ol[
+- item
+- item
+	ul[
+	- item
+	- item
+	- item
+	]
 ]

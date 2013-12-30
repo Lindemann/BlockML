@@ -68,10 +68,10 @@
 				<ul>
 					<li><span><span>2.12 Lists</span></span><a href="#sec-2.12"><span>[⚐]</span></a></li>
 					<ul>
-						<li><span><span>2.12.1 Ordered Lists</span></span><a href="#sec-2.12.1"><span>[⚐]</span></a></li>
+						<li><span><span>2.12.1 Unordered Lists</span></span><a href="#sec-2.12.1"><span>[⚐]</span></a></li>
 					</ul>
 					<ul>
-						<li><span><span>2.12.2 Unordered Lists</span></span><a href="#sec-2.12.2"><span>[⚐]</span></a></li>
+						<li><span><span>2.12.2 Ordered Lists</span></span><a href="#sec-2.12.2"><span>[⚐]</span></a></li>
 					</ul>
 				</ul>
 				<ul>
@@ -119,7 +119,7 @@
 						<li><span><span>2.17.7 Superscript</span></span><a href="#sec-2.17.7"><span>[⚐]</span></a></li>
 					</ul>
 					<ul>
-						<li><span><span>2.17.8 Inline code</span></span><a href="#sec-2.17.8"><span>[⚐]</span></a></li>
+						<li><span><span>2.17.8 Inline Code</span></span><a href="#sec-2.17.8"><span>[⚐]</span></a></li>
 					</ul>
 				</ul>
 				<ul>
@@ -332,6 +332,10 @@ self.document = [HTMLDocument new];</code></pre>
 			</div>
 			<div class="sec" id="sec-2.10">
 				<h2>2.10 Tables</h2>
+				<pre><code class="no-highlight">table[
+tr[ th[Header 1] th[Header 2] ]
+tr[   td[Data 1]   td[Data 2] ]
+]</code></pre>
 				<table>
 					<tr>
 						<th>
@@ -350,6 +354,10 @@ self.document = [HTMLDocument new];</code></pre>
 						</td>
 					</tr>
 				</table>
+				<pre><code class="no-highlight">table[
+tr[ th[Header 1] td[Data 1] ]
+tr[ th[Header 2] td[Data 2] ]
+]</code></pre>
 				<table>
 					<tr>
 						<th>
@@ -368,6 +376,10 @@ self.document = [HTMLDocument new];</code></pre>
 						</td>
 					</tr>
 				</table>
+				<pre><code class="no-highlight">table[
+tr[ 	  th[Header][h:2] ]
+tr[ td[Data 1] td[Data 2] ]
+]</code></pre>
 				<table>
 					<tr>
 						<th colspan="2">
@@ -383,6 +395,10 @@ self.document = [HTMLDocument new];</code></pre>
 						</td>
 					</tr>
 				</table>
+				<pre><code class="no-highlight">table[
+tr[ th[Header][v:2] td[Data 2] ]
+tr[                 td[Data 1] ]
+]</code></pre>
 				<table>
 					<tr>
 						<th rowspan="2">
@@ -398,6 +414,10 @@ self.document = [HTMLDocument new];</code></pre>
 						</td>
 					</tr>
 				</table>
+				<pre><code class="no-highlight">table[
+tr[ th[Header 1] th[Header 2] ]
+tr[           td[Data 1][h:2] ]
+]</code></pre>
 				<table>
 					<tr>
 						<th>
@@ -420,10 +440,57 @@ self.document = [HTMLDocument new];</code></pre>
 			<div class="sec" id="sec-2.12">
 				<h2>2.12 Lists</h2>
 				<div class="sec" id="sec-2.12.1">
-					<h3>2.12.1 Ordered Lists</h3>
+					<h3>2.12.1 Unordered Lists</h3>
+					<p>To create unordered lists use the <span class="code">ul[]</span>-element and add your list items to it. You can use dashes <span class="code">-</span> in front of items to emphasize the list structure, but you don't have to. The whitespace between dash and item is irrelevant.</p>
+					<p>You can nest your list with other unordered or ordered lists. See the example in the in <a href="#id-NLISTS">Listing 2.1</a>.</p>
+					<pre><code class="no-highlight">ul[
+- item
+- item
+- item
+]</code></pre>
+					<ul>
+						<li>item</li>
+						<li>item</li>
+						<li>item</li>
+					</ul>
+					<pre><code class="no-highlight">ul[
+item
+-item
+ - item
+]</code></pre>
 				</div>
 				<div class="sec" id="sec-2.12.2">
-					<h3>2.12.2 Unordered Lists</h3>
+					<h3>2.12.2 Ordered Lists</h3>
+					<p>Ordered lists work in the same way like unordered lists.</p>
+					<pre><code class="no-highlight">ol[
+- item
+- item
+- item
+]</code></pre>
+					<ol>
+						<li>item</li>
+						<li>item</li>
+						<li>item</li>
+					</ol>
+					<pre><code class="no-highlight">ol[
+- item
+- item
+	ul[
+	- item
+	- item
+	- item
+	]
+]</code></pre>
+					<div class="cap" id="id-NLISTS"><span>Listing 2.1: </span>Nested lists</div>
+					<ol>
+						<li>item</li>
+						<li>item</li>
+						<ul>
+							<li>item</li>
+							<li>item</li>
+							<li>item</li>
+						</ul>
+					</ol>
 				</div>
 			</div>
 			<div class="sec" id="sec-2.13">
@@ -462,7 +529,7 @@ And a second paragraph, but without a source.]</code></pre>
 			</div>
 			<div class="sec" id="sec-2.17">
 				<h2>2.17 Text Styles</h2>
-				<p>You can style your text as <span class="bold">bold</span>, <span class="italic">italic</span>, <span class="underline">underlined</span>, <span class="marked">marked</span>, <span class="strikethrough">strikethrough</span>, subscript <span class="sub">text</span>, superscript <span class="sup">text</span> and as <span class="code">inline code</span>.</p>
+				<p>You can style your text as <span class="bold">bold</span>, <span class="italic">italic</span>, <span class="underline">underlined</span>, <span class="marked">marked</span>, <span class="strikethrough">strikethrough</span>, subscript <span class="sub">text</span>, superscript <span class="sup">text</span>, and as <span class="code">inline code</span>.</p>
 				<div class="sec" id="sec-2.17.1">
 					<h3>2.17.1 Bold</h3>
 					<pre><code class="no-highlight">My b[bold] text.</code></pre>
@@ -499,7 +566,7 @@ And a second paragraph, but without a source.]</code></pre>
 					<p>My superscript <span class="sup">text</span>.</p>
 				</div>
 				<div class="sec" id="sec-2.17.8">
-					<h3>2.17.8 Inline code</h3>
+					<h3>2.17.8 Inline Code</h3>
 					<pre><code class="no-highlight">My c[inline code].</code></pre>
 					<p>My <span class="code">inline code</span>.</p>
 				</div>

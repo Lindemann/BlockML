@@ -233,25 +233,50 @@ m[Don't forget to escape the square brackets!]
 
 sec[Tables][
 
+code[no-highlight][table\[
+tr\[ th\[Header 1\] th\[Header 2\] \]
+tr\[   td\[Data 1\]   td\[Data 2\] \]
+\]]
+
 table[
 tr[ th[Header 1] th[Header 2] ]
 tr[   td[Data 1]   td[Data 2] ]
 ]
+
+code[no-highlight][table\[
+tr\[ th\[Header 1\] td\[Data 1\] \]
+tr\[ th\[Header 2\] td\[Data 2\] \]
+\]]
 
 table[
 tr[ th[Header 1] td[Data 1] ]
 tr[ th[Header 2] td[Data 2] ]
 ]
 
+code[no-highlight][table\[
+tr\[ 	  th\[Header\]\[h:2\] \]
+tr\[ td\[Data 1\] td\[Data 2\] \]
+\]]
+
 table[
 tr[ 	  th[Header][h:2] ]
 tr[ td[Data 1] td[Data 2] ]
 ]
 
+code[no-highlight][table\[
+tr\[ th\[Header\]\[v:2\] td\[Data 2\] \]
+tr\[                 td\[Data 1\] \]
+\]]
+
 table[
 tr[ th[Header][v:2] td[Data 2] ]
 tr[ 				td[Data 1] ]
 ]
+
+code[no-highlight][table\[
+tr\[ th\[Header 1\] th\[Header 2\] \]
+tr\[           td\[Data 1\]\[h:2\] \]
+\]]
 
 table[
 tr[ th[Header 1] th[Header 2] ]
@@ -264,9 +289,70 @@ sec[Captions][]/*Captions*/
 
 sec[Lists][
 
-sec[Ordered Lists][]/*Ordered Lists*/
+sec[Unordered Lists][
 
-sec[Unordered Lists][]/*Unordered Lists*/
+To create unordered lists use the c[ul\[\]]-element and add your list items to it. You can use dashes c[-] in front of items to emphasize the list structure, but you don't have to. The whitespace between dash and item is irrelevant.
+
+You can nest your list with other unordered or ordered lists. See the example in the in id[NLISTS].
+
+code[no-highlight][ul\[
+- item
+- item
+- item
+\]]
+
+ul[
+- item
+- item
+- item
+]
+
+code[no-highlight][ul\[
+item
+-item
+ - item
+\]]
+
+]/*Unordered Lists*/
+
+sec[Ordered Lists][
+
+Ordered lists work in the same way like unordered lists.
+
+code[no-highlight][ol\[
+- item
+- item
+- item
+\]]
+
+ol[
+- item
+- item
+- item
+]
+
+code[no-highlight][ol\[
+- item
+- item
+	ul\[
+	- item
+	- item
+	- item
+	\]
+\]]
+cap[Listing][Nested lists][NLISTS]
+
+ol[
+- item
+- item
+	ul[
+	- item
+	- item
+	- item
+	]
+]
+
+]/*Ordered Lists*/
 
 ]/*Lists*/
 
@@ -303,7 +389,7 @@ And a second paragraph, but without a source.]
 
 sec[Text Styles][
 
-You can style your text as b[bold], i[italic], u[underlined], m[marked], s[strikethrough], subscript sub[text], superscript sup[text] and as c[inline code].
+You can style your text as b[bold], i[italic], u[underlined], m[marked], s[strikethrough], subscript sub[text], superscript sup[text], and as c[inline code].
 
 sec[Bold][
 
@@ -354,7 +440,7 @@ My superscript sup[text].
 
 ]/*Subscript*/
 
-sec[Inline code][
+sec[Inline Code][
 
 code[no-highlight][My c\[inline code\].]
 My c[inline code].

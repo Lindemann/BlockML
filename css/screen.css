@@ -485,6 +485,8 @@ td {
   #footer img {
     height: 20px;
     padding: 0 10px; }
+  #footer p {
+    text-align: center; }
   @media screen and (min-width: 500px) {
     #footer p {
       float: left;

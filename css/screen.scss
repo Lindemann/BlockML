@@ -875,6 +875,9 @@ td {
 		height: 20px;
 		padding: 0 10px;
 	}
+	p {
+		text-align: center;
+	}
 
 	// Desktop
 	@media screen and (min-width: $mobile) {
