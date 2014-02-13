@@ -362,19 +362,24 @@ td {
     font-family: "Source Code Pro", monospace;
     text-align: left;
     color: white; }
+    @media screen and (max-width: 500px) {
+      #featuresAndSyntax .window {
+        font-size: 10pt; } }
     #featuresAndSyntax .window p:nth-child(1) {
-      padding-top: 2em; }
+      padding-top: 1.4em; }
     #featuresAndSyntax .window p:last-child {
-      padding-bottom: 2em; }
+      padding-bottom: 1.4em; }
     #featuresAndSyntax .window p {
-      padding: 0 1em 1em 2em;
-      line-height: 1em; }
+      padding: 0 0.7em 0.7em 1.4em;
+      line-height: 1.2em; }
     #featuresAndSyntax .window .keyword {
       color: #6176f6;
       background-color: rgba(97, 118, 246, 0.2); }
     #featuresAndSyntax .window .sectionHeading {
       color: #E586FC;
       background-color: rgba(229, 134, 252, 0.2); }
+    #featuresAndSyntax .window .comment {
+      color: #4d4d4d; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                               FAKE APP WINDOWS                             */
@@ -426,6 +431,16 @@ td {
       float: left; }
     #exampleDocuments .grid *:nth-child(2) {
       float: right; }
+    @media screen and (max-width: 500px) {
+      #exampleDocuments .grid .grid {
+        display: block;
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 15px; }
+      #exampleDocuments .grid .filledButton {
+        display: block;
+        margin: 0 auto;
+        float: none; } }
     #exampleDocuments .grid .grid {
       width: 170px; }
       #exampleDocuments .grid .grid .hollowButton {

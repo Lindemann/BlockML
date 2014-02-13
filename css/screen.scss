@@ -717,16 +717,20 @@ td {
 		font-family:"Source Code Pro", monospace;
 		text-align: left;
 		color: white;
-		$fakeCodePaddingAndLineHeight: 1.0em;
+		// Mobile
+		@media screen and (max-width: $mobile) {
+			font-size: 10pt;
+		}
+		$fakeCodePadding: 0.7em;
 		p:nth-child(1) {
-			padding-top: $fakeCodePaddingAndLineHeight * 2;
+			padding-top: $fakeCodePadding * 2;
 		}
 		p:last-child {
-			padding-bottom: $fakeCodePaddingAndLineHeight * 2
+			padding-bottom: $fakeCodePadding * 2
 		}
 		p {
-			padding: 0 $fakeCodePaddingAndLineHeight $fakeCodePaddingAndLineHeight $fakeCodePaddingAndLineHeight * 2;
-			line-height: $fakeCodePaddingAndLineHeight;
+			padding: 0 $fakeCodePadding $fakeCodePadding $fakeCodePadding * 2;
+			line-height: 1.2em;
 		}
 		.keyword {
 			color: $linkColor;
@@ -735,6 +739,9 @@ td {
 		.sectionHeading {
 			color: #E586FC;
 			background-color: rgba(#E586FC, 0.2);
+		}
+		.comment {
+			color: darken(white, 70%);
 		}
 	}
 }
@@ -798,6 +805,18 @@ td {
 			}
 		*:nth-child(2) {
 			float: right;
+		}
+		// Mobile
+		@media screen and (max-width: $mobile) {
+			.grid {
+				@include center;
+				float: none;
+				margin-bottom: 15px;
+			}
+			.filledButton {
+				@include center;
+				float: none;
+			}
 		}
 		overflow: hidden;
 		@include centerWithWidth(360px);
