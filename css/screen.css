@@ -33,6 +33,8 @@
   margin: 0 auto;
   max-width: 660px;
   padding: 60px 0; }
+  .in > h1 {
+    padding-top: 0; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    FONT                                    */
@@ -99,7 +101,8 @@ h6 {
 .hollowButton, .filledButton {
   display: block;
   padding: 10px 0;
-  width: 170px; }
+  width: 170px;
+  border-radius: 5px; }
 
 .hollowButton {
   width: 168px;
@@ -325,22 +328,25 @@ td {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                HOW IT WORKS                                */
 /*////////////////////////////////////////////////////////////////////////////*/
-#howItWorks {
+#howItWorks p {
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center; }
+#howItWorks img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%; }
+#howItWorks #light {
+  background-color: #EDEDED; }
+#howItWorks #dark {
   background-color: #262929;
   color: #e6e6e6; }
-  #howItWorks img {
-    padding: 3.2em 0;
-    display: block;
-    margin: 0 auto;
-    max-width: 100%; }
-  #howItWorks .filledButton {
+  #howItWorks #dark img {
+    padding: 3.2em 0; }
+  #howItWorks #dark .filledButton {
     display: block;
     margin: 0 auto; }
-  #howItWorks p {
-    display: block;
-    margin: 0 auto;
-    max-width: 500px;
-    text-align: center; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                           FEATURES AND SYNTAX                              */
@@ -480,6 +486,12 @@ td {
 #footer {
   background-color: white;
   color: #C6C6C6; }
+  #footer .in {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 60px 0; }
   #footer a:hover {
     opacity: 0.5; }
   #footer img {

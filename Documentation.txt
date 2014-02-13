@@ -293,7 +293,7 @@ sec[Unordered Lists][
 
 To create unordered lists use the c[ul\[\]]-element and add your list items to it. You can use dashes c[-] in front of items to emphasize the list structure, but you don't have to. The whitespace between dash and item is irrelevant.
 
-You can nest your list with other unordered or ordered lists. See the example in the in id[NLISTS].
+You can nest your lists with other unordered or ordered lists. See an example in id[NLISTS].
 
 code[no-highlight][ul\[
 - item

@@ -65,6 +65,9 @@ $codeBorder: solid lighten($fontColor, 60%) 1px;
 	width: 70%;
 	@include centerWithWidth(660px);
 	padding: $generalPadding 0;
+	> h1 {
+		padding-top: 0;
+	}
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -154,6 +157,7 @@ h6 {
 	display: block;
 	padding: 10px 0;
 	width: $buttonWidth;
+	border-radius: 5px;
 }
 
 .hollowButton {
@@ -598,6 +602,12 @@ td {
 
 #header {
 	#parallaxBG {
+//		filter: blur(4px);
+//		-o-filter: blur(4px);
+//		-ms-filter: blur(4px);
+//		-moz-filter: blur(4px);
+//		-webkit-filter: blur(4px);
+
 		background-image: url(../images/stars.svg);
 		background-color: #262929;
 		background-size: 250px;
@@ -666,20 +676,27 @@ td {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                HOW IT WORKS                                */
 /*////////////////////////////////////////////////////////////////////////////*/
-
 #howItWorks {
-	background-color: #262929;
-	color: darken(white, 10%);
-	img {
-		padding: $paragraphPadding * 2 0;
-		@include centerWithWidth(100%);
-	}
-	.filledButton {
-		@include center;
-	}
 	p {
 		@include centerWithWidth(500px);
 		text-align: center;
+	}
+		img {
+			@include centerWithWidth(100%);
+	}
+	#light {
+		background-color: #EDEDED;
+	}
+
+	#dark {
+		background-color: #262929;
+		color: darken(white, 10%);
+		img {
+			padding: $paragraphPadding * 2 0;
+		}
+		.filledButton {
+			@include center;
+		}
 	}
 }
 
@@ -777,7 +794,7 @@ td {
 	}
 	.grid {
 		*:nth-child(1) {
-				float: left;
+			float: left;
 			}
 		*:nth-child(2) {
 			float: right;
@@ -817,6 +834,7 @@ td {
 
 #getStarted {
 	background-color: #EDEDED;
+//	color: lighten($fontColor, 20%);
 	img {
 		max-width: 100%;
 	}
@@ -868,6 +886,11 @@ td {
 #footer {
 	background-color: white;
 	color: #C6C6C6;
+	.in{
+		width: 90%;
+		@include centerWithWidth(100%);
+		padding: $generalPadding 0;
+	}
 	a:hover {
 		opacity:0.5;
 	}
