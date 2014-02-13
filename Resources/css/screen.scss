@@ -151,10 +151,16 @@ h6 {
 /*                                    ERROR                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-.error {     background-color: $selectionColor;     text-align: center; padding:
-0.4em 0;     font-family:"Source Code Pro", monospace;     font-weight: 500;
-color: darken($selectionColor, 40%);     border-radius: 6px; border: solid
-darken($selectionColor, 30%) 1px;     margin-bottom: $paragraphPadding;
+.error {
+	background-color: $selectionColor;
+	text-align: center;
+	padding: 0.4em 0;
+	font-family:"Source Code Pro", monospace;
+	font-weight: 500;
+	color: darken($selectionColor, 40%);
+	border-radius: 6px; 
+	border: solid darken($selectionColor, 30%) 1px;
+	margin-bottom: $paragraphPadding;
 
 	a {
 		color: darken($selectionColor, 32%);
