@@ -535,6 +535,8 @@ td {
   text-align: center;
   font-size: 36pt;
   padding-bottom: 60px; }
+#exampleDocuments .window #toc {
+  padding-bottom: 60px; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                             	   GET STARTED                                */
