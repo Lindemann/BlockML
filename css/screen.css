@@ -364,16 +364,16 @@ td {
         margin: 0 auto;
         max-width: 370px;
         overflow: hidden; }
-        #blockML .grid .hollowButton:nth-child(1) {
+        #blockML .grid .hollowButton {
           float: left; }
-        #blockML .grid .hollowButton:nth-child(2) {
+        #blockML .grid .filledButton {
           float: right; } }
     @media screen and (max-width: 500px) {
-      #blockML .grid .hollowButton:nth-child(1) {
+      #blockML .grid .hollowButton {
         display: block;
         margin: 0 auto;
         margin-bottom: 15px; }
-      #blockML .grid .hollowButton:nth-child(2) {
+      #blockML .grid .filledButton {
         display: block;
         margin: 0 auto; } }
 

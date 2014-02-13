@@ -653,21 +653,21 @@ td {
 		// Desktop
 		@media screen and (min-width: $mobile) {
 			@include centerWithWidth(370px);
-			.hollowButton:nth-child(1) {
+			.hollowButton {
 				float: left;
 			}
-			.hollowButton:nth-child(2) {
+			.filledButton {
 				float: right;
 			}
 			overflow: hidden; // Why does this halp??? WHY!?
 		}
 		// Mobile
 		@media screen and (max-width: $mobile) {
-			.hollowButton:nth-child(1) {
+			.hollowButton {
 				@include center;
 				margin-bottom: 15px;
 			}
-			.hollowButton:nth-child(2) {
+			.filledButton {
 				@include center;
 			}
 		}
