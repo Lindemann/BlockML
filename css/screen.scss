@@ -191,95 +191,6 @@ h6 {
 	padding: $paragraphPadding 0;
 }
 
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                    TITLE                                   */
-///*////////////////////////////////////////////////////////////////////////////*/
-
-//#title {
-//	text-align: center;
-//	font-size: 36pt;
-//	padding-bottom: $generalPadding;
-//}
-
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                    ERROR                                   */
-///*////////////////////////////////////////////////////////////////////////////*/
-
-//.error {     background-color: $selectionColor;     text-align: center; padding:
-//0.4em 0;     font-family:"Source Code Pro", monospace;     font-weight: 500;
-//color: darken($selectionColor, 40%);     border-radius: 6px; border: solid
-//darken($selectionColor, 30%) 1px;     margin-bottom: $paragraphPadding;
-
-//	a {
-//		color: darken($selectionColor, 32%);
-//		text-decoration: underline;
-//	}
-//}
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                    TOC                                     */
-/*////////////////////////////////////////////////////////////////////////////*/
-
-/* Hä? */
-
-@mixin backgroundArea($paddingLeft, $paddingRight) {
-/* Make a white box around the text to hide the background dots */
-	height: 1.6em;
-	padding-left: $paddingLeft;
-	padding-right: $paddingRight;
-	background-color: white;
-}
-
-#toc {
-	padding-bottom: $generalPadding;
-	ul {
-		list-style: none;
-		/* List should start on the left edge */
-		padding-left: 0;
-		padding-bottom: 0;
-
-		ul {
-			/* SubLists are indented */
-			padding-left: 1.4em;
-		}
-	}
-	li {
-		/* Set a repeating background picture on the bottom */
-		background: url(dot.svg) repeat-x bottom left;
-		/* To give the Link a fix position */
-		position: relative;
-		> span {
-			display: inline-block;
-			max-width: 90%;
-			span {
-				@include backgroundArea(0em, 0.2em);
-				/* Move the Text a few Pixel deeper than its normal bottom */
-				/* Moving the Picture is not possible...for reasons...*/
-				position: relative;
-				bottom: -0.4em;
-			}
-		}
-	}
-	a {
-		float: right;
-		display: block;
-		height: 100%;
-
-		position: absolute; 
-		/* Move the Link a few Pixel deeper than its normal bottom */
-		bottom: -0.3em;
-		right: 0;
-
-		span {
-			/* Move the Text to the bottom of List */
-			position: absolute; 
-			bottom: 0;
-			right: 0;
-			@include backgroundArea(0.3em, 0em);
-		}
-	}
-}
-
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                   CODE                                     */
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -603,12 +514,6 @@ td {
 
 #header {
 	#parallaxBG {
-//		filter: blur(4px);
-//		-o-filter: blur(4px);
-//		-ms-filter: blur(4px);
-//		-moz-filter: blur(4px);
-//		-webkit-filter: blur(4px);
-
 		background-image: url(../images/stars.svg);
 		background-color: #262929;
 		background-size: 250px;
@@ -858,8 +763,64 @@ td {
 		font-size: 36pt;
 		padding-bottom: $generalPadding;
 	}
+
+	/* TOC */
+	@mixin backgroundArea($paddingLeft, $paddingRight) {
+	/* Make a white box around the text to hide the background dots */
+		height: 1.6em;
+		padding-left: $paddingLeft;
+		padding-right: $paddingRight;
+		background-color: white;
+	}
+
 	#toc {
 		padding-bottom: $generalPadding;
+		ul {
+			list-style: none;
+			/* List should start on the left edge */
+			padding-left: 0;
+			padding-bottom: 0;
+
+			ul {
+				/* SubLists are indented */
+				padding-left: 1.4em;
+			}
+		}
+		li {
+			/* Set a repeating background picture on the bottom */
+			background: url(dot.svg) repeat-x bottom left;
+			/* To give the Link a fix position */
+			position: relative;
+			> span {
+				display: inline-block;
+				max-width: 90%;
+				span {
+					@include backgroundArea(0em, 0.2em);
+					/* Move the Text a few Pixel deeper than its normal bottom */
+					/* Moving the Picture is not possible...for reasons...*/
+					position: relative;
+					bottom: -0.4em;
+				}
+			}
+		}
+		a {
+			float: right;
+			display: block;
+			height: 100%;
+
+			position: absolute; 
+			/* Move the Link a few Pixel deeper than its normal bottom */
+			bottom: -0.3em;
+			right: 0;
+
+			span {
+				/* Move the Text to the bottom of List */
+				position: absolute; 
+				bottom: 0;
+				right: 0;
+				@include backgroundArea(0.3em, 0em);
+			}
+		}
 	}
 }
 
@@ -872,23 +833,35 @@ $grayFontColor: darken(white, 10%);
 #getStarted {
 	background-color: #262929;
 	color: $grayFontColor;
-
 	p {
 		text-align: center;
 		@include centerWithWidth(50%);
 	}
-
 	img {
 		max-width: 100%;
-		padding: $paragraphPadding 0;
+		padding: $paragraphPadding*2 0;
 	}
-	pre:before {
-		content: " ";
-	    display: block;
-	    font-size: $fontSize;
-	    padding-bottom: $paragraphPadding;
-	    height: 0;
-	}
+}
+
+.number {
+	border: 1px solid $grayFontColor;
+	border-radius: 100px;
+	@include center;
+
+	padding: 0;
+
+	$circleSize: 2.2em;
+	width: $circleSize;
+	height: $circleSize;
+	line-height: $circleSize;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                            ADDITIONAL DOWNLOADS                            */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#additionalDownloads {
+	background-color: #EDEDED;
 	.grid {
 		// Must > 50%
 		$imageSizeForOverlap: 70%;
@@ -908,20 +881,6 @@ $grayFontColor: darken(white, 10%);
 		padding: $paragraphPadding 0;
 	}
 }
-
-.number {
-	border: 1px solid $grayFontColor;
-	border-radius: 100px;
-	@include center;
-
-	padding: 0;
-
-	$circleSize: 2.2em;
-	width: $circleSize;
-	height: $circleSize;
-	line-height: $circleSize;
-}
-
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                             	     FOOTER                                   */

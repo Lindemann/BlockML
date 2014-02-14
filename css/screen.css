@@ -129,57 +129,6 @@ h6 {
   padding: 1.6em 0; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
-/*                                    TOC                                     */
-/*////////////////////////////////////////////////////////////////////////////*/
-/* Hä? */
-#toc {
-  padding-bottom: 60px; }
-  #toc ul {
-    list-style: none;
-    /* List should start on the left edge */
-    padding-left: 0;
-    padding-bottom: 0; }
-    #toc ul ul {
-      /* SubLists are indented */
-      padding-left: 1.4em; }
-  #toc li {
-    /* Set a repeating background picture on the bottom */
-    background: url(dot.svg) repeat-x bottom left;
-    /* To give the Link a fix position */
-    position: relative; }
-    #toc li > span {
-      display: inline-block;
-      max-width: 90%; }
-      #toc li > span span {
-        /* Make a white box around the text to hide the background dots */
-        height: 1.6em;
-        padding-left: 0em;
-        padding-right: 0.2em;
-        background-color: white;
-        /* Move the Text a few Pixel deeper than its normal bottom */
-        /* Moving the Picture is not possible...for reasons...*/
-        position: relative;
-        bottom: -0.4em; }
-  #toc a {
-    float: right;
-    display: block;
-    height: 100%;
-    position: absolute;
-    /* Move the Link a few Pixel deeper than its normal bottom */
-    bottom: -0.3em;
-    right: 0; }
-    #toc a span {
-      /* Move the Text to the bottom of List */
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      /* Make a white box around the text to hide the background dots */
-      height: 1.6em;
-      padding-left: 0.3em;
-      padding-right: 0em;
-      background-color: white; }
-
-/*////////////////////////////////////////////////////////////////////////////*/
 /*                                   CODE                                     */
 /*////////////////////////////////////////////////////////////////////////////*/
 code {
@@ -497,29 +446,75 @@ td {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                WINDOW CONTENT                              */
 /*////////////////////////////////////////////////////////////////////////////*/
-#exampleDocuments .window * {
-  margin: 0;
-  padding: 0;
-  text-align: left; }
-#exampleDocuments .window .in {
-  display: block;
-  margin: 0 auto;
-  width: 80%;
-  padding: 60px 0; }
-#exampleDocuments .window h1, #exampleDocuments .window h2, #exampleDocuments .window h3, #exampleDocuments .window h4, #exampleDocuments .window h5, #exampleDocuments .window h6 {
-  padding: 0.6em 0;
-  line-height: 1.2em; }
-#exampleDocuments .window .frontpage {
-  padding-bottom: 30px; }
-  #exampleDocuments .window .frontpage h1, #exampleDocuments .window .frontpage h2, #exampleDocuments .window .frontpage h3, #exampleDocuments .window .frontpage h4, #exampleDocuments .window .frontpage h5, #exampleDocuments .window .frontpage h6, #exampleDocuments .window .frontpage #title {
-    padding: 0.2em 0;
-    text-align: center; }
-#exampleDocuments .window #title {
-  text-align: center;
-  font-size: 36pt;
-  padding-bottom: 60px; }
-#exampleDocuments .window #toc {
-  padding-bottom: 60px; }
+#exampleDocuments .window {
+  /* TOC */ }
+  #exampleDocuments .window * {
+    margin: 0;
+    padding: 0;
+    text-align: left; }
+  #exampleDocuments .window .in {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    padding: 60px 0; }
+  #exampleDocuments .window h1, #exampleDocuments .window h2, #exampleDocuments .window h3, #exampleDocuments .window h4, #exampleDocuments .window h5, #exampleDocuments .window h6 {
+    padding: 0.6em 0;
+    line-height: 1.2em; }
+  #exampleDocuments .window .frontpage {
+    padding-bottom: 30px; }
+    #exampleDocuments .window .frontpage h1, #exampleDocuments .window .frontpage h2, #exampleDocuments .window .frontpage h3, #exampleDocuments .window .frontpage h4, #exampleDocuments .window .frontpage h5, #exampleDocuments .window .frontpage h6, #exampleDocuments .window .frontpage #title {
+      padding: 0.2em 0;
+      text-align: center; }
+  #exampleDocuments .window #title {
+    text-align: center;
+    font-size: 36pt;
+    padding-bottom: 60px; }
+  #exampleDocuments .window #toc {
+    padding-bottom: 60px; }
+    #exampleDocuments .window #toc ul {
+      list-style: none;
+      /* List should start on the left edge */
+      padding-left: 0;
+      padding-bottom: 0; }
+      #exampleDocuments .window #toc ul ul {
+        /* SubLists are indented */
+        padding-left: 1.4em; }
+    #exampleDocuments .window #toc li {
+      /* Set a repeating background picture on the bottom */
+      background: url(dot.svg) repeat-x bottom left;
+      /* To give the Link a fix position */
+      position: relative; }
+      #exampleDocuments .window #toc li > span {
+        display: inline-block;
+        max-width: 90%; }
+        #exampleDocuments .window #toc li > span span {
+          /* Make a white box around the text to hide the background dots */
+          height: 1.6em;
+          padding-left: 0em;
+          padding-right: 0.2em;
+          background-color: white;
+          /* Move the Text a few Pixel deeper than its normal bottom */
+          /* Moving the Picture is not possible...for reasons...*/
+          position: relative;
+          bottom: -0.4em; }
+    #exampleDocuments .window #toc a {
+      float: right;
+      display: block;
+      height: 100%;
+      position: absolute;
+      /* Move the Link a few Pixel deeper than its normal bottom */
+      bottom: -0.3em;
+      right: 0; }
+      #exampleDocuments .window #toc a span {
+        /* Move the Text to the bottom of List */
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        /* Make a white box around the text to hide the background dots */
+        height: 1.6em;
+        padding-left: 0.3em;
+        padding-right: 0em;
+        background-color: white; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                             	   GET STARTED                                */
@@ -534,25 +529,7 @@ td {
     max-width: 50%; }
   #getStarted img {
     max-width: 100%;
-    padding: 1.6em 0; }
-  #getStarted pre:before {
-    content: " ";
-    display: block;
-    font-size: 14pt;
-    padding-bottom: 1.6em;
-    height: 0; }
-  #getStarted .grid {
-    overflow: hidden;
-    padding: 1.6em 0; }
-    #getStarted .grid img:nth-child(1) {
-      float: left;
-      width: 70%; }
-    #getStarted .grid img:nth-child(2) {
-      float: right;
-      width: 70%;
-      margin-left: -100%;
-      position: relative;
-      padding-top: 5%; }
+    padding: 3.2em 0; }
 
 .number {
   border: 1px solid #e6e6e6;
@@ -563,6 +540,24 @@ td {
   width: 2.2em;
   height: 2.2em;
   line-height: 2.2em; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                            ADDITIONAL DOWNLOADS                            */
+/*////////////////////////////////////////////////////////////////////////////*/
+#additionalDownloads {
+  background-color: #EDEDED; }
+  #additionalDownloads .grid {
+    overflow: hidden;
+    padding: 1.6em 0; }
+    #additionalDownloads .grid img:nth-child(1) {
+      float: left;
+      width: 70%; }
+    #additionalDownloads .grid img:nth-child(2) {
+      float: right;
+      width: 70%;
+      margin-left: -100%;
+      position: relative;
+      padding-top: 5%; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                             	     FOOTER                                   */
