@@ -672,31 +672,10 @@ td {
 			}
 		}
 	}
-}
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                HOW IT WORKS                                */
-/*////////////////////////////////////////////////////////////////////////////*/
-#howItWorks {
-	p {
-		@include centerWithWidth(500px);
-		text-align: center;
-	}
+	#app {
+		background-color: #EDEDED;
 		img {
 			@include centerWithWidth(100%);
-	}
-	#light {
-		background-color: #EDEDED;
-	}
-
-	#dark {
-		background-color: #262929;
-		color: darken(white, 10%);
-		img {
-			padding: $paragraphPadding * 2 0;
-		}
-		.filledButton {
-			@include center;
 		}
 	}
 }
@@ -888,12 +867,20 @@ td {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                             	   GET STARTED                                */
 /*////////////////////////////////////////////////////////////////////////////*/
+$grayFontColor: darken(white, 10%);
 
 #getStarted {
-	background-color: #EDEDED;
-//	color: lighten($fontColor, 20%);
+	background-color: #262929;
+	color: $grayFontColor;
+
+	p {
+		text-align: center;
+		@include centerWithWidth(50%);
+	}
+
 	img {
 		max-width: 100%;
+		padding: $paragraphPadding 0;
 	}
 	pre:before {
 		content: " ";
@@ -923,7 +910,7 @@ td {
 }
 
 .number {
-	border: 1px solid $fontColor;
+	border: 1px solid $grayFontColor;
 	border-radius: 100px;
 	@include center;
 

@@ -376,29 +376,12 @@ td {
       #blockML .grid .filledButton {
         display: block;
         margin: 0 auto; } }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                HOW IT WORKS                                */
-/*////////////////////////////////////////////////////////////////////////////*/
-#howItWorks p {
-  display: block;
-  margin: 0 auto;
-  max-width: 500px;
-  text-align: center; }
-#howItWorks img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%; }
-#howItWorks #light {
-  background-color: #EDEDED; }
-#howItWorks #dark {
-  background-color: #262929;
-  color: #e6e6e6; }
-  #howItWorks #dark img {
-    padding: 3.2em 0; }
-  #howItWorks #dark .filledButton {
-    display: block;
-    margin: 0 auto; }
+  #blockML #app {
+    background-color: #EDEDED; }
+    #blockML #app img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                           FEATURES AND SYNTAX                              */
@@ -542,9 +525,16 @@ td {
 /*                             	   GET STARTED                                */
 /*////////////////////////////////////////////////////////////////////////////*/
 #getStarted {
-  background-color: #EDEDED; }
+  background-color: #262929;
+  color: #e6e6e6; }
+  #getStarted p {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    max-width: 50%; }
   #getStarted img {
-    max-width: 100%; }
+    max-width: 100%;
+    padding: 1.6em 0; }
   #getStarted pre:before {
     content: " ";
     display: block;
@@ -565,7 +555,7 @@ td {
       padding-top: 5%; }
 
 .number {
-  border: 1px solid #424242;
+  border: 1px solid #e6e6e6;
   border-radius: 100px;
   display: block;
   margin: 0 auto;
