@@ -100,7 +100,6 @@ a, a span {
 	color: $linkColor;
     text-decoration: none;
     &:hover {
-		text-decoration: underline;
 		color: darken($linkColor, 20%);
 	}
 }
@@ -189,6 +188,31 @@ h6 {
 .container {
 	@include centerWithWidth($buttonWidth);
 	padding: $paragraphPadding 0;
+}
+
+.buttonGrid {
+	padding: $paragraphPadding 0;
+	// Desktop
+	@media screen and (min-width: $mobile) {
+		@include centerWithWidth(370px);
+		.hollowButton {
+			float: left;
+		}
+		.filledButton {
+			float: right;
+		}
+		overflow: hidden; // Why does this halp??? WHY!?
+	}
+	// Mobile
+	@media screen and (max-width: $mobile) {
+		.hollowButton {
+			@include center;
+			margin-bottom: 15px;
+		}
+		.filledButton {
+			@include center;
+		}
+	}
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -553,30 +577,6 @@ td {
 
 #blockML {
 	background-color: white;
-	.grid {
-		padding: $paragraphPadding 0;
-		// Desktop
-		@media screen and (min-width: $mobile) {
-			@include centerWithWidth(370px);
-			.hollowButton {
-				float: left;
-			}
-			.filledButton {
-				float: right;
-			}
-			overflow: hidden; // Why does this halp??? WHY!?
-		}
-		// Mobile
-		@media screen and (max-width: $mobile) {
-			.hollowButton {
-				@include center;
-				margin-bottom: 15px;
-			}
-			.filledButton {
-				@include center;
-			}
-		}
-	}
 	#app {
 		background-color: #EDEDED;
 		img {
@@ -841,6 +841,27 @@ $grayFontColor: darken(white, 10%);
 		max-width: 100%;
 		padding: $paragraphPadding*2 0;
 	}
+	.hollowButton {
+		color: $grayFontColor;
+		border: 1px solid $grayFontColor;
+		&:hover {
+			$hoverColor: darken($grayFontColor, 40%);
+			color: $hoverColor;
+			border: 1px solid $hoverColor;
+		}
+	}
+//	.grid {
+//		overflow: hidden;
+//		.instruction {
+//			width: 50%;
+//		}
+//		.instruction:nth-child(1) {
+//			float: left;
+//			}
+//		.instruction:nth-child(2) {
+//			float: right;
+//		}
+//	}
 }
 
 .number {
@@ -850,7 +871,7 @@ $grayFontColor: darken(white, 10%);
 
 	padding: 0;
 
-	$circleSize: 2.2em;
+	$circleSize: 2.8em;
 	width: $circleSize;
 	height: $circleSize;
 	line-height: $circleSize;

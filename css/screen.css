@@ -61,7 +61,6 @@ a, a span {
   color: #6176f6;
   text-decoration: none; }
   a:hover, a span:hover {
-    text-decoration: underline;
     color: #0d2be4; }
 
 ::selection {
@@ -127,6 +126,27 @@ h6 {
   margin: 0 auto;
   max-width: 170px;
   padding: 1.6em 0; }
+
+.buttonGrid {
+  padding: 1.6em 0; }
+  @media screen and (min-width: 500px) {
+    .buttonGrid {
+      display: block;
+      margin: 0 auto;
+      max-width: 370px;
+      overflow: hidden; }
+      .buttonGrid .hollowButton {
+        float: left; }
+      .buttonGrid .filledButton {
+        float: right; } }
+  @media screen and (max-width: 500px) {
+    .buttonGrid .hollowButton {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 15px; }
+    .buttonGrid .filledButton {
+      display: block;
+      margin: 0 auto; } }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                   CODE                                     */
@@ -305,26 +325,6 @@ td {
 /*////////////////////////////////////////////////////////////////////////////*/
 #blockML {
   background-color: white; }
-  #blockML .grid {
-    padding: 1.6em 0; }
-    @media screen and (min-width: 500px) {
-      #blockML .grid {
-        display: block;
-        margin: 0 auto;
-        max-width: 370px;
-        overflow: hidden; }
-        #blockML .grid .hollowButton {
-          float: left; }
-        #blockML .grid .filledButton {
-          float: right; } }
-    @media screen and (max-width: 500px) {
-      #blockML .grid .hollowButton {
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 15px; }
-      #blockML .grid .filledButton {
-        display: block;
-        margin: 0 auto; } }
   #blockML #app {
     background-color: #EDEDED; }
     #blockML #app img {
@@ -530,6 +530,12 @@ td {
   #getStarted img {
     max-width: 100%;
     padding: 3.2em 0; }
+  #getStarted .hollowButton {
+    color: #e6e6e6;
+    border: 1px solid #e6e6e6; }
+    #getStarted .hollowButton:hover {
+      color: gray;
+      border: 1px solid gray; }
 
 .number {
   border: 1px solid #e6e6e6;
@@ -537,9 +543,9 @@ td {
   display: block;
   margin: 0 auto;
   padding: 0;
-  width: 2.2em;
-  height: 2.2em;
-  line-height: 2.2em; }
+  width: 2.8em;
+  height: 2.8em;
+  line-height: 2.8em; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                            ADDITIONAL DOWNLOADS                            */
