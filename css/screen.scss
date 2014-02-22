@@ -30,8 +30,14 @@
 	margin: 0 auto;
 }
 
-$fontSize: 14pt;
+$fontSize: 13pt;
+$minWidth: 1060px;
+
+// Colors
 $selectionColor: #F1FC82;
+$blackRussian: #262929;
+$gold: #D6D198;
+$neonBlue: #6176F6;
 
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -101,12 +107,67 @@ a {
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
+/*                               NAVIGATION BAR                               */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#navBar {
+	min-width: $minWidth;
+	background-color: RGBA(255.00, 255.00, 255.00, 0.95);
+	$borderColor: darken(white, 10%);
+	z-index: 9999;
+	a {
+		color: $blackRussian;
+	    text-decoration: none;
+	    &:hover {
+			text-decoration: none;
+			color: lighten($blackRussian, 30%);
+		}
+	}
+	a img:hover {
+		opacity:0.8;
+	}
+	line-height: normal;
+	$navBarHeight: 80px;
+	border-bottom: 1px solid $borderColor;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: $navBarHeight;
+	ul {
+		text-align: right;
+		// center ul vertically
+		// $fontSize*96/72 converts pt to px
+		margin: ($navBarHeight - ($fontSize * 96 / 72)) / 2 0;
+		margin-right: 10px;
+		li {
+			display: inline;
+			margin: 0 12px;
+		}
+	}
+	img {
+		float: left;
+		$iconPadding: 10px;
+		height: $navBarHeight - ($iconPadding * 2);
+		margin: $iconPadding;
+	}
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                INTRODUCTION                                */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#introduction {
+	background-color: $blackRussian;
+	height: 300px;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
 /*                               GETTING STARTED                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #gettingStarted {
 	background-color: #D6D198;
-	min-width: 1060px;
+	min-width: $minWidth;
 }
 
 #gettingStarted .in {
@@ -167,6 +228,9 @@ a {
 
 #gettingStarted .grid-2 {
 	position: relative;
+	h1, h2, h3, h4, h5, h6, p, li, div, span {
+		font-weight: 400;
+	}
 }
 
 #source {
@@ -174,10 +238,8 @@ a {
 	bottom: 0;
 }
 
-$linkColor: #6176F6;
-
 #source .window {
-	background-color: #262929;
+	background-color: $blackRussian;
 	font-family:"Source Code Pro", monospace;
 	font-size: 11pt;
 	text-align: left;
@@ -195,8 +257,8 @@ $linkColor: #6176F6;
 		line-height: 1.4em;
 	}
 	.keyword {
-		color: $linkColor;
-		background-color: rgba($linkColor, 0.2);
+		color: $neonBlue;
+		background-color: rgba($neonBlue, 0.2);
 	}
 	.sectionHeading {
 		color: #E586FC;
@@ -233,9 +295,6 @@ $linkColor: #6176F6;
 	line-height: 1.6em;
 	word-wrap: break-word;
 	font-size: 11pt;
-	h1, h2, h3, h4, h5, h6, p, li, div, span {
-		font-weight: 400;
-	}
 	p {
 		padding-bottom: $paragraphPadding;
 		text-align: left;
@@ -264,10 +323,10 @@ $linkColor: #6176F6;
 		font-size: 13pt;
 	}
 	a, a span {
-		color: $linkColor;
+		color: $neonBlue;
 	    text-decoration: none;
 	    &:hover {
-			color: darken($linkColor, 20%);
+			color: darken($neonBlue, 20%);
 		}
 	}
 	h1, h2, h3, h4, h5, h6 {
