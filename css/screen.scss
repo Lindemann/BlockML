@@ -30,8 +30,6 @@
 	margin: 0 auto;
 }
 
-$paragraphPadding: 1.6em;
-
 $fontSize: 14pt;
 $selectionColor: #F1FC82;
 
@@ -73,7 +71,7 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
 }
 
 p {
-	padding-bottom: $paragraphPadding;
+	padding-bottom: 1.6em;
 	text-align: left;
 }
 
@@ -108,52 +106,59 @@ a {
 
 #gettingStarted {
 	background-color: #D6D198;
+	min-width: 1060px;
+}
+
+#gettingStarted .in {
+	width: 1020px;
+	@include center;
 }
 
 .titleBar {
 	background-color: #EDEDED;
-	height: 50px;
+	height: 40px;
 	border-radius: 10px 10px 0 0;
 }
 
 .titleBarButtons {
 	position: relative;
-	top: 13px;
+	top: 10px;
 	left: 7px;
 }
 
 .titleBarButton {
-	$titleBarButtonSize: 15px;
+	$titleBarButtonSize: 13px;
 	height: $titleBarButtonSize;
 	width: $titleBarButtonSize;
 	border-radius: 100px;
-	margin: 6px;
+	margin: 4px;
 	background-color: #878787;
 	float: left;
 }
 
 .titleBarTitle {
 	position: relative;
-	top: 40px;
+	top: 32px;
 	color: #878787;
 	font-family:"Source Code Pro", monospace;
+	font-size: 11pt;
 	text-align: center;
 	line-height: 1.6em;
 }
 
 #output .titleBarTitle {
 	text-align: left;
-	padding-left: 120px;
+	padding-left: 100px;
 }
 
 .textField {
 	div {
-		height: 30px;
+		height: 25px;
 		max-width: 100%;
 		background-color: white;
 		border-radius: 100px;
 	}
-	padding: 10px 20px 0 100px;
+	padding: 8px 14px 0 80px;
 }
 
 #source, #output {
@@ -281,8 +286,7 @@ $linkColor: #6176F6;
 		font-size: 27pt;
 		padding-bottom: $generalPadding;
 	}
-
-	/* TOC */
+	// TOC 
 	@mixin backgroundArea($paddingLeft, $paddingRight) {
 	/* Make a white box around the text to hide the background dots */
 		height: 1.6em;

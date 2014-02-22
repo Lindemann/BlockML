@@ -67,42 +67,49 @@ a {
 /*                               GETTING STARTED                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 #gettingStarted {
-  background-color: #D6D198; }
+  background-color: #D6D198;
+  min-width: 1060px; }
+
+#gettingStarted .in {
+  width: 1020px;
+  display: block;
+  margin: 0 auto; }
 
 .titleBar {
   background-color: #EDEDED;
-  height: 50px;
+  height: 40px;
   border-radius: 10px 10px 0 0; }
 
 .titleBarButtons {
   position: relative;
-  top: 13px;
+  top: 10px;
   left: 7px; }
 
 .titleBarButton {
-  height: 15px;
-  width: 15px;
+  height: 13px;
+  width: 13px;
   border-radius: 100px;
-  margin: 6px;
+  margin: 4px;
   background-color: #878787;
   float: left; }
 
 .titleBarTitle {
   position: relative;
-  top: 40px;
+  top: 32px;
   color: #878787;
   font-family: "Source Code Pro", monospace;
+  font-size: 11pt;
   text-align: center;
   line-height: 1.6em; }
 
 #output .titleBarTitle {
   text-align: left;
-  padding-left: 120px; }
+  padding-left: 100px; }
 
 .textField {
-  padding: 10px 20px 0 100px; }
+  padding: 8px 14px 0 80px; }
   .textField div {
-    height: 30px;
+    height: 25px;
     max-width: 100%;
     background-color: white;
     border-radius: 100px; }
@@ -146,8 +153,7 @@ a {
   font-size: 14pt;
   line-height: 1.6em;
   word-wrap: break-word;
-  font-size: 11pt;
-  /* TOC */ }
+  font-size: 11pt; }
   #output .window * {
     margin: 0;
     padding: 0;
