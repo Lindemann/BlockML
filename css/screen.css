@@ -1,6 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
-@import url(../highlight.js/styles/github.css);
 /*
     ____  __           __   __  _____ 
    / __ )/ /___  _____/ /__/  |/  / / 
@@ -13,7 +12,6 @@
 /*                                   IMPORTS                                  */
 /*////////////////////////////////////////////////////////////////////////////*/
 /* Fonts */
-/* highlight.js */
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                       SASS VARS, MIXINS AND FUNCTIONS                      */
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -27,15 +25,6 @@
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                  GENERAL                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
-.in {
-  width: 70%;
-  display: block;
-  margin: 0 auto;
-  max-width: 660px;
-  padding: 60px 0; }
-  .in > h1 {
-    padding-top: 0; }
-
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    FONT                                    */
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -46,9 +35,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14pt;
   line-height: 1.6em;
-  color: #424242;
-  word-wrap: break-word;
-  text-align: center; }
+  word-wrap: break-word; }
 
 h1, h2, h3, h4, h5, h6, p, li, div, span {
   font-weight: 400; }
@@ -57,11 +44,8 @@ p {
   padding-bottom: 1.6em;
   text-align: left; }
 
-a, a span {
-  color: #6176f6;
+a {
   text-decoration: none; }
-  a:hover, a span:hover {
-    color: #0d2be4; }
 
 ::selection {
   background-color: #f1fc82; }
@@ -70,304 +54,21 @@ a, a span {
   background-color: #f1fc82; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
-/*                                   HEADINGS                                 */
+/*                                     GRID                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
-h1, h2, h3, h4, h5, h6 {
-  padding: 0.6em 0;
-  line-height: 1.2em; }
-
-h1 {
-  font-size: 28pt; }
-
-h2 {
-  font-size: 24pt; }
-
-h3 {
-  font-size: 22pt; }
-
-h4 {
-  font-size: 20pt; }
-
-h5 {
-  font-size: 18pt; }
-
-h6 {
-  font-size: 16pt; }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                     BUTTON                                 */
-/*////////////////////////////////////////////////////////////////////////////*/
-.hollowButton, .filledButton {
-  display: block;
-  padding: 10px 0;
-  width: 170px;
-  border-radius: 5px; }
-
-.hollowButton {
-  width: 168px;
-  padding: 9px 0;
-  color: #424242;
-  border: 1px solid #424242; }
-  .hollowButton:hover {
-    text-decoration: none;
-    color: #8f8f8f;
-    border: 1px solid #8f8f8f; }
-
-.filledButton {
-  color: white;
-  background-color: #6176f6; }
-  .filledButton:hover {
-    text-decoration: none;
-    background-color: #314cf3;
-    color: white; }
-
-.container {
-  display: block;
-  margin: 0 auto;
-  max-width: 170px;
-  padding: 1.6em 0; }
-
-.buttonGrid {
-  padding: 1.6em 0; }
-  @media screen and (min-width: 500px) {
-    .buttonGrid {
-      display: block;
-      margin: 0 auto;
-      max-width: 370px;
-      overflow: hidden; }
-      .buttonGrid .hollowButton {
-        float: left; }
-      .buttonGrid .filledButton {
-        float: right; } }
-  @media screen and (max-width: 500px) {
-    .buttonGrid .hollowButton {
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 15px; }
-    .buttonGrid .filledButton {
-      display: block;
-      margin: 0 auto; } }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                   CODE                                     */
-/*////////////////////////////////////////////////////////////////////////////*/
-code {
-  font-family: "Source Code Pro", monospace;
-  text-align: left;
-  /* Decoration */
-  border: solid #dbdbdb 1px;
-  -webkit-border-radius: 3px;
-  /* Add a scrollbar for looooooong code */
-  word-wrap: normal;
-  overflow: scroll;
-  overflow-y: auto;
-  overflow-x: auto; }
-
-pre {
-  width: 100%;
-  font-size: 11pt;
-  line-height: 1.6em; }
-
-/* Creepy method to give pre a padding-bottom, 
-which is as height as the other padding-bottoms,
-where the font size is $fontSize and not 11pt */
-pre:after {
-  content: " ";
-  display: block;
-  font-size: 14pt;
-  padding-bottom: 1.6em;
-  height: 0; }
-
-/* Some "improvements" of the github.css */
-pre code {
-  background-color: #f7f7f7; }
-
-pre .title,
-pre .id {
-  color: #9537FF; }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                    TABLE                                   */
-/*////////////////////////////////////////////////////////////////////////////*/
-table {
-  margin-bottom: 1.6em;
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  table-layout: fixed; }
-
-td, th {
-  border: 1px solid #c2c2c2;
-  height: 40px;
-  padding: 0 10px; }
-  td :last-child, th :last-child {
-    padding-bottom: 0; }
-
-th {
-  background: #efefef; }
-  th * {
-    font-weight: 600;
-    text-align: center; }
-
-td {
-  background: #fafafa;
-  text-align: left; }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                             STYLE MODIFIER                                 */
-/*////////////////////////////////////////////////////////////////////////////*/
-.marked {
-  background-color: #f1fc82;
-  padding: 0 0.3em; }
-
-.bold {
-  font-weight: 600; }
-
-.underline {
-  text-decoration: underline; }
-
-.code {
-  font-family: "Source Code Pro", monospace;
-  font-size: 12pt;
-  font-weight: 500;
-  background-color: #f7f7f7;
-  padding: 0 0.3em;
-  -webkit-border-radius: 3px;
-  border: solid #dbdbdb 1px;
-  white-space: nowrap; }
-
-.italic {
-  font-style: italic; }
-
-.strikethrough {
-  text-decoration: line-through; }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                NAVIGATION BAR                              */
-/*////////////////////////////////////////////////////////////////////////////*/
-#navBar {
-  background-color: RGBA(255, 255, 255, 0.95);
-  z-index: 9999;
-  line-height: normal; }
-  #navBar a {
-    color: #424242;
-    text-decoration: none; }
-    #navBar a:hover {
-      text-decoration: none;
-      color: #8f8f8f; }
-  #navBar a img:hover {
-    opacity: 0.8; }
-  @media screen and (min-width: 880px) {
-    #navBar {
-      border-bottom: 1px solid #e6e6e6;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 70px; }
-      #navBar ul {
-        text-align: right;
-        margin: 22.55556px 0;
-        margin-right: 40px; }
-        #navBar ul li {
-          display: inline;
-          margin: 0 10px; }
-      #navBar img {
-        float: left;
-        height: 50px;
-        margin: 10px; } }
-  @media screen and (max-width: 880px) {
-    #navBar img {
-      display: block;
-      margin: 0 auto;
-      height: 70px;
-      padding: 20px; }
-    #navBar ul {
-      list-style: none;
-      text-align: center; }
-      #navBar ul li {
-        line-height: 2em;
-        border-top: 1px solid #e6e6e6; } }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                    HEADER                                  */
-/*////////////////////////////////////////////////////////////////////////////*/
-#header {
-  height: 500px;
+.grid-2 {
   overflow: hidden; }
-  #header #parallaxBG {
-    background-image: url(../images/stars.svg);
-    background-color: #262929;
-    background-size: 250px;
-    height: 100%;
-    width: 100%;
-    z-index: -9999;
-    position: fixed;
-    top: 0; }
-  #header img {
-    display: block;
-    margin: 0 auto;
-    width: 500px;
-    position: relative;
-    top: 150px;
-    left: 150px; }
-  @media screen and (max-width: 500px) {
-    #header {
-      height: 300px; }
-      #header #parallaxBG {
-        background-size: 150px; }
-      #header img {
-        width: 300px;
-        top: 80px;
-        left: 100px; } }
+  .grid-2 .gridMember:nth-child(1) {
+    float: left; }
+  .grid-2 .gridMember:nth-child(2) {
+    float: right; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
-/*                                    BLOCKML                                 */
+/*                               GETTING STARTED                              */
 /*////////////////////////////////////////////////////////////////////////////*/
-#blockML {
-  background-color: white; }
-  #blockML #app {
-    background-color: #EDEDED; }
-    #blockML #app img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%; }
+#gettingStarted {
+  background-color: #D6D198; }
 
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                           FEATURES AND SYNTAX                              */
-/*////////////////////////////////////////////////////////////////////////////*/
-#featuresAndSyntax {
-  background-color: white; }
-  #featuresAndSyntax .in {
-    padding-bottom: 0px; }
-  #featuresAndSyntax table {
-    margin: 1.6em 0 3.2em 0; }
-  #featuresAndSyntax .window {
-    background-color: #262929;
-    font-family: "Source Code Pro", monospace;
-    text-align: left;
-    color: white; }
-    @media screen and (max-width: 500px) {
-      #featuresAndSyntax .window {
-        font-size: 10pt; } }
-    #featuresAndSyntax .window p:nth-child(1) {
-      padding-top: 1.4em; }
-    #featuresAndSyntax .window p:last-child {
-      padding-bottom: 1.4em; }
-    #featuresAndSyntax .window p {
-      padding: 0 0.7em 0.7em 1.4em;
-      line-height: 1.2em; }
-    #featuresAndSyntax .window .keyword {
-      color: #6176f6;
-      background-color: rgba(97, 118, 246, 0.2); }
-    #featuresAndSyntax .window .sectionHeading {
-      color: #E586FC;
-      background-color: rgba(229, 134, 252, 0.2); }
-    #featuresAndSyntax .window .comment {
-      color: #4d4d4d; }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                               FAKE APP WINDOWS                             */
-/*////////////////////////////////////////////////////////////////////////////*/
 .titleBar {
   background-color: #EDEDED;
   height: 50px;
@@ -386,54 +87,17 @@ td {
   background-color: #878787;
   float: left; }
 
-@media screen and (min-width: 500px) {
-  .titleBarTitle {
-    position: relative;
-    top: 40px;
-    padding-top: -40px;
-    color: #878787;
-    font-family: "Source Code Pro", monospace; } }
-@media screen and (max-width: 500px) {
-  .titleBarTitle {
-    display: none; } }
+.titleBarTitle {
+  position: relative;
+  top: 40px;
+  color: #878787;
+  font-family: "Source Code Pro", monospace;
+  text-align: center;
+  line-height: 1.6em; }
 
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                             EXAMPLE DOCUMENTS                              */
-/*////////////////////////////////////////////////////////////////////////////*/
-#exampleDocuments {
-  background-color: #DADADA; }
-  #exampleDocuments .window {
-    background-color: white; }
-  #exampleDocuments .in {
-    padding-bottom: 0px; }
-  #exampleDocuments .grid {
-    overflow: hidden;
-    display: block;
-    margin: 0 auto;
-    max-width: 360px; }
-    #exampleDocuments .grid *:nth-child(1) {
-      float: left; }
-    #exampleDocuments .grid *:nth-child(2) {
-      float: right; }
-    @media screen and (max-width: 500px) {
-      #exampleDocuments .grid .grid {
-        display: block;
-        margin: 0 auto;
-        float: none;
-        margin-bottom: 15px; }
-      #exampleDocuments .grid .filledButton {
-        display: block;
-        margin: 0 auto;
-        float: none; } }
-    #exampleDocuments .grid .grid {
-      width: 170px; }
-      #exampleDocuments .grid .grid .hollowButton {
-        width: 73px; }
-  #exampleDocuments .in > .grid {
-    padding: 0.8em 0 1.6em 0; }
-  #exampleDocuments .titleBarTitle {
-    text-align: left;
-    padding-left: 120px; }
+#output .titleBarTitle {
+  text-align: left;
+  padding-left: 120px; }
 
 .textField {
   padding: 10px 20px 0 100px; }
@@ -443,51 +107,109 @@ td {
     background-color: white;
     border-radius: 100px; }
 
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                WINDOW CONTENT                              */
-/*////////////////////////////////////////////////////////////////////////////*/
-#exampleDocuments .window {
+#source, #output {
+  width: 500px; }
+
+#gettingStarted .grid-2 {
+  position: relative; }
+
+#source {
+  position: absolute;
+  bottom: 0; }
+
+#source .window {
+  background-color: #262929;
+  font-family: "Source Code Pro", monospace;
+  font-size: 11pt;
+  text-align: left;
+  color: white; }
+  #source .window p:nth-child(1) {
+    padding-top: 2.1em; }
+  #source .window p:last-child {
+    padding-bottom: 2.1em; }
+  #source .window p {
+    padding: 0 2.1em 0.7em 2.1em;
+    line-height: 1.4em; }
+  #source .window .keyword {
+    color: #6176f6;
+    background-color: rgba(97, 118, 246, 0.2); }
+  #source .window .sectionHeading {
+    color: #E586FC;
+    background-color: rgba(229, 134, 252, 0.2); }
+  #source .window .comment {
+    color: #4d4d4d; }
+
+#output .window {
+  background-color: white;
+  color: #424242;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14pt;
+  line-height: 1.6em;
+  word-wrap: break-word;
+  font-size: 11pt;
   /* TOC */ }
-  #exampleDocuments .window * {
+  #output .window * {
     margin: 0;
     padding: 0;
     text-align: left; }
-  #exampleDocuments .window .in {
+  #output .window .in {
     display: block;
     margin: 0 auto;
     width: 80%;
-    padding: 60px 0; }
-  #exampleDocuments .window h1, #exampleDocuments .window h2, #exampleDocuments .window h3, #exampleDocuments .window h4, #exampleDocuments .window h5, #exampleDocuments .window h6 {
+    padding: 40px 0; }
+  #output .window h1, #output .window h2, #output .window h3, #output .window h4, #output .window h5, #output .window h6, #output .window p, #output .window li, #output .window div, #output .window span {
+    font-weight: 400; }
+  #output .window p {
+    padding-bottom: 0.6em;
+    text-align: left; }
+  #output .window h1 {
+    font-size: 25pt; }
+  #output .window h2 {
+    font-size: 23pt; }
+  #output .window h3 {
+    font-size: 21pt; }
+  #output .window h4 {
+    font-size: 17pt; }
+  #output .window h5 {
+    font-size: 15pt; }
+  #output .window h6 {
+    font-size: 13pt; }
+  #output .window a, #output .window a span {
+    color: #6176f6;
+    text-decoration: none; }
+    #output .window a:hover, #output .window a span:hover {
+      color: #0d2be4; }
+  #output .window h1, #output .window h2, #output .window h3, #output .window h4, #output .window h5, #output .window h6 {
     padding: 0.6em 0;
     line-height: 1.2em; }
-  #exampleDocuments .window .frontpage {
-    padding-bottom: 30px; }
-    #exampleDocuments .window .frontpage h1, #exampleDocuments .window .frontpage h2, #exampleDocuments .window .frontpage h3, #exampleDocuments .window .frontpage h4, #exampleDocuments .window .frontpage h5, #exampleDocuments .window .frontpage h6, #exampleDocuments .window .frontpage #title {
+  #output .window .frontpage {
+    padding-bottom: 20px; }
+    #output .window .frontpage h1, #output .window .frontpage h2, #output .window .frontpage h3, #output .window .frontpage h4, #output .window .frontpage h5, #output .window .frontpage h6, #output .window .frontpage #title {
       padding: 0.2em 0;
       text-align: center; }
-  #exampleDocuments .window #title {
+  #output .window #title {
     text-align: center;
-    font-size: 36pt;
-    padding-bottom: 60px; }
-  #exampleDocuments .window #toc {
-    padding-bottom: 60px; }
-    #exampleDocuments .window #toc ul {
+    font-size: 27pt;
+    padding-bottom: 40px; }
+  #output .window #toc {
+    padding-bottom: 40px; }
+    #output .window #toc ul {
       list-style: none;
       /* List should start on the left edge */
       padding-left: 0;
       padding-bottom: 0; }
-      #exampleDocuments .window #toc ul ul {
+      #output .window #toc ul ul {
         /* SubLists are indented */
         padding-left: 1.4em; }
-    #exampleDocuments .window #toc li {
+    #output .window #toc li {
       /* Set a repeating background picture on the bottom */
       background: url(dot.svg) repeat-x bottom left;
       /* To give the Link a fix position */
       position: relative; }
-      #exampleDocuments .window #toc li > span {
+      #output .window #toc li > span {
         display: inline-block;
         max-width: 90%; }
-        #exampleDocuments .window #toc li > span span {
+        #output .window #toc li > span span {
           /* Make a white box around the text to hide the background dots */
           height: 1.6em;
           padding-left: 0em;
@@ -497,7 +219,7 @@ td {
           /* Moving the Picture is not possible...for reasons...*/
           position: relative;
           bottom: -0.4em; }
-    #exampleDocuments .window #toc a {
+    #output .window #toc a {
       float: right;
       display: block;
       height: 100%;
@@ -505,7 +227,7 @@ td {
       /* Move the Link a few Pixel deeper than its normal bottom */
       bottom: -0.3em;
       right: 0; }
-      #exampleDocuments .window #toc a span {
+      #output .window #toc a span {
         /* Move the Text to the bottom of List */
         position: absolute;
         bottom: 0;
@@ -515,82 +237,3 @@ td {
         padding-left: 0.3em;
         padding-right: 0em;
         background-color: white; }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                             	   GET STARTED                                */
-/*////////////////////////////////////////////////////////////////////////////*/
-#getStarted {
-  background-color: #262929;
-  color: #e6e6e6; }
-  #getStarted p {
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    max-width: 50%; }
-  #getStarted img {
-    max-width: 100%;
-    padding: 3.2em 0; }
-  #getStarted .hollowButton {
-    color: #e6e6e6;
-    border: 1px solid #e6e6e6; }
-    #getStarted .hollowButton:hover {
-      color: gray;
-      border: 1px solid gray; }
-
-.number {
-  border: 1px solid #e6e6e6;
-  border-radius: 100px;
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  width: 2.8em;
-  height: 2.8em;
-  line-height: 2.8em; }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                            ADDITIONAL DOWNLOADS                            */
-/*////////////////////////////////////////////////////////////////////////////*/
-#additionalDownloads {
-  background-color: #EDEDED; }
-  #additionalDownloads .grid {
-    overflow: hidden;
-    padding: 1.6em 0; }
-    #additionalDownloads .grid img:nth-child(1) {
-      float: left;
-      width: 70%; }
-    #additionalDownloads .grid img:nth-child(2) {
-      float: right;
-      width: 70%;
-      margin-left: -100%;
-      position: relative;
-      padding-top: 5%; }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                             	     FOOTER                                   */
-/*////////////////////////////////////////////////////////////////////////////*/
-#footer {
-  background-color: white;
-  color: #C6C6C6; }
-  #footer .in {
-    width: 90%;
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    padding: 60px 0; }
-  #footer a:hover {
-    opacity: 0.5; }
-  #footer img {
-    height: 20px;
-    padding: 0 10px; }
-  #footer p {
-    text-align: center; }
-  @media screen and (min-width: 500px) {
-    #footer p {
-      float: left;
-      line-height: 1em;
-      padding: 0; }
-    #footer .grid {
-      float: right;
-      line-height: 0em; }
-    #footer .in {
-      overflow: hidden; } }

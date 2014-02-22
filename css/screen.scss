@@ -15,9 +15,6 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
 
-/* highlight.js */
-@import url(../highlight.js/styles/github.css);
-
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                       SASS VARS, MIXINS AND FUNCTIONS                      */
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -33,20 +30,11 @@
 	margin: 0 auto;
 }
 
-$mobile: 500px;
-
-$generalPadding: 60px;
 $paragraphPadding: 1.6em;
 
 $fontSize: 14pt;
-$fontColor: #424242;
-$linkColor: #6176F6;
 $selectionColor: #F1FC82;
 
-$buttonWidth: 170px;
-
-$codeBackgroundColor: lighten($fontColor, 71%);
-$codeBorder: solid lighten($fontColor, 60%) 1px;
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                   RESET                                    */
@@ -61,13 +49,8 @@ $codeBorder: solid lighten($fontColor, 60%) 1px;
 /*                                  GENERAL                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-.in{
-	width: 70%;
-	@include centerWithWidth(660px);
-	padding: $generalPadding 0;
-	> h1 {
-		padding-top: 0;
-	}
+body {
+
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -82,9 +65,7 @@ body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: $fontSize;
 	line-height: 1.6em;
-	color: $fontColor;
 	word-wrap: break-word;
-	text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6, p, li, div, span {
@@ -96,12 +77,8 @@ p {
 	text-align: left;
 }
 
-a, a span {
-	color: $linkColor;
-    text-decoration: none;
-    &:hover {
-		color: darken($linkColor, 20%);
-	}
+a {
+	text-decoration: none;
 }
 
 ::selection { 
@@ -112,528 +89,26 @@ a, a span {
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
-/*                                   HEADINGS                                 */
+/*                                     GRID                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-h1, h2, h3, h4, h5, h6 {
-	padding: 0.6em 0;
-	line-height: 1.2em;
-}
-
-h1 {
-	font-size: 28pt;
-}
-
-h2 {
-	font-size: 24pt;
-}
-
-h3 {
-	font-size: 22pt;
-}
-
-h4 {
-	font-size: 20pt;
-}
-
-h5 {
-	font-size: 18pt;
-}
-
-h6 {
-	font-size: 16pt;
-}
-
-//#title {
-//	font-size: 36pt;
-//}
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                     BUTTON                                 */
-/*////////////////////////////////////////////////////////////////////////////*/
-
-.hollowButton, .filledButton {
-	display: block;
-	padding: 10px 0;
-	width: $buttonWidth;
-	border-radius: 5px;
-}
-
-.hollowButton {
-	// subtract 1px because border
-	width: $buttonWidth - 2px;
-	padding: 9px 0;
-
-	color: $fontColor;
-	border: 1px solid $fontColor;
-	&:hover {
-		text-decoration: none;
-		$hoverColor: lighten($fontColor, 30%);
-		color: $hoverColor;
-		border: 1px solid $hoverColor;
+.grid-2 {
+	.gridMember:nth-child(1) {
+		float: left;
 	}
-}
-
-.filledButton {
-	color: white;
-	background-color: $linkColor;
-	&:hover {
-		text-decoration: none;
-		$hoverColor: lighten($fontColor, 30%);
-		background-color: darken($linkColor, 10%);
-		color: white;
+	.gridMember:nth-child(2) {
+		float: right;
 	}
-}
-
-.container {
-	@include centerWithWidth($buttonWidth);
-	padding: $paragraphPadding 0;
-}
-
-.buttonGrid {
-	padding: $paragraphPadding 0;
-	// Desktop
-	@media screen and (min-width: $mobile) {
-		@include centerWithWidth(370px);
-		.hollowButton {
-			float: left;
-		}
-		.filledButton {
-			float: right;
-		}
-		overflow: hidden; // Why does this halp??? WHY!?
-	}
-	// Mobile
-	@media screen and (max-width: $mobile) {
-		.hollowButton {
-			@include center;
-			margin-bottom: 15px;
-		}
-		.filledButton {
-			@include center;
-		}
-	}
-}
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                   CODE                                     */
-/*////////////////////////////////////////////////////////////////////////////*/
-
-code {
-	font-family:"Source Code Pro", monospace;
-	text-align: left;
-
-	/* Decoration */
-	border: $codeBorder;
-	-webkit-border-radius: 3px;
-
-	/* Add a scrollbar for looooooong code */
-	word-wrap: normal;
-	overflow: scroll;
-	overflow-y: auto;
-	overflow-x: auto;
-}
-
-pre {
-  	width: 100%;
-    font-size: 11pt;
-    line-height: 1.6em;
-}
-
-/* Creepy method to give pre a padding-bottom, 
-which is as height as the other padding-bottoms,
-where the font size is $fontSize and not 11pt */
-pre:after {
-	content: " ";
-    display: block;
-    font-size: $fontSize;
-    padding-bottom: $paragraphPadding;
-    height: 0;
-}
-
-/* Some "improvements" of the github.css */
-pre code {
-	background-color: $codeBackgroundColor;
-}
-pre .title,
-pre .id {
-//  color: #00AB7D;
-	color: #9537FF;
-}
-
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                    IMAGE                                   */
-///*////////////////////////////////////////////////////////////////////////////*/
-
-//img {
-//	max-width: 100%;
-//	padding-bottom: $paragraphPadding;
-//	@include center;
-//}
-
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                     LIST                                   */
-///*////////////////////////////////////////////////////////////////////////////*/
-
-//ul, ol {
-//	padding: 0 0 $paragraphPadding 1.4em;
-//   ul, ol {
-//		padding: 0 0 0 2em;
-//	}
-//}
-
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                   CAPTION                                  */
-///*////////////////////////////////////////////////////////////////////////////*/
-
-//.cap {
-//	@include centerWithWidth(80%);
-//	text-align: center;
-//	padding-bottom: $paragraphPadding;
-
-//	span {
-//		font-weight: 600;
-//	}
-//}
-
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                 BIBLIOGRAPHY                               */
-///*////////////////////////////////////////////////////////////////////////////*/
-
-//.bib {
-//	padding-bottom: $paragraphPadding;
-//	> a {
-//		position: absolute;
-//		/* needed to break long links */
-//		width: 130px;
-//		display: block;
-//	}
-//	p {
-//		margin-left: 140px;
-//		&:last-of-type {
-//			padding-bottom: 0;
-//		}
-//	}
-//}
-
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                	BLOCKQUOTE                                */
-///*////////////////////////////////////////////////////////////////////////////*/
-
-//.quote {
-//	padding-bottom: $paragraphPadding;
-//	font-style: italic;
-//	@include centerWithWidth(70%);
-
-//	p:last-of-type {
-//		padding-bottom: 0;
-//	}
-
-//	p {
-//		margin-left: 40px;
-//	}
-
-//	&:before {
-//		content: "“";
-//		font-size: $fontSize*5;
-//		color: lighten($fontColor, 20%);
-//		position: absolute;
-//		line-height: 0.6em;
-//	}
-
-//	.source {
-//		color: lighten($fontColor, 30%);
-//		font-size: $fontSize*0.9;
-//		margin-left: 40px;
-//		&:before {
-//			content: "— ";
-//		}
-//		a {
-//			color: lighten($fontColor, 20%);
-//		}
-//	}
-//}
-
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                     MATH                                   */
-///*////////////////////////////////////////////////////////////////////////////*/
-
-//.math {
-//    padding-bottom: $paragraphPadding;
-//}
-
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                   ENDNOTES                                 */
-///*////////////////////////////////////////////////////////////////////////////*/
-
-//// #fn-1 is always the first endnote
-//#fn-1 {
-//	padding-top: $paragraphPadding;
-//	margin-top: $generalPadding;
-//	border-top: 1px solid $fontColor;
-//}
-
-//.en {
-//	padding-bottom: $paragraphPadding;
-//}
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                    TABLE                                   */
-/*////////////////////////////////////////////////////////////////////////////*/
-
-table {
-	margin-bottom: $paragraphPadding;
-	width: 100%; 
-	border-collapse: collapse; 
-	border-spacing: 0; 
-	table-layout: fixed;
-}
-
-td, th { 
-	border: 1px solid lighten($fontColor, 50%); 
-	height: 40px;
-	:last-child {
-		padding-bottom: 0;
-	}
-	padding: 0 10px;
-}
-
-th {
-	background: lighten($fontColor, 68%);
-	* {
-		font-weight: 600;
-		text-align: center;
-	}
-}
-
-td {
-	background: lighten($fontColor, 72%);
-	text-align: left;
-}
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                             STYLE MODIFIER                                 */
-/*////////////////////////////////////////////////////////////////////////////*/
-
-.marked {
-	background-color: $selectionColor;
-	padding: 0 0.3em;
-}
-
-.bold {
-	font-weight: 600;
-}
-
-.underline {
-	text-decoration: underline;
-}
-
-.code {
-	font-family:"Source Code Pro", monospace;
-	font-size: 12pt;
-	font-weight: 500;
-	background-color: $codeBackgroundColor;
-	padding: 0 0.3em;
-
-	-webkit-border-radius: 3px;
-	border: $codeBorder;
-
-	white-space: nowrap;
-}
-
-.italic {
-	font-style: italic;
-}
-
-.strikethrough {
-	text-decoration: line-through;
-}
-
-///*////////////////////////////////////////////////////////////////////////////*/
-///*                                	FRONTPAGE                                 */
-///*////////////////////////////////////////////////////////////////////////////*/
-
-//.frontpage {
-//	text-align: center;
-//	padding-bottom: $generalPadding;
-//	img, {
-//		padding-bottom: 0;
-//	}
-//	h6 {
-//		color: lighten($fontColor, 30%);
-//	}
-//	h1, h2, h3, h4, h5, h6, #title {
-//		padding: 0.2em 0;
-//	}
-//}
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                NAVIGATION BAR                              */
-/*////////////////////////////////////////////////////////////////////////////*/
-
-#navBar {
-	background-color: RGBA(255.00, 255.00, 255.00, 0.95);
-	$breakPoint: 880px;
-	$borderColor: darken(white, 10%);
-	z-index: 9999;
-	a {
-		color: $fontColor;
-	    text-decoration: none;
-	    &:hover {
-			text-decoration: none;
-			color: lighten($fontColor, 30%);
-		}
-	}
-	a img:hover {
-			opacity:0.8;
-		}
-	line-height: normal;
-	// Desktop
-	@media screen and (min-width: $breakPoint) {
-		$navBarHeight: 70px;
-		border-bottom: 1px solid $borderColor;
-		position: fixed;
-		top: 0;
-		width: 100%;
-		height: $navBarHeight;
-		ul {
-			text-align: right;
-			// center ul vertically
-			// $fontSize*96/72 converts pt to px
-			margin: ($navBarHeight - ($fontSize * 96 / 72)) / 2 0;
-			margin-right: 40px;
-			li {
-				display: inline;
-				margin: 0 10px;
-			}
-		}
-		img {
-			float: left;
-			$iconPadding: 10px;
-			height: $navBarHeight - ($iconPadding * 2);
-			margin: $iconPadding;
-		}
-	}
-	// Mobile
-	@media screen and (max-width: $breakPoint) {
-		img {
-			@include center;
-			height: 70px;
-			padding: 20px;
-		}
-		ul {
-			list-style: none;
-			text-align: center;
-			li {
-				line-height: 2em;
-				border-top:1px solid $borderColor;
-			}
-		}
-	}
-}
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                    HEADER                                  */
-/*////////////////////////////////////////////////////////////////////////////*/
-
-#header {
-	#parallaxBG {
-		background-image: url(../images/stars.svg);
-		background-color: #262929;
-		background-size: 250px;
-		height: 100%;
-		width: 100%;
-		z-index: -9999;
-		position: fixed;
-		top: 0;
-	}
-	height: 500px;
 	overflow: hidden;
-	img {
-		@include center;
-		width: 500px;
-		position: relative;
-		top: 150px;
-		left: 150px;
-	}
-	// Mobile
-	@media screen and (max-width: $mobile) {
-		height: 300px;
-		#parallaxBG {
-			background-size: 150px;
-		}
-		img {
-			width: 300px;
-			top: 80px;
-			left: 100px;
-		}
-	}
-}
-
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                    BLOCKML                                 */
-/*////////////////////////////////////////////////////////////////////////////*/
-
-#blockML {
-	background-color: white;
-	#app {
-		background-color: #EDEDED;
-		img {
-			@include centerWithWidth(100%);
-		}
-	}
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
-/*                           FEATURES AND SYNTAX                              */
+/*                               GETTING STARTED                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-#featuresAndSyntax {
-	background-color: white;
-	.in {
-		padding-bottom: 0px;
-	}
-	table {
-		margin: $paragraphPadding 0 $paragraphPadding * 2 0;
-	}
-	.window {
-		background-color: #262929;
-		font-family:"Source Code Pro", monospace;
-		text-align: left;
-		color: white;
-		// Mobile
-		@media screen and (max-width: $mobile) {
-			font-size: 10pt;
-		}
-		$fakeCodePadding: 0.7em;
-		p:nth-child(1) {
-			padding-top: $fakeCodePadding * 2;
-		}
-		p:last-child {
-			padding-bottom: $fakeCodePadding * 2
-		}
-		p {
-			padding: 0 $fakeCodePadding $fakeCodePadding $fakeCodePadding * 2;
-			line-height: 1.2em;
-		}
-		.keyword {
-			color: $linkColor;
-			background-color: rgba($linkColor, 0.2);
-		}
-		.sectionHeading {
-			color: #E586FC;
-			background-color: rgba(#E586FC, 0.2);
-		}
-		.comment {
-			color: darken(white, 70%);
-		}
-	}
+#gettingStarted {
+	background-color: #D6D198;
 }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                               FAKE APP WINDOWS                             */
-/*////////////////////////////////////////////////////////////////////////////*/
 
 .titleBar {
 	background-color: #EDEDED;
@@ -658,67 +133,17 @@ td {
 }
 
 .titleBarTitle {
-	// Desktop
-	@media screen and (min-width: $mobile) {
-		position: relative;
-		top: 40px;
-		padding-top: - 40px;
-		color: #878787;
-		font-family:"Source Code Pro", monospace;
-	}
-	// Mobile
-	@media screen and (max-width: $mobile) {
-		display: none;
-	}
+	position: relative;
+	top: 40px;
+	color: #878787;
+	font-family:"Source Code Pro", monospace;
+	text-align: center;
+	line-height: 1.6em;
 }
 
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                             EXAMPLE DOCUMENTS                              */
-/*////////////////////////////////////////////////////////////////////////////*/
-
-#exampleDocuments {
-	background-color: #DADADA;
-	.window {
-		background-color: white;
-	}
-	.in {
-		padding-bottom: 0px;
-	}
-	.grid {
-		*:nth-child(1) {
-			float: left;
-			}
-		*:nth-child(2) {
-			float: right;
-		}
-		// Mobile
-		@media screen and (max-width: $mobile) {
-			.grid {
-				@include center;
-				float: none;
-				margin-bottom: 15px;
-			}
-			.filledButton {
-				@include center;
-				float: none;
-			}
-		}
-		overflow: hidden;
-		@include centerWithWidth(360px);
-		.grid {
-			width: $buttonWidth;
-			.hollowButton {
-				width: $buttonWidth / 2 - 12px;
-			}
-		}
-	}
-	.in>.grid {
-		padding: $paragraphPadding / 2 0 $paragraphPadding 0;
-	}
-	.titleBarTitle {
-		text-align: left;
-		padding-left: 120px;
-	}
+#output .titleBarTitle {
+	text-align: left;
+	padding-left: 120px;
 }
 
 .textField {
@@ -731,21 +156,114 @@ td {
 	padding: 10px 20px 0 100px;
 }
 
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                                WINDOW CONTENT                              */
-/*////////////////////////////////////////////////////////////////////////////*/
+#source, #output {
+	width: 500px;
+}
 
-#exampleDocuments .window {
+#gettingStarted .grid-2 {
+	position: relative;
+}
+
+#source {
+	position: absolute;
+	bottom: 0;
+}
+
+$linkColor: #6176F6;
+
+#source .window {
+	background-color: #262929;
+	font-family:"Source Code Pro", monospace;
+	font-size: 11pt;
+	text-align: left;
+	color: white;
+
+	$fakeCodePadding: 0.7em;
+	p:nth-child(1) {
+		padding-top: $fakeCodePadding * 3;
+	}
+	p:last-child {
+		padding-bottom: $fakeCodePadding * 3
+	}
+	p {
+		padding: 0 $fakeCodePadding*3 $fakeCodePadding $fakeCodePadding*3;
+		line-height: 1.4em;
+	}
+	.keyword {
+		color: $linkColor;
+		background-color: rgba($linkColor, 0.2);
+	}
+	.sectionHeading {
+		color: #E586FC;
+		background-color: rgba(#E586FC, 0.2);
+	}
+	.comment {
+		color: darken(white, 70%);
+	}
+}
+
+#output .window {
 	// Reset
     * {
 	    margin: 0;
 	    padding: 0;
 	    text-align: left;
 	}
+
+	background-color: white;
+	$fontColor: #424242;
+	color: $fontColor;
+	$generalPadding: 40px;
+	$paragraphPadding: 0.6em;
+
 	.in {
 		@include center;
 		width: 80%;
 		padding: $generalPadding 0;
+	}
+
+	// Text
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: $fontSize;
+	line-height: 1.6em;
+	word-wrap: break-word;
+	font-size: 11pt;
+	h1, h2, h3, h4, h5, h6, p, li, div, span {
+		font-weight: 400;
+	}
+	p {
+		padding-bottom: $paragraphPadding;
+		text-align: left;
+	}
+	h1 {
+		font-size: 25pt;
+	}
+
+	h2 {
+		font-size: 23pt;
+	}
+
+	h3 {
+		font-size: 21pt;
+	}
+
+	h4 {
+		font-size: 17pt;
+	}
+
+	h5 {
+		font-size: 15pt;
+	}
+
+	h6 {
+		font-size: 13pt;
+	}
+	a, a span {
+		color: $linkColor;
+	    text-decoration: none;
+	    &:hover {
+			color: darken($linkColor, 20%);
+		}
 	}
 	h1, h2, h3, h4, h5, h6 {
 		padding: 0.6em 0;
@@ -760,7 +278,7 @@ td {
 	}
 	#title {
 		text-align: center;
-		font-size: 36pt;
+		font-size: 27pt;
 		padding-bottom: $generalPadding;
 	}
 
@@ -825,143 +343,7 @@ td {
 }
 
 
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                             	   GET STARTED                                */
-/*////////////////////////////////////////////////////////////////////////////*/
-$grayFontColor: darken(white, 10%);
 
-#getStarted {
-	background-color: #262929;
-	color: $grayFontColor;
-	p {
-		text-align: center;
-		@include centerWithWidth(50%);
-	}
-	img {
-		max-width: 100%;
-		padding: $paragraphPadding*2 0;
-	}
-	.hollowButton {
-		color: $grayFontColor;
-		border: 1px solid $grayFontColor;
-		&:hover {
-			$hoverColor: darken($grayFontColor, 40%);
-			color: $hoverColor;
-			border: 1px solid $hoverColor;
-		}
-	}
-//	.grid {
-//		overflow: hidden;
-//		.instruction {
-//			width: 50%;
-//		}
-//		.instruction:nth-child(1) {
-//			float: left;
-//			}
-//		.instruction:nth-child(2) {
-//			float: right;
-//		}
-//	}
-}
-
-.number {
-	border: 1px solid $grayFontColor;
-	border-radius: 100px;
-	@include center;
-
-	padding: 0;
-
-	$circleSize: 2.8em;
-	width: $circleSize;
-	height: $circleSize;
-	line-height: $circleSize;
-}
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                            ADDITIONAL DOWNLOADS                            */
-/*////////////////////////////////////////////////////////////////////////////*/
-
-#additionalDownloads {
-	background-color: #EDEDED;
-	.grid {
-		// Must > 50%
-		$imageSizeForOverlap: 70%;
-		img:nth-child(1) {
-			float: left;
-			width: $imageSizeForOverlap;
-
-		}
-		img:nth-child(2) {
-			float: right;
-			width: $imageSizeForOverlap;
-			margin-left: -100%;
-			position: relative;
-			padding-top: 5%;
-		}
-		overflow: hidden;
-		padding: $paragraphPadding 0;
-	}
-}
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/*                             	     FOOTER                                   */
-/*////////////////////////////////////////////////////////////////////////////*/
-
-#footer {
-	background-color: white;
-	color: #C6C6C6;
-	.in{
-		width: 90%;
-		@include centerWithWidth(100%);
-		padding: $generalPadding 0;
-	}
-	a:hover {
-		opacity:0.5;
-	}
-	img {
-		height: 20px;
-		padding: 0 10px;
-	}
-	p {
-		text-align: center;
-	}
-
-	// Desktop
-	@media screen and (min-width: $mobile) {
-		p {
-			float: left;
-			line-height: 1em;
-			padding: 0;
-		}
-		.grid {
-			float: right;
-			line-height: 0em;
-		}
-		.in {
-			overflow: hidden;
-		}
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-// Desktop
-@media screen and (min-width: $mobile) {
-
-}
-// Mobile
-@media screen and (max-width: $mobile) {
-
-}
 
 
 

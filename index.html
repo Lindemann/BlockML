@@ -12,192 +12,24 @@
 		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 		<link type="image/x-icon" href="images/favicon.ico" rel="icon">
 		<link media="screen" href="css/screen.css" type="text/css" rel="stylesheet">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 		<title>BlockML</title>
 	</head>
 	<body>
 <!--
 ////////////////////////////////////////////////////////////////////////////
-                              NAVIGATION BAR                               
+                              GETTING STARTED                              
 ////////////////////////////////////////////////////////////////////////////
 -->
-		<div id = "navBar">
-			<a href="index.html"><img src="images/icon.svg" alt = "icon"></a>
-			<ul>
-                <li><a href="Documentation/document.html" target="_blank">Documentation</a></li>
-                <li><a href="#featuresAndSyntax">Features And Syntax</a></li>
-                <li><a href="#exampleDocuments">Example Documents</a></li>
-                <li><a href="#getStarted">Get Started</a></li>
-                <li><a href="#additionalDownloads">Additional Downloads</a></li>
-            </ul>
-		</div>
-<!--
-////////////////////////////////////////////////////////////////////////////
-                                 HEADER                                
-////////////////////////////////////////////////////////////////////////////
--->
-		<div id = "header">
-			<div id = "parallaxBG"></div>
-			<img src="images/blockB.svg" alt = "B">
-			<!-- <img src="images/_app.png" alt = "App"> -->
-		</div>
-<!--
-////////////////////////////////////////////////////////////////////////////
-                                 BLOCKML                                
-////////////////////////////////////////////////////////////////////////////
--->
-		<div id = "blockML">
-			<div class = "out">
-				<div class= "in"> 
-					<h1>BlockML</h1>
-					<p>BlockML is a free and open source markup language for scientific documents. It is also pretty well suited for documentations, blog articles and other complex stuff.</p>
-					<p>The main goal of BlockML is to combine the most useful functions of LaTeX with the simplicity and advantages of lightweight markup languages like Markdown.</p>
-					<p>The BlockML OSX App turns minimally marked-up plain text into well formatted HTML documents, which are perfectly readable in the browser and on mobile devices. It comes with a nice default CSS theme, but basically, you can style your output HTML however you want.</p>
-					<p> The BlockML OSX App is basically a compiler for the BlockML markup language. To create plain text files you will need a separate text editor like TextMate.</p>
-					<div class = "buttonGrid">
-						<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">SOURCE CODE</a>
-						<a class = "filledButton" href="">DOWNLOAD</a>
-					</div>
-				</div>
-			</div>
 
-			<!-- APP -->
-			<div id = "app">
-				<div class = "out">
-					<div class= "in">
-						<img src="images/app.png" alt = "App">
-						<div class = "buttonGrid">
-							<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">SOURCE CODE</a>
-							<a class = "filledButton" href="">DOWNLOAD</a>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div id = "gettingStarted">
 
-		</div>
-<!--
-////////////////////////////////////////////////////////////////////////////
-                            FEATURES AND SYNTAX                                
-////////////////////////////////////////////////////////////////////////////
--->
-		<div id = "featuresAndSyntax">
-			<div class = "out">
-				<div class= "in"> 
-					<h1>Features And Syntax</h1>
-					<p>BlockML provides a couple of features wich are especially needed for academic documents, like sections, tables of contents, bibliographic references or captions. BlockML also provides features wich are common for lightweight markup languages, like links, headings, images and so on.</p>
+			<div class = "grid-2">
 
-					<p>For detailed information about the available markup elemensts and the syntax look into the documentation.</p>
-
-					<div class = "container"><a class = "hollowButton" href="Documentation/document.html" target="_blank">DOCUMENTATION</a></div>
-
-					<table>
-						<tr>
-							<th colspan="2">
-								<p>Features</p>
-							</th>
-						</tr>
-						<tr>
-							<td>
-								<p>Sections with numbered section headings</p>
-							</td>
-							<td>
-								<p>Auto generated tables of contents</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Mathematical formulas</p>
-							</td>
-							<td>
-								<p>Cross references</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Bibliographic references</p>
-							</td>
-							<td>
-								<p>Code listings with syntax highlighting</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Tables</p>
-							</td>
-							<td>
-								<p>Captions for listings, images, sections and tables</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Quotes</p>
-							</td>
-							<td>
-								<p>Footnotes</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Headings</p>
-							</td>
-							<td>
-								<p>Images</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Links</p>
-							</td>
-							<td>
-								<p>Embedded HTML</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Ordered lists</p>
-							</td>
-							<td>
-								<p>Unordered lists</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Strikethrough text</p>
-							</td>
-							<td>
-								<p>Inline Code</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Bold text</p>
-							</td>
-							<td>
-								<p>Marked text</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Underlined text</p>
-							</td>
-							<td>
-								<p>Italic text</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Subscript text</p>
-							</td>
-							<td>
-								<p>Superscript text</p>
-							</td>
-						</tr>
-					</table>
-
-					<p>The syntax of BlockML is slightly S-Expression inspired and designed to be consistent and memorable. A BlockML markup element consists of a <span class="code">selector</span>, who defines the type of the element and one or more <span class="code">blocks</span>, which embed the text you want to mark up: <span class="code">selector[block]</span></p>
+				<div id = "source" class = "gridMember">
 
 					<div class = "titleBarTitle">document.txt</div>
+
 					<div class = "titleBar" id = "text">
 						<div class = "titleBarButtons">
 							<div class = "titleBarButton"></div>
@@ -205,8 +37,8 @@
 							<div class = "titleBarButton"></div>
 						</div>
 					</div>
-					<div class = "window">
 
+					<div class = "window">
 						<p><span class = "keyword">fp[</span></p>
 						<p><span class = "keyword">title[</span>Example Document Title<span class = "keyword">]</span></p>
 						<p><span class = "keyword">h4[</span>Author Name<span class = "keyword">]</span></p>
@@ -219,45 +51,20 @@
 						<p><span class = "keyword">sec[</span><span class = "sectionHeading">First Section</span><span class = "keyword">][</span></p>
 
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<br>
 
 						<p><span class = "keyword">sec[</span><span class = "sectionHeading">First Subsection</span><span class = "keyword">][</span></p>
 						<p><span class = "keyword">math[</span><span class = "tex2jax_ignore">$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$</span><span class = "keyword">]</span></p>
 						<p><span class = "keyword">]</span><span class = "comment">/* First Subsection */</span></p>
-
+						<br>
+						
 						<p><span class = "keyword">]</span><span class = "comment">/* First Section */</span></p>
-
 					</div>
+
 				</div>
-			</div>
-		</div>
-<!--
-////////////////////////////////////////////////////////////////////////////
-                              EXAMPLE DOCUMENTS                               
-////////////////////////////////////////////////////////////////////////////
--->
-		<div id = "exampleDocuments">
-			<div class = "out">
-				<div class= "in"> 
-					<h1>Example Documents</h1>
-					<h3>Documentation</h3>
 
-					<div class = "grid">
-						<div class = "grid">
-							<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">TXT</a>
-							<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">HTML</a>
-						</div>
-						<a class = "filledButton" href="Documentation/document.html" target="_blank">DOWNLOAD</a>
-					</div>
 
-					<h3>Features Showcase</h3>
-
-					<div class = "grid">
-						<div class = "grid">
-							<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">TXT</a>
-							<a class = "hollowButton" href="https://github.com/Lindemann/BlockML" target="_blank">HTML</a>
-						</div>
-						<a class = "filledButton" href="Documentation/document.html" target="_blank">DOWNLOAD</a>
-					</div>
+				<div id = "output" class = "gridMember">
 
 					<div class = "titleBarTitle">document.html</div>
 					<div class = "titleBar">
@@ -295,87 +102,18 @@
 
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-<!--
-////////////////////////////////////////////////////////////////////////////
-                                 GET STARTED                              
-////////////////////////////////////////////////////////////////////////////
--->
-		<div id = "getStarted">
-			<div class = "out">
-				<div class= "in">
-					<h1>Get Started</h1>
-					<img src="images/infoGraphic.svg" alt = "Infographic">
-
-					<div class = "grid">
-						<div class = "instruction">
-							<div class = "container"><h1 class = "number">1</h1></div>
-							<p>Copy <a href="#text">this</a> text into a txt file. Use whatever text editor you like.</p>
-						</div>
-
-						<div class = "instruction">
-							<div class = "container"><h1 class = "number">2</h1></div>
-							<p>Drag and Drop your txt file onto the BlockML OSX App.</p>
-						</div>
-					</div>
-
-					<div class = "grid">
-						<div class = "instruction">
-							<div class = "container"><h1 class = "number">3</h1></div>
-							<p>The App has generated an HTML file with additional CSS and JS. Rainbows! </p>
-						</div>
-
-						<div class = "instruction">
-							<div class = "container"><h1 class = "number">4</h1></div>
-							<p>To understand the markup take a look into the documentation.</p>
-						</div>
-					</div>
-					
-
-
-					<div class = "buttonGrid">
-						<a class = "hollowButton" href="Documentation/document.html" target="_blank">DOCUMENTATION</a>
-						<a class = "filledButton" href="" target="_blank">DOWNLOAD</a>
-					</div>
 
 				</div>
+
 			</div>
+
 		</div>
 
-<!--
-////////////////////////////////////////////////////////////////////////////
-                             ADDITIONAL DOWNLOADS                              
-////////////////////////////////////////////////////////////////////////////
--->
-		<div id = "additionalDownloads">
-			<div class = "out">
-				<div class= "in">
-					<h1>Additional Downloads</h1>
-					<div class = "grid">
-						<img src="images/day.png" alt = "Night TM Theme">
-						<img src="images/night.png" alt = "Day TM Theme">
-					</div>
-				</div>
-			</div>
-		</div>
-<!--
-////////////////////////////////////////////////////////////////////////////
-                                  FOOTER                               
-////////////////////////////////////////////////////////////////////////////
--->
-		<div id = "footer">
-			<div class = "out">
-				<div class= "in"> 
-					<p>© 2016 Aww Apps</p>
-					<div class = "grid">
-						<a href="http://awwapps.com" target="_blank"><img src="images/awwApps.svg" alt = "Aww Apps"></a>
-						<a href="https://twitter.com/L_INDEMANN" target="_blank"><img src="images/twitter.svg" alt = "Twitter"></a>
-			            <a href="https://github.com/Lindemann/BlockML" target="_blank"><img src="images/github.svg" alt = "Github"></a>
-					</div>
-				</div>
-			</div>
-		</div>
+
+
+
+
+
+
 	</body>
 </html>
