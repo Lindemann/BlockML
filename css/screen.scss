@@ -54,7 +54,7 @@ $neonBlue: #6176F6;
 /*////////////////////////////////////////////////////////////////////////////*/
 
 body {
-
+	min-width: $minWidth;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -112,7 +112,7 @@ a {
 
 #navBar {
 	min-width: $minWidth;
-	background-color: RGBA(255.00, 255.00, 255.00, 0.95);
+	background-color: RGBA(255.00, 255.00, 255.00, 0.9);
 	$borderColor: darken(white, 10%);
 	z-index: 9999;
 	a {
@@ -153,12 +153,41 @@ a {
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
+/*                                    HEADER                                  */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#header {
+	#parallaxBG {
+		background-image: url(../images/stars.svg);
+		background-color: $blackRussian;
+		background-size:1200px;		
+		height: 100%;
+		width: 100%;
+		z-index: -9999;
+		position: fixed;
+		top: 0;
+	}
+	height: 600px;
+	overflow: hidden;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
 /*                                INTRODUCTION                                */
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #introduction {
-	background-color: $blackRussian;
-	height: 300px;
+	background-color: white;
+	height: 500px;
+}
+
+#triangle {
+	$triangleHeight: 60px;
+	background-image: url(../images/triangle.svg);
+	background-size:100% $triangleHeight;
+	height: $triangleHeight;
+	width: 100%;
+	position: relative;
+	bottom: $triangleHeight;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -167,7 +196,6 @@ a {
 
 #gettingStarted {
 	background-color: #D6D198;
-	min-width: $minWidth;
 }
 
 #gettingStarted .in {
