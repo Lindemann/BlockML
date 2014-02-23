@@ -36,7 +36,7 @@ $duration: 0.2s;
 
 // Colors
 $blackRussian: #262929;
-$gold: #D6D198;
+$gold: #C2BC7A;
 $neonBlue: #6176F6;
 
 
@@ -63,6 +63,8 @@ body {
 
 html {
 	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -190,14 +192,19 @@ $buttonWidth: 230px;
 		z-index: -9999;
 		position: fixed;
 		top: 0;
+//		-webkit-filter: blur(1px);
 	}
 	height: 600px;
 	overflow: hidden;
 	text-align: center;
+	// To quiet the background image intensity
+	background-color: RGBA(38, 41, 41, 0.4);
 	h1 {
 		font-size: 70pt;
 		color: white;
 		padding-top: 190px;
+		// h1 seems not optically centered
+		padding-left: 20px;
 		letter-spacing:0.3em;
 		b {
 			font-weight: 400;
@@ -220,7 +227,28 @@ $buttonWidth: 230px;
 
 #introduction {
 	background-color: white;
-	height: 500px;
+	.in {
+		@include centerWithWidth(700px);
+		padding-top: 50px;
+		padding-bottom: 100px;
+	}
+	color: $blackRussian;
+	h1 {
+		font-weight: 400;
+		font-size: 36pt;
+		padding-bottom: 30px;
+	}
+	p {
+		padding-bottom: 30px;
+		line-height: 1.8em;
+		opacity: 0.8;
+		&:last-of-type {
+			padding-bottom: 0;
+		}
+		b {
+			font-weight: 400;
+		}
+	}
 }
 
 #triangle {
@@ -231,6 +259,7 @@ $buttonWidth: 230px;
 	width: 100%;
 	position: relative;
 	bottom: $triangleHeight - 1px;
+	margin-bottom: -$triangleHeight - 1px;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -238,7 +267,8 @@ $buttonWidth: 230px;
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #gettingStarted {
-	background-color: #D6D198;
+	background-color: $gold;
+	padding-top: 200px;
 }
 
 #gettingStarted .in {
@@ -276,6 +306,7 @@ $buttonWidth: 230px;
 	font-size: 10pt;
 	text-align: center;
 	line-height: 1.6em;
+	margin-top: -1.6em;
 }
 
 #output .titleBarTitle {
