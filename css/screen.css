@@ -43,13 +43,16 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
   font-weight: 200; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  transition: opacity 0.2s, color 0.2s; }
+  a:hover {
+    text-decoration: none; }
 
 ::selection {
-  background-color: #f1fc82; }
+  background-color: #F1FC82; }
 
 ::-moz-selection {
-  background-color: #f1fc82; }
+  background-color: RGBA(241, 252, 130, 0.7); }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                     GRID                                   */
@@ -60,6 +63,22 @@ a {
     float: left; }
   .grid-2 .gridMember:nth-child(2) {
     float: right; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                     BUTTON                                 */
+/*////////////////////////////////////////////////////////////////////////////*/
+.button {
+  display: block;
+  width: 230px;
+  border-radius: 40px;
+  width: 230px;
+  padding: 20px 0;
+  color: #d6d198;
+  border: 2px solid #d6d198;
+  transition: color 0.2s, background-color 0.2s; }
+  .button:hover {
+    color: white;
+    background-color: #d6d198; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                               NAVIGATION BAR                               */
@@ -74,12 +93,8 @@ a {
   top: 0;
   width: 100%;
   height: 80px; }
-  #navBar a {
-    color: #262929;
-    text-decoration: none; }
-    #navBar a:hover {
-      text-decoration: none;
-      color: #707878; }
+  #navBar a img {
+    transition: opacity 0.2s; }
   #navBar a img:hover {
     opacity: 0.8; }
   #navBar ul {
@@ -91,6 +106,10 @@ a {
       margin: 0 12px;
       font-weight: 400;
       font-size: 12pt; }
+    #navBar ul a {
+      color: #262929; }
+      #navBar ul a:hover {
+        opacity: 0.6; }
   #navBar img {
     float: left;
     height: 60px;
@@ -115,12 +134,18 @@ a {
   #header h1 {
     font-size: 70pt;
     color: white;
-    padding-top: 200px;
+    padding-top: 190px;
     letter-spacing: 0.3em; }
     #header h1 b {
       font-weight: 400; }
-  #header p {
-    color: white; }
+  #header h4 {
+    color: white;
+    margin-top: 5px;
+    font-size: 16pt; }
+  #header .button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 35px; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                INTRODUCTION                                */
@@ -135,7 +160,7 @@ a {
   height: 70px;
   width: 100%;
   position: relative;
-  bottom: 70px; }
+  bottom: 69px; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                               GETTING STARTED                              */
@@ -168,7 +193,7 @@ a {
 
 .titleBarTitle {
   position: relative;
-  top: 32px;
+  top: 31px;
   color: #878787;
   font-family: "Source Code Pro", monospace;
   font-size: 10pt;
