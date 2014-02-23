@@ -30,8 +30,8 @@
 	margin: 0 auto;
 }
 
-$fontSize: 13pt;
-$minWidth: 1060px;
+$fontSize: 14pt;
+$minWidth: 1000px;
 
 // Colors
 $selectionColor: #F1FC82;
@@ -68,17 +68,11 @@ html {
 body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: $fontSize;
-	line-height: 1.6em;
 	word-wrap: break-word;
 }
 
 h1, h2, h3, h4, h5, h6, p, li, div, span {
-	font-weight: 400;
-}
-
-p {
-	padding-bottom: 1.6em;
-	text-align: left;
+	font-weight: 200;
 }
 
 a {
@@ -115,6 +109,7 @@ a {
 	background-color: RGBA(255.00, 255.00, 255.00, 0.9);
 	$borderColor: darken(white, 10%);
 	z-index: 9999;
+	$fontSize: 12pt;
 	a {
 		color: $blackRussian;
 	    text-decoration: none;
@@ -142,6 +137,8 @@ a {
 		li {
 			display: inline;
 			margin: 0 12px;
+			font-weight: 400;
+			font-size: $fontSize;
 		}
 	}
 	img {
@@ -169,7 +166,24 @@ a {
 	}
 	height: 600px;
 	overflow: hidden;
+
+	text-align: center;
+
+	h1 {
+		font-size: 70pt;
+		color: white;
+		padding-top: 200px;
+		letter-spacing:0.3em;
+		b {
+			font-weight: 400;
+		}
+	}
+	p {
+		color: white;
+	}
 }
+
+
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                INTRODUCTION                                */
@@ -181,7 +195,7 @@ a {
 }
 
 #triangle {
-	$triangleHeight: 60px;
+	$triangleHeight: 70px;
 	background-image: url(../images/triangle.svg);
 	background-size:100% $triangleHeight;
 	height: $triangleHeight;
@@ -199,7 +213,7 @@ a {
 }
 
 #gettingStarted .in {
-	width: 1020px;
+	width: 940px;
 	@include center;
 }
 
@@ -230,7 +244,7 @@ a {
 	top: 32px;
 	color: #878787;
 	font-family:"Source Code Pro", monospace;
-	font-size: 11pt;
+	font-size: 10pt;
 	text-align: center;
 	line-height: 1.6em;
 }
@@ -251,7 +265,7 @@ a {
 }
 
 #source, #output {
-	width: 500px;
+	width: 450px;
 }
 
 #gettingStarted .grid-2 {
@@ -269,7 +283,7 @@ a {
 #source .window {
 	background-color: $blackRussian;
 	font-family:"Source Code Pro", monospace;
-	font-size: 11pt;
+	font-size: 10pt;
 	text-align: left;
 	color: white;
 
@@ -308,10 +322,10 @@ a {
 	background-color: white;
 	$fontColor: #424242;
 	color: $fontColor;
-	$generalPadding: 40px;
+	$generalPadding: 30px;
 	$paragraphPadding: 0.6em;
 
-	.in {
+	.inner {
 		@include center;
 		width: 80%;
 		padding: $generalPadding 0;
@@ -322,33 +336,33 @@ a {
 	font-size: $fontSize;
 	line-height: 1.6em;
 	word-wrap: break-word;
-	font-size: 11pt;
+	font-size: 10pt;
 	p {
 		padding-bottom: $paragraphPadding;
 		text-align: left;
 	}
 	h1 {
-		font-size: 25pt;
+		font-size: 22pt;
 	}
 
 	h2 {
-		font-size: 23pt;
+		font-size: 20pt;
 	}
 
 	h3 {
-		font-size: 21pt;
+		font-size: 18pt;
 	}
 
 	h4 {
-		font-size: 17pt;
+		font-size: 16pt;
 	}
 
 	h5 {
-		font-size: 15pt;
+		font-size: 14pt;
 	}
 
 	h6 {
-		font-size: 13pt;
+		font-size: 12pt;
 	}
 	a, a span {
 		color: $neonBlue;
@@ -370,7 +384,7 @@ a {
 	}
 	#title {
 		text-align: center;
-		font-size: 27pt;
+		font-size: 26pt;
 		padding-bottom: $generalPadding;
 	}
 	// TOC 

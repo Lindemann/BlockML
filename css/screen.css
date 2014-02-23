@@ -26,7 +26,7 @@
 /*                                  GENERAL                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 body {
-  min-width: 1060px; }
+  min-width: 1000px; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    FONT                                    */
@@ -36,16 +36,11 @@ html {
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 13pt;
-  line-height: 1.6em;
+  font-size: 14pt;
   word-wrap: break-word; }
 
 h1, h2, h3, h4, h5, h6, p, li, div, span {
-  font-weight: 400; }
-
-p {
-  padding-bottom: 1.6em;
-  text-align: left; }
+  font-weight: 200; }
 
 a {
   text-decoration: none; }
@@ -70,7 +65,7 @@ a {
 /*                               NAVIGATION BAR                               */
 /*////////////////////////////////////////////////////////////////////////////*/
 #navBar {
-  min-width: 1060px;
+  min-width: 1000px;
   background-color: RGBA(255, 255, 255, 0.9);
   z-index: 9999;
   line-height: normal;
@@ -89,11 +84,13 @@ a {
     opacity: 0.8; }
   #navBar ul {
     text-align: right;
-    margin: 28.44444px 0;
+    margin: 29.33333px 0;
     margin-right: 10px; }
     #navBar ul li {
       display: inline;
-      margin: 0 12px; }
+      margin: 0 12px;
+      font-weight: 400;
+      font-size: 12pt; }
   #navBar img {
     float: left;
     height: 60px;
@@ -104,7 +101,8 @@ a {
 /*////////////////////////////////////////////////////////////////////////////*/
 #header {
   height: 600px;
-  overflow: hidden; }
+  overflow: hidden;
+  text-align: center; }
   #header #parallaxBG {
     background-image: url(../images/stars.svg);
     background-color: #262929;
@@ -114,6 +112,15 @@ a {
     z-index: -9999;
     position: fixed;
     top: 0; }
+  #header h1 {
+    font-size: 70pt;
+    color: white;
+    padding-top: 200px;
+    letter-spacing: 0.3em; }
+    #header h1 b {
+      font-weight: 400; }
+  #header p {
+    color: white; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                INTRODUCTION                                */
@@ -124,11 +131,11 @@ a {
 
 #triangle {
   background-image: url(../images/triangle.svg);
-  background-size: 100% 60px;
-  height: 60px;
+  background-size: 100% 70px;
+  height: 70px;
   width: 100%;
   position: relative;
-  bottom: 60px; }
+  bottom: 70px; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                               GETTING STARTED                              */
@@ -137,7 +144,7 @@ a {
   background-color: #D6D198; }
 
 #gettingStarted .in {
-  width: 1020px;
+  width: 940px;
   display: block;
   margin: 0 auto; }
 
@@ -164,7 +171,7 @@ a {
   top: 32px;
   color: #878787;
   font-family: "Source Code Pro", monospace;
-  font-size: 11pt;
+  font-size: 10pt;
   text-align: center;
   line-height: 1.6em; }
 
@@ -181,7 +188,7 @@ a {
     border-radius: 100px; }
 
 #source, #output {
-  width: 500px; }
+  width: 450px; }
 
 #gettingStarted .grid-2 {
   position: relative; }
@@ -195,7 +202,7 @@ a {
 #source .window {
   background-color: #262929;
   font-family: "Source Code Pro", monospace;
-  font-size: 11pt;
+  font-size: 10pt;
   text-align: left;
   color: white; }
   #source .window p:nth-child(1) {
@@ -218,34 +225,34 @@ a {
   background-color: white;
   color: #424242;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 13pt;
+  font-size: 12pt;
   line-height: 1.6em;
   word-wrap: break-word;
-  font-size: 11pt; }
+  font-size: 10pt; }
   #output .window * {
     margin: 0;
     padding: 0;
     text-align: left; }
-  #output .window .in {
+  #output .window .inner {
     display: block;
     margin: 0 auto;
     width: 80%;
-    padding: 40px 0; }
+    padding: 30px 0; }
   #output .window p {
     padding-bottom: 0.6em;
     text-align: left; }
   #output .window h1 {
-    font-size: 25pt; }
+    font-size: 22pt; }
   #output .window h2 {
-    font-size: 23pt; }
+    font-size: 20pt; }
   #output .window h3 {
-    font-size: 21pt; }
+    font-size: 18pt; }
   #output .window h4 {
-    font-size: 17pt; }
+    font-size: 16pt; }
   #output .window h5 {
-    font-size: 15pt; }
+    font-size: 14pt; }
   #output .window h6 {
-    font-size: 13pt; }
+    font-size: 12pt; }
   #output .window a, #output .window a span {
     color: #6176f6;
     text-decoration: none; }
@@ -255,16 +262,16 @@ a {
     padding: 0.6em 0;
     line-height: 1.2em; }
   #output .window .frontpage {
-    padding-bottom: 20px; }
+    padding-bottom: 15px; }
     #output .window .frontpage h1, #output .window .frontpage h2, #output .window .frontpage h3, #output .window .frontpage h4, #output .window .frontpage h5, #output .window .frontpage h6, #output .window .frontpage #title {
       padding: 0.2em 0;
       text-align: center; }
   #output .window #title {
     text-align: center;
-    font-size: 27pt;
-    padding-bottom: 40px; }
+    font-size: 26pt;
+    padding-bottom: 30px; }
   #output .window #toc {
-    padding-bottom: 40px; }
+    padding-bottom: 30px; }
     #output .window #toc ul {
       list-style: none;
       /* List should start on the left edge */
