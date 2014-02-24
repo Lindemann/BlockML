@@ -634,7 +634,7 @@ $instructionWidth: 220px;
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #appImage {
-	background-color: gray;
+	background-color: #45FD83;
 	img {
 		@include center;
 		padding-top: 60px;
@@ -642,7 +642,6 @@ $instructionWidth: 220px;
 	}
 	background-image: url(../images/galaxy.jpg);
 	background-position:center;
-//	background-size:1200px;	
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/

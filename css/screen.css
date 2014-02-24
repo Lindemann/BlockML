@@ -469,7 +469,7 @@ a {
 /*                                   APP IMAGE                                */
 /*////////////////////////////////////////////////////////////////////////////*/
 #appImage {
-  background-color: gray;
+  background-color: #45FD83;
   background-image: url(../images/galaxy.jpg);
   background-position: center; }
   #appImage img {
