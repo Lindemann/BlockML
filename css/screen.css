@@ -469,10 +469,14 @@ a {
 /*                                   APP IMAGE                                */
 /*////////////////////////////////////////////////////////////////////////////*/
 #appImage {
-  background-color: gray; }
+  background-color: gray;
+  background-image: url(../images/galaxy.jpg);
+  background-position: center; }
   #appImage img {
     display: block;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 30px; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                 DOCUMENTATION                              */

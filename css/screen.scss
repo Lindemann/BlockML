@@ -637,7 +637,12 @@ $instructionWidth: 220px;
 	background-color: gray;
 	img {
 		@include center;
+		padding-top: 60px;
+		padding-bottom: 30px;
 	}
+	background-image: url(../images/galaxy.jpg);
+	background-position:center;
+//	background-size:1200px;	
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
