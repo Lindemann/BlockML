@@ -32,9 +32,8 @@ body {
 /*                                    FONT                                    */
 /*////////////////////////////////////////////////////////////////////////////*/
 html {
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto; }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -51,10 +50,10 @@ a {
     text-decoration: none; }
 
 ::selection {
-  background-color: #F1FC82; }
+  background-color: #f1fc82; }
 
 ::-moz-selection {
-  background-color: RGBA(241, 252, 130, 0.7); }
+  background-color: rgba(241, 252, 130, 0.7); }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                     GRID                                   */
@@ -66,6 +65,15 @@ a {
   .grid-2 .gridMember:nth-child(2) {
     float: right; }
 
+.grid-3 {
+  overflow: hidden; }
+  .grid-3 .gridMember:nth-child(1) {
+    float: left; }
+  .grid-3 .gridMember:nth-child(2) {
+    float: left; }
+  .grid-3 .gridMember:nth-child(3) {
+    float: left; }
+
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                     BUTTON                                 */
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -73,21 +81,16 @@ a {
   display: block;
   width: 230px;
   border-radius: 40px;
-  width: 230px;
   padding: 20px 0;
-  color: #c2bc7a;
-  border: 2px solid #c2bc7a;
+  text-align: center;
   transition: color 0.2s, background-color 0.2s; }
-  .button:hover {
-    color: white;
-    background-color: #c2bc7a; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                               NAVIGATION BAR                               */
 /*////////////////////////////////////////////////////////////////////////////*/
 #navBar {
   min-width: 1000px;
-  background-color: RGBA(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 9999;
   line-height: normal;
   border-bottom: 1px solid #e6e6e6;
@@ -98,7 +101,7 @@ a {
   #navBar a img {
     transition: opacity 0.2s; }
   #navBar a img:hover {
-    opacity: 0.8; }
+    opacity: 0.6; }
   #navBar ul {
     text-align: right;
     margin: 29.33333px 0;
@@ -111,7 +114,7 @@ a {
     #navBar ul a {
       color: #262929; }
       #navBar ul a:hover {
-        opacity: 0.6; }
+        opacity: 0.3; }
   #navBar img {
     float: left;
     height: 60px;
@@ -121,10 +124,12 @@ a {
 /*                                    HEADER                                  */
 /*////////////////////////////////////////////////////////////////////////////*/
 #header {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   height: 600px;
   overflow: hidden;
   text-align: center;
-  background-color: RGBA(38, 41, 41, 0.4); }
+  background-color: rgba(38, 41, 41, 0.4); }
   #header #parallaxBG {
     background-image: url(../images/stars.svg);
     background-color: #262929;
@@ -147,16 +152,23 @@ a {
     margin-top: 5px;
     font-size: 16pt; }
   #header .button {
+    color: #d6d198;
+    border: 2px solid #d6d198;
     display: block;
     margin: 0 auto;
     margin-top: 35px; }
+    #header .button:hover {
+      color: white;
+      background-color: #d6d198; }
+    #header .button:hover {
+      -webkit-font-smoothing: subpixel-antialiased;
+      -moz-osx-font-smoothing: auto; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                INTRODUCTION                                */
 /*////////////////////////////////////////////////////////////////////////////*/
 #introduction {
-  background-color: white;
-  color: #262929; }
+  background-color: white; }
   #introduction .in {
     display: block;
     margin: 0 auto;
@@ -164,17 +176,19 @@ a {
     padding-top: 50px;
     padding-bottom: 100px; }
   #introduction h1 {
+    color: #262929;
     font-weight: 400;
     font-size: 36pt;
     padding-bottom: 30px; }
   #introduction p {
     padding-bottom: 30px;
     line-height: 1.8em;
-    opacity: 0.8; }
+    color: #706F6F; }
     #introduction p:last-of-type {
       padding-bottom: 0; }
     #introduction p b {
-      font-weight: 400; }
+      font-weight: 400;
+      color: #262929; }
 
 #triangle {
   background-image: url(../images/triangle.svg);
@@ -186,16 +200,81 @@ a {
   margin-bottom: -71px; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
+/*                                   EXAMPLE                                  */
+/*////////////////////////////////////////////////////////////////////////////*/
+#example {
+  background-color: #c6c6c6;
+  overflow: hidden; }
+  #example p {
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px; }
+  #example .button {
+    color: white;
+    border: 2px solid white; }
+    #example .button:hover {
+      color: #c6c6c6;
+      background-color: white; }
+  #example .parentGrid {
+    display: block;
+    margin: 0 auto;
+    max-width: 480px;
+    margin-bottom: 50px; }
+    #example .parentGrid .grid-2 {
+      width: 230px; }
+      #example .parentGrid .grid-2 .button {
+        width: 103px; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
 /*                               GETTING STARTED                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 #gettingStarted {
-  background-color: #c2bc7a;
-  padding-top: 200px; }
+  background-color: #d6d198; }
+  #gettingStarted .in {
+    padding-top: 100px;
+    width: 940px;
+    display: block;
+    margin: 0 auto; }
+  #gettingStarted h1.real {
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 36pt;
+    padding-bottom: 60px;
+    text-align: center; }
+  #gettingStarted p.real {
+    color: white; }
+  #gettingStarted .grid-3 {
+    display: block;
+    margin: 0 auto;
+    max-width: 700px;
+    padding-bottom: 60px; }
+    #gettingStarted .grid-3 .gridMember:nth-child(2) {
+      margin: 0 20px; }
 
-#gettingStarted .in {
-  width: 940px;
+.instruction {
+  width: 220px;
+  text-align: center;
+  overflow: hidden; }
+
+.number {
+  border: 2px solid white;
+  border-radius: 100px;
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0;
+  width: 2.2em;
+  height: 2.2em;
+  line-height: 2.2em;
+  color: white;
+  text-align: center;
+  font-size: 36pt;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 30px; }
 
 .titleBar {
   background-color: #EDEDED;
@@ -238,7 +317,9 @@ a {
     border-radius: 100px; }
 
 #source, #output {
-  width: 450px; }
+  width: 450px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 #gettingStarted .grid-2 {
   position: relative; }
@@ -266,8 +347,8 @@ a {
     color: #6176f6;
     background-color: rgba(97, 118, 246, 0.2); }
   #source .window .sectionHeading {
-    color: #E586FC;
-    background-color: rgba(229, 134, 252, 0.2); }
+    color: #e489ff;
+    background-color: rgba(228, 137, 255, 0.2); }
   #source .window .comment {
     color: #4d4d4d; }
 
@@ -366,3 +447,104 @@ a {
         padding-left: 0.3em;
         padding-right: 0em;
         background-color: white; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                 APP DOWNLOAD                               */
+/*////////////////////////////////////////////////////////////////////////////*/
+#appDownload {
+  background-color: #6176f6;
+  overflow: hidden; }
+  #appDownload .button {
+    color: white;
+    border: 2px solid white;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px; }
+    #appDownload .button:hover {
+      color: #6176f6;
+      background-color: white; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   APP IMAGE                                */
+/*////////////////////////////////////////////////////////////////////////////*/
+#appImage {
+  background-color: gray; }
+  #appImage img {
+    display: block;
+    margin: 0 auto; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                 DOCUMENTATION                              */
+/*////////////////////////////////////////////////////////////////////////////*/
+#documentation {
+  background-color: #c6c6c6;
+  overflow: hidden; }
+  #documentation p {
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px; }
+  #documentation .button {
+    color: white;
+    border: 2px solid white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px; }
+    #documentation .button:hover {
+      color: #c6c6c6;
+      background-color: white; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                EDITOR PLUGIN                               */
+/*////////////////////////////////////////////////////////////////////////////*/
+#editorPlugins {
+  background-color: #e489ff;
+  overflow: hidden; }
+  #editorPlugins p {
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px; }
+  #editorPlugins .button {
+    color: white;
+    border: 2px solid white; }
+    #editorPlugins .button:hover {
+      color: #e489ff;
+      background-color: white; }
+  #editorPlugins .grid-2 {
+    display: block;
+    margin: 0 auto;
+    max-width: 484px;
+    margin-bottom: 50px; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                             	     FOOTER                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+#footer {
+  background-color: white;
+  color: #c6c6c6; }
+  #footer .in {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 70px 0; }
+  #footer a:hover {
+    opacity: 0.5; }
+  #footer img {
+    height: 20px;
+    padding: 0 10px; }
+  #footer p {
+    text-align: center; }
+  #footer p {
+    float: left;
+    line-height: 1em;
+    padding: 0; }
+  #footer .grid {
+    float: right;
+    line-height: 0em; }
+  #footer .in {
+    overflow: hidden; }

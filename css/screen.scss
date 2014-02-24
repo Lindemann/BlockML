@@ -30,15 +30,29 @@
 	margin: 0 auto;
 }
 
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
 $fontSize: 14pt;
 $minWidth: 1000px;
 $duration: 0.2s;
+$buttonWidth: 230px;
 
 // Colors
 $blackRussian: #262929;
-$gold: #C2BC7A;
+$gold: #D6D198;
 $neonBlue: #6176F6;
-
+$alto: #C6C6C6;
+$violet: #E489FF;
+$neonYellow: #F1FC82;
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                   RESET                                    */
@@ -62,9 +76,7 @@ body {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 html {
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	@include font-smoothing(off);
 }
 
 body {
@@ -86,11 +98,11 @@ a {
 }
 
 ::selection { 
-	background-color: #F1FC82;
+	background-color: $neonYellow;
 //	background-color: #E489FF;
 }
 ::-moz-selection { 
-	background-color: RGBA(241, 252, 130, 0.7); 
+	background-color: rgba($neonYellow, 0.7); 
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -107,25 +119,40 @@ a {
 	overflow: hidden;
 }
 
+.grid-3 {
+	.gridMember:nth-child(1) {
+		float: left;
+	}
+	.gridMember:nth-child(2) {
+		float: left;
+	}
+	.gridMember:nth-child(3) {
+		float: left;
+	}
+	overflow: hidden;
+}
+
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                     BUTTON                                 */
 /*////////////////////////////////////////////////////////////////////////////*/
-
-$buttonWidth: 230px;
 
 .button {
 	display: block;
 	width: $buttonWidth;
 	border-radius: 40px;
-	width: $buttonWidth;
 	padding: 20px 0;
-	color: $gold;
-	border: 2px solid $gold;
+	text-align: center;
 	transition: color $duration, background-color $duration;
+}
+
+@mixin buttonColor($strokeColor, $hoverFillColor, $hoverTextColor) {
+	color: $strokeColor;
+	border: 2px solid $strokeColor;
 	&:hover {
-		color: white;
-		background-color: $gold;
+		color: $hoverTextColor;
+		background-color: $hoverFillColor;
 	}
+
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -134,7 +161,7 @@ $buttonWidth: 230px;
 
 #navBar {
 	min-width: $minWidth;
-	background-color: RGBA(255.00, 255.00, 255.00, 0.9);
+	background-color: rgba(white, 0.9);
 	$borderColor: darken(white, 10%);
 	z-index: 9999;
 	$fontSize: 12pt;
@@ -142,7 +169,7 @@ $buttonWidth: 230px;
 		transition: opacity $duration;
 	}
 	a img:hover {
-		opacity:0.8;
+		opacity:0.6;
 	}
 	line-height: normal;
 	$navBarHeight: 80px;
@@ -155,6 +182,7 @@ $buttonWidth: 230px;
 		text-align: right;
 		// center ul vertically
 		// $fontSize*96/72 converts pt to px
+		// 1 Point = 1.3333333333333 Pixel
 		margin: ($navBarHeight - ($fontSize * 96 / 72)) / 2 0;
 		margin-right: 10px;
 		li {
@@ -166,7 +194,7 @@ $buttonWidth: 230px;
 		a {
 			color: $blackRussian;
 		    &:hover {
-				opacity:0.6;
+				opacity:0.3;
 			}
 		}
 	}
@@ -183,6 +211,7 @@ $buttonWidth: 230px;
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #header {
+	@include font-smoothing(on);
 	#parallaxBG {
 		background-image: url(../images/stars.svg);
 		background-color: $blackRussian;
@@ -193,12 +222,13 @@ $buttonWidth: 230px;
 		position: fixed;
 		top: 0;
 //		-webkit-filter: blur(1px);
+//		-webkit-transform: rotate(7deg);
 	}
 	height: 600px;
 	overflow: hidden;
 	text-align: center;
 	// To quiet the background image intensity
-	background-color: RGBA(38, 41, 41, 0.4);
+	background-color: rgba($blackRussian, 0.4);
 	h1 {
 		font-size: 70pt;
 		color: white;
@@ -216,8 +246,12 @@ $buttonWidth: 230px;
 		font-size: 16pt;
 	}
 	.button {
+		@include buttonColor($gold, $gold, white);
 		@include center;
 		margin-top: 35px;
+		&:hover {
+			@include font-smoothing(off);
+		}
 	}
 }
 
@@ -232,8 +266,8 @@ $buttonWidth: 230px;
 		padding-top: 50px;
 		padding-bottom: 100px;
 	}
-	color: $blackRussian;
 	h1 {
+		color: $blackRussian;
 		font-weight: 400;
 		font-size: 36pt;
 		padding-bottom: 30px;
@@ -241,12 +275,13 @@ $buttonWidth: 230px;
 	p {
 		padding-bottom: 30px;
 		line-height: 1.8em;
-		opacity: 0.8;
+		color: #706F6F;
 		&:last-of-type {
 			padding-bottom: 0;
 		}
 		b {
 			font-weight: 400;
+			color: $blackRussian;
 		}
 	}
 }
@@ -263,17 +298,88 @@ $buttonWidth: 230px;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
+/*                                   EXAMPLE                                  */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#example {
+	background-color: $alto;
+	overflow: hidden;
+	p {
+		color: white;
+		font-weight: 400;
+		text-align: center;
+		padding-top: 50px;
+		padding-bottom: 30px;
+	}
+	.button {
+		@include buttonColor(white, white, $alto);
+	}
+	.parentGrid {
+		@include centerWithWidth(($buttonWidth * 2) + 20px);
+		margin-bottom: 50px;
+		.grid-2 {
+			width: $buttonWidth;
+			.button {
+				width: ($buttonWidth / 2) - 12px;
+			}
+		}
+	}
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
 /*                               GETTING STARTED                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 
+$instructionWidth: 220px;
+
 #gettingStarted {
 	background-color: $gold;
-	padding-top: 200px;
+	.in {
+		padding-top: 100px;
+		width: 940px;
+		@include center;
+	}
+	h1.real {
+		color: white;
+		@include font-smoothing(on);
+		font-weight: 400;
+		font-size: 36pt;
+		padding-bottom: 60px;
+		text-align: center;
+	}
+	p.real {
+		color: white;
+
+	}
+	.grid-3 {
+		@include centerWithWidth(700px);
+		.gridMember:nth-child(2) {
+			margin: 0 (700px - $instructionWidth*3)/2;
+		}
+		padding-bottom: 60px;
+	}
 }
 
-#gettingStarted .in {
-	width: 940px;
+.instruction {
+	width: $instructionWidth;
+	text-align: center;
+	overflow: hidden;
+}
+
+.number {
+	border: 2px solid white;
+	border-radius: 100px;
 	@include center;
+	padding: 0;
+	$circleSize: 2.2em;
+	width: $circleSize;
+	height: $circleSize;
+	line-height: $circleSize;
+	color: white;
+	text-align: center;
+	font-size: 36pt;
+	@include font-smoothing(on);
+	margin-bottom: 30px;
 }
 
 .titleBar {
@@ -326,6 +432,7 @@ $buttonWidth: 230px;
 
 #source, #output {
 	width: 450px;
+	@include font-smoothing(on);
 }
 
 #gettingStarted .grid-2 {
@@ -363,8 +470,8 @@ $buttonWidth: 230px;
 		background-color: rgba($neonBlue, 0.2);
 	}
 	.sectionHeading {
-		color: #E586FC;
-		background-color: rgba(#E586FC, 0.2);
+		color: $violet; 
+		background-color: rgba($violet, 0.2);
 	}
 	.comment {
 		color: darken(white, 70%);
@@ -504,6 +611,114 @@ $buttonWidth: 230px;
 				@include backgroundArea(0.3em, 0em);
 			}
 		}
+	}
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                 APP DOWNLOAD                               */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#appDownload {
+	background-color: $neonBlue;
+	overflow: hidden;
+	.button {
+		@include buttonColor(white, white, $neonBlue);
+		@include center;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                   APP IMAGE                                */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#appImage {
+	background-color: gray;
+	img {
+		@include center;
+	}
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                 DOCUMENTATION                              */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#documentation {
+	background-color: $alto;
+	overflow: hidden;
+	p {
+		color: white;
+		font-weight: 400;
+		text-align: center;
+		padding-top: 50px;
+		padding-bottom: 30px;
+	}
+	.button {
+		@include buttonColor(white, white, $alto);
+		@include center;
+		margin-bottom: 50px;
+	}
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                                EDITOR PLUGIN                               */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#editorPlugins {
+	background-color: $violet;
+	overflow: hidden;
+	p {
+		color: white;
+		font-weight: 400;
+		text-align: center;
+		padding-top: 50px;
+		padding-bottom: 30px;
+	}
+	.button {
+		@include buttonColor(white, white, $violet);
+	}
+	.grid-2 {
+		@include centerWithWidth(($buttonWidth * 2) + 24px);
+		margin-bottom: 50px;
+	}
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*                             	     FOOTER                                   */
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#footer {
+	background-color: white;
+	color: $alto;
+	.in{
+		width: 90%;
+		@include centerWithWidth(100%);
+		padding: 70px 0;
+	}
+	a:hover {
+		opacity:0.5;
+	}
+	img {
+		height: 20px;
+		padding: 0 10px;
+	}
+	p {
+		text-align: center;
+	}
+
+	// Desktop
+	p {
+		float: left;
+		line-height: 1em;
+		padding: 0;
+	}
+	.grid {
+		float: right;
+		line-height: 0em;
+	}
+	.in {
+		overflow: hidden;
 	}
 }
 
