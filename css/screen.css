@@ -97,27 +97,29 @@ a {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 80px; }
+  height: 90px; }
   #navBar a img {
     transition: opacity 0.2s; }
   #navBar a img:hover {
     opacity: 0.6; }
   #navBar ul {
     text-align: right;
-    margin: 29.33333px 0;
-    margin-right: 10px; }
+    margin: 34.33333px 0;
+    margin-right: 15px; }
     #navBar ul li {
       display: inline;
       margin: 0 12px;
       font-weight: 400;
       font-size: 12pt; }
+      #navBar ul li:last-of-type {
+        margin-right: 0; }
     #navBar ul a {
       color: #262929; }
       #navBar ul a:hover {
         opacity: 0.3; }
   #navBar img {
     float: left;
-    height: 60px;
+    height: 70px;
     margin: 10px; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -126,14 +128,14 @@ a {
 #header {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 600px;
+  height: 650px;
   overflow: hidden;
   text-align: center;
   background-color: rgba(38, 41, 41, 0.4); }
   #header #parallaxBG {
     background-image: url(../images/stars.svg);
     background-color: #262929;
-    background-size: 1200px;
+    background-size: 1280px;
     height: 100%;
     width: 100%;
     z-index: -9999;
@@ -142,21 +144,21 @@ a {
   #header h1 {
     font-size: 70pt;
     color: white;
-    padding-top: 190px;
+    padding-top: 210px;
     padding-left: 20px;
-    letter-spacing: 0.3em; }
+    letter-spacing: 0.4em; }
     #header h1 b {
       font-weight: 400; }
   #header h4 {
     color: white;
-    margin-top: 5px;
+    margin-top: 0px;
     font-size: 16pt; }
   #header .button {
     color: #d6d198;
     border: 2px solid #d6d198;
     display: block;
     margin: 0 auto;
-    margin-top: 35px; }
+    margin-top: 50px; }
     #header .button:hover {
       color: white;
       background-color: #d6d198; }
