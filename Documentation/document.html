@@ -23,12 +23,6 @@
 			<h1>Contents</h1>
 			<ul>
 				<li><span><span>1 Introduction</span></span><a href="#sec-1"><span>[⚐]</span></a></li>
-				<ul>
-					<li><span><span>1.1 General Approach/Getting Started?</span></span><a href="#sec-1.1"><span>[⚐]</span></a></li>
-				</ul>
-				<ul>
-					<li><span><span>1.2 Syntax</span></span><a href="#sec-1.2"><span>[⚐]</span></a></li>
-				</ul>
 			</ul>
 			<ul>
 				<li><span><span>2 Markup Elements</span></span><a href="#sec-2"><span>[⚐]</span></a></li>
@@ -159,36 +153,24 @@
 		</div>
 		<div class="sec" id="sec-1">
 			<h1>1 Introduction</h1>
-			<div class="sec" id="sec-1.1">
-				<h2>1.1 General Approach/Getting Started?</h2>
-				<p>Info graphic, file types, App, directories, CSS, JS, resources are online, App don't touch the resources in derived data after the first compilation</p>
-				<p>The App is basically a compiler with an UI...<br>It is no necessary to use TextMate...<br>Output directory</p>
-				<img src="images/info.svg">
-			</div>
-			<div class="sec" id="sec-1.2">
-				<h2>1.2 Syntax</h2>
-				<p>Little Example Document</p>
-			</div>
+			<img src="images/info.svg">
 		</div>
 		<div class="sec" id="sec-2">
 			<h1>2 Markup Elements</h1>
 			<div class="sec" id="sec-2.1">
 				<h2>2.1 Paragraphs, Line Breaks and White Space</h2>
+				<p>Paragraphs and line breaks work exactly like you would except. To create new paragraphs use 2 LFs (press 2 times Enter). To create line breaks use 1 LF.</p>
 				<pre><code class="markdown">This is a paragraph.↵
 ↵ 
 This is a second paragraph.↵
 This is a new line.</code></pre>
+				<p>Useless whitespace gets removed from the compiler.</p>
 				<pre><code class="markdown">↵ 
 ↵ 
 ↵ 
 ↵ 
-The BlockML parser removes useless white space like the LFs above.↵
+The BlockML compiler removes useless white space like the LFs above.↵
 ••••Or this TAB in front of this sentence.</code></pre>
-				<pre><code class="markdown">img[image.png]↵
-↵
-↵
-↵
-code[java][System.out.print("Java™!!1!");]</code></pre>
 			</div>
 			<div class="sec" id="sec-2.2">
 				<h2>2.2 Title</h2>
@@ -199,78 +181,65 @@ code[java][System.out.print("Java™!!1!");]</code></pre>
 			</div>
 			<div class="sec" id="sec-2.3">
 				<h2>2.3 Sections</h2>
-				<p>Sections consist of an section heading and section content. These content can be text and every BlockML markup element, regardless that not every element makes sense in that context, for example <span class="code">Title</span> and <span class="code">TOC</span> elements.</p>
+				<p>Sections consist of a section heading and section content. </p>
+				<pre><code class="vala">sec[Heading][Content]</code></pre>
+				<p>These content can be text and every BlockML markup element, regardless that not every element makes sense in that context, for example <span class="code">title</span> and <span class="code">toc</span> elements.</p>
 				<p>Nest the sections to get a section hierarchy.</p>
-				<pre><code class="vala">sec[Section Heading][This section contains text.]/*Section*/
+				<pre><code class="vala">sec[Section Heading][
 
-sec[Section Heading][
+sec[SubSection Heading][Content]/* SubSection */
 
-	sec[SubSection Heading][]/*SubSection*/
+sec[SubSection Heading][
 
-	sec[SubSection Heading][
+sec[SubSubSection Heading][Some other content]/* SubSubSection */
 
-		sec[SubSubSection Heading][
-		This section contains text too.
-		]/*SubSubSection*/
+]/*SubSection*/
 
-	]/*SubSection*/
+]/* Section */
 
-]/*Section*/
-
-sec[Section Heading][
-This section contains two paragraphs. This is the first one.
-
-And this is the second one with a link inside a[http://awwapps.com].
-]/*Section*/</code></pre>
+sec[Section Heading][Content too]/*Section*/</code></pre>
 <div class="sec" id="sec-1">
 	<h1>1 Section Heading</h1>
-	<p>This section contains text.</p>
-</div>
-<div class="sec" id="sec-2">
-	<h1>2 Section Heading</h1>
-	<div class="sec" id="sec-2.1">
-		<h2>2.1 SubSection Heading</h2>
+	<div class="sec" id="sec-1.1">
+		<h2>1.1 SubSection Heading</h2>
+		<p>Content</p>
 	</div>
-	<div class="sec" id="sec-2.2">
-		<h2>2.2 SubSection Heading</h2>
-		<div class="sec" id="sec-2.2.1">
-			<h3>2.2.1 SubSubSection Heading</h3>
-			<p>This section contains text too.</p>
+	<div class="sec" id="sec-1.2">
+		<h2>1.2 SubSection Heading</h2>
+		<div class="sec" id="sec-1.2.1">
+			<h3>1.2.1 SubSubSection Heading</h3>
+			<p>Some other content</p>
 		</div>
 	</div>
 </div>
-<div class="sec" id="sec-3">
-	<h1>3 Section Heading</h1>
-	<p>This section contains two paragraphs. This is the first one.</p>
-	<p>And this is the second one with a link inside <a href="http://awwapps.com">http://awwapps.com</a>.</p>
+<div class="sec" id="sec-2">
+	<h1>2 Section Heading</h1>
+	<p>Content too</p>
 </div>
 			</div>
 			<div class="sec" id="sec-2.4">
 				<h2>2.4 Table of Contents</h2>
-				<p>To get a Table of Contents use the TOC element. The Table of Contents gets assembled from the section headings.</p>
+				<p>To get a Table of Contents use the <span class="code">toc</span> element. The Table of Contents gets assembled from the section headings.</p>
 				<pre><code class="no-highlight">toc[TOC Title]</code></pre>
 				<p>The Table of Contents for the section example above looks like this:</p>
-<div id="toc" style="padding-top: 0; padding-bottom: 1.6em">
-	<h1 style="padding-top: 0">TOC Title</h1>
-	<ul>
-		<li><span><span>1 Section Heading</span></span><a href="#sec-1"><span>[⚐]</span></a></li>
-	</ul>
-	<ul>
-		<li><span><span>2 Section Heading</span></span><a href="#sec-2"><span>[⚐]</span></a></li>
-		<ul>
-			<li><span><span>2.1 SubSection Heading</span></span><a href="#sec-2.1"><span>[⚐]</span></a></li>
-		</ul>
-		<ul>
-			<li><span><span>2.2 SubSection Heading</span></span><a href="#sec-2.2"><span>[⚐]</span></a></li>
+<div id="toc">
+			<h1>TOC Title</h1>
 			<ul>
-				<li><span><span>2.2.1 SubSubSection Heading</span></span><a href="#sec-2.2.1"><span>[⚐]</span></a></li>
+				<li><span><span>1 Section Heading</span></span><a href="#sec-1"><span>[⚐]</span></a></li>
+				<ul>
+					<li><span><span>1.1 SubSection Heading</span></span><a href="#sec-1.1"><span>[⚐]</span></a></li>
+				</ul>
+				<ul>
+					<li><span><span>1.2 SubSection Heading</span></span><a href="#sec-1.2"><span>[⚐]</span></a></li>
+					<ul>
+						<li><span><span>1.2.1 SubSubSection Heading</span></span><a href="#sec-1.2.1"><span>[⚐]</span></a></li>
+					</ul>
+				</ul>
 			</ul>
-		</ul>
-	</ul>
-	<ul>
-		<li><span><span>3 Section Heading</span></span><a href="#sec-3"><span>[⚐]</span></a></li>
-	</ul>
-</div>
+			<ul>
+				<li><span><span>2 Section Heading</span></span><a href="#sec-2"><span>[⚐]</span></a></li>
+			</ul>
+		</div>
 			</div>
 			<div class="sec" id="sec-2.5">
 				<h2>2.5 Links</h2>
@@ -281,14 +250,14 @@ a[http://awwapps.com][Description Text]</code></pre>
 			</div>
 			<div class="sec" id="sec-2.6">
 				<h2>2.6 Images</h2>
-				<p>To embed a local image into the document, copy that image into the auto generated <span class="code">images</span>-Folder, which is part of the <span class="code">Output</span>-Folder. Then embed the image name without any path references.</p>
+				<p>To embed a local image into the document, copy that image into the auto generated <span class="code">images</span>-Folder, which is part of the <span class="code">output</span>-Folder. Then embed the image name without any path references.</p>
 				<img src="images/embedImage.png">
 				<pre><code class="no-highlight">img[localImage.png]</code></pre>
 				<img src="images/dribbble.png">
-				<p>You can also embed images from the interweb, when you use their URL.</p>
-				<pre><code class="no-highlight">img[http://interwebImage.jpg]</code></pre>
+				<p>You can also embed images from the internet, when you use their URL.</p>
+				<pre><code class="no-highlight">img[http://internetImage.jpg]</code></pre>
 				<p>If an image doesn't fit into the document, resize its width or its height or both with a second block: <span class="code">[w, h]</span></p>
-				<p><span class="marked">Don't forget the comma...</span></p>
+				<p><span class="marked">Don't forget the comma!</span></p>
 				<pre><code class="vala">/*adjust width and height*/
 img[localImage.png][400, 300]
 
@@ -317,7 +286,7 @@ h6[Heading 6]</code></pre>
 			</div>
 			<div class="sec" id="sec-2.8">
 				<h2>2.8 Code Listings</h2>
-				<p>For code listings you have to use the following syntax:</p>
+				<p>Code listings uses the following syntax:</p>
 				<pre><code class="no-highlight">code[Language][Code]</code></pre>
 				<p>BlockML makes use of <a>Highlight.js</a> to provide </p>
 				<p>Languages, CSS, no-highlight<br><span class="marked">Don't forget to escape the square brackets!</span> For more information read <a href="#sec-3">3 Escape of Special Characters</a>.</p>
