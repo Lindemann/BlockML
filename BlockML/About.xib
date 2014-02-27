@@ -17,23 +17,23 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1" customClass="CustomWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
-            <rect key="contentRect" x="101" y="437" width="430" height="260"/>
+            <rect key="contentRect" x="101" y="437" width="215" height="260"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="430" height="260"/>
+                <rect key="frame" x="0.0" y="0.0" width="215" height="260"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NTz-r9-RUM">
-                        <rect key="frame" x="0.0" y="13" width="430" height="247"/>
+                        <rect key="frame" x="0.0" y="13" width="215" height="247"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T9I-an-WFp" customClass="BugFixImageView">
-                                <rect key="frame" x="139" y="166" width="153" height="60"/>
+                                <rect key="frame" x="75" y="163" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="AwwApps" id="L6A-SW-m9W"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="AboutIcon" id="L6A-SW-m9W"/>
                             </imageView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ux-ff-fX2">
-                                <rect key="frame" x="179" y="52" width="73" height="25"/>
+                                <rect key="frame" x="71" y="52" width="73" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="roundTextured" title="Credits" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="huk-RK-iAF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LSw-Z8-7h3">
-                                <rect key="frame" x="18" y="96" width="394" height="17"/>
+                                <rect key="frame" x="-90" y="96" width="394" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="&lt;Version>" id="8oy-wL-9Af">
                                     <font key="font" metaFont="system"/>
@@ -53,7 +53,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-jv-520">
-                                <rect key="frame" x="129" y="128" width="173" height="17"/>
+                                <rect key="frame" x="21" y="128" width="173" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="© Aww Apps 2014" id="6BB-cy-JcK">
                                     <font key="font" metaFont="system"/>
@@ -68,6 +68,6 @@
         </window>
     </objects>
     <resources>
-        <image name="AwwApps" width="153" height="60"/>
+        <image name="AboutIcon" width="64" height="64"/>
     </resources>
 </document>
