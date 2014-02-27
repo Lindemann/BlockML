@@ -27,7 +27,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
 - (id)init {
     self = [super init];
     if (self) {
-        self.title = @"BlockML";
+        self.title = @"D O C U M E N T";
     }
     return self;
 }

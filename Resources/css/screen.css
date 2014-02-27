@@ -38,7 +38,9 @@ body {
 /*                                    FONT                                    */
 /*////////////////////////////////////////////////////////////////////////////*/
 html {
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
