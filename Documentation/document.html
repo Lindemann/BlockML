@@ -15,9 +15,13 @@
 		<link media="print" href="css/print.css" type="text/css" rel="stylesheet">
 		<script src="highlight/highlight.pack.js"></script>
 		<script>hljs.tabReplace = '    ';hljs.initHighlightingOnLoad();</script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'],['\\(','\\)']], processClass: 'math', ignoreClass: 'no-math'}});
+		</script>
 		<title>BlockML Documentation</title>
 	</head>
-	<body>
+	<body class="no-math">
 		<h1 id="title">BlockML Documentation</h1>
 		<div id="toc">
 			<h1>Contents</h1>
@@ -189,6 +193,19 @@ The BlockML compiler removes useless white space like the LFs above.↵
 
 sec[SubSection Heading][Content]/* SubSection */
 
+]/* Section */</code></pre>
+<div class="sec" id="sec-1">
+	<h1>1 Section Heading</h1>
+	<div class="sec" id="sec-1.1">
+		<h2>1.1 SubSection Heading</h2>
+		<p>Content</p>
+	</div>
+</div>
+				<p>A complex example:</p>
+				<pre><code class="vala">sec[Section Heading][
+
+sec[SubSection Heading][Content]/* SubSection */
+
 sec[SubSection Heading][
 
 sec[SubSubSection Heading][Some other content]/* SubSubSection */
@@ -288,8 +305,10 @@ h6[Heading 6]</code></pre>
 				<h2>2.8 Code Listings</h2>
 				<p>Code listings uses the following syntax:</p>
 				<pre><code class="no-highlight">code[Language][Code]</code></pre>
-				<p>BlockML makes use of <a>Highlight.js</a> to provide </p>
-				<p>Languages, CSS, no-highlight<br><span class="marked">Don't forget to escape the square brackets!</span> For more information read <a href="#sec-3">3 Escape of Special Characters</a>.</p>
+				<p>BlockML makes use of <a href="http://highlightjs.org">Highlight.js</a> to provide syntax highlighting. In order to get proper highlighting you have to specify the programming language. You find a list of all available languages under: <a href="http://highlightjs.org/static/test.html">http://highlightjs.org/static/test.html</a>. Use <span class="code">no-highlight</span> if you don't want syntax highlighting.</p>
+				<pre><code class="no-highlight">code[java][System.out.println("Hello World!");]</code></pre>
+				<pre><code class="java">System.out.println("Hello World!");</code></pre>
+				<p><span class="marked">You have to escape all square brackets in your code.</span> For more information read <a href="#sec-3">3 Escape of Special Characters</a>.</p>
 				<pre><code class="no-highlight">code[objectivec][self.scanner = \[Scanner scannerWithString:string\];
 self.document = \[HTMLDocument new\];]</code></pre>
 				<pre><code class="objectivec">self.scanner = [Scanner scannerWithString:string];
@@ -297,10 +316,25 @@ self.document = [HTMLDocument new];</code></pre>
 			</div>
 			<div class="sec" id="sec-2.9">
 				<h2>2.9 Math Formulas</h2>
-				<p><span class="marked">Don't forget to escape the square brackets!</span></p>
+				<p>Since BlockML uses <a href="http://www.mathjax.org">MathJax</a> for mathematics rendering you can use TeX/LaTeX or MathML syntax. </p>
+				<p>Use <span class="code">math[Formula]</span> for larger equations that stay separated by themselves. The delimiters for TeX/LaTeX formulas are <span class="code">$$...$$</span> or <span class="code">\[...\]</span>.</p>
+				<pre><code class="no-highlight">math[$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$]</code></pre>
+				<div class="math">$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$</div>
+				<p>Or use <span class="code">im[Formula]</span> for inline mathematics. The TeX/LaTeX inline delimiters are <span class="code">$...$</span> and <span class="code">\(...\)</span>.</p>
+				<pre><code class="no-highlight">Some text with inline mathematics: im[$a \ne 0$].</code></pre>
+				<p>Some text with inline mathematics: <span class="math">$a \ne 0$</span>.</p>
+				<p><span class="marked">You have to escape all square brackets in your code.</span> For more information read <a href="#sec-3">3 Escape of Special Characters</a>.</p>
 			</div>
 			<div class="sec" id="sec-2.10">
 				<h2>2.10 Tables</h2>
+				<p>The BlockML tables are very similar to <a href="http://www.w3schools.com/html/html_tables.asp">HTML tables</a>.</p>
+				<p>There are the 4 markup elements to crate a table:</p>
+				<ul>
+					<li><span class="code">table[]</span>: creates a table</li>
+					<li><span class="code">tr[]</span>: creates a table row</li>
+					<li><span class="code">th[]</span>: creates a table header cell</li>
+					<li><span class="code">td[]</span>: creates a table data cell</li>
+				</ul>
 				<pre><code class="no-highlight">table[
 tr[ th[Header 1] th[Header 2] ]
 tr[   td[Data 1]   td[Data 2] ]
@@ -573,7 +607,7 @@ Some text with a comment /* a[http://awwapps.com] */ inside.</code></pre>
 			<pre><code class="objectivec">[self.window orderFront:self];</code></pre>
 			<p>To escape the square brackets just set a backslash <span class="code">\</span> in front of them.</p>
 			<pre><code class="objectivec">\[self.window orderFront:self\];</code></pre>
-			<p>if you need an expression like this <span class="code"></span> for your fancy LaTeX math formula stuff, it gets a little bit trickier. Like it is usual in programming the occurrence of a trailing backslash <span class="code">\\</span> means, that the first backslash <span class="code">\</span> gets escaped, because the first backslash loses their meaning as escape symbol and gets a normal character. </p>
+			<p>if you need an expression like this <span class="code"></span> for your fancy LaTeX math formula stuff, it gets a little bit messie. Like it is usual in programming the occurrence of a trailing backslash <span class="code">\\</span> means, that the first backslash <span class="code">\</span> gets escaped, because the first backslash loses their meaning as escape symbol and gets a normal character. </p>
 			<p>That means you have to use 6786 backslashes <span class="code"></span> to print <span class="code"></span> with 2 backslashes.</p>
 			<p>But luckily the BlockML App helps you to manage all the backslashes...</p>
 			<img src="images/escape.png">

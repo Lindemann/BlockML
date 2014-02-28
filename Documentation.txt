@@ -61,6 +61,22 @@ code[vala][sec\[Section Heading\]\[
 
 sec\[SubSection Heading\]\[Content\]/* SubSection */
 
+\]/* Section */]
+
+html[<div class="sec" id="sec-1">
+	<h1>1 Section Heading</h1>
+	<div class="sec" id="sec-1.1">
+		<h2>1.1 SubSection Heading</h2>
+		<p>Content</p>
+	</div>
+</div>]
+
+A complex example:
+
+code[vala][sec\[Section Heading\]\[
+
+sec\[SubSection Heading\]\[Content\]/* SubSection */
+
 sec\[SubSection Heading\]\[
 
 sec\[SubSubSection Heading\]\[Some other content\]/* SubSubSection */
@@ -186,11 +202,12 @@ Code listings uses the following syntax:
 
 code[no-highlight][code\[Language\]\[Code\]]
 
-BlockML makes use of a[][Highlight.js] to provide 
+BlockML makes use of a[http://highlightjs.org][Highlight.js] to provide syntax highlighting. In order to get proper highlighting you have to specify the programming language. You find a list of all available languages under: a[http://highlightjs.org/static/test.html]. Use c[no-highlight] if you don't want syntax highlighting.
 
+code[no-highlight][code\[java\]\[System.out.println("Hello World!");\]]
+code[java][System.out.println("Hello World!");]
 
-Languages, CSS, no-highlight
-m[Don't forget to escape the square brackets!] For more information read id[ESCAPE].
+m[You have to escape all square brackets in your code.] For more information read id[ESCAPE].
 
 code[no-highlight][code\[objectivec\]\[self.scanner = \\\[Scanner scannerWithString:string\\\];
 self.document = \\\[HTMLDocument new\\\];\]]
@@ -201,10 +218,36 @@ self.document = \[HTMLDocument new\];]
 ]/*Code with Syntax Highlighting*/
 
 sec[Math Formulas][
-m[Don't forget to escape the square brackets!]
+
+Since BlockML uses a[http://www.mathjax.org][MathJax] for mathematics rendering you can use TeX/LaTeX or MathML syntax. 
+
+Use c[math\[Formula\]] for larger equations that stay separated by themselves. The delimiters for TeX/LaTeX formulas are c[$$...$$] or c[\\\[...\\\]].
+
+code[no-highlight][math\[$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$$\]]
+
+math[$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$]
+
+Or use c[im\[Formula\]] for inline mathematics. The TeX/LaTeX inline delimiters are c[$...$] and c[\(...\)].
+
+code[no-highlight][Some text with inline mathematics: im\[$a \ne 0$\].]
+
+Some text with inline mathematics: im[$a \ne 0$].
+
+m[You have to escape all square brackets in your code.] For more information read id[ESCAPE].
+
 ]/*Math Formulas*/
 
 sec[Tables][
+
+The BlockML tables are very similar to a[http://www.w3schools.com/html/html_tables.asp][HTML tables].
+
+There are the 4 markup elements to crate a table:
+ul[
+- c[table\[\]]: creates a table
+- c[tr\[\]]: creates a table row
+- c[th\[\]]: creates a table header cell
+- c[td\[\]]: creates a table data cell
+]
 
 code[no-highlight][table\[
 tr\[ th\[Header 1\] th\[Header 2\] \]
@@ -456,7 +499,7 @@ code[objectivec][\[self.window orderFront:self\];]
 To escape the square brackets just set a backslash c[\\] in front of them.
 code[objectivec][\\\[self.window orderFront:self\\\];]
 
-if you need an expression like this c[] for your fancy LaTeX math formula stuff, it gets a little bit trickier. Like it is usual in programming the occurrence of a trailing backslash c[\\\\] means, that the first backslash c[\\] gets escaped, because the first backslash loses their meaning as escape symbol and gets a normal character. 
+if you need an expression like this c[] for your fancy LaTeX math formula stuff, it gets a little bit messie. Like it is usual in programming the occurrence of a trailing backslash c[\\\\] means, that the first backslash c[\\] gets escaped, because the first backslash loses their meaning as escape symbol and gets a normal character. 
 
 That means you have to use 6786 backslashes c[] to print c[] with 2 backslashes.
 
