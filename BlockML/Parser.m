@@ -123,7 +123,7 @@
     [self math:parent];
     
     [self table:parent];
-    // Not realy Block Tags but keep parsing
+    // Not really Block Tags but keep parsing
     [self tableData:parent];
     [self tableHeader:parent];
     [self tableRow:parent];
@@ -281,14 +281,15 @@
 - (void)inlineMath:(HTMLElement*)parent {
     // math[
     if (self.token.type == IM_SB) {
+        InlineMath *inlineMath = [InlineMath new];
+        [parent addElement:inlineMath];
         [self nextToken];
         // STRING
         if (self.token.type == STRING) {
-            self.document.mathJax = YES;
+            self.document.mathJax = YES;;
             Text *text = [Text new];
             text.string = self.token.value;
-            [parent addElement:text];
-            self.document.inlineMath = YES;
+            [inlineMath addElement:text];
             [self nextToken];
         }
         // ]

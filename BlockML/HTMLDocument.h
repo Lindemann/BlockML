@@ -16,7 +16,6 @@
 @property (nonatomic, strong) NSString *title;
 
 @property (nonatomic) BOOL mathJax;
-@property (nonatomic) BOOL inlineMath;
 @property (nonatomic) BOOL highlight;
 
 @property (nonatomic, strong) TableOfContent *tableOfContent;

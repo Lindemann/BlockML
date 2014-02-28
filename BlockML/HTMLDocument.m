@@ -105,7 +105,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
         [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
     }
     
-    if (self.mathJax || self.inlineMath) {
+    if (self.mathJax) {
         //CDN
         [result appendString:[HTMLStringBuilder
                               openTag:@"script"
@@ -123,10 +123,9 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                               lineBreak:NO]];
         */
         [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:0 lineBreak:YES]];
-    }
-    if (self.inlineMath) {
+        
         [result appendString:[HTMLStringBuilder openTag:@"script" attributes:@{@"type": @"text/x-mathjax-config"} indentation:2 lineBreak:YES]];
-        [result appendString:[HTMLStringBuilder text:@"MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']]}});" indentation:3 lineBreak:YES]];
+        [result appendString:[HTMLStringBuilder text:@"MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'],['\\\\(','\\\\)']], processClass: 'math', ignoreClass: 'no-math'}});" indentation:3 lineBreak:YES]];
         [result appendString:[HTMLStringBuilder closingTag:@"script" indentation:2 lineBreak:YES]];
     }
     
@@ -135,8 +134,12 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
     [result appendString:[HTMLStringBuilder closingTag:@"title" indentation:0 lineBreak:YES]];
     
     [result appendString:[HTMLStringBuilder closingTag:@"head" indentation:1 lineBreak:YES]];
-    [result appendString:[HTMLStringBuilder openTag:@"body" attributes:nil indentation:1 lineBreak:YES]];
-
+    
+    NSDictionary *bodyAttributes = nil;
+    if (self.mathJax) {
+        bodyAttributes = @{CLASS: @"no-math"};
+    }
+    [result appendString:[HTMLStringBuilder openTag:@"body" attributes:bodyAttributes indentation:1 lineBreak:YES]];
     return result;
 }
 
