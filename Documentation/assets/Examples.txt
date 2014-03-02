@@ -1,4 +1,1 @@
-table[
-tr[ td[Data 1]   td[Data 2] ]
-tr[ td[Data 3]   td[Data 4] ]
-]
+Some text with a footnote fn[Content].

@@ -248,7 +248,16 @@ ul[
 - c[td\[\]]: creates a table data cell
 ]
 
-Two simple examples:
+To assemble a table create at first a c[table]-element:
+code[no-highlight][table\[
+\]]
+Then add the rows:
+code[no-highlight][table\[
+tr\[\]
+tr\[\]
+\]]
+
+Finally add c[th]-cells and c[td]-cells:
 
 code[no-highlight][table\[
 tr\[ th\[Header 1\] th\[Header 2\] \]
@@ -259,6 +268,8 @@ table[
 tr[ th[Header 1] th[Header 2] ]
 tr[   td[Data 1]   td[Data 2] ]
 ]
+
+An other simple example:
 
 code[no-highlight][table\[
 tr\[ th\[Header 1\] td\[Data 1\] \]
@@ -312,7 +323,36 @@ tr[			  td[Data 1][h:2] ]
 
 sec[Captions][
 
+To create a caption use:
+code[no-highlight][cap\[Type\]\[Description\]]
 
+The first block specifies the type of the caption like: Listing, Fig., Figure, Table, Abbildung...The second block contains the description text to your image, code listing, table or equation.
+
+Captions of the same type get numbered consecutively. Captions of another type have their own consecutive numbering.
+
+code[no-highlight][img\[image01.png\]\[300,\]
+cap\[Fig.\]\[An image\]
+
+code\[python\]\[print("Hello, world!")\]
+cap\[Listing\]\[A code listing\]
+
+img\[image02.png\]\[300,\]
+cap\[Fig.\]\[Another image\]
+
+code\[lisp\]\[(display "Hello, world!")\]
+cap\[Listing\]\[Another code listing\]]
+
+img[image01.png][300,]
+cap[Fig.][An image]
+
+code[python][print("Hello, world!")]
+cap[Listing][A code listing]
+
+img[image02.png][300,]
+cap[Fig.][Another image]
+
+code[lisp][(display "Hello, world!")]
+cap[Listing][Another code listing]
 
 
 ]/*Captions*/
@@ -342,6 +382,12 @@ item
 -item
  - item
 \]]
+
+ul[
+- item
+- item
+- item
+]
 
 ]/*Unordered Lists*/
 
@@ -386,7 +432,17 @@ ol[
 
 ]/*Lists*/
 
-sec[Footnotes][]/*Footnotes*/
+sec[Footnotes][
+
+For footnotes use c[fn\[Content\]]. All footnotes get added to the end of the document.
+
+code[no-highlight][Some text with a footnote fn\[Content\].]
+
+html[<p>Some text with a footnote <a id="fn-back-1" href="#fn-1"><sup>\[1\]</sup></a>.</p>
+<div id="fn-1" class="en"><a href="#fn-back-1">\[1\]↵</a> Content</div>]
+
+
+]/*Footnotes*/
 
 sec[Cross References][
 

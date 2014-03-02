@@ -334,7 +334,15 @@ self.document = [HTMLDocument new];</code></pre>
 					<li><span class="code">th[]</span>: creates a table header cell</li>
 					<li><span class="code">td[]</span>: creates a table data cell</li>
 				</ul>
-				<p>Two simple examples:</p>
+				<p>To assemble a table create at first a <span class="code">table</span>-element:</p>
+				<pre><code class="no-highlight">table[
+]</code></pre>
+				<p>Then add the rows:</p>
+				<pre><code class="no-highlight">table[
+tr[]
+tr[]
+]</code></pre>
+				<p>Finally add <span class="code">th</span>-cells and <span class="code">td</span>-cells:</p>
 				<pre><code class="no-highlight">table[
 tr[ th[Header 1] th[Header 2] ]
 tr[   td[Data 1]   td[Data 2] ]
@@ -357,6 +365,7 @@ tr[   td[Data 1]   td[Data 2] ]
 						</td>
 					</tr>
 				</table>
+				<p>An other simple example:</p>
 				<pre><code class="no-highlight">table[
 tr[ th[Header 1] td[Data 1] ]
 tr[ th[Header 2] td[Data 2] ]
@@ -443,13 +452,36 @@ tr[           td[Data 1][h:2] ]
 			</div>
 			<div class="sec" id="sec-2.11">
 				<h2>2.11 Captions</h2>
+				<p>To create a caption use:</p>
+				<pre><code class="no-highlight">cap[Type][Description]</code></pre>
+				<p>The first block specifies the type of the caption like: Listing, Fig., Figure, Table, Abbildung...The second block contains the description text to your image, code listing, table or equation.</p>
+				<p>Captions of the same type get numbered consecutively. Captions of another type have their own consecutive numbering.</p>
+				<pre><code class="no-highlight">img[image01.png][300,]
+cap[Fig.][An image]
+
+code[python][print("Hello, world!")]
+cap[Listing][A code listing]
+
+img[image02.png][300,]
+cap[Fig.][Another image]
+
+code[lisp][(display "Hello, world!")]
+cap[Listing][Another code listing]</code></pre>
+				<img src="images/image01.png" width="300">
+				<div class="cap"><span>Fig. 2.1: </span>An image</div>
+				<pre><code class="python">print("Hello, world!")</code></pre>
+				<div class="cap"><span>Listing 2.1: </span>A code listing</div>
+				<img src="images/image02.png" width="300">
+				<div class="cap"><span>Fig. 2.2: </span>Another image</div>
+				<pre><code class="lisp">(display "Hello, world!")</code></pre>
+				<div class="cap"><span>Listing 2.2: </span>Another code listing</div>
 			</div>
 			<div class="sec" id="sec-2.12">
 				<h2>2.12 Lists</h2>
 				<div class="sec" id="sec-2.12.1">
 					<h3>2.12.1 Unordered Lists</h3>
 					<p>To create unordered lists use the <span class="code">ul[]</span>-element and add your list items to it. You can use dashes <span class="code">-</span> in front of items to emphasize the list structure, but you don't have to. The whitespace between dash and item is irrelevant.</p>
-					<p>You can nest your lists with other unordered or ordered lists. See an example in <a href="#id-NLISTS">Listing 2.1</a>.</p>
+					<p>You can nest your lists with other unordered or ordered lists. See an example in <a href="#id-NLISTS">Listing 2.3</a>.</p>
 					<pre><code class="no-highlight">ul[
 - item
 - item
@@ -465,6 +497,11 @@ item
 -item
  - item
 ]</code></pre>
+					<ul>
+						<li>item</li>
+						<li>item</li>
+						<li>item</li>
+					</ul>
 				</div>
 				<div class="sec" id="sec-2.12.2">
 					<h3>2.12.2 Ordered Lists</h3>
@@ -488,7 +525,7 @@ item
 	- item
 	]
 ]</code></pre>
-					<div class="cap" id="id-NLISTS"><span>Listing 2.1: </span>Nested lists</div>
+					<div class="cap" id="id-NLISTS"><span>Listing 2.3: </span>Nested lists</div>
 					<ol>
 						<li>item</li>
 						<li>item</li>
@@ -502,6 +539,10 @@ item
 			</div>
 			<div class="sec" id="sec-2.13">
 				<h2>2.13 Footnotes</h2>
+				<p>For footnotes use <span class="code">fn[Content]</span>. All footnotes get added to the end of the document.</p>
+				<pre><code class="no-highlight">Some text with a footnote fn[Content].</code></pre>
+<p>Some text with a footnote <a id="fn-back-1" href="#fn-1"><sup>[1]</sup></a>.</p>
+<div id="fn-1" class="en"><a href="#fn-back-1">[1]↵</a> Content</div>
 			</div>
 			<div class="sec" id="sec-2.14">
 				<h2>2.14 Cross References</h2>
