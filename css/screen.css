@@ -472,13 +472,16 @@ a {
 /*////////////////////////////////////////////////////////////////////////////*/
 #appImage {
   background-color: #45FD83;
-  background-image: url(../images/galaxy.jpg);
+  background-image: url(../images/galaxy.svg);
   background-position: center; }
   #appImage img {
     display: block;
     margin: 0 auto;
     padding-top: 60px;
     padding-bottom: 30px; }
+  @media screen and (min-width: 3000px) {
+    #appImage {
+      background-size: 100%; } }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                 DOCUMENTATION                              */

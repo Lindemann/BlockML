@@ -320,21 +320,21 @@ self.document = [HTMLDocument new];</code></pre>
 				<p>Use <span class="code">math[Formula]</span> for larger equations that stay separated by themselves. The delimiters for TeX/LaTeX formulas are <span class="code">$$...$$</span> or <span class="code">\[...\]</span>.</p>
 				<pre><code class="no-highlight">math[$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$]</code></pre>
 				<div class="math">$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$</div>
-				<p>Or use <span class="code">im[Formula]</span> for inline mathematics. The TeX/LaTeX inline delimiters are <span class="code">$...$</span> and <span class="code">\(...\)</span>.</p>
-				<pre><code class="no-highlight">Some text with inline mathematics: im[$a \ne 0$].</code></pre>
-				<p>Some text with inline mathematics: <span class="math">$a \ne 0$</span>.</p>
+				<p>Or use <span class="code">im[Formula]</span> for inline mathematics. The TeX/LaTeX inline delimiters are <span class="code">$...$</span> or <span class="code">\(...\)</span>.</p>
+				<pre><code class="no-highlight">Some inline mathematics: im[$a \ne 0$].</code></pre>
+				<p>Some inline mathematics: <span class="math">$a \ne 0$</span>.</p>
 				<p><span class="marked">You have to escape all square brackets in your code.</span> For more information read <a href="#sec-3">3 Escape of Special Characters</a>.</p>
 			</div>
 			<div class="sec" id="sec-2.10">
 				<h2>2.10 Tables</h2>
-				<p>The BlockML tables are very similar to <a href="http://www.w3schools.com/html/html_tables.asp">HTML tables</a>.</p>
-				<p>There are the 4 markup elements to crate a table:</p>
+				<p>The BlockML tables are very similar to <a href="http://www.w3schools.com/html/html_tables.asp">HTML tables</a>. There are the 4 markup elements to build a table:</p>
 				<ul>
 					<li><span class="code">table[]</span>: creates a table</li>
 					<li><span class="code">tr[]</span>: creates a table row</li>
 					<li><span class="code">th[]</span>: creates a table header cell</li>
 					<li><span class="code">td[]</span>: creates a table data cell</li>
 				</ul>
+				<p>Two simple examples:</p>
 				<pre><code class="no-highlight">table[
 tr[ th[Header 1] th[Header 2] ]
 tr[   td[Data 1]   td[Data 2] ]
@@ -379,6 +379,8 @@ tr[ th[Header 2] td[Data 2] ]
 						</td>
 					</tr>
 				</table>
+				<p>Add a second block, to specify the number of rows or columns a <span class="code">td</span>-cell or a <span class="code">th</span>-cell should span. <span class="code">[h:number]</span> creates a horizontal span and <span class="code">[v:number]</span> creates a vertical span.</p>
+				<p>In this example <span class="code">th[Header][h:2]</span> creates a horizontal span over 2 columns.</p>
 				<pre><code class="no-highlight">table[
 tr[ 	  th[Header][h:2] ]
 tr[ td[Data 1] td[Data 2] ]
@@ -398,6 +400,7 @@ tr[ td[Data 1] td[Data 2] ]
 						</td>
 					</tr>
 				</table>
+				<p>In this example <span class="code">th[Header][v:2]</span> creates a vertical span over 2 rows.</p>
 				<pre><code class="no-highlight">table[
 tr[ th[Header][v:2] td[Data 2] ]
 tr[                 td[Data 1] ]
@@ -417,6 +420,7 @@ tr[                 td[Data 1] ]
 						</td>
 					</tr>
 				</table>
+				<p>And in this example <span class="code">td[Data 1][h:2]</span> creates a horizontal span over 2 columns.</p>
 				<pre><code class="no-highlight">table[
 tr[ th[Header 1] th[Header 2] ]
 tr[           td[Data 1][h:2] ]

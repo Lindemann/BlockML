@@ -227,11 +227,11 @@ code[no-highlight][math\[$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$$\]]
 
 math[$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$]
 
-Or use c[im\[Formula\]] for inline mathematics. The TeX/LaTeX inline delimiters are c[$...$] and c[\(...\)].
+Or use c[im\[Formula\]] for inline mathematics. The TeX/LaTeX inline delimiters are c[$...$] or c[\(...\)].
 
-code[no-highlight][Some text with inline mathematics: im\[$a \ne 0$\].]
+code[no-highlight][Some inline mathematics: im\[$a \ne 0$\].]
 
-Some text with inline mathematics: im[$a \ne 0$].
+Some inline mathematics: im[$a \ne 0$].
 
 m[You have to escape all square brackets in your code.] For more information read id[ESCAPE].
 
@@ -239,15 +239,16 @@ m[You have to escape all square brackets in your code.] For more information rea
 
 sec[Tables][
 
-The BlockML tables are very similar to a[http://www.w3schools.com/html/html_tables.asp][HTML tables].
+The BlockML tables are very similar to a[http://www.w3schools.com/html/html_tables.asp][HTML tables]. There are the 4 markup elements to build a table:
 
-There are the 4 markup elements to crate a table:
 ul[
 - c[table\[\]]: creates a table
 - c[tr\[\]]: creates a table row
 - c[th\[\]]: creates a table header cell
 - c[td\[\]]: creates a table data cell
 ]
+
+Two simple examples:
 
 code[no-highlight][table\[
 tr\[ th\[Header 1\] th\[Header 2\] \]
@@ -269,6 +270,10 @@ tr[ th[Header 1] td[Data 1] ]
 tr[ th[Header 2] td[Data 2] ]
 ]
 
+Add a second block, to specify the number of rows or columns a c[td]-cell or a c[th]-cell should span. c[\[h:number\]] creates a horizontal span and c[\[v:number\]] creates a vertical span.
+
+In this example c[th\[Header\]\[h:2\]] creates a horizontal span over 2 columns.
+
 code[no-highlight][table\[
 tr\[ 	  th\[Header\]\[h:2\] \]
 tr\[ td\[Data 1\] td\[Data 2\] \]
@@ -279,6 +284,8 @@ tr[ 	  th[Header][h:2] ]
 tr[ td[Data 1] td[Data 2] ]
 ]
 
+In this example c[th\[Header\]\[v:2\]] creates a vertical span over 2 rows.
+
 code[no-highlight][table\[
 tr\[ th\[Header\]\[v:2\] td\[Data 2\] \]
 tr\[                 td\[Data 1\] \]
@@ -288,6 +295,8 @@ table[
 tr[ th[Header][v:2] td[Data 2] ]
 tr[ 				td[Data 1] ]
 ]
+
+And in this example c[td\[Data 1\]\[h:2\]] creates a horizontal span over 2 columns.
 
 code[no-highlight][table\[
 tr\[ th\[Header 1\] th\[Header 2\] \]
@@ -301,7 +310,12 @@ tr[			  td[Data 1][h:2] ]
 
 ]/*Tables*/
 
-sec[Captions][]/*Captions*/
+sec[Captions][
+
+
+
+
+]/*Captions*/
 
 sec[Lists][
 
