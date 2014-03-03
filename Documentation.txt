@@ -446,7 +446,36 @@ html[<p>Some text with a footnote <a id="fn-back-1" href="#fn-1"><sup>\[1\]</sup
 
 sec[Cross References][
 
-sec[References to Captions][]/*References to Captions*/
+Basically, cross references to captions, sections and bibliography items work almost the same. At first, specify an UID with c[id\[UID\]]. An UID is an unique string, which should only used for one reference.
+
+Now mention the c[id] in your text:
+
+code[no-highlight][Some text with a reference id\[UNIQUE_IDENTIFIER\].]
+
+Read the following sections, to see how to connect that c[id] with your captions, sections or bibliography items. 
+
+sec[References to Captions][
+
+Add a further block to your caption that contains the UID.
+
+code[no-highlight][cap\[Type\]\[Description\]\[UID\]]
+
+Here is an example with an image-caption. The UID is "IMG01".
+
+code[no-highlight][img\[image01.png\]\[300,\]
+cap\[Figure\]\[Image\]\[IMG01\]
+
+Text text text id\[IMG01\] text.]
+
+img[image01.png][300,]
+cap[Figure][Image][IMG01]
+
+Text text text id[IMG01] text.
+
+
+
+
+]/*References to Captions*/
 
 sec[References to Sections][]/*References to Sections*/
 
@@ -457,19 +486,15 @@ sec[References to Bibliography Items][]/*References to Bibliography Items*/
 sec[Bibliography][]/*Bibliography*/
 
 sec[Quotes][
-There are block quotation with or without a source.
+There are block quotations with or without a source.
 
-code[no-highlight][q\[Block quotation with one paragraph and a source.\]\[The Source\]]
+code[no-highlight][q\[Quote\]\[Source\]]
 
-q[Block quotation with one paragraph and a source.][The Source]
+q[Quote][Source]
 
-code[no-highlight][q\[Block quotation with one paragraph.
+code[no-highlight][q\[Quote\]]
 
-And a second paragraph, but without a source.\]]
-
-q[Block quotation with one paragraph.
-
-And a second paragraph, but without a source.]
+q[Quote]
 
 ]/*Quotes*/
 

@@ -546,8 +546,22 @@ item
 			</div>
 			<div class="sec" id="sec-2.14">
 				<h2>2.14 Cross References</h2>
+				<p>Basically, cross references to captions, sections and bibliography items work almost the same. At first, specify an UID with <span class="code">id[UID]</span>. An UID is an unique string, which should only used for one reference.</p>
+				<p>Now mention the <span class="code">id</span> in your text:</p>
+				<pre><code class="no-highlight">Some text with a reference id[UNIQUE_IDENTIFIER].</code></pre>
+				<p>Read the following sections, to see how to connect that <span class="code">id</span> with your captions, sections or bibliography items. </p>
 				<div class="sec" id="sec-2.14.1">
 					<h3>2.14.1 References to Captions</h3>
+					<p>Add a further block to your caption that contains the UID.</p>
+					<pre><code class="no-highlight">cap[Type][Description][UID]</code></pre>
+					<p>Here is an example with an image-caption. The UID is "IMG01".</p>
+					<pre><code class="no-highlight">img[image01.png][300,]
+cap[Figure][Image][IMG01]
+
+Text text text id[IMG01] text.</code></pre>
+					<img src="images/image01.png" width="300">
+					<div class="cap" id="id-IMG01"><span>Figure 2.1: </span>Image</div>
+					<p>Text text text <a href="#id-IMG01">Figure 2.1</a> text.</p>
 				</div>
 				<div class="sec" id="sec-2.14.2">
 					<h3>2.14.2 References to Sections</h3>
@@ -561,18 +575,15 @@ item
 			</div>
 			<div class="sec" id="sec-2.16">
 				<h2>2.16 Quotes</h2>
-				<p>There are block quotation with or without a source.</p>
-				<pre><code class="no-highlight">q[Block quotation with one paragraph and a source.][The Source]</code></pre>
+				<p>There are block quotations with or without a source.</p>
+				<pre><code class="no-highlight">q[Quote][Source]</code></pre>
 				<div class="quote">
-					<p>Block quotation with one paragraph and a source.</p>
-					<div class="source">The Source</div>
+					<p>Quote</p>
+					<div class="source">Source</div>
 				</div>
-				<pre><code class="no-highlight">q[Block quotation with one paragraph.
-
-And a second paragraph, but without a source.]</code></pre>
+				<pre><code class="no-highlight">q[Quote]</code></pre>
 				<div class="quote">
-					<p>Block quotation with one paragraph.</p>
-					<p>And a second paragraph, but without a source.</p>
+					<p>Quote</p>
 				</div>
 			</div>
 			<div class="sec" id="sec-2.17">
