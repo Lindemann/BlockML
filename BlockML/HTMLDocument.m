@@ -188,7 +188,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 [element.parent isKindOfClass:[TableRow class]] ||
                 [element.parent isKindOfClass:[TableHeader class]] ||
                 [element.parent isKindOfClass:[TableData class]] ||
-                [element.parent isKindOfClass:[FrontPage class]]) {
+                [element.parent isKindOfClass:[DocumentHead class]]) {
                 element.closingTagLineBreak = YES;
                 // +1 for body tag
                 element.openTagIndentation = element.parentCount + 1;
@@ -204,7 +204,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 [element isKindOfClass:[TableRow class]] ||
                 [element isKindOfClass:[TableHeader class]] ||
                 [element isKindOfClass:[TableData class]] ||
-                [element isKindOfClass:[FrontPage class]]) {
+                [element isKindOfClass:[DocumentHead class]]) {
                 element.openTagLineBreak = YES;
                 element.closingTagLineBreak = YES;
                 // +1 for body tag

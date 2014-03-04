@@ -8,6 +8,6 @@
 
 #import "HTMLElement.h"
 
-@interface FrontPage : HTMLElement
+@interface DocumentHead : HTMLElement
 
 @end

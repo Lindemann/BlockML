@@ -129,7 +129,7 @@
     [self tableRow:parent];
     
     [self heading:parent];
-    [self frontPage:parent];
+    [self head:parent];
     [self pageBreak:parent];
     [self html:parent];
 }
@@ -391,7 +391,7 @@
 
 - (void)inlineHTML:(HTMLElement*)parent {
     // ihtml[
-    if (self.token.type == IHTML_SB) {
+    if (self.token.type == IH_SB) {
         [self nextToken];
         // STRING
         if (self.token.type == STRING) {
@@ -999,10 +999,10 @@
     }
 }
 
-- (void)frontPage:(HTMLElement*)parent {
+- (void)head:(HTMLElement*)parent {
     // fp[
-    if (self.token.type == FP_SB) {
-        FrontPage *frontPage = [FrontPage new];
+    if (self.token.type == HEAD_SB) {
+        DocumentHead *frontPage = [DocumentHead new];
         [parent addElement:frontPage];
         [self nextToken];
         // Heading | Image | Title

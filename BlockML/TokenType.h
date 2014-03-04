@@ -21,7 +21,7 @@ typedef enum {
     
     FN_SB,      // fn[
     
-    IHTML_SB,    // ihtml[
+    IH_SB,    // ih[
     
     SUB_SB,     // sub[
     SUP_SB,     // sup[
@@ -73,7 +73,7 @@ typedef enum {
     
     PB_SB,      // pb[
     
-    FP_SB,// frontpage[
+    HEAD_SB,// head[
     
     TITLE_SB,    // title[
     

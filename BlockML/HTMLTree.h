@@ -37,5 +37,5 @@
 #import "TableData.h"
 #import "TableHeader.h"
 #import "StyleModifier.h"
-#import "FrontPage.h"
+#import "DocumentHead.h"
 #import "PageBreak.h"

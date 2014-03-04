@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Lindemann. All rights reserved.
 //
 
-#import "FrontPage.h"
+#import "DocumentHead.h"
 
-@implementation FrontPage
+@implementation DocumentHead
 
 - (NSString*)openTag {
     NSMutableString *result = [NSMutableString new];
-    [self.attributes setValue:@"frontpage" forKey:CLASS];
+    [self.attributes setValue:@"document_head" forKey:CLASS];
     [result appendString:[HTMLStringBuilder openTag:DIV attributes:self.attributes indentation:self.openTagIndentation lineBreak:self.openTagLineBreak]];
     return result;
 }

@@ -40,7 +40,7 @@ title = "title[" string "]".
 
 tableOfContent = "toc[" string "]".
 
-frontpage = "fp[" {title | heading | image } "]".
+head = "head[" {title | heading | image } "]".
 
 pageBreak = "pb[]".
 
@@ -99,7 +99,7 @@ footnote = "fn[" text "]".
 link = "a[" string "]""[" string "]" |
        "a[" string "]".
 
-inlineHTML = "html[" text "]".
+inlineHTML = "ih[" text "]".
 
 inlineMath = "im[" string "]".
 
