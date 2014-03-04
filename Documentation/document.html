@@ -365,7 +365,7 @@ tr[   td[Data 1]   td[Data 2] ]
 						</td>
 					</tr>
 				</table>
-				<p>An other simple example:</p>
+				<p>Another simple example:</p>
 				<pre><code class="no-highlight">table[
 tr[ th[Header 1] td[Data 1] ]
 tr[ th[Header 2] td[Data 2] ]
@@ -452,9 +452,9 @@ tr[           td[Data 1][h:2] ]
 			</div>
 			<div class="sec" id="sec-2.11">
 				<h2>2.11 Captions</h2>
-				<p>To create a caption use:</p>
+				<p>You should use captions directly after <span class="code">image</span>-, <span class="code">code</span>-, <span class="code">math</span>- or for example <span class="code">table</span>-elements. To create a caption use:</p>
 				<pre><code class="no-highlight">cap[Type][Description]</code></pre>
-				<p>The first block specifies the type of the caption like: Listing, Fig., Figure, Table, Abbildung...The second block contains the description text to your image, code listing, table or equation.</p>
+				<p>The first block specifies the type of the caption like: Listing, Fig., Figure, Table, Abbildung...The second block contains the description text to your <span class="code">image</span>-, <span class="code">code</span>-, <span class="code">math</span>- or <span class="code">table</span>-elements.</p>
 				<p>Captions of the same type get numbered consecutively. Captions of another type have their own consecutive numbering.</p>
 				<pre><code class="no-highlight">img[image01.png][300,]
 cap[Fig.][An image]
@@ -547,31 +547,73 @@ item
 			<div class="sec" id="sec-2.14">
 				<h2>2.14 Cross References</h2>
 				<p>Basically, cross references to captions, sections and bibliography items work almost the same. At first, specify an UID with <span class="code">id[UID]</span>. An UID is an unique string, which should only used for one reference.</p>
-				<p>Now mention the <span class="code">id</span> in your text:</p>
-				<pre><code class="no-highlight">Some text with a reference id[UNIQUE_IDENTIFIER].</code></pre>
-				<p>Read the following sections, to see how to connect that <span class="code">id</span> with your captions, sections or bibliography items. </p>
+				<p>Use the <span class="code">id</span> at this place in your text, where you want to mention the reference.</p>
+				<pre><code class="no-highlight">Some text with a reference id[UNIQUE].</code></pre>
+				<p>Read the following sections, to see how to connect a <span class="code">id</span> with your captions, sections or bibliography items. </p>
 				<div class="sec" id="sec-2.14.1">
 					<h3>2.14.1 References to Captions</h3>
 					<p>Add a further block to your caption that contains the UID.</p>
 					<pre><code class="no-highlight">cap[Type][Description][UID]</code></pre>
-					<p>Here is an example with an image-caption. The UID is "IMG01".</p>
+					<p>Here is an example with an image-caption. The UID is "IMG01":</p>
 					<pre><code class="no-highlight">img[image01.png][300,]
 cap[Figure][Image][IMG01]
 
-Text text text id[IMG01] text.</code></pre>
+Look at id[IMG01].</code></pre>
 					<img src="images/image01.png" width="300">
 					<div class="cap" id="id-IMG01"><span>Figure 2.1: </span>Image</div>
-					<p>Text text text <a href="#id-IMG01">Figure 2.1</a> text.</p>
+					<p>Look at <a href="#id-IMG01">Figure 2.1</a>.</p>
 				</div>
 				<div class="sec" id="sec-2.14.2">
 					<h3>2.14.2 References to Sections</h3>
+					<p>Add a further block to your section that contains the UID.</p>
+					<pre><code class="no-highlight">sec[Section Heading][Content][UID]</code></pre>
+					<p>Here is an example with "SEC" as UID:</p>
+					<pre><code class="no-highlight">For more information see id[SEC].
+
+sec[Section Heading][
+Content
+][SEC]</code></pre>
+<p>For more information see <a href="#sec-example">1 Section Heading</a>.</p>
+<div class="sec" id="sec-example">
+	<h1>1 Section Heading</h1>
+	<p>Content</p>
+</div>
 				</div>
 				<div class="sec" id="sec-2.14.3">
 					<h3>2.14.3 References to Bibliography Items</h3>
+					<p>bibliography items own by default a UID-block.</p>
+					<pre><code class="no-highlight">bib[UID][Publication Details]</code></pre>
+					<p>Here is an example with "BIB01" as UID:</p>
+					<pre><code class="no-highlight">...(figure taken from id[BIB01])
+
+bib[BIB01][Author, Title, Date]</code></pre>
+					<p>...(figure taken from <a id="bib-BIB01" href="#id-BIB01">[BIB01]</a>)</p>
+					<div class="bib" id="id-BIB01">
+						<a href="#bib-BIB01">[BIB01]↵</a>
+						<p>Author, Title, Date</p>
+					</div>
 				</div>
 			</div>
 			<div class="sec" id="sec-2.15">
 				<h2>2.15 Bibliography</h2>
+				<p>To reference a publication use the following syntax:</p>
+				<pre><code class="no-highlight">bib[UID][Publication Details]</code></pre>
+				<p>The UID is an unique string, which should only used for one bibliography item.</p>
+				<p>The publication details must become formatted by your self, in a <a href="http://sites.stat.psu.edu/~surajit/present/bib.htm#bibstyle">bibliography style</a> of your choice.</p>
+				<p>If two or more bibliography items follow each other, they get sorted alphabetically by their UID's.</p>
+				<p>It might be best practice to collect all bibliography items in a separate "References"/"Bibliography" section or place them at the end of the document. The UID should not be longer then 6 characters and should contain a little bit context to the publication.</p>
+				<p>Some examples:</p>
+				<pre><code class="no-highlight">bib[SKETCH][Ivan Sutherland.  Sketchpad: A Man-Machine Graphical Communication System. MIT, 1963. a[http://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-574.pdf][PDF]]
+
+bib[DNA][James Watson and Francis Crick. A Structure for Deoxyribose Nucleic Acid. Nature 171, 737-738, 1953. a[http://www.nature.com/nature/dna50/watsoncrick.pdf][PDF]]</code></pre>
+				<div class="bib" id="id-DNA">
+					<a href="#bib-DNA">[DNA]↵</a>
+					<p>James Watson and Francis Crick. A Structure for Deoxyribose Nucleic Acid. Nature 171, 737-738, 1953. <a href="http://www.nature.com/nature/dna50/watsoncrick.pdf">PDF</a></p>
+				</div>
+				<div class="bib" id="id-SKETCH">
+					<a href="#bib-SKETCH">[SKETCH]↵</a>
+					<p>Ivan Sutherland.  Sketchpad: A Man-Machine Graphical Communication System. MIT, 1963. <a href="http://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-574.pdf">PDF</a></p>
+				</div>
 			</div>
 			<div class="sec" id="sec-2.16">
 				<h2>2.16 Quotes</h2>

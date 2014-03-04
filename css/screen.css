@@ -394,9 +394,9 @@ a {
   #output .window h1, #output .window h2, #output .window h3, #output .window h4, #output .window h5, #output .window h6 {
     padding: 0.6em 0;
     line-height: 1.2em; }
-  #output .window .frontpage {
+  #output .window .document_head {
     padding-bottom: 15px; }
-    #output .window .frontpage h1, #output .window .frontpage h2, #output .window .frontpage h3, #output .window .frontpage h4, #output .window .frontpage h5, #output .window .frontpage h6, #output .window .frontpage #title {
+    #output .window .document_head h1, #output .window .document_head h2, #output .window .document_head h3, #output .window .document_head h4, #output .window .document_head h5, #output .window .document_head h6, #output .window .document_head #title {
       padding: 0.2em 0;
       text-align: center; }
   #output .window #title {
@@ -472,7 +472,7 @@ a {
 /*////////////////////////////////////////////////////////////////////////////*/
 #appImage {
   background-color: #44E588;
-  background-image: url(../images/galaxy.svg);
+  background-image: url(../images/galaxy.jpg);
   background-position: center; }
   #appImage img {
     display: block;

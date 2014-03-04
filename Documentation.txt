@@ -269,7 +269,7 @@ tr[ th[Header 1] th[Header 2] ]
 tr[   td[Data 1]   td[Data 2] ]
 ]
 
-An other simple example:
+Another simple example:
 
 code[no-highlight][table\[
 tr\[ th\[Header 1\] td\[Data 1\] \]
@@ -323,10 +323,10 @@ tr[			  td[Data 1][h:2] ]
 
 sec[Captions][
 
-To create a caption use:
+You should use captions directly after c[image]-, c[code]-, c[math]- or for example c[table]-elements. To create a caption use:
 code[no-highlight][cap\[Type\]\[Description\]]
 
-The first block specifies the type of the caption like: Listing, Fig., Figure, Table, Abbildung...The second block contains the description text to your image, code listing, table or equation.
+The first block specifies the type of the caption like: Listing, Fig., Figure, Table, Abbildung...The second block contains the description text to your c[image]-, c[code]-, c[math]- or c[table]-elements.
 
 Captions of the same type get numbered consecutively. Captions of another type have their own consecutive numbering.
 
@@ -448,11 +448,11 @@ sec[Cross References][
 
 Basically, cross references to captions, sections and bibliography items work almost the same. At first, specify an UID with c[id\[UID\]]. An UID is an unique string, which should only used for one reference.
 
-Now mention the c[id] in your text:
+Use the c[id] at this place in your text, where you want to mention the reference.
 
-code[no-highlight][Some text with a reference id\[UNIQUE_IDENTIFIER\].]
+code[no-highlight][Some text with a reference id\[UNIQUE\].]
 
-Read the following sections, to see how to connect that c[id] with your captions, sections or bibliography items. 
+Read the following sections, to see how to connect a c[id] with your captions, sections or bibliography items. 
 
 sec[References to Captions][
 
@@ -460,30 +460,86 @@ Add a further block to your caption that contains the UID.
 
 code[no-highlight][cap\[Type\]\[Description\]\[UID\]]
 
-Here is an example with an image-caption. The UID is "IMG01".
+Here is an example with an image-caption. The UID is "IMG01":
 
 code[no-highlight][img\[image01.png\]\[300,\]
 cap\[Figure\]\[Image\]\[IMG01\]
 
-Text text text id\[IMG01\] text.]
+Look at id\[IMG01\].]
 
 img[image01.png][300,]
 cap[Figure][Image][IMG01]
 
-Text text text id[IMG01] text.
-
-
-
+Look at id[IMG01].
 
 ]/*References to Captions*/
 
-sec[References to Sections][]/*References to Sections*/
+sec[References to Sections][
 
-sec[References to Bibliography Items][]/*References to Bibliography Items*/
+Add a further block to your section that contains the UID.
+
+code[no-highlight][sec\[Section Heading\]\[Content\]\[UID\]]
+
+Here is an example with "SEC" as UID:
+
+code[no-highlight][For more information see id\[SEC\].
+
+sec\[Section Heading\]\[
+Content
+\]\[SEC\]]
+
+html[<p>For more information see <a href="#sec-example">1 Section Heading</a>.</p>
+<div class="sec" id="sec-example">
+	<h1>1 Section Heading</h1>
+	<p>Content</p>
+</div>]
+
+]/*References to Sections*/
+
+sec[References to Bibliography Items][
+
+bibliography items own by default a UID-block.
+
+code[no-highlight][bib\[UID\]\[Publication Details\]]
+
+Here is an example with "BIB01" as UID:
+
+code[no-highlight][...(figure taken from id\[BIB01\])
+
+bib\[BIB01\]\[Author, Title, Date\]]
+
+...(figure taken from id[BIB01])
+bib[BIB01][Author, Title, Date]
+
+]/*References to Bibliography Items*/
 
 ]/*Cross References*/
 
-sec[Bibliography][]/*Bibliography*/
+sec[Bibliography][
+
+To reference a publication use the following syntax:
+
+code[no-highlight][bib\[UID\]\[Publication Details\]]
+
+The UID is an unique string, which should only used for one bibliography item.
+
+The publication details must become formatted by your self, in a a[http://sites.stat.psu.edu/~surajit/present/bib.htm#bibstyle][bibliography style] of your choice.
+
+If two or more bibliography items follow each other, they get sorted alphabetically by their UID's.
+
+It might be best practice to collect all bibliography items in a separate "References"/"Bibliography" section or place them at the end of the document. The UID should not be longer then 6 characters and should contain a little bit context to the publication.
+
+Some examples:
+
+code[no-highlight][bib\[SKETCH\]\[Ivan Sutherland.  Sketchpad: A Man-Machine Graphical Communication System. MIT, 1963. a\[http://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-574.pdf\]\[PDF\]\]
+
+bib\[DNA\]\[James Watson and Francis Crick. A Structure for Deoxyribose Nucleic Acid. Nature 171, 737-738, 1953. a\[http://www.nature.com/nature/dna50/watsoncrick.pdf\]\[PDF\]\]]
+
+bib[SKETCH][Ivan Sutherland.  Sketchpad: A Man-Machine Graphical Communication System. MIT, 1963. a[http://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-574.pdf][PDF]]
+
+bib[DNA][James Watson and Francis Crick. A Structure for Deoxyribose Nucleic Acid. Nature 171, 737-738, 1953. a[http://www.nature.com/nature/dna50/watsoncrick.pdf][PDF]]
+
+]/*Bibliography*/
 
 sec[Quotes][
 There are block quotations with or without a source.

@@ -1,1 +1,6 @@
-Some text with a footnote fn[Content].
+bib[DNA][James Watson and Francis Crick. A Structure for Deoxyribose Nucleic Acid. Nature 171, 737-738, 1953. a[http://www.nature.com/nature/dna50/watsoncrick.pdf][PDF]]
+
+bib[DEDKUO][Alfred Wegener. Die Entstehung der
+Kontinente und Ozeane. Friedr. Vieweg & Sohn Akt.-Ges., Braunschweig, 1929. a[http://de.wikisource.org/wiki/Die_Entstehung_der_Kontinente_und_Ozeane][Wikisource]]
+
+bib[SKETCH][Ivan Sutherland.  Sketchpad: A Man-Machine Graphical Communication System. MIT, 1963. a[http://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-574.pdf][PDF]]
