@@ -623,9 +623,35 @@ sec[Page Break][]/*Page Break*/
 
 sec[Embed HTML][
 
-sec[Inline HTML][]/*Inline HTML*/
+sec[Inline HTML][
 
-sec[Block HTML][]/*Block HTML*/
+Embed a[https://developer.mozilla.org/en-US/docs/HTML/Inline_elements][inline level HTML] with: 
+
+code[no-highlight][ihtml\[HTML Code\]]
+
+You can use inline HTML in the same way like inline BlockML elements.
+
+Example:
+
+code[no-highlight][text text ihtml\[<b>text</b>\] text.]
+
+text text ihtml[<b>text</b>] text.
+
+]/*Inline HTML*/
+
+sec[Block HTML][
+
+Embed  a[https://developer.mozilla.org/en-US/docs/HTML/Block-level_elements][block level HTML] with: 
+
+code[no-highlight][html\[HTML Code\]]
+
+Example:
+
+code[no-highlight][html\[<h1>Text</h1>\]]
+
+html[<h1>Text</h1>]
+
+]/*Block HTML*/
 
 ]/*Embed HTML*/
 
