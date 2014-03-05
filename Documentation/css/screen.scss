@@ -70,6 +70,8 @@ body {
 
 html {
 	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -151,10 +153,16 @@ h6 {
 /*                                    ERROR                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-.error {     background-color: $selectionColor;     text-align: center; padding:
-0.4em 0;     font-family:"Source Code Pro", monospace;     font-weight: 500;
-color: darken($selectionColor, 40%);     border-radius: 6px; border: solid
-darken($selectionColor, 30%) 1px;     margin-bottom: $paragraphPadding;
+.error {
+	background-color: $selectionColor;
+	text-align: center;
+	padding: 0.4em 0;
+	font-family:"Source Code Pro", monospace;
+	font-weight: 500;
+	color: darken($selectionColor, 40%);
+	border-radius: 6px; 
+	border: solid darken($selectionColor, 30%) 1px;
+	margin-bottom: $paragraphPadding;
 
 	a {
 		color: darken($selectionColor, 32%);
@@ -367,7 +375,7 @@ ul, ol {
 /*                                     MATH                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-.math {
+div.math {
     padding-bottom: $paragraphPadding;
 }
 
@@ -472,10 +480,10 @@ td {
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
-/*                                	FRONTPAGE                                 */
+/*                                	DOCUMENT HEAD                             */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-.frontpage {
+.document_head {
 	text-align: center;
 	padding-bottom: $generalPadding;
 	img, {

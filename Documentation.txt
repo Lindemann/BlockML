@@ -48,6 +48,8 @@ img[title.png]
 
 ]/*Title*/
 
+sec[Document Header][]/*Document Header*/
+
 sec[Sections][
 Sections consist of a section heading and section content. 
 
@@ -617,33 +619,25 @@ My c[inline code].
 
 ]/*Text Styles*/
 
-sec[Document Header and Front Page][]/*Document Header or Front Page*/
-
-sec[Page Break][]/*Page Break*/
-
 sec[Embed HTML][
 
 sec[Inline HTML][
 
-Embed a[https://developer.mozilla.org/en-US/docs/HTML/Inline_elements][inline level HTML] with: 
-
-code[no-highlight][ihtml\[HTML Code\]]
+Embed a[https://developer.mozilla.org/en-US/docs/HTML/Inline_elements][inline level HTML] with c[ih\[HTML Code\]].
 
 You can use inline HTML in the same way like inline BlockML elements.
 
 Example:
 
-code[no-highlight][text text ihtml\[<b>text</b>\] text.]
+code[no-highlight][text text ih\[<b>text</b>\] text.]
 
-text text ihtml[<b>text</b>] text.
+text text ih[<b>text</b>] text.
 
 ]/*Inline HTML*/
 
 sec[Block HTML][
 
-Embed  a[https://developer.mozilla.org/en-US/docs/HTML/Block-level_elements][block level HTML] with: 
-
-code[no-highlight][html\[HTML Code\]]
+Embed  a[https://developer.mozilla.org/en-US/docs/HTML/Block-level_elements][block level HTML] with c[html\[HTML Code\]].
 
 Example:
 
@@ -666,6 +660,8 @@ lines */
 
 Some text with a comment /* a\[http://awwapps.com\] */ inside.] 
 ]/*Comments*/
+
+sec[Page Break][]/*Page Break*/
 
 ]/*Markup Elements*/
 

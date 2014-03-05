@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
-@import url(../highlight.js/styles/github.css);
+@import url(../highlight/styles/github.css);
 /*
     ____  __           __   __  _____ 
    / __ )/ /___  _____/ /__/  |/  / / 
@@ -28,17 +28,19 @@
 /*                                  GENERAL                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
 body {
-  max-width: 660px;
+  width: 660px;
   display: block;
   margin: 0 auto;
-  width: 70%;
+  max-width: 70%;
   padding: 120px 0; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    FONT                                    */
 /*////////////////////////////////////////////////////////////////////////////*/
 html {
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -198,11 +200,11 @@ pre:after {
 
 /* Some "improvements" of the github.css */
 pre code {
-  background-color: #f7f7f7; }
+  background-color: #fafafa; }
 
 pre .title,
 pre .id {
-  color: #9537FF; }
+  color: #AC64E1; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                    IMAGE                                   */
@@ -227,7 +229,7 @@ ul, ol {
 .cap {
   display: block;
   margin: 0 auto;
-  width: 80%;
+  max-width: 80%;
   text-align: center;
   padding-bottom: 1.6em; }
   .cap span {
@@ -256,7 +258,7 @@ ul, ol {
   font-style: italic;
   display: block;
   margin: 0 auto;
-  width: 70%; }
+  max-width: 70%; }
   .quote p:last-of-type {
     padding-bottom: 0; }
   .quote p {
@@ -279,7 +281,7 @@ ul, ol {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                     MATH                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
-.math {
+div.math {
   padding-bottom: 1.6em; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -300,7 +302,8 @@ table {
   margin-bottom: 1.6em;
   width: 100%;
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+  table-layout: fixed; }
 
 table, td, td {
   padding: 0 10px; }
@@ -312,7 +315,7 @@ td, th {
   height: 40px; }
 
 th {
-  background: #efefef; }
+  background: #eaeaea; }
   th * {
     font-weight: 600; }
 
@@ -327,7 +330,7 @@ td {
   padding: 0 0.3em; }
 
 .bold {
-  font-weight: 600; }
+  font-weight: 700; }
 
 .underline {
   text-decoration: underline; }
@@ -336,7 +339,7 @@ td {
   font-family: "Source Code Pro", monospace;
   font-size: 12pt;
   font-weight: 500;
-  background-color: #f7f7f7;
+  background-color: #fafafa;
   padding: 0 0.3em;
   -webkit-border-radius: 3px;
   border: solid #dbdbdb 1px;
@@ -348,15 +351,24 @@ td {
 .strikethrough {
   text-decoration: line-through; }
 
+.sub, .sup {
+  font-size: 80%; }
+
+.sub {
+  vertical-align: sub; }
+
+.sup {
+  vertical-align: super; }
+
 /*////////////////////////////////////////////////////////////////////////////*/
-/*                                	FRONTPAGE                                 */
+/*                                	DOCUMENT HEAD                             */
 /*////////////////////////////////////////////////////////////////////////////*/
-.frontpage {
+.document_head {
   text-align: center;
   padding-bottom: 60px; }
-  .frontpage img {
+  .document_head img {
     padding-bottom: 0; }
-  .frontpage h6 {
+  .document_head h6 {
     color: #8f8f8f; }
-  .frontpage h1, .frontpage h2, .frontpage h3, .frontpage h4, .frontpage h5, .frontpage h6, .frontpage #title {
+  .document_head h1, .document_head h2, .document_head h3, .document_head h4, .document_head h5, .document_head h6, .document_head #title {
     padding: 0.2em 0; }

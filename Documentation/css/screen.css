@@ -38,7 +38,9 @@ body {
 /*                                    FONT                                    */
 /*////////////////////////////////////////////////////////////////////////////*/
 html {
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -279,7 +281,7 @@ ul, ol {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                     MATH                                   */
 /*////////////////////////////////////////////////////////////////////////////*/
-.math {
+div.math {
   padding-bottom: 1.6em; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -359,14 +361,14 @@ td {
   vertical-align: super; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
-/*                                	FRONTPAGE                                 */
+/*                                	DOCUMENT HEAD                             */
 /*////////////////////////////////////////////////////////////////////////////*/
-.frontpage {
+.document_head {
   text-align: center;
   padding-bottom: 60px; }
-  .frontpage img {
+  .document_head img {
     padding-bottom: 0; }
-  .frontpage h6 {
+  .document_head h6 {
     color: #8f8f8f; }
-  .frontpage h1, .frontpage h2, .frontpage h3, .frontpage h4, .frontpage h5, .frontpage h6, .frontpage #title {
+  .document_head h1, .document_head h2, .document_head h3, .document_head h4, .document_head h5, .document_head h6, .document_head #title {
     padding: 0.2em 0; }
