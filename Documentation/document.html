@@ -37,22 +37,22 @@
 					<li><span><span>2.2 Title</span></span><a href="#sec-2.2"><span>[⚐]</span></a></li>
 				</ul>
 				<ul>
-					<li><span><span>2.3 Document Header</span></span><a href="#sec-2.3"><span>[⚐]</span></a></li>
+					<li><span><span>2.3 Headings</span></span><a href="#sec-2.3"><span>[⚐]</span></a></li>
 				</ul>
 				<ul>
-					<li><span><span>2.4 Sections</span></span><a href="#sec-2.4"><span>[⚐]</span></a></li>
+					<li><span><span>2.4 Document Head</span></span><a href="#sec-2.4"><span>[⚐]</span></a></li>
 				</ul>
 				<ul>
-					<li><span><span>2.5 Table of Contents</span></span><a href="#sec-2.5"><span>[⚐]</span></a></li>
+					<li><span><span>2.5 Sections</span></span><a href="#sec-2.5"><span>[⚐]</span></a></li>
 				</ul>
 				<ul>
-					<li><span><span>2.6 Links</span></span><a href="#sec-2.6"><span>[⚐]</span></a></li>
+					<li><span><span>2.6 Table of Contents</span></span><a href="#sec-2.6"><span>[⚐]</span></a></li>
 				</ul>
 				<ul>
-					<li><span><span>2.7 Images</span></span><a href="#sec-2.7"><span>[⚐]</span></a></li>
+					<li><span><span>2.7 Links</span></span><a href="#sec-2.7"><span>[⚐]</span></a></li>
 				</ul>
 				<ul>
-					<li><span><span>2.8 Headings</span></span><a href="#sec-2.8"><span>[⚐]</span></a></li>
+					<li><span><span>2.8 Images</span></span><a href="#sec-2.8"><span>[⚐]</span></a></li>
 				</ul>
 				<ul>
 					<li><span><span>2.9 Code Listings</span></span><a href="#sec-2.9"><span>[⚐]</span></a></li>
@@ -184,10 +184,37 @@ The BlockML compiler removes useless white space like the LFs above.↵
 				<img src="images/title.png">
 			</div>
 			<div class="sec" id="sec-2.3">
-				<h2>2.3 Document Header</h2>
+				<h2>2.3 Headings</h2>
+				<p>There are headings from <span class="code">&lt;h1></span> - <span class="code">&lt;h6></span>. Headings don't get used for the Table of Contents (see <a href="#sec-2.6">2.6 Table of Contents</a>).</p>
+				<pre><code class="no-highlight">h1[Heading 1]
+h2[Heading 2]
+h3[Heading 3]
+h4[Heading 4]
+h5[Heading 5]
+h6[Heading 6]</code></pre>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
 			</div>
 			<div class="sec" id="sec-2.4">
-				<h2>2.4 Sections</h2>
+				<h2>2.4 Document Head</h2>
+				<p>Use <span class="code">head[Content]</span> to create a nice looking header for your document.<br>Allowed contents for this element are <span class="code">title</span> and <span class="code">h1</span>-<span class="code">h6</span>.</p>
+				<pre><code class="no-highlight">head[
+title[Document Title]
+h2[Heading 2]
+h6[Heading 6]
+]</code></pre>
+<div class="document_head">
+	<h1 id="title">Document Title</h1>
+	<h2>Heading 2</h2>
+	<h6>Heading 6</h6>
+</div>
+			</div>
+			<div class="sec" id="sec-2.5">
+				<h2>2.5 Sections</h2>
 				<p>Sections consist of a section heading and section content. </p>
 				<pre><code class="vala">sec[Heading][Content]</code></pre>
 				<p>These content can be text and every BlockML markup element, regardless that not every element makes sense in that context, for example <span class="code">title</span> and <span class="code">toc</span> elements.</p>
@@ -237,8 +264,8 @@ sec[Section Heading][Content too]/*Section*/</code></pre>
 	<p>Content too</p>
 </div>
 			</div>
-			<div class="sec" id="sec-2.5">
-				<h2>2.5 Table of Contents</h2>
+			<div class="sec" id="sec-2.6">
+				<h2>2.6 Table of Contents</h2>
 				<p>To get a Table of Contents use the <span class="code">toc</span> element. The Table of Contents gets assembled from the section headings.</p>
 				<pre><code class="no-highlight">toc[TOC Title]</code></pre>
 				<p>The Table of Contents for the section example above looks like this:</p>
@@ -261,15 +288,15 @@ sec[Section Heading][Content too]/*Section*/</code></pre>
 			</ul>
 		</div>
 			</div>
-			<div class="sec" id="sec-2.6">
-				<h2>2.6 Links</h2>
+			<div class="sec" id="sec-2.7">
+				<h2>2.7 Links</h2>
 				<p>A Link consists of an URL or of an URL and a link description.</p>
 				<pre><code class="no-highlight">a[http://awwapps.com]
 a[http://awwapps.com][Description Text]</code></pre>
 				<p><a href="http://awwapps.com">http://awwapps.com</a><br><a href="http://awwapps.com">Description Text</a></p>
 			</div>
-			<div class="sec" id="sec-2.7">
-				<h2>2.7 Images</h2>
+			<div class="sec" id="sec-2.8">
+				<h2>2.8 Images</h2>
 				<p>To embed a local image into the document, copy that image into the auto generated <span class="code">images</span>-Folder, which is part of the <span class="code">output</span>-Folder. Then embed the image name without any path references.</p>
 				<img src="images/embedImage.png">
 				<pre><code class="no-highlight">img[localImage.png]</code></pre>
@@ -287,22 +314,6 @@ img[localImage.png][400,]
 /*adjust only the height*/
 img[localImage.png][,300]</code></pre>
 				<img src="images/dribbble.png" width="400">
-			</div>
-			<div class="sec" id="sec-2.8">
-				<h2>2.8 Headings</h2>
-				<p>There are headings from <span class="code">&lt;h1></span> - <span class="code">&lt;h6></span>. Headings don't get used for the TOC. If you want a fancy TOC use sections.</p>
-				<pre><code class="no-highlight">h1[Heading 1]
-h2[Heading 2]
-h3[Heading 3]
-h4[Heading 4]
-h5[Heading 5]
-h6[Heading 6]</code></pre>
-<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
 			</div>
 			<div class="sec" id="sec-2.9">
 				<h2>2.9 Code Listings</h2>
