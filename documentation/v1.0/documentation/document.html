@@ -752,6 +752,16 @@ Some text with a comment /* a[http://awwapps.com] */ inside.</code></pre>
 		</div>
 		<div class="sec" id="sec-4">
 			<h1>4 Error Warnings</h1>
+			<p>If the BlockML compiler can't compile your source text you will get an error message. For instance, a forgotten closing square bracket will cause an error like this:</p>
+			<pre><code class="no-highlight">sec[Section Heading][
+
+Content</code></pre>
+<div class="error" id="error-0">1 Error found!<br><a href="#error-1">Error with Section</a></div>
+<div class="sec" id="sec-1">
+	<h1>1 Section Heading</h1>
+	<p>Content</p>
+</div>
+<div class="error" id="error-1">Error with Section</div>
 		</div>
 		<div class="sec" id="sec-5">
 			<h1>5 Use Custom CSS</h1>

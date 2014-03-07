@@ -15,6 +15,7 @@ sec[Introduction][
 
 sec[Basic Usage][
 
+
 img[info.svg]
 
 Since BlockML has to be compilable to HTML, its feature set is closely linked to the capabilities of HTML. Like HTML BlockML has block level markup and inline markup. 
@@ -721,12 +722,27 @@ img[escape.png]
 
 ][ESCAPE]/*Escape of Special Characters*/
 
-sec[Error Warnings][]/*Errors*/
+sec[Error Warnings][
+
+If the BlockML compiler can't compile your source text you will get an error message. For instance, a forgotten closing square bracket will cause an error like this:
+
+code[no-highlight][sec\[Section Heading\]\[
+
+Content]
+
+html[<div class="error" id="error-0">1 Error found!<br><a href="#error-1">Error with Section</a></div>
+<div class="sec" id="sec-1">
+	<h1>1 Section Heading</h1>
+	<p>Content</p>
+</div>
+<div class="error" id="error-1">Error with Section</div>]
+
+]/*Errors*/
 
 sec[Use Custom CSS][]/*Use Custom CSS*/
 
 sec[Converting HTML into a PDF][]/*Convert your HTML Document into a PDF*/
 
 sec[Setup TextMate][
-If you have ever used TextMate, this section isn't for you. Just "install" the tmBundle, the color schemes and activate spell checking.
+
 ]/*Setup TextMate*/
