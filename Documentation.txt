@@ -13,7 +13,29 @@ toc[Contents]
 
 sec[Introduction][
 
+sec[Basic Usage][
+
 img[info.svg]
+
+Since BlockML has to be compilable to HTML, its feature set is closely linked to the capabilities of HTML. Like HTML BlockML has block level markup and inline markup. 
+
+]/* Basic Usage */
+
+sec[Syntax][
+
+BlockML source text consist of plain text and markup elements. BlockML markup has always these structure:
+img[structure.svg][550,]
+
+At the beginning of an element stands a b[selector], which specifies the type of the element. The selector is as short as possible and often inspired by HTML tags. 
+
+The selector is followed by 1-n b[blocks], depending on the type of the element. Blocks contain content and are not interchangeable. Some elements have one optional block at their end, for example the c[img] element with its optional size specification:
+
+code[no-highlight][img\[cat.png\]
+img\[cat.png\]\[300, 200\]] 
+
+The b[content] has to be plain text in some blocks. While other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: c[c\[UITableView\]]. An instance for a markup element that could contain other markup is the section element: c[sec\[Overview\]\[An instance of c\[UITableView\]...\]]. You can think of blocks like of arguments for a method. A block on a certain position expects a certain input.
+
+]/* Syntax */
 
 ]/* Introduction */
 

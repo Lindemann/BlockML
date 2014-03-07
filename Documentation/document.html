@@ -27,6 +27,12 @@
 			<h1>Contents</h1>
 			<ul>
 				<li><span><span>1 Introduction</span></span><a href="#sec-1"><span>[⚐]</span></a></li>
+				<ul>
+					<li><span><span>1.1 Basic Usage</span></span><a href="#sec-1.1"><span>[⚐]</span></a></li>
+				</ul>
+				<ul>
+					<li><span><span>1.2 Syntax</span></span><a href="#sec-1.2"><span>[⚐]</span></a></li>
+				</ul>
 			</ul>
 			<ul>
 				<li><span><span>2 Markup Elements</span></span><a href="#sec-2"><span>[⚐]</span></a></li>
@@ -157,7 +163,21 @@
 		</div>
 		<div class="sec" id="sec-1">
 			<h1>1 Introduction</h1>
-			<img src="images/info.svg">
+			<div class="sec" id="sec-1.1">
+				<h2>1.1 Basic Usage</h2>
+				<img src="images/info.svg">
+				<p>Since BlockML has to be compilable to HTML, its feature set is closely linked to the capabilities of HTML. Like HTML BlockML has block level markup and inline markup. </p>
+			</div>
+			<div class="sec" id="sec-1.2">
+				<h2>1.2 Syntax</h2>
+				<p>BlockML source text consist of plain text and markup elements. BlockML markup has always these structure:</p>
+				<img src="images/structure.svg" width="550">
+				<p>At the beginning of an element stands a <span class="bold">selector</span>, which specifies the type of the element. The selector is as short as possible and often inspired by HTML tags. </p>
+				<p>The selector is followed by 1-n <span class="bold">blocks</span>, depending on the type of the element. Blocks contain content and are not interchangeable. Some elements have one optional block at their end, for example the <span class="code">img</span> element with its optional size specification:</p>
+				<pre><code class="no-highlight">img[cat.png]
+img[cat.png][300, 200]</code></pre>
+				<p>The <span class="bold">content</span> has to be plain text in some blocks. While other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: <span class="code">c[UITableView]</span>. An instance for a markup element that could contain other markup is the section element: <span class="code">sec[Overview][An instance of c[UITableView]...]</span>. You can think of blocks like of arguments for a method. A block on a certain position expects a certain input.</p>
+			</div>
 		</div>
 		<div class="sec" id="sec-2">
 			<h1>2 Markup Elements</h1>
