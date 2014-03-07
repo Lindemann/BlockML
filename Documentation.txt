@@ -662,7 +662,7 @@ sec[Embed HTML][
 
 sec[Inline HTML][
 
-Embed a[https://developer.mozilla.org/en-US/docs/HTML/Inline_elements][inline level HTML] with c[ih\[HTML Code\]].
+Embed a[https://developer.mozilla.org/en-US/docs/HTML/Inline_elements][inline HTML] with c[ih\[HTML Code\]].
 
 You can use inline HTML in the same way like inline BlockML elements.
 
