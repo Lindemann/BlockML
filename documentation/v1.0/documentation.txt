@@ -13,23 +13,28 @@ toc[Contents]
 
 sec[Introduction][
 
-sec[Basic Usage][
+sec[Basic usage][
+
+- output folder
+- directory structure
+- files don't get overwritten
+
 
 
 img[info.svg]
 
 Since BlockML has to be compilable to HTML, its feature set is closely linked to the capabilities of HTML. Like HTML BlockML has block level markup and inline markup. 
 
-]/* Basic Usage */
+]/* Basic usage */
 
 sec[Syntax][
 
 BlockML source text consist of plain text and markup elements. BlockML markup has always these structure:
 img[structure.svg][550,]
 
-At the beginning of an element stands a b[selector], which specifies the type of the element. The selector is as short as possible and often inspired by HTML tags. 
+At the beginning of an element stands a b[selector], which specifies the type of the element. The selector is as short as possible and often inspired by HTML tag names. 
 
-The selector is followed by 1-n b[blocks], depending on the type of the element. Blocks contain content and are not interchangeable. Some elements have one optional block at their end, for example the c[img] element with its optional size specification:
+The selector is followed by one or more b[blocks], depending on the type of the element. Blocks contain content and are not interchangeable. Some elements have one optional block at their end, for example the c[img] element with its optional size specification:
 
 code[no-highlight][img\[cat.png\]
 img\[cat.png\]\[300, 200\]] 
@@ -40,9 +45,9 @@ The b[content] has to be plain text in some blocks. While other blocks can conta
 
 ]/* Introduction */
 
-sec[Markup Elements][
+sec[Markup elements][
 
-sec[Paragraphs, Line Breaks and White Space][
+sec[Paragraphs, line breaks and white space][
 
 Paragraphs and line breaks work exactly like you would except. To create new paragraphs use 2 LFs (press 2 times Enter). To create line breaks use 1 LF.
 
@@ -60,7 +65,7 @@ code[markdown][↵
 The BlockML compiler removes useless white space like the LFs above.↵
 ••••Or this TAB in front of this sentence.]
 
-]/*Paragraphs, Line Breaks and White Space*/
+]/* Paragraphs, line breaks and white space */
 
 sec[Title][
 This element creates a centered, clown sized heading and it sets the c[<title>] of your HTML document.
@@ -69,7 +74,7 @@ code[no-highlight][title\[Document Title\]]
 html[<h1 style="padding: 0" id="title">Document Title</h1><p></p>]
 img[title.png]
 
-]/*Title*/
+]/* Title */
 
 sec[Headings][
 
@@ -89,9 +94,9 @@ html[<h1>Heading 1</h1>
 <h5>Heading 5</h5>
 <h6>Heading 6</h6>]
 
-]/*Headings*/
+]/* Headings */
 
-sec[Document Head][
+sec[Document head][
 
 Use c[head\[Content\]] to create a nice looking header for your document.
 Allowed contents for this element are c[title] and c[h1]-c[h6].
@@ -108,7 +113,7 @@ html[<div class="document_head">
 	<h6>Heading 6</h6>
 </div>]
 
-]/*Document Head*/
+]/* Document head */
 
 sec[Sections][
 Sections consist of a section heading and section content. 
@@ -168,9 +173,9 @@ html[<div class="sec" id="sec-1">
 	<p>Content too</p>
 </div>]
 
-]/*Sections*/
+]/* Sections */
 
-sec[Table of Contents][
+sec[Table of contents][
 To get a Table of Contents use the c[toc] element. The Table of Contents gets assembled from the section headings.
 
 code[no-highlight][toc\[TOC Title\]]
@@ -196,7 +201,7 @@ html[<div id="toc">
 			</ul>
 		</div>]
 
-][TOC]/*Table of Contents*/
+][TOC]/* Table of contents */
 
 sec[Links][
 A Link consists of an URL or of an URL and a link description.
@@ -207,7 +212,7 @@ a\[http://awwapps.com\]\[Description Text\]]
 a[http://awwapps.com]
 a[http://awwapps.com][Description Text]
 
-]/*Links*/
+]/* Links */
 
 sec[Images][
 To embed a local image into the document, copy that image into the auto generated c[images]-Folder, which is part of the c[output]-Folder. Then embed the image name without any path references.
@@ -236,9 +241,9 @@ img\[localImage.png\]\[,300\]]
 
 img[dribbble.png][400,]
 
-]/*Images*/
+]/* Images */
 
-sec[Code Listings][
+sec[Code listings][
 
 Code listings uses the following syntax:
 
@@ -257,9 +262,9 @@ self.document = \\\[HTMLDocument new\\\];\]]
 code[objectivec][self.scanner = \[Scanner scannerWithString:string\];
 self.document = \[HTMLDocument new\];]
 
-]/*Code with Syntax Highlighting*/
+]/* Code listings */
 
-sec[Math Formulas][
+sec[Math formulas][
 
 Since BlockML uses a[http://www.mathjax.org][MathJax] for mathematics rendering you can use TeX/LaTeX or MathML syntax. 
 
@@ -277,7 +282,7 @@ Some inline mathematics: im[$a \ne 0$].
 
 m[You have to escape all square brackets in your code.] For more information read id[ESCAPE].
 
-]/*Math Formulas*/
+]/* Math formulas */
 
 sec[Tables][
 
@@ -361,7 +366,7 @@ tr[ th[Header 1] th[Header 2] ]
 tr[			  td[Data 1][h:2] ]
 ]
 
-]/*Tables*/
+]/* Tables */
 
 sec[Captions][
 
@@ -397,11 +402,11 @@ code[lisp][(display "Hello, world!")]
 cap[Listing][Another code listing]
 
 
-]/*Captions*/
+]/* Captions */
 
 sec[Lists][
 
-sec[Unordered Lists][
+sec[Unordered lists][
 
 To create unordered lists use the c[ul\[\]]-element and add your list items to it. You can use dashes c[-] in front of items to emphasize the list structure, but you don't have to. The whitespace between dash and item is irrelevant.
 
@@ -431,9 +436,9 @@ ul[
 - item
 ]
 
-]/*Unordered Lists*/
+]/* Unordered lists */
 
-sec[Ordered Lists][
+sec[Ordered lists][
 
 Ordered lists work in the same way like unordered lists.
 
@@ -470,9 +475,9 @@ ol[
 	]
 ]
 
-]/*Ordered Lists*/
+]/* Ordered lists */
 
-]/*Lists*/
+]/* Lists */
 
 sec[Footnotes][
 
@@ -484,9 +489,9 @@ html[<p>Some text with a footnote <a id="fn-back-1" href="#fn-1"><sup>\[1\]</sup
 <div id="fn-1" class="en"><a href="#fn-back-1">\[1\]↵</a> Content</div>]
 
 
-]/*Footnotes*/
+]/* Footnotes */
 
-sec[Cross References][
+sec[Cross references][
 
 Basically, cross references to captions, sections and bibliography items work almost the same. At first, specify an UID with c[id\[UID\]]. An UID is an unique string, which should only used for one reference.
 
@@ -496,7 +501,7 @@ code[no-highlight][Some text with a reference id\[UNIQUE\].]
 
 Read the following sections, to see how to connect a c[id] with your captions, sections or bibliography items. 
 
-sec[References to Captions][
+sec[References to captions][
 
 Add a further block to your caption that contains the UID.
 
@@ -514,9 +519,9 @@ cap[Figure][Image][IMG01]
 
 Look at id[IMG01].
 
-]/*References to Captions*/
+]/* References to captions */
 
-sec[References to Sections][
+sec[References to sections][
 
 Add a further block to your section that contains the UID.
 
@@ -536,9 +541,9 @@ html[<p>For more information see <a href="#sec-example">1 Section Heading</a>.</
 	<p>Content</p>
 </div>]
 
-]/*References to Sections*/
+]/* References to sections */
 
-sec[References to Bibliography Items][
+sec[References to bibliography items][
 
 bibliography items own by default a UID-block.
 
@@ -553,9 +558,9 @@ bib\[BIB01\]\[Author, Title, Date\]]
 ...(figure taken from id[BIB01])
 bib[BIB01][Author, Title, Date]
 
-]/*References to Bibliography Items*/
+]/* References to bibliography items */
 
-]/*Cross References*/
+]/* Cross references */
 
 sec[Bibliography][
 
@@ -567,7 +572,7 @@ The UID is an unique string, which should only used for one bibliography item.
 
 The publication details must become formatted by your self, in a a[http://sites.stat.psu.edu/~surajit/present/bib.htm#bibstyle][bibliography style] of your choice.
 
-If two or more bibliography items follow each other, they get sorted alphabetically by their UID's.
+If two or more bibliography items follow each other, they get sorted alphabetically by their UIDs.
 
 It might be best practice to collect all bibliography items in a separate "References"/"Bibliography" section or place them at the end of the document. The UID should not be longer then 6 characters and should contain a little bit context to the publication.
 
@@ -581,7 +586,7 @@ bib[SKETCH][Ivan Sutherland.  Sketchpad: A Man-Machine Graphical Communication S
 
 bib[DNA][James Watson and Francis Crick. A Structure for Deoxyribose Nucleic Acid. Nature 171, 737-738, 1953. a[http://www.nature.com/nature/dna50/watsoncrick.pdf][PDF]]
 
-]/*Bibliography*/
+]/* Bibliography */
 
 sec[Quotes][
 There are block quotations with or without a source.
@@ -594,9 +599,9 @@ code[no-highlight][q\[Quote\]]
 
 q[Quote]
 
-]/*Quotes*/
+]/* Quotes */
 
-sec[Text Styles][
+sec[Text styles][
 
 You can style your text as b[bold], i[italic], u[underlined], m[marked], s[strikethrough], subscript sub[text], superscript sup[text], and as c[inline code].
 
@@ -605,59 +610,59 @@ sec[Bold][
 code[no-highlight][My b\[bold\] text.]
 My b[bold] text.
 
-]/*Bold*/
+]/* Bold */
 
 sec[Italic][
 
 code[no-highlight][My i\[italic\] text.]
 My i[italic] text.
 
-]/*Italic*/
+]/* Italic */
 
 sec[Underlined][
 
 code[no-highlight][My u\[underlined\] text.]
 My u[underlined] text.
 
-]/*Underlined*/
+]/* Underlined */
 
 sec[Marked][
 
 code[no-highlight][My m\[marked\] text.]
 My m[marked] text.
 
-]/*Marked*/
+]/* Marked */
 
 sec[Strikethrough][
 
 code[no-highlight][My s\[strikethrough\] text.]
 My s[strikethrough] text.
 
-]/*strikethrough*/
+]/* Strikethrough */
 
 sec[Subscript][
 
 code[no-highlight][My subscript sub\[text\].]
 My subscript sub[text].
 
-]/*Subscript*/
+]/* Subscript */
 
 sec[Superscript][
 
 code[no-highlight][My superscript sup\[text\].]
 My superscript sup[text].
 
-]/*Subscript*/
+]/* Subscript */
 
 sec[Inline Code][
 
 code[no-highlight][My c\[inline code\].]
 My c[inline code].
 
-]/*Bold*/
+]/* Bold */
 
 
-]/*Text Styles*/
+]/* Text styles */
 
 sec[Embed HTML][
 
@@ -673,7 +678,7 @@ code[no-highlight][text text ih\[<b>text</b>\] text.]
 
 text text ih[<b>text</b>] text.
 
-]/*Inline HTML*/
+]/* Inline HTML */
 
 sec[Block HTML][
 
@@ -685,9 +690,9 @@ code[no-highlight][html\[<h1>Text</h1>\]]
 
 html[<h1>Text</h1>]
 
-]/*Block HTML*/
+]/* Block HTML */
 
-]/*Embed HTML*/
+]/* Embed HTML */
 
 sec[Comments][
 
@@ -699,13 +704,13 @@ multiple
 lines */
 
 Some text with a comment /* a\[http://awwapps.com\] */ inside.] 
-]/*Comments*/
+]/* Comments */
 
-sec[Page Break][]/*Page Break*/
+sec[Page break][]/* Page break */
 
-]/*Markup Elements*/
+]/* Markup elements */
 
-sec[Escape of Special Characters][
+sec[Escape of special characters][
 Since square brackets c[\[\]] have a very special meaning in BlockML it is necessary to escape them, if you want to use them in a non markup context. For example in code or mathematical formulas. 
 code[objectivec][\[self.window orderFront:self\];]
 
@@ -720,9 +725,9 @@ But luckily the BlockML App helps you to manage all the backslashes...
 
 img[escape.png]
 
-][ESCAPE]/*Escape of Special Characters*/
+][ESCAPE]/* Escape of special characters */
 
-sec[Error Warnings][
+sec[Error warnings][
 
 If the BlockML compiler can't compile your source text you will get an error message. For instance, a forgotten closing square bracket will cause an error like this:
 
@@ -737,12 +742,40 @@ html[<div class="error" id="error-0">1 Error found!<br><a href="#error-1">Error 
 </div>
 <div class="error" id="error-1">Error with Section</div>]
 
-]/*Errors*/
+]/* Error warnings */
 
-sec[Use Custom CSS][]/*Use Custom CSS*/
+sec[Use custom CSS][
 
-sec[Converting HTML into a PDF][]/*Convert your HTML Document into a PDF*/
+Just replace the default c[screen.css] and c[print.css] with your own stylesheets. But let the file names unchanged. 
+
+code[html][<head>
+	<link media="screen" href="css/screen.css" type="text/css" rel="stylesheet">
+	<link media="print" href="css/print.css" type="text/css" rel="stylesheet">
+</head>]
+
+]/* Use custom CSS */
+
+sec[Convert HTML documents to PDF][
+
+CSS has theoretically the capability to render printable PDFs out of HTML pages. This functionality is called "Paged Media". Some Paged Media features are:
+
+ul[
+- set the size of pages and their margins
+- set page breaks after certain elements or avoid them within an element
+- create headers and footers
+- set page numbers
+- set cross-references
+- generate a table of contents
+]
+
+Unfortunately, no browser supports this functions in their PDF export yet. But, there are some HTML to PDF converting tools like a[http://www.princexml.com][Prince], which implement the Paged Media specification. Prince offers a free license for non-commercial use and is perfect for converting BlockML documents to PDFs.
+
+The c[print.css] is the place where you can set up all the Paged Media stuff.
+
+This article is a good introduction to the topic: a[http://alistapart.com/article/boom][Printing a Book with CSS: Boom!]
+
+]/* Convert HTML documents to PDF */
 
 sec[Setup TextMate][
 
-]/*Setup TextMate*/
+]/* Setup TextMate */

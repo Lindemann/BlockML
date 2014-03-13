@@ -472,7 +472,7 @@ a {
 /*////////////////////////////////////////////////////////////////////////////*/
 #appImage {
   background-color: #44E588;
-  background-image: url(../images/galaxy.jpg);
+  background-image: url(../images/galaxy.svg);
   background-position: center; }
   #appImage img {
     display: block;
