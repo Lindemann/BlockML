@@ -203,7 +203,7 @@
     // Example: Foo /*...
     // Returns the string Foo 
     NSString *OPEN_COM = @"/*";
-    if ([self.currentString hasSuffix:OPEN_COM]) {
+    if ([self.currentString hasSuffix:OPEN_COM] && !self.commentIsOpen) {
         self.token.type = STRING;
         NSRange stringRange = {0, self.currentString.length - OPEN_COM.length};
         self.token.value = [self.currentString substringWithRange:stringRange];

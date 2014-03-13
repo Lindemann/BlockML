@@ -99,7 +99,7 @@ footnote = "fn[" text "]".
 link = "a[" string "]""[" string "]" |
        "a[" string "]".
 
-inlineHTML = "ih[" text "]".
+inlineHTML = "ih[" string "]".
 
 inlineMath = "im[" string "]".
 
