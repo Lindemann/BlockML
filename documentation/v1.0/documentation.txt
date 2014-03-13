@@ -39,7 +39,7 @@ The selector is followed by one or more b[blocks], depending on the type of the 
 code[no-highlight][img\[cat.png\]
 img\[cat.png\]\[300, 200\]] 
 
-The b[content] has to be plain text in some blocks. While other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: c[c\[UITableView\]]. An instance for a markup element that could contain other markup is the section element: c[sec\[Overview\]\[An instance of c\[UITableView\]...\]]. You can think of blocks like of arguments for a method. A block on a certain position expects a certain input.
+The b[content] has to be plain text in some blocks, while other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: c[c\[UITableView\]]. An instance for a markup element that could contain other markup is the section element: c[sec\[Overview\]\[An instance of c\[UITableView\]...\]]. You can think of blocks like of arguments for a method. A block on a certain position expects a certain input.
 
 ]/* Syntax */
 
@@ -696,6 +696,8 @@ html[<h1>Text</h1>]
 
 sec[Comments][
 
+Out comment text with c[/*...*/].
+
 code[vala][/* Comment */
 
 /* Comment
@@ -706,22 +708,51 @@ lines */
 Some text with a comment /* a\[http://awwapps.com\] */ inside.] 
 ]/* Comments */
 
-sec[Page break][]/* Page break */
+/*sec[Page break][
+
+The page break element c[pb\[\]] is only interesting if you want to convert your HTML to a PDF document (see id[HTML2PDF]).
+
+You can use this element to force a page break...
+
+]/* Page break */*/
+
 
 ]/* Markup elements */
 
 sec[Escape of special characters][
-Since square brackets c[\[\]] have a very special meaning in BlockML it is necessary to escape them, if you want to use them in a non markup context. For example in code or mathematical formulas. 
+Since square brackets c[\[\]] have a very special meaning in BlockML, it is necessary to escape them, if you want to use them in a non markup context. For example in code or mathematical formulas.
+
+Here is a typical code example:
 code[objectivec][\[self.window orderFront:self\];]
 
 To escape the square brackets just set a backslash c[\\] in front of them.
 code[objectivec][\\\[self.window orderFront:self\\\];]
 
-if you need an expression like this c[] for your fancy LaTeX math formula stuff, it gets a little bit messie. Like it is usual in programming the occurrence of a trailing backslash c[\\\\] means, that the first backslash c[\\] gets escaped, because the first backslash loses their meaning as escape symbol and gets a normal character. 
 
-That means you have to use 6786 backslashes c[] to print c[] with 2 backslashes.
+Since the backslash c[\\] has a very special meaning as escape symbol, you have to use two backslash c[\\\\] in order to print one. This can get a little bit messy in fancy TeX/LaTeX formulas.
 
-But luckily the BlockML App helps you to manage all the backslashes...
+For example, to use this TeX/LaTeX formula:
+code[no-highlight][\\begin{aligned}
+\\dot{x} & = \\sigma(y-x) \\\\
+\\dot{y} & = \\rho x - y - xz \\\\
+\\dot{z} & = -\\beta z + xy
+\\end{aligned}]
+
+You have to write this:
+code[no-highlight][math\[\\\\begin{aligned}
+\\\\dot{x} & = \\\\sigma(y-x) \\\\\\\\
+\\\\dot{y} & = \\\\rho x - y - xz \\\\\\\\
+\\\\dot{z} & = -\\\\beta z + xy
+\\\\end{aligned}\]]
+
+And get this result:
+math[\\begin{aligned}
+\\dot{x} & = \\sigma(y-x) \\\\
+\\dot{y} & = \\rho x - y - xz \\\\
+\\dot{z} & = -\\beta z + xy
+\\end{aligned}]
+
+But luckily the BlockML App helps to manage all the backslashes. Just insert your code or equation to the upper textfield and copy the text from the textfield below.
 
 img[escape.png]
 
@@ -774,7 +805,7 @@ The c[print.css] is the place where you can set up all the Paged Media stuff.
 
 This article is a good introduction to the topic: a[http://alistapart.com/article/boom][Printing a Book with CSS: Boom!]
 
-]/* Convert HTML documents to PDF */
+][HTML2PDF]/* Convert HTML documents to PDF */
 
 sec[Setup TextMate][
 

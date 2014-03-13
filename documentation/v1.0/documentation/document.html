@@ -141,9 +141,6 @@
 				<ul>
 					<li><span><span>2.20 Comments</span></span><a href="#sec-2.20"><span>[⚐]</span></a></li>
 				</ul>
-				<ul>
-					<li><span><span>2.21 Page break</span></span><a href="#sec-2.21"><span>[⚐]</span></a></li>
-				</ul>
 			</ul>
 			<ul>
 				<li><span><span>3 Escape of special characters</span></span><a href="#sec-3"><span>[⚐]</span></a></li>
@@ -177,7 +174,7 @@
 				<p>The selector is followed by one or more <span class="bold">blocks</span>, depending on the type of the element. Blocks contain content and are not interchangeable. Some elements have one optional block at their end, for example the <span class="code">img</span> element with its optional size specification:</p>
 				<pre><code class="no-highlight">img[cat.png]
 img[cat.png][300, 200]</code></pre>
-				<p>The <span class="bold">content</span> has to be plain text in some blocks. While other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: <span class="code">c[UITableView]</span>. An instance for a markup element that could contain other markup is the section element: <span class="code">sec[Overview][An instance of c[UITableView]...]</span>. You can think of blocks like of arguments for a method. A block on a certain position expects a certain input.</p>
+				<p>The <span class="bold">content</span> has to be plain text in some blocks, while other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: <span class="code">c[UITableView]</span>. An instance for a markup element that could contain other markup is the section element: <span class="code">sec[Overview][An instance of c[UITableView]...]</span>. You can think of blocks like of arguments for a method. A block on a certain position expects a certain input.</p>
 			</div>
 		</div>
 		<div class="sec" id="sec-2">
@@ -727,6 +724,7 @@ bib[DNA][James Watson and Francis Crick. A Structure for Deoxyribose Nucleic Aci
 			</div>
 			<div class="sec" id="sec-2.20">
 				<h2>2.20 Comments</h2>
+				<p>Out comment text with <span class="code">/*...*/</span>.</p>
 				<pre><code class="vala">/* Comment */
 
 /* Comment
@@ -736,19 +734,34 @@ lines */
 
 Some text with a comment /* a[http://awwapps.com] */ inside.</code></pre>
 			</div>
-			<div class="sec" id="sec-2.21">
-				<h2>2.21 Page break</h2>
-			</div>
 		</div>
 		<div class="sec" id="sec-3">
 			<h1>3 Escape of special characters</h1>
-			<p>Since square brackets <span class="code">[]</span> have a very special meaning in BlockML it is necessary to escape them, if you want to use them in a non markup context. For example in code or mathematical formulas. </p>
+			<p>Since square brackets <span class="code">[]</span> have a very special meaning in BlockML, it is necessary to escape them, if you want to use them in a non markup context. For example in code or mathematical formulas.</p>
+			<p>Here is a typical code example:</p>
 			<pre><code class="objectivec">[self.window orderFront:self];</code></pre>
 			<p>To escape the square brackets just set a backslash <span class="code">\</span> in front of them.</p>
 			<pre><code class="objectivec">\[self.window orderFront:self\];</code></pre>
-			<p>if you need an expression like this <span class="code"></span> for your fancy LaTeX math formula stuff, it gets a little bit messie. Like it is usual in programming the occurrence of a trailing backslash <span class="code">\\</span> means, that the first backslash <span class="code">\</span> gets escaped, because the first backslash loses their meaning as escape symbol and gets a normal character. </p>
-			<p>That means you have to use 6786 backslashes <span class="code"></span> to print <span class="code"></span> with 2 backslashes.</p>
-			<p>But luckily the BlockML App helps you to manage all the backslashes...</p>
+			<p>Since the backslash <span class="code">\</span> has a very special meaning as escape symbol, you have to use two backslash <span class="code">\\</span> in order to print one. This can get a little bit messy in fancy TeX/LaTeX formulas.</p>
+			<p>For example, to use this TeX/LaTeX formula:</p>
+			<pre><code class="no-highlight">\begin{aligned}
+\dot{x} &amp; = \sigma(y-x) \\
+\dot{y} &amp; = \rho x - y - xz \\
+\dot{z} &amp; = -\beta z + xy
+\end{aligned}</code></pre>
+			<p>You have to write this:</p>
+			<pre><code class="no-highlight">math[\\begin{aligned}
+\\dot{x} &amp; = \\sigma(y-x) \\\\
+\\dot{y} &amp; = \\rho x - y - xz \\\\
+\\dot{z} &amp; = -\\beta z + xy
+\\end{aligned}]</code></pre>
+			<p>And get this result:</p>
+			<div class="math">\begin{aligned}
+\dot{x} &amp; = \sigma(y-x) \\
+\dot{y} &amp; = \rho x - y - xz \\
+\dot{z} &amp; = -\beta z + xy
+\end{aligned}</div>
+			<p>But luckily the BlockML App helps to manage all the backslashes. Just insert your code or equation to the upper textfield and copy the text from the textfield below.</p>
 			<img src="images/escape.png">
 		</div>
 		<div class="sec" id="sec-4">
