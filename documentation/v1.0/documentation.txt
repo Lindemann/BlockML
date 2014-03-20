@@ -11,26 +11,23 @@ title[BlockML Documentation]
 
 toc[Contents]
 
-sec[Introduction][
-
 sec[Basic usage][
 
-- output folder
-- directory structure
-- files don't get overwritten
+The BlockML OSX app is basically a compiler for plain text files that are marked up with BlockML. To create these plain text files you will need a separate text editor. You can use whatever text editor you like, but it is highly recommended, to use a[http://macromates.com/download][TextMate] or a[http://www.sublimetext.com][Sublime Text], in combination with the c[BlockML.tmbundle], to get syntax highlighting. If you need help with the setup of TextMate or Sublime Text read: id[EDITOR]. Possible file extensions are c[.txt] and c[.blockml]. 
 
-
-
+Once you have created a text file and want to compile it, drag and drop it onto the BlockML OSX app. You will notice that the app starts compiling immediately and opens a browser window with your actual output HTML.
 img[info.svg]
 
-Since BlockML has to be compilable to HTML, its feature set is closely linked to the capabilities of HTML. Like HTML BlockML has block level markup and inline markup. 
+The app has generated an output-folder next to your text file. This output-folder contains the HTML-file, the css-folder and an images-folder. The css-folder and the images-folder don't get overwritten when you recompile your text file.
+
+img[output.png]
 
 ]/* Basic usage */
 
 sec[Syntax][
 
 BlockML source text consist of plain text and markup elements. BlockML markup has always these structure:
-img[structure.svg][550,]
+img[structure.svg][500,]
 
 At the beginning of an element stands a b[selector], which specifies the type of the element. The selector is as short as possible and often inspired by HTML tag names. 
 
@@ -42,8 +39,6 @@ img\[cat.png\]\[300, 200\]]
 The b[content] has to be plain text in some blocks, while other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: c[c\[UITableView\]]. An instance for a markup element that could contain other markup is the section element: c[sec\[Overview\]\[An instance of c\[UITableView\]...\]]. You can think of blocks like of arguments for a method. A block on a certain position expects a certain input.
 
 ]/* Syntax */
-
-]/* Introduction */
 
 sec[Markup elements][
 
@@ -215,7 +210,7 @@ a[http://awwapps.com][Description Text]
 ]/* Links */
 
 sec[Images][
-To embed a local image into the document, copy that image into the auto generated c[images]-Folder, which is part of the c[output]-Folder. Then embed the image name without any path references.
+To embed a local image into the document, copy that image into the auto generated images-folder, which is part of the output-folder. Then embed the image name without any path references.
 
 img[embedImage.png]
 code[no-highlight][img\[localImage.png\]]
@@ -280,7 +275,7 @@ code[no-highlight][Some inline mathematics: im\[$a \ne 0$\].]
 
 Some inline mathematics: im[$a \ne 0$].
 
-m[You have to escape all square brackets in your code.] For more information read id[ESCAPE].
+m[You have to escape all square brackets and backslashes.] For more information read id[ESCAPE].
 
 ]/* Math formulas */
 
@@ -682,7 +677,7 @@ text text ih[<b>text</b>] text.
 
 sec[Block HTML][
 
-Embed  a[https://developer.mozilla.org/en-US/docs/HTML/Block-level_elements][block level HTML] with c[html\[HTML Code\]].
+Embed  a[https://developer.mozilla.org/en-US/docs/HTML/Block-level_elements][block-level HTML] with c[html\[HTML Code\]].
 
 Example:
 
@@ -719,6 +714,24 @@ You can use this element to force a page break...
 
 ]/* Markup elements */
 
+sec[Block-level and inline-level markup][
+
+Since BlockML has to be compilable to HTML, its feature set is closely linked to the capabilities of HTML. Like HTML BlockML has block level markup and inline markup.
+
+h4[Inline-level markup]
+
+Inline level markup can appear within plain text or some block-level elements.
+
+c[a], c[fn], c[id], c[ih], c[im], c[c], c[b], c[u], c[i], c[s], c[m], c[sub], c[sup]
+
+h4[Block-level markup]
+
+Block-level elements may appear within a c[sec]-element or separated on a new line.
+
+c[title], c[head], c[toc], c[sec], c[h1...h6], c[img], c[math], c[code], c[ul], c[ol], c[q], c[cap], c[bib], c[table], c[html]
+
+]/* Block level and inline level markup */
+
 sec[Escape of special characters][
 Since square brackets c[\[\]] have a very special meaning in BlockML, it is necessary to escape them, if you want to use them in a non markup context. For example in code or mathematical formulas.
 
@@ -729,7 +742,7 @@ To escape the square brackets just set a backslash c[\\] in front of them.
 code[objectivec][\\\[self.window orderFront:self\\\];]
 
 
-Since the backslash c[\\] has a very special meaning as escape symbol, you have to use two backslash c[\\\\] in order to print one. This can get a little bit messy in fancy TeX/LaTeX formulas.
+The backslash c[\\] has a special meaning as escape symbol, you have to use two backslash c[\\\\] in order to print one. This can get a little bit messy in fancy TeX/LaTeX formulas.
 
 For example, to use this TeX/LaTeX formula:
 code[no-highlight][\\begin{aligned}
@@ -807,6 +820,6 @@ This article is a good introduction to the topic: a[http://alistapart.com/articl
 
 ][HTML2PDF]/* Convert HTML documents to PDF */
 
-sec[Setup TextMate][
+sec[Setup TextMate and Sublime Text][
 
-]/* Setup TextMate */
+][EDITOR]/* Setup TextMate */
