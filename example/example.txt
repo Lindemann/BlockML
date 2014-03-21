@@ -22,7 +22,7 @@ h1[Preface]
 
 This text is originated as an exercise for an university course about scientific writing at the Beuth University of Applied Sciences Berlin. The assignment was to choose a computer science paper, reproduce the key ideas in own words, and add some own thoughts about that topic as conclusion. 
 
-I have selected the classical paper "b[Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I]" by John McCarthy from 1960 (id[LISP]), because it permits a fascinating look into the history of programming languages and is the origin of many concepts that are still relevant today./*It is the purpose of this text*/ 
+I have selected the classical paper "b[Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I]" by John McCarthy from 1960 (id[LISP]), because it permits a fascinating look into the history of programming languages and is the origin of many concepts that are still relevant today.
 
 This text is also influenced by Paul Graham's article "b[Roots of Lisp]" from 2002 (id[ROOTS]) about that McCarthy paper. I follow Paul Graham's approach to provide code examples in actual LISP code instead of m-expressions, and I assume that c[quote] and c[cond] are elementary functions.
 
