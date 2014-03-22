@@ -685,9 +685,7 @@ $instructionWidth: 220px;
 	}
 	.button {
 		@include buttonColor(white, white, $violet);
-	}
-	.grid-2 {
-		@include centerWithWidth(($buttonWidth * 2) + 24px);
+		@include center;
 		margin-bottom: 50px;
 	}
 }

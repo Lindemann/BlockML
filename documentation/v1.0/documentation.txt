@@ -18,7 +18,7 @@ The BlockML OSX app is basically a compiler for plain text files that are marked
 Once you have created a text file and want to compile it, drag and drop it onto the BlockML OSX app. You will notice that the app starts compiling immediately and opens a browser window with your actual output HTML.
 img[info.svg]
 
-The app has generated an output-folder next to your text file. This output-folder contains the HTML-file, the css-folder and an images-folder. The css-folder and the images-folder don't get overwritten when you recompile your text file.
+The app has generated an output-folder next to your text file. This output-folder contains the HTML-file, the css-folder and an images-folder. Once the output-folder was generated, the css-folder and the images-folder don't get overwritten after recompilation. Use the images-folder to add images to your document and the css-folder to add custom CSS-files.
 
 img[output.png]
 

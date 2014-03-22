@@ -519,15 +519,13 @@ a {
     padding-bottom: 30px; }
   #editorPlugins .button {
     color: white;
-    border: 2px solid white; }
+    border: 2px solid white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px; }
     #editorPlugins .button:hover {
       color: #e489ff;
       background-color: white; }
-  #editorPlugins .grid-2 {
-    display: block;
-    margin: 0 auto;
-    max-width: 484px;
-    margin-bottom: 50px; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                             	     FOOTER                                   */
