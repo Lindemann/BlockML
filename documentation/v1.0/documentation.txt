@@ -836,9 +836,10 @@ img[TM_3.png]
 img[TM_4_1.png]
 img[TM_4_2.png]
 
-Done! The following steps are optional and only necessary in case you want to use the BlockML color schemes.
 
-5. Drag and drop the c[BlockML Night.tmTheme]/c[BlockML Day.tmTheme] onto the TextMate icon
+Almost done! The following steps are optional.
+
+5. In case you want to use the BlockML color schemes, drag and drop the c[BlockML Night.tmTheme]/c[BlockML Day.tmTheme] onto the TextMate icon
 img[TM_5.png]
 
 6. Add the c[tmTheme]-file to BlockML-bundle
@@ -852,6 +853,9 @@ cap[Fig.][Night theme]
 
 img[TM_7_3.png]
 cap[Fig.][Day theme]
+
+8. Activate Spell Checking
+img[TM_8.png]
 
 ]/* TextMate */
 
