@@ -26,10 +26,10 @@ img[output.png]
 
 sec[Syntax][
 
-BlockML source text consist of plain text and markup elements. BlockML markup has always these structure:
+BlockML source text consists of plain text and markup elements. BlockML markup has always these structure:
 img[structure.svg][500,]
 
-At the beginning of an element stands a b[selector], which specifies the type of the element. The selector is as short as possible and often inspired by HTML tag names. 
+A markup element begins with a b[selector], which specifies the type of the element. The selector is as short as possible and often inspired by HTML tag names. 
 
 The selector is followed by one or more b[blocks], depending on the type of the element. Blocks contain content and are not interchangeable. Some elements have one optional block at their end, for example the c[img] element with its optional size specification:
 
@@ -171,11 +171,11 @@ html[<div class="sec" id="sec-1">
 ]/* Sections */
 
 sec[Table of contents][
-To get a Table of Contents use the c[toc] element. The Table of Contents gets assembled from the section headings.
+To get a table of contents use the c[toc] element. The table of contents gets assembled from the section headings.
 
 code[no-highlight][toc\[TOC Title\]]
 
-The Table of Contents for the section example above looks like this:
+The table of contents for the section example above looks like this:
 
 html[<div id="toc">
 			<h1>TOC Title</h1>
@@ -299,7 +299,7 @@ tr\[\]
 tr\[\]
 \]]
 
-Finally add c[th]-cells and c[td]-cells:
+Finally, add c[th]-cells and c[td]-cells:
 
 code[no-highlight][table\[
 tr\[ th\[Header 1\] th\[Header 2\] \]
@@ -365,7 +365,7 @@ tr[			  td[Data 1][h:2] ]
 
 sec[Captions][
 
-You should use captions directly after c[image]-, c[code]-, c[math]- or for example c[table]-elements. To create a caption use:
+You should use captions directly after c[image]-, c[code]-, c[math]- or c[table]-elements. To create a caption use:
 code[no-highlight][cap\[Type\]\[Description\]]
 
 The first block specifies the type of the caption like: Listing, Fig., Figure, Table, Abbildung...The second block contains the description text to your c[image]-, c[code]-, c[math]- or c[table]-elements.
@@ -449,6 +449,8 @@ ol[
 - item
 ]
 
+An example with nested lists:
+
 code[no-highlight][ol\[
 - item
 - item
@@ -494,7 +496,7 @@ Use the c[id] at this place in your text, where you want to mention the referenc
 
 code[no-highlight][Some text with a reference id\[UNIQUE\].]
 
-Read the following sections, to see how to connect a c[id] with your captions, sections or bibliography items. 
+Read the following sections, to see how to connect an c[id] with your captions, sections or bibliography items. 
 
 sec[References to captions][
 
@@ -540,7 +542,7 @@ html[<p>For more information see <a href="#sec-example">1 Section Heading</a>.</
 
 sec[References to bibliography items][
 
-bibliography items own by default a UID-block.
+bibliography items own by default an UID-block.
 
 code[no-highlight][bib\[UID\]\[Publication Details\]]
 
@@ -665,7 +667,7 @@ sec[Inline HTML][
 
 Embed a[https://developer.mozilla.org/en-US/docs/HTML/Inline_elements][inline HTML] with c[ih\[HTML Code\]].
 
-You can use inline HTML in the same way like inline BlockML elements.
+You can use inline HTML in the same way like inline BlockML elements (see id[LEVEL]).
 
 Example:
 
@@ -730,7 +732,7 @@ Block-level elements may appear within a c[sec]-element or separated on a new li
 
 c[title], c[head], c[toc], c[sec], c[h1...h6], c[img], c[math], c[code], c[ul], c[ol], c[q], c[cap], c[bib], c[table], c[html]
 
-]/* Block level and inline level markup */
+][LEVEL]/* Block level and inline level markup */
 
 sec[Escape of special characters][
 Since square brackets c[\[\]] have a very special meaning in BlockML, it is necessary to escape them, if you want to use them in a non markup context. For example in code or mathematical formulas.
@@ -744,7 +746,7 @@ code[objectivec][\\\[self.window orderFront:self\\\];]
 
 The backslash c[\\] has a special meaning as escape symbol, you have to use two backslash c[\\\\] in order to print one. This can get a little bit messy in fancy TeX/LaTeX formulas.
 
-For example, to use this TeX/LaTeX formula:
+For example in this TeX/LaTeX formula:
 code[no-highlight][\\begin{aligned}
 \\dot{x} & = \\sigma(y-x) \\\\
 \\dot{y} & = \\rho x - y - xz \\\\
@@ -765,7 +767,7 @@ math[\\begin{aligned}
 \\dot{z} & = -\\beta z + xy
 \\end{aligned}]
 
-But luckily the BlockML App helps to manage all the backslashes. Just insert your code or equation to the upper textfield and copy the text from the textfield below.
+But luckily the BlockML App helps to manage all the backslashes. Just insert your code or equation to the upper textfield and use the text from the textfield below.
 
 img[escape.png]
 
