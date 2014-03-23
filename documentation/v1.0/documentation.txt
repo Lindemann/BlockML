@@ -825,11 +825,13 @@ sec[Setup TextMate and Sublime Text][
 sec[TextMate][
 
 
-1. Download a[][TextMate] and the a[][BlockML plugin]
+1. Download a[http://macromates.com/download][TextMate] and the a[http://blockml.awwapps.com/downloads/BlockML.zip][BlockML plugin]
 2. Drag and drop the c[BlockML.tmbundle] onto the TextMate icon
 img[TM_2.png]
+
 3. Install it
 img[TM_3.png]
+
 4. Choose BlockML as language
 img[TM_4_1.png]
 img[TM_4_2.png]
@@ -843,18 +845,38 @@ img[TM_5.png]
 img[TM_6.png]
 
 7. Choose a color scheme
-img[TM_7.png]
+img[TM_7_1.png]
 
-img[night.png]
+img[TM_7_2.png]
 cap[Fig.][Night theme]
-img[day.png]
+
+img[TM_7_3.png]
 cap[Fig.][Day theme]
 
 ]/* TextMate */
 
 sec[Sublime Text][
 
-img[sublime.png]
+1. Download a[http://www.sublimetext.com][Sublime Text] and the a[http://blockml.awwapps.com/downloads/BlockML.zip][BlockML plugin]
+
+2. Open Sublime Text's c[Packages]-folder
+img[ST_2.png]
+
+3. Move the downloaded c[BlockML]-folder into the c[Packages]-folder
+img[ST_3.png]
+
+4. Choose BlockML as language
+img[ST_4_1.png]
+img[ST_4_2.png]
+
+5. Finally, you can choose a BlockML color scheme
+img[ST_5_1.png]
+
+img[ST_5_2.png]
+cap[Fig.][Night theme]
+
+img[ST_5_3.png]
+cap[Fig.][Day theme]
 
 ]/* Sublime Text */
 
