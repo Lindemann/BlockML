@@ -36,7 +36,7 @@ The selector is followed by one or more b[blocks], depending on the type of the 
 code[no-highlight][img\[cat.png\]
 img\[cat.png\]\[300, 200\]] 
 
-The b[content] has to be plain text in some blocks, while other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: c[c\[UITableView\]]. An instance for a markup element that could contain other markup is the section element: c[sec\[Overview\]\[An instance of c\[UITableView\]...\]]. You can think of blocks like of arguments for a method. A block on a certain position expects a certain input.
+The b[content] has to be plain text in some blocks, while other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: c[c\[UITableView\]]. An instance for a markup element that could contain other markup is the section element: c[sec\[Overview\]\[An instance of c\[UITableView\]...\]]. You can think of blocks like of arguments for a method: a block on a certain position expects a certain input.
 
 ]/* Syntax */
 
@@ -821,5 +821,41 @@ This article is a good introduction to the topic: a[http://alistapart.com/articl
 ][HTML2PDF]/* Convert HTML documents to PDF */
 
 sec[Setup TextMate and Sublime Text][
+
+sec[TextMate][
+
+
+1. Download a[][TextMate] and the a[][BlockML plugin]
+2. Drag and drop the c[BlockML.tmbundle] onto the TextMate icon
+img[TM_2.png]
+3. Install it
+img[TM_3.png]
+4. Choose BlockML as language
+img[TM_4_1.png]
+img[TM_4_2.png]
+
+Done! The following steps are optional and only necessary in case you want to use the BlockML color schemes.
+
+5. Drag and drop the c[BlockML Night.tmTheme]/c[BlockML Day.tmTheme] onto the TextMate icon
+img[TM_5.png]
+
+6. Add the c[tmTheme]-file to BlockML-bundle
+img[TM_6.png]
+
+7. Choose a color scheme
+img[TM_7.png]
+
+img[night.png]
+cap[Fig.][Night theme]
+img[day.png]
+cap[Fig.][Day theme]
+
+]/* TextMate */
+
+sec[Sublime Text][
+
+img[sublime.png]
+
+]/* Sublime Text */
 
 ][EDITOR]/* Setup TextMate */

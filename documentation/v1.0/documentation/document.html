@@ -156,6 +156,12 @@
 			</ul>
 			<ul>
 				<li><span><span>9 Setup TextMate and Sublime Text</span></span><a href="#sec-9"><span>[⚐]</span></a></li>
+				<ul>
+					<li><span><span>9.1 TextMate</span></span><a href="#sec-9.1"><span>[⚐]</span></a></li>
+				</ul>
+				<ul>
+					<li><span><span>9.2 Sublime Text</span></span><a href="#sec-9.2"><span>[⚐]</span></a></li>
+				</ul>
 			</ul>
 		</div>
 		<div class="sec" id="sec-1">
@@ -174,7 +180,7 @@
 			<p>The selector is followed by one or more <span class="bold">blocks</span>, depending on the type of the element. Blocks contain content and are not interchangeable. Some elements have one optional block at their end, for example the <span class="code">img</span> element with its optional size specification:</p>
 			<pre><code class="no-highlight">img[cat.png]
 img[cat.png][300, 200]</code></pre>
-			<p>The <span class="bold">content</span> has to be plain text in some blocks, while other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: <span class="code">c[UITableView]</span>. An instance for a markup element that could contain other markup is the section element: <span class="code">sec[Overview][An instance of c[UITableView]...]</span>. You can think of blocks like of arguments for a method. A block on a certain position expects a certain input.</p>
+			<p>The <span class="bold">content</span> has to be plain text in some blocks, while other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: <span class="code">c[UITableView]</span>. An instance for a markup element that could contain other markup is the section element: <span class="code">sec[Overview][An instance of c[UITableView]...]</span>. You can think of blocks like of arguments for a method: a block on a certain position expects a certain input.</p>
 		</div>
 		<div class="sec" id="sec-3">
 			<h1>3 Markup elements</h1>
@@ -811,6 +817,31 @@ Content</code></pre>
 		</div>
 		<div class="sec" id="sec-9">
 			<h1>9 Setup TextMate and Sublime Text</h1>
+			<div class="sec" id="sec-9.1">
+				<h2>9.1 TextMate</h2>
+				<p>1. Download <a>TextMate</a> and the <a>BlockML plugin</a><br>2. Drag and drop the <span class="code">BlockML.tmbundle</span> onto the TextMate icon</p>
+				<img src="images/TM_2.png">
+				<p>3. Install it</p>
+				<img src="images/TM_3.png">
+				<p>4. Choose BlockML as language</p>
+				<img src="images/TM_4_1.png">
+				<img src="images/TM_4_2.png">
+				<p>Done! The following steps are optional and only necessary in case you want to use the BlockML color schemes.</p>
+				<p>5. Drag and drop the <span class="code">BlockML Night.tmTheme</span>/<span class="code">BlockML Day.tmTheme</span> onto the TextMate icon</p>
+				<img src="images/TM_5.png">
+				<p>6. Add the <span class="code">tmTheme</span>-file to BlockML-bundle</p>
+				<img src="images/TM_6.png">
+				<p>7. Choose a color scheme</p>
+				<img src="images/TM_7.png">
+				<img src="images/night.png">
+				<div class="cap"><span>Fig. 9.1: </span>Night theme</div>
+				<img src="images/day.png">
+				<div class="cap"><span>Fig. 9.2: </span>Day theme</div>
+			</div>
+			<div class="sec" id="sec-9.2">
+				<h2>9.2 Sublime Text</h2>
+				<img src="images/sublime.png">
+			</div>
 		</div>
 	</body>
 </html>
