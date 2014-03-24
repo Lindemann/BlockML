@@ -177,7 +177,7 @@
 			<p>BlockML source text consists of plain text and markup elements. BlockML markup has always these structure:</p>
 			<img src="images/structure.svg" width="500">
 			<p>A markup element begins with a <span class="bold">selector</span>, which specifies the type of the element. The selector is as short as possible and often inspired by HTML tag names. </p>
-			<p>The selector is followed by one or more <span class="bold">blocks</span>, depending on the type of the element. Blocks contain content and are not interchangeable. Some elements have one optional block at their end, for example the <span class="code">img</span> element with its optional size specification:</p>
+			<p>The selector is followed by one or more <span class="bold">blocks</span>, depending on the type of the element. Blocks contain content and are not interchangeable. Some elements have one optional block at their end, for example the <span class="code">img</span>-element with its optional size specification:</p>
 			<pre><code class="no-highlight">img[cat.png]
 img[cat.png][300, 200]</code></pre>
 			<p>The <span class="bold">content</span> has to be plain text in some blocks, while other blocks can contain plain text and further markup. For instance, the element for inline code has to contain only plain text like: <span class="code">c[UITableView]</span>. An instance for a markup element that could contain other markup is the section element: <span class="code">sec[Overview][An instance of c[UITableView]...]</span>. You can think of blocks like of arguments for a method: a block on a certain position expects a certain input.</p>
@@ -289,9 +289,9 @@ sec[Section Heading][Content too]/*Section*/</code></pre>
 			</div>
 			<div class="sec" id="sec-3.6">
 				<h2>3.6 Table of contents</h2>
-				<p>To get a Table of contents use the <span class="code">toc</span> element. The Table of contents gets assembled from the section headings.</p>
+				<p>To get a table of contents use the <span class="code">toc</span>-element. The table of contents gets assembled from the section headings.</p>
 				<pre><code class="no-highlight">toc[TOC Title]</code></pre>
-				<p>The Table of contents for the section example above looks like this:</p>
+				<p>The table of contents for the section example above looks like this:</p>
 <div id="toc">
 			<h1>TOC Title</h1>
 			<ul>
@@ -782,7 +782,7 @@ Some text with a comment /* a[http://awwapps.com] */ inside.</code></pre>
 		</div>
 		<div class="sec" id="sec-6">
 			<h1>6 Error warnings</h1>
-			<p>If the BlockML compiler can't compile your source text you will get an error message. For instance, a forgotten closing square bracket will cause an error like this:</p>
+			<p>If the BlockML compiler can't compile your text file you will get an error message. For instance, a forgotten closing square bracket will cause an error like this:</p>
 			<pre><code class="no-highlight">sec[Section Heading][
 
 Content</code></pre>
@@ -830,7 +830,7 @@ Content</code></pre>
 				<p>Almost done! The following steps are optional.</p>
 				<p>5. In case you want to use the BlockML color schemes, drag and drop the <span class="code">BlockML Night.tmTheme</span>/<span class="code">BlockML Day.tmTheme</span> onto the TextMate icon</p>
 				<img src="images/TM_5.png">
-				<p>6. Add the <span class="code">tmTheme</span>-file to BlockML-bundle</p>
+				<p>6. Add the <span class="code">tmTheme</span>-file to the BlockML-bundle</p>
 				<img src="images/TM_6.png">
 				<p>7. Choose a color scheme</p>
 				<img src="images/TM_7_1.png">

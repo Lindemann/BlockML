@@ -31,7 +31,7 @@ img[structure.svg][500,]
 
 A markup element begins with a b[selector], which specifies the type of the element. The selector is as short as possible and often inspired by HTML tag names. 
 
-The selector is followed by one or more b[blocks], depending on the type of the element. Blocks contain content and are not interchangeable. Some elements have one optional block at their end, for example the c[img] element with its optional size specification:
+The selector is followed by one or more b[blocks], depending on the type of the element. Blocks contain content and are not interchangeable. Some elements have one optional block at their end, for example the c[img]-element with its optional size specification:
 
 code[no-highlight][img\[cat.png\]
 img\[cat.png\]\[300, 200\]] 
@@ -171,7 +171,7 @@ html[<div class="sec" id="sec-1">
 ]/* Sections */
 
 sec[Table of contents][
-To get a table of contents use the c[toc] element. The table of contents gets assembled from the section headings.
+To get a table of contents use the c[toc]-element. The table of contents gets assembled from the section headings.
 
 code[no-highlight][toc\[TOC Title\]]
 
@@ -775,7 +775,7 @@ img[escape.png]
 
 sec[Error warnings][
 
-If the BlockML compiler can't compile your source text you will get an error message. For instance, a forgotten closing square bracket will cause an error like this:
+If the BlockML compiler can't compile your text file you will get an error message. For instance, a forgotten closing square bracket will cause an error like this:
 
 code[no-highlight][sec\[Section Heading\]\[
 
@@ -844,7 +844,7 @@ Almost done! The following steps are optional.
 5. In case you want to use the BlockML color schemes, drag and drop the c[BlockML Night.tmTheme]/c[BlockML Day.tmTheme] onto the TextMate icon
 img[TM_5.png]
 
-6. Add the c[tmTheme]-file to BlockML-bundle
+6. Add the c[tmTheme]-file to the BlockML-bundle
 img[TM_6.png]
 
 7. Choose a color scheme
