@@ -314,7 +314,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 }
                 Error *error = (Error*)element;
                 [self.errors addObject:error];
-                error.count = self.errors.count;
+                error.count = (int)self.errors.count;
             }
             
             // Captions
@@ -367,7 +367,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                     self.footnotes = [NSMutableArray new];
                 }
                 [self.footnotes addObject:footnote];
-                footnote.footnoteNumber = self.footnotes.count;
+                footnote.footnoteNumber = (int)self.footnotes.count;
                 Sup *sup = [Sup new];
                 Text *text = [Text new];
                 text.string = footnote.linkString;

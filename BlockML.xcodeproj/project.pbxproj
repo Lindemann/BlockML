@@ -13,7 +13,6 @@
 		82080F36172D0CEE008ABC58 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 82080F34172D0CEE008ABC58 /* Credits.rtf */; };
 		82080F39172D0CEE008ABC58 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F38172D0CEE008ABC58 /* AppDelegate.m */; };
 		82080F3C172D0CEE008ABC58 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82080F3A172D0CEE008ABC58 /* MainMenu.xib */; };
-		82080F44172D0CEF008ABC58 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82080F43172D0CEF008ABC58 /* SenTestingKit.framework */; };
 		82080F45172D0CEF008ABC58 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82080F25172D0CEE008ABC58 /* Cocoa.framework */; };
 		82080F4D172D0CEF008ABC58 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82080F4B172D0CEF008ABC58 /* InfoPlist.strings */; };
 		82080F50172D0CEF008ABC58 /* BlockMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080F4F172D0CEF008ABC58 /* BlockMLTests.m */; };
@@ -107,8 +106,7 @@
 		82080F37172D0CEE008ABC58 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		82080F38172D0CEE008ABC58 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		82080F3B172D0CEE008ABC58 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		82080F42172D0CEF008ABC58 /* BlockMLTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockMLTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		82080F43172D0CEF008ABC58 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		82080F42172D0CEF008ABC58 /* BlockMLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockMLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82080F4A172D0CEF008ABC58 /* BlockMLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlockMLTests-Info.plist"; sourceTree = "<group>"; };
 		82080F4C172D0CEF008ABC58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		82080F4E172D0CEF008ABC58 /* BlockMLTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockMLTests.h; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82080F44172D0CEF008ABC58 /* SenTestingKit.framework in Frameworks */,
 				82080F45172D0CEF008ABC58 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				82080F22172D0CEE008ABC58 /* BlockML.app */,
-				82080F42172D0CEF008ABC58 /* BlockMLTests.octest */,
+				82080F42172D0CEF008ABC58 /* BlockMLTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,7 +270,6 @@
 			children = (
 				82A062811813ED08007A7F17 /* QuartzCore.framework */,
 				82080F25172D0CEE008ABC58 /* Cocoa.framework */,
-				82080F43172D0CEF008ABC58 /* SenTestingKit.framework */,
 				82080F27172D0CEE008ABC58 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -727,8 +723,8 @@
 			);
 			name = BlockMLTests;
 			productName = BlockMLTests;
-			productReference = 82080F42172D0CEF008ABC58 /* BlockMLTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 82080F42172D0CEF008ABC58 /* BlockMLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -736,8 +732,14 @@
 		82080F1A172D0CEE008ABC58 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Lindemann;
+				TargetAttributes = {
+					82080F41172D0CEF008ABC58 = {
+						TestTargetID = 82080F21172D0CEE008ABC58;
+					};
+				};
 			};
 			buildConfigurationList = 82080F1D172D0CEE008ABC58 /* Build configuration list for PBXProject "BlockML" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -996,6 +998,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BlockML/BlockML-Prefix.pch";
 				INFOPLIST_FILE = "BlockML/BlockML-Info.plist";
@@ -1009,6 +1015,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BlockML/BlockML-Prefix.pch";
 				INFOPLIST_FILE = "BlockML/BlockML-Info.plist";
@@ -1022,13 +1032,15 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BlockML.app/Contents/MacOS/BlockML";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\\\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\\\"",
+					"$(inherited)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BlockML/BlockML-Prefix.pch";
 				INFOPLIST_FILE = "BlockMLTests/BlockMLTests-Info.plist";
 				PRODUCT_NAME = BlockMLTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -1037,13 +1049,15 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BlockML.app/Contents/MacOS/BlockML";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\\\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\\\"",
+					"$(inherited)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BlockML/BlockML-Prefix.pch";
 				INFOPLIST_FILE = "BlockMLTests/BlockMLTests-Info.plist";
 				PRODUCT_NAME = BlockMLTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

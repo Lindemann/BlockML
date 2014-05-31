@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Lindemann. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface BlockMLTests : SenTestCase
+@interface BlockMLTests : XCTestCase
 
 @end

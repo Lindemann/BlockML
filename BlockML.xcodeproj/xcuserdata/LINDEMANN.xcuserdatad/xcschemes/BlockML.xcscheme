@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "82080F41172D0CEF008ABC58"
-               BuildableName = "BlockMLTests.octest"
+               BuildableName = "BlockMLTests.xctest"
                BlueprintName = "BlockMLTests"
                ReferencedContainer = "container:BlockML.xcodeproj">
             </BuildableReference>
