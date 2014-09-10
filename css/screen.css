@@ -1,5 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
 /*
     ____  __           __   __  _____ 
    / __ )/ /___  _____/ /__/  |/  / / 
@@ -12,6 +10,8 @@
 /*                                   IMPORTS                                  */
 /*////////////////////////////////////////////////////////////////////////////*/
 /* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                       SASS VARS, MIXINS AND FUNCTIONS                      */
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -50,7 +50,7 @@ a {
     text-decoration: none; }
 
 ::selection {
-  background-color: #f1fc82; }
+  background-color: #F1FC82; }
 
 ::-moz-selection {
   background-color: rgba(241, 252, 130, 0.7); }
@@ -105,7 +105,7 @@ a {
   #navBar ul {
     text-align: right;
     margin: 34.33333px 0;
-    margin-right: 15px; }
+    margin-right: 24px; }
     #navBar ul li {
       display: inline;
       margin: 0 12px;
@@ -154,14 +154,14 @@ a {
     margin-top: 0px;
     font-size: 16pt; }
   #header .button {
-    color: #d6d198;
-    border: 2px solid #d6d198;
+    color: #D6D198;
+    border: 2px solid #D6D198;
     display: block;
     margin: 0 auto;
     margin-top: 50px; }
     #header .button:hover {
       color: white;
-      background-color: #d6d198; }
+      background-color: #D6D198; }
     #header .button:hover {
       -webkit-font-smoothing: subpixel-antialiased;
       -moz-osx-font-smoothing: auto; }
@@ -205,7 +205,7 @@ a {
 /*                                   EXAMPLE                                  */
 /*////////////////////////////////////////////////////////////////////////////*/
 #example {
-  background-color: #c6c6c6;
+  background-color: #C6C6C6;
   overflow: hidden; }
   #example p {
     color: white;
@@ -217,7 +217,7 @@ a {
     color: white;
     border: 2px solid white; }
     #example .button:hover {
-      color: #c6c6c6;
+      color: #C6C6C6;
       background-color: white; }
   #example .parentGrid {
     display: block;
@@ -233,7 +233,7 @@ a {
 /*                               GETTING STARTED                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 #gettingStarted {
-  background-color: #d6d198; }
+  background-color: #D6D198; }
   #gettingStarted .in {
     padding-top: 100px;
     width: 940px;
@@ -346,10 +346,10 @@ a {
     padding: 0 2.1em 0.7em 2.1em;
     line-height: 1.4em; }
   #source .window .keyword {
-    color: #6176f6;
+    color: #6176F6;
     background-color: rgba(97, 118, 246, 0.2); }
   #source .window .sectionHeading {
-    color: #e489ff;
+    color: #E489FF;
     background-color: rgba(228, 137, 255, 0.2); }
   #source .window .comment {
     color: #4d4d4d; }
@@ -358,7 +358,7 @@ a {
   background-color: white;
   color: #424242;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 12pt;
+  font-size: 14pt;
   line-height: 1.6em;
   word-wrap: break-word;
   font-size: 10pt; }
@@ -387,7 +387,7 @@ a {
   #output .window h6 {
     font-size: 12pt; }
   #output .window a, #output .window a span {
-    color: #6176f6;
+    color: #6176F6;
     text-decoration: none; }
     #output .window a:hover, #output .window a span:hover {
       color: #0d2be4; }
@@ -454,7 +454,7 @@ a {
 /*                                 APP DOWNLOAD                               */
 /*////////////////////////////////////////////////////////////////////////////*/
 #appDownload {
-  background-color: #6176f6;
+  background-color: #6176F6;
   overflow: hidden; }
   #appDownload .button {
     color: white;
@@ -464,7 +464,7 @@ a {
     margin-top: 50px;
     margin-bottom: 50px; }
     #appDownload .button:hover {
-      color: #6176f6;
+      color: #6176F6;
       background-color: white; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -487,7 +487,7 @@ a {
 /*                                 DOCUMENTATION                              */
 /*////////////////////////////////////////////////////////////////////////////*/
 #documentation {
-  background-color: #c6c6c6;
+  background-color: #C6C6C6;
   overflow: hidden; }
   #documentation p {
     color: white;
@@ -502,14 +502,14 @@ a {
     margin: 0 auto;
     margin-bottom: 50px; }
     #documentation .button:hover {
-      color: #c6c6c6;
+      color: #C6C6C6;
       background-color: white; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /*                                EDITOR PLUGIN                               */
 /*////////////////////////////////////////////////////////////////////////////*/
 #editorPlugins {
-  background-color: #e489ff;
+  background-color: #E489FF;
   overflow: hidden; }
   #editorPlugins p {
     color: white;
@@ -524,7 +524,7 @@ a {
     margin: 0 auto;
     margin-bottom: 50px; }
     #editorPlugins .button:hover {
-      color: #e489ff;
+      color: #E489FF;
       background-color: white; }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -532,7 +532,7 @@ a {
 /*////////////////////////////////////////////////////////////////////////////*/
 #footer {
   background-color: white;
-  color: #c6c6c6; }
+  color: #C6C6C6; }
   #footer .in {
     width: 90%;
     display: block;
@@ -555,3 +555,5 @@ a {
     line-height: 0em; }
   #footer .in {
     overflow: hidden; }
+
+/*# sourceMappingURL=screen.css.map */
