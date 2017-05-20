@@ -21,14 +21,14 @@
         <window title="BlockML" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
-            <rect key="contentRect" x="196" y="240" width="430" height="260"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="contentRect" x="196" y="240" width="430" height="247"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="430" height="260"/>
+                <rect key="frame" x="0.0" y="0.0" width="430" height="247"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTa-fM-fUV" customClass="DropView">
-                        <rect key="frame" x="0.0" y="13" width="430" height="247"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="247"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-Wq-VgI">
@@ -73,6 +73,7 @@
                     </customView>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="116" y="161"/>
         </window>
     </objects>
     <resources>
