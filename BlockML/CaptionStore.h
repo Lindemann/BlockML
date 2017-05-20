@@ -10,7 +10,7 @@
 
 @interface CaptionStore : NSObject
 
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *captionStoreDescription;
 @property (nonatomic, strong) NSMutableArray *captionsArray;
 
 @end

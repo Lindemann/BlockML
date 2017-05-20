@@ -11,7 +11,7 @@
 @interface Caption : HTMLElement
 
 @property (nonatomic, strong) NSString *identfier; // eg. WIKIBI
-@property (nonatomic, strong) NSString *description; // eg. Abb., Figure...
+@property (nonatomic, strong) NSString *captionDescription; // eg. Abb., Figure...
 @property (nonatomic, strong) NSString *captionNumber; // eg. 4.1
 @property (nonatomic, strong) NSString *captionText;
 

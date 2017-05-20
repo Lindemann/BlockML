@@ -120,7 +120,7 @@
 }
 
 - (void)dropedFileWithURL:(NSURL*)URL {
-    [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:URL display:NO completionHandler:nil];
+    [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:URL display:NO completionHandler:^(NSDocument * _Nullable document, BOOL documentWasAlreadyOpen, NSError * _Nullable error) {}];
 }
 
 - (void)draggingStarted {

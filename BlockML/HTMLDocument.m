@@ -331,7 +331,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                 
                 // Assembly String
                 Text *text = [Text new];
-                text.string = [NSString  stringWithFormat:@"%@ %@: ", caption.description, caption.captionNumber];
+                text.string = [NSString  stringWithFormat:@"%@ %@: ", caption.captionDescription, caption.captionNumber];
                 Span *span = [caption.elements objectAtIndex:0];
                 [span addElement:text];
             }
@@ -396,7 +396,7 @@ static NSString *const BLOCKML = @"<!--\n    ____  __           __   __  _____\n
                             for (Caption *caption in captionStore.captionsArray) {
                                 if ([identifier.identfier isEqual:caption.identfier]) {
                                     Text *text = [Text new];
-                                    text.string = [NSString stringWithFormat:@"%@ %@", caption.description, caption.captionNumber];
+                                    text.string = [NSString stringWithFormat:@"%@ %@", caption.captionDescription, caption.captionNumber];
                                     [identifier addElement:text];
                                 }
                             }

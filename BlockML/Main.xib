@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-Wq-VgI">
-                                <rect key="frame" x="160" y="81" width="111" height="25"/>
+                                <rect key="frame" x="160" y="81" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="vKA-cK-kbo" customClass="BugFixSegmentedCell">
                                     <font key="font" metaFont="system"/>

@@ -38,8 +38,8 @@
 //    NSLog(@"performDragOperation:");
     NSPasteboard *pastboard = [sender draggingPasteboard];
     NSURL *URL = [NSURL URLFromPasteboard:pastboard];
-    if (![URL.pathExtension caseInsensitiveCompare:@"txt"] == NSOrderedSame &&
-        ![URL.pathExtension caseInsensitiveCompare:@"blockml"] == NSOrderedSame) {
+    if ((![URL.pathExtension caseInsensitiveCompare:@"txt"]) == NSOrderedSame &&
+        (![URL.pathExtension caseInsensitiveCompare:@"blockml"]) == NSOrderedSame) {
         return NO;
     }
     [self.delegate dropedFileWithURL:URL];

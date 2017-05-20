@@ -675,11 +675,11 @@
         Span *span = [Span new];
         [caption addElement:span];
         // If cap[]
-        caption.description = @" ";
+        caption.captionDescription = @" ";
         [self nextToken];
         // STRING eg. Figure
         if (self.token.type == STRING) {
-            caption.description = self.token.value;
+            caption.captionDescription = self.token.value;
             [self nextToken];
         }
         // ]

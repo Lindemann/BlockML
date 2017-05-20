@@ -21,7 +21,7 @@
 - (void)addCaption:(Caption *)caption {
     CaptionStore *captionStore;
     for (CaptionStore *tmpCaptionStore in self.captionStoreArray) {
-        if ([tmpCaptionStore.description isEqual:caption.description]) {
+        if ([tmpCaptionStore.captionStoreDescription isEqual:caption.captionDescription]) {
             captionStore = tmpCaptionStore;
         }
     }
@@ -29,7 +29,7 @@
         [captionStore.captionsArray addObject:caption];
     } else {
         captionStore = [CaptionStore new];
-        captionStore.description = caption.description;
+        captionStore.captionStoreDescription = caption.captionDescription;
         [captionStore.captionsArray addObject:caption];
         [self.captionStoreArray addObject:captionStore];
     }
