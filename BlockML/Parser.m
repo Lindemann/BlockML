@@ -745,12 +745,10 @@
             // [
             if (self.token.type == OPEN_SB) {
                 [self nextToken];
-                // textBlock
-                if (self.token.type == STRING) {
-                    Paragraph *paragraph = [Paragraph new];
-                    [bibliography addElement:paragraph];
-                    [self textBlock:paragraph];
-                }
+                // text
+                Paragraph *paragraph = [Paragraph new];
+                [bibliography addElement:paragraph];
+                [self text:paragraph];
                 if (self.token.type == CLOSE_SB) {
                     [self nextToken];
                 } else {
