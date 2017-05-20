@@ -7,7 +7,6 @@
 //
 
 #import "EscapeTextWindowController.h"
-#import "INAppStoreWindow.h"
 
 @interface EscapeTextWindowController ()
 
@@ -24,13 +23,8 @@
     return self;
 }
 
-- (void)windowDidLoad
-{
+- (void)windowDidLoad {
     [super windowDidLoad];
-    INAppStoreWindow *window = (INAppStoreWindow*)self.window;
-    window.showsTitle = YES;
-    window.verticallyCenterTitle = YES;
-    window.titleTextColor = [NSColor colorWithCalibratedRed:0.31f green:0.31f blue:0.31f alpha:1.00f];
     
     self.input.delegate = self;
     self.output.delegate = self;

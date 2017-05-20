@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "INAppStoreWindow.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
