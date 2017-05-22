@@ -22,7 +22,11 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <rect key="contentRect" x="196" y="240" width="430" height="247"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <value key="minSize" type="size" width="430" height="247"/>
+            <value key="maxSize" type="size" width="430" height="247"/>
+            <value key="minFullScreenContentSize" type="size" width="430" height="247"/>
+            <value key="maxFullScreenContentSize" type="size" width="430" height="247"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="430" height="247"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -31,8 +35,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="247"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
+                            <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="GcV-e4-84O">
+                                <rect key="frame" x="207" y="183" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
                             <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-Wq-VgI">
-                                <rect key="frame" x="160" y="81" width="116" height="25"/>
+                                <rect key="frame" x="160" y="77" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="vKA-cK-kbo" customClass="BugFixSegmentedCell">
                                     <font key="font" metaFont="system"/>
@@ -48,7 +56,7 @@
                                 </connections>
                             </segmentedControl>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nga-jw-UCJ">
-                                <rect key="frame" x="18" y="145" width="394" height="27"/>
+                                <rect key="frame" x="18" y="141" width="394" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Drop Your Text File Here" id="MJw-o1-DOb">
                                     <font key="font" metaFont="system" size="22"/>
@@ -57,7 +65,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l36-W5-6l8">
-                                <rect key="frame" x="150" y="120" width="130" height="17"/>
+                                <rect key="frame" x="150" y="116" width="130" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="&lt;textFileName.txt&gt;" id="CFL-7e-ozn">
                                     <font key="font" metaFont="system"/>
@@ -65,10 +73,6 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="GcV-e4-84O">
-                                <rect key="frame" x="207" y="183" width="16" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </progressIndicator>
                         </subviews>
                     </customView>
                 </subviews>
