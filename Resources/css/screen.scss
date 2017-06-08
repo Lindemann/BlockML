@@ -1,7 +1,7 @@
 /*
-    ____  __           __   __  _____ 
-   / __ )/ /___  _____/ /__/  |/  / / 
-  / __  / / __ \/ ___/ //_/ /|_/ / /  
+    ____  __           __   __  _____
+   / __ )/ /___  _____/ /__/  |/  / /
+  / __  / / __ \/ ___/ //_/ /|_/ / /
  / /_/ / / /_/ / /__/ ,< / /  / / /___
 /_____/_/\____/\___/_/|_/_/  /_/_____/
 
@@ -12,8 +12,7 @@
 /*////////////////////////////////////////////////////////////////////////////*/
 
 /* Fonts */
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
 
 /* highlight.js */
 //@import url(http://yandex.st/highlightjs/7.3/styles/github.min.css);
@@ -99,11 +98,11 @@ a, a span {
 	}
 }
 
-::selection { 
+::selection {
 	background-color: $selectionColor;
 }
-::-moz-selection { 
-	background-color: $selectionColor; 
+::-moz-selection {
+	background-color: $selectionColor;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -160,7 +159,7 @@ h6 {
 	font-family:"Source Code Pro", monospace;
 	font-weight: 500;
 	color: darken($selectionColor, 40%);
-	border-radius: 6px; 
+	border-radius: 6px;
 	border: solid darken($selectionColor, 30%) 1px;
 	margin-bottom: $paragraphPadding;
 
@@ -219,14 +218,14 @@ h6 {
 		display: block;
 		height: 100%;
 
-		position: absolute; 
+		position: absolute;
 		/* Move the Link a few Pixel deeper than its normal bottom */
 		bottom: -0.3em;
 		right: 0;
 
 		span {
 			/* Move the Text to the bottom of List */
-			position: absolute; 
+			position: absolute;
 			bottom: 0;
 			right: 0;
 			@include backgroundArea(0.3em, 0em);
@@ -258,7 +257,7 @@ pre {
     line-height: 1.6em;
 }
 
-/* Creepy method to give pre a padding-bottom, 
+/* Creepy method to give pre a padding-bottom,
 which is as height as the other padding-bottoms,
 where the font size is $fontSize and not 11pt */
 pre:after {
@@ -400,8 +399,8 @@ div.math {
 
 table {
 	margin-bottom: $paragraphPadding;
-	width: 100%; 
-	border-collapse: collapse; 
+	width: 100%;
+	border-collapse: collapse;
 	border-spacing: 0;
 	table-layout: fixed;
 }
@@ -413,9 +412,9 @@ table, td, td {
 	padding: 0 10px;
 }
 
-td, th { 
-	border: 1px solid lighten($fontColor, 50%); 
-	height: 40px; 
+td, th {
+	border: 1px solid lighten($fontColor, 50%);
+	height: 40px;
 }
 
 th {
@@ -496,4 +495,3 @@ td {
 		padding: 0.2em 0;
 	}
 }
-
